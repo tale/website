@@ -1,0 +1,70 @@
+* {
+	color: #FFFFFF;
+	font-style: normal;
+	font-variant: normal;
+	background-color: #1A1A1A;
+	font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
+}
+
+body {
+	margin: 1em;
+}
+
+h1 {
+	font-size: 32px;
+	font-weight: 1000;
+	line-height: 40px;
+}
+
+h3 { 
+	color: #E0E0E0;
+	font-size: 16px;
+	font-weight: 200;
+	line-height: 4px;
+} 
+
+h4 {
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 0px;
+	padding-top: 20px;
+} 
+
+li {
+	font-size: 14px;
+	color: #E0E0E0;
+	font-weight: 400;
+	line-height: 18px;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgb(31, 27, 27);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgb(66, 60, 60);
+}
+
+::-moz-scrollbar {
+	width: 10px;
+}
+
+::-moz-scrollbar-track {
+	background: rgba(0, 0, 0, 0.1);
+}
+
+::-moz-scrollbar-thumb {
+	background: rgb(31, 27, 27);
+}
+
+::-moz-scrollbar-thumb:hover {
+	background: rgb(66, 60, 60);
+}
