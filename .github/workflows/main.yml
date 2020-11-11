@@ -13,6 +13,3 @@ jobs:
       - name: Checkout tale/website
         uses: actions/checkout@v2
 
-      - name: Reload Nginx
-        run: sudo systemctl reload nginx
-
