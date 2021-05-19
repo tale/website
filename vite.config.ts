@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
-import preact from '@preact/preset-vite'
+import reactRefresh from '@vitejs/plugin-react-refresh'
 
 export default defineConfig({
-	plugins: [preact()]
+	plugins: [reactRefresh()]
 })
