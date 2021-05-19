@@ -1,0 +1,13 @@
+# Yarn PNP
+/.yarn/*
+!/.yarn/releases
+!/.yarn/plugins
+!/.yarn/cache
+!/.yarn/sdks
+
+# Project
+dist/
+*.local
+dist-ssr/
+.DS_Store
+node_modules/
