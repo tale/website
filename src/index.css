@@ -1,9 +1,7 @@
 html, body {
-	height: 100%;
-	width: 100%;
 	padding: 0;
 	margin: 0;
-	background-color: #fafafa;
+	background-image: url("assets/topography.svg");
 	background-repeat: repeat;
 	font-family: 'JetBrains Mono';
 	font-weight: 400;
@@ -28,14 +26,6 @@ html, body {
 	-webkit-touch-callout: none;
 }
 
-#background {
-	height: 100%;
-	width: 100%;
-	padding-top: 100px;
-	position: absolute;
-	background-image: url("assets/topography.svg");
-}
-
 #app {
 	position: absolute;
 	height: 100%;
@@ -44,6 +34,7 @@ html, body {
 
 .info-banner {
 	margin: 36px;
+	margin-bottom: 0px !important;
 	width: fit-content;
 	color: rgba(0, 0, 0, 0.5);
 }
@@ -99,7 +90,7 @@ html, body {
 }
 
 .card {
-	margin: 36px;
+	margin: 32px;
 	padding: 36px;
 	width: fit-content;
 	backdrop-filter: blur(1.5px);
