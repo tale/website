@@ -1,4 +1,4 @@
-import { Component } from 'preact'
+import React, { Component } from 'react'
 import { IoPeopleCircle, IoGlobe } from 'react-icons/io5'
 
 interface InfoBannerProps {
@@ -14,7 +14,7 @@ interface InfoBannerProps {
 export default class InfoBanner extends Component<InfoBannerProps> {
 	render() {
 		return (
-			<div class="info-banner">
+			<div className="info-banner">
 				<h1>{this.props.name.toUpperCase()}</h1>
 				<p>{this.props.description}</p>
 				<br />

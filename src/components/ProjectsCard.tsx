@@ -1,4 +1,4 @@
-import { Component } from 'preact'
+import React, { Component } from 'react'
 
 const projects = [
 	{
@@ -30,21 +30,21 @@ const projects = [
 export default class ProjectsCard extends Component {
 	render() {
 		return (
-			<div class="card project-card">
+			<div className="card project-card">
 				<h1>Active Projects</h1>
 				<ul>
 					{projects.map(project => {
 						if (project.link) {
 							return (
-								<li class="list-object">
-									<a class="list-link" href={project.link}>
+								<li key={project.name} className="list-object">
+									<a className="list-link" href={project.link}>
 										<strong style={{ textDecoration: 'underline' }}>{project.name}</strong>: {project.description}
 									</a>
 								</li>
 							)
 						} else {
 							return (
-								<li class="list-object">
+								<li key={project.name} className="list-object">
 									<strong>{project.name}</strong>: {project.description}
 								</li>
 							)

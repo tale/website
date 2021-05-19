@@ -1,11 +1,11 @@
-import { Component } from 'preact'
+import React, { Component } from 'react'
 import TooltipIcon from './TooltipIcon'
 import { SiVim, SiTypescript, SiSwift, SiWebstorm, SiVisualstudiocode, SiJest, SiReact, SiKubernetes, SiDocker, SiGithub, SiNodeDotJs, SiMongodb, SiPostgresql, SiDirectus, SiSvelte, SiXcode, SiGooglecloud, SiPython, SiCsharp, SiC, SiJava, SiKotlin, SiSass, SiAzuredevops, SiAtlassian, SiCloudflare, SiGatsby, SiGit, SiPostman, SiNginx, SiSentry, SiTerraform, SiYarn, SiTailwindcss, SiKeras, SiJavascript } from 'react-icons/si'
 
 export default class TechnologyCard extends Component {
 	render() {
 		return (
-			<div class="card technology">
+			<div className="card technology">
 				<h1>Technologies I Use</h1>
 				<TooltipIcon description="Atlassian — Jira & Trello">
 					<SiAtlassian />

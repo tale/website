@@ -1,4 +1,4 @@
-import { Component } from 'preact'
+import React, { Component } from 'react'
 import { SiMailDotRu, SiGithub, SiTwitter, SiKeybase } from 'react-icons/si'
 
 interface ContactCardProps {
@@ -11,7 +11,7 @@ interface ContactCardProps {
 export default class ContactCard extends Component<ContactCardProps> {
 	render() {
 		return (
-			<div class="card">
+			<div className="card">
 				<h1>Contact Me</h1>
 				<a href={`mailto:${this.props.mail}`}>
 					<SiMailDotRu />

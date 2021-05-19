@@ -3,15 +3,18 @@ import ContactCard from './components/ContactCard'
 import ProjectsCard from './components/ProjectsCard'
 import ResourcesCard from './components/ResourcesCard'
 import TechnologyCard from './components/TechnologyCard'
-import { Component } from 'preact'
+import React, { Component } from 'react'
 
 interface AppState {
 	width: number
 }
 
 export default class App extends Component<unknown, AppState> {
+	state = {
+		width: window.innerWidth
+	}
+
 	componentDidMount() {
-		this.setState({ width: window.innerWidth })
 		window.addEventListener('resize', () => this.setState({ width: window.innerWidth }))
 	}
 
@@ -27,11 +30,11 @@ export default class App extends Component<unknown, AppState> {
 						website: 'https://hashbang.productions'
 					}}
 				/>
-				<div class="cards">
+				<div className="cards">
 					<div>
 						<TechnologyCard />
 						{this.state.width <= 1024 && <ProjectsCard />}
-						<div class="cards subcards">
+						<div className="cards subcards">
 							<ResourcesCard />
 							<ContactCard
 								github="tale"

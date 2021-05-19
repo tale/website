@@ -1,10 +1,10 @@
-import { Component } from 'preact'
+import React, { Component } from 'react'
 import { FiBox, FiFileText, FiMail, FiInfo } from 'react-icons/fi'
 
 export default class ResourcesCard extends Component {
 	render() {
 		return (
-			<div class="card">
+			<div className="card">
 				<h1>Resources/Links</h1>
 				<a href="#">
 					<FiFileText />
