@@ -28,8 +28,8 @@ html, body {
 
 #app {
 	position: absolute;
-	height: 100%;
-	width: 100%;
+	height: max-content;
+	width: max-content
 }
 
 .info-banner {
@@ -211,6 +211,10 @@ h1 {
 	.card {
 		width: initial;
 		max-width: initial;
+	}
+
+	.subcards div {
+		width: initial;
 	}
 
 	.info-banner h1 {
