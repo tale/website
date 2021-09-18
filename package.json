@@ -1,0 +1,26 @@
+{
+	"name": "@tale/website",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "svelte-kit dev",
+		"build": "svelte-kit build",
+		"preview": "svelte-kit preview",
+		"check": "svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-static": "^1.0.0-next.18",
+		"@sveltejs/kit": "next",
+		"@types/simple-icons": "^5.8.0",
+		"svelte": "^3.34.0",
+		"svelte-check": "^2.0.0",
+		"svelte-lazy": "^1.0.12",
+		"svelte-preprocess": "^4.0.0",
+		"tslib": "^2.0.0",
+		"typescript": "^4.0.0"
+	},
+	"type": "module",
+	"dependencies": {
+		"simple-icons": "^5.14.0"
+	}
+}
