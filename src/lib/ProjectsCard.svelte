@@ -48,6 +48,7 @@
 	.table {
 		display: flex;
 		flex-direction: column;
+		max-width: 25vw;
 	}
 
 	.column {
@@ -59,5 +60,11 @@
 
 	#title {
 		font-weight: bolder;
+	}
+
+	@media (max-device-width: 480px) {
+		.table {
+			max-width: initial;
+		}
 	}
 </style>
