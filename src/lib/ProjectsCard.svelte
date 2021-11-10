@@ -1,22 +1,24 @@
 <script lang="ts">
-	import Card from "$lib/Card.svelte";
+	import Card from '$lib/Card.svelte';
 	const projects = [
 		{
-			name: "Chariz",
-			description:
-				"A payments processing platform and marketplace for app developers",
-			link: "https://chariz.com",
+			name: 'Chariz',
+			description: 'A payments processing platform and marketplace for app developers',
+			link: 'https://chariz.com',
 		},
 		{
-			name: "Lyricify",
-			description:
-				"A lockscreen extension to view song lyrics on your iPhone",
-			link: "https://chariz.com/buy/lyricify",
+			name: 'Lyricify',
+			description: 'A lockscreen extension to view song lyrics on your iPhone',
+			link: 'https://chariz.com/buy/lyricify',
 		},
 		{
-			name: "Canister",
-			description:
-				"A search engine for packages used by the iOS Jailbreaking community",
+			name: 'bruh',
+			description: 'A replacement to the CLI provided by homebrew (brew.sh)',
+			link: 'https://github.com/tale/bruh',
+		},
+		{
+			name: 'Canister',
+			description: 'A search engine for packages used by the iOS Jailbreaking community',
 		},
 	];
 </script>
