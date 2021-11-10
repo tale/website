@@ -1,21 +1,21 @@
 <script lang="ts">
-	import Lazy from "svelte-lazy";
+	import Lazy from 'svelte-lazy';
 
 	function removeSpinner() {
 		setTimeout(() => {
-			document.getElementsByClassName("spinner").item(0).remove();
+			document.getElementsByClassName('spinner').item(0).remove();
 		}, 500);
 	}
 </script>
 
 <div class="spinner">
-	<div class="double-bounce1" />
-	<div class="double-bounce2" />
+	<div class="double-bounce1"></div>
+	<div class="double-bounce2"></div>
 </div>
 
-<Lazy onload={removeSpinner}>
-	<div id="background" />
-	<div id="overlay" />
+<Lazy onload="{removeSpinner}">
+	<div id="background"></div>
+	<div id="overlay"></div>
 </Lazy>
 
 <div id="content">
@@ -24,7 +24,7 @@
 
 <style>
 	#background {
-		background-image: url("https://source.unsplash.com/featured/1920x1080/daily/?city,america,day");
+		background-image: url('https://source.unsplash.com/featured/1920x1080/daily/?city,america,day');
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: 50% cover;
@@ -37,7 +37,7 @@
 
 	#overlay {
 		background-color: rgba(255, 255, 255, 0.1);
-		background-image: url("/bank-note.svg");
+		background-image: url('/bank-note.svg');
 		background-repeat: repeat;
 		position: fixed;
 		opacity: 0.25;
@@ -53,14 +53,14 @@
 
 	@media (orientation: portrait) {
 		#background {
-			background-image: url("https://source.unsplash.com/featured/1080x1920/daily/?city,america,day");
+			background-image: url('https://source.unsplash.com/featured/1080x1920/daily/?city,america,day');
 			background-color: white;
 		}
 	}
 
 	@media (prefers-color-scheme: dark) {
 		#background {
-			background-image: url("https://source.unsplash.com/featured/1920x1080/daily/?city,america,night");
+			background-image: url('https://source.unsplash.com/featured/1920x1080/daily/?city,america,night');
 			background-color: black;
 		}
 
@@ -72,7 +72,7 @@
 
 	@media (prefers-color-scheme: dark) and (orientation: portrait) {
 		#background {
-			background-image: url("https://source.unsplash.com/featured/1080x1920/daily/?city,america,night");
+			background-image: url('https://source.unsplash.com/featured/1080x1920/daily/?city,america,night');
 			background-color: black;
 		}
 

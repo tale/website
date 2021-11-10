@@ -1,22 +1,22 @@
 <script lang="ts">
-	import Cloudflare from "simple-icons/icons/cloudflare.js";
-	import Docker from "simple-icons/icons/docker.js";
-	import Git from "simple-icons/icons/git.js";
-	import Gradle from "simple-icons/icons/gradle.js";
-	import Grafana from "simple-icons/icons/grafana.js";
-	import Jira from "simple-icons/icons/jira.js";
-	import Kubernetes from "simple-icons/icons/kubernetes.js";
-	import Linux from "simple-icons/icons/linux.js";
-	import MongoDB from "simple-icons/icons/mongodb.js";
-	import NodeJS from "simple-icons/icons/nodedotjs.js";
-	import Passport from "simple-icons/icons/passport.js";
-	import PostgreSQL from "simple-icons/icons/postgresql.js";
-	import React from "simple-icons/icons/react.js";
-	import Redis from "simple-icons/icons/redis.js";
-	import Svelte from "simple-icons/icons/svelte.js";
-	import TypeScript from "simple-icons/icons/typescript.js";
+	import Cloudflare from 'simple-icons/icons/cloudflare.js';
+	import Docker from 'simple-icons/icons/docker.js';
+	import Git from 'simple-icons/icons/git.js';
+	import Gradle from 'simple-icons/icons/gradle.js';
+	import Grafana from 'simple-icons/icons/grafana.js';
+	import Jira from 'simple-icons/icons/jira.js';
+	import Kubernetes from 'simple-icons/icons/kubernetes.js';
+	import Linux from 'simple-icons/icons/linux.js';
+	import MongoDB from 'simple-icons/icons/mongodb.js';
+	import NodeJS from 'simple-icons/icons/nodedotjs.js';
+	import Passport from 'simple-icons/icons/passport.js';
+	import PostgreSQL from 'simple-icons/icons/postgresql.js';
+	import React from 'simple-icons/icons/react.js';
+	import Redis from 'simple-icons/icons/redis.js';
+	import Svelte from 'simple-icons/icons/svelte.js';
+	import TypeScript from 'simple-icons/icons/typescript.js';
 
-	import Card from "$lib/Card.svelte";
+	import Card from '$lib/Card.svelte';
 
 	const icons = [
 		Cloudflare,
@@ -46,7 +46,7 @@
 			{#each icons.splice(0, Math.ceil(icons.length / 2)) as icon}
 				<div class="skill">
 					<svg height="32" width="32" fill="currentColor">
-						<path d={icon.path} />
+						<path d="{icon.path}"></path>
 					</svg>
 					<span>{icon.title}</span>
 				</div>
@@ -56,7 +56,7 @@
 			{#each icons as icon}
 				<div class="skill">
 					<svg height="32" width="32" fill="currentColor">
-						<path d={icon.path} />
+						<path d="{icon.path}"></path>
 					</svg>
 					<span>{icon.title}</span>
 				</div>

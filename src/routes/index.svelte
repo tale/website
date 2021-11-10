@@ -1,9 +1,9 @@
 <script>
-	import AboutCard from "$lib/AboutCard.svelte";
-	import ContactCard from "$lib/ContactCard.svelte";
-	import LinksCard from "$lib/LinksCard.svelte";
-	import ProjectsCard from "$lib/ProjectsCard.svelte";
-	import TechnologiesCard from "$lib/TechnologiesCard.svelte";
+	import AboutCard from '$lib/AboutCard.svelte';
+	import ContactCard from '$lib/ContactCard.svelte';
+	import LinksCard from '$lib/LinksCard.svelte';
+	import ProjectsCard from '$lib/ProjectsCard.svelte';
+	import TechnologiesCard from '$lib/TechnologiesCard.svelte';
 </script>
 
 <div class="root">

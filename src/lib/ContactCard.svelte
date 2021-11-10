@@ -1,31 +1,31 @@
 <script lang="ts">
-	import Github from "simple-icons/icons/github.js";
-	import Twitter from "simple-icons/icons/twitter.js";
-	import Resume from "simple-icons/icons/adobeacrobatreader.js";
-	import LinkedIn from "simple-icons/icons/linkedin.js";
+	import Github from 'simple-icons/icons/github.js';
+	import Twitter from 'simple-icons/icons/twitter.js';
+	import Resume from 'simple-icons/icons/adobeacrobatreader.js';
+	import LinkedIn from 'simple-icons/icons/linkedin.js';
 
-	import Card from "$lib/Card.svelte";
+	import Card from '$lib/Card.svelte';
 
 	const contacts = [
 		{
-			name: "Github",
+			name: 'Github',
 			svg: Github,
-			link: "https://github.com/tale"
+			link: 'https://github.com/tale',
 		},
 		{
-			name: "Twitter",
+			name: 'Twitter',
 			svg: Twitter,
-			link: "https://twitter.com/aarnavtale"
+			link: 'https://twitter.com/aarnavtale',
 		},
 		{
-			name: "Resume",
+			name: 'Resume',
 			svg: Resume,
-			link: "/#"
+			link: '/#',
 		},
 		{
-			name: "LinkedIn",
+			name: 'LinkedIn',
 			svg: LinkedIn,
-			link: "https://www.linkedin.com/in/aarnavtale"
+			link: 'https://www.linkedin.com/in/aarnavtale',
 		},
 	];
 </script>
@@ -33,25 +33,19 @@
 <Card>
 	<div class="table">
 		<div class="column" id="profile-parent">
-			<img
-				src="https://github.com/tale.png"
-				alt="Face Profile"
-				id="profile"
-				width="128"
-				height="128"
-			/>
+			<img src="https://github.com/tale.png" alt="Face Profile" id="profile" width="128" height="128" />
 		</div>
 		<div class="column" id="contact-parent">
 			{#each contacts as contact}
-			<a href={contact.link}>
-				<div class="contact">
-					<svg height="32" width="32" fill="currentColor">
-						<path d={contact.svg.path} />
-					</svg>
-					<span>{contact.name}</span>
-				</div>
-			</a>
-		{/each}
+				<a href="{contact.link}">
+					<div class="contact">
+						<svg height="32" width="32" fill="currentColor">
+							<path d="{contact.svg.path}"></path>
+						</svg>
+						<span>{contact.name}</span>
+					</div>
+				</a>
+			{/each}
 		</div>
 	</div>
 </Card>

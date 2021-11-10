@@ -20,13 +20,13 @@
 	}
 
 	:global(.card h1) {
-		font-family: "Lora", serif;
+		font-family: 'Lora', serif;
 		letter-spacing: 2px;
 		font-size: 48px;
 	}
 
 	:global(.card h1) {
-		font-family: "Lora", serif;
+		font-family: 'Lora', serif;
 		letter-spacing: 2px;
 		font-size: 32px;
 	}
