@@ -31,7 +31,7 @@
 			<div class="column">
 				{#if project.link}
 					<span>
-						<a href="https://chariz.com/buy/lyricify" id="title">
+						<a href={project.link} id="title">
 							{project.name}:
 						</a>
 						{project.description}
