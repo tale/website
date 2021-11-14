@@ -20,7 +20,7 @@
 		{
 			name: 'Resume',
 			svg: Resume,
-			link: '/#',
+			link: '/Aarnav_Tale_Resume.pdf',
 		},
 		{
 			name: 'LinkedIn',
