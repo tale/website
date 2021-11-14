@@ -1,9 +1,8 @@
 <script lang="ts">
-	import { SimpleIcon } from 'simple-icons'
 	import Cloudflare from 'simple-icons/icons/cloudflare.js';
-	import CPP from 'simple-icons/icons/cplusplus';
+	import CPP from 'simple-icons/icons/cplusplus.js';
 	import Docker from 'simple-icons/icons/docker.js';
-	import Express from 'simple-icons/icons/express';
+	import Express from 'simple-icons/icons/express.js';
 	import Git from 'simple-icons/icons/git.js';
 	import GnuBash from 'simple-icons/icons/gnubash.js';
 	import Go from 'simple-icons/icons/go.js';
