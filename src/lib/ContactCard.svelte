@@ -37,7 +37,7 @@
 		</div>
 		<div class="column" id="contact-parent">
 			{#each contacts as contact}
-				<a href="{contact.link}">
+				<a rel="external" href="{contact.link}">
 					<div class="contact">
 						<svg height="32" width="32" fill="currentColor">
 							<path d="{contact.svg.path}"></path>
