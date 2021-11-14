@@ -22,24 +22,30 @@
 
 	import Card from '$lib/Card.svelte';
 
-	const standout = [Kubernetes, TypeScript, CPP, Docker];
+	const standout = [
+		{ icon: Kubernetes.path, title: 'Kubernetes' },
+		{ icon: TypeScript.path, title: 'TypeScript' },
+		{ icon: CPP.path, title: 'C++' },
+		{ icon: Docker.path, title: 'Docker' },
+	];
+
 	const icons = [
-		Cloudflare,
-		Express,
-		Git,
-		[GnuBash, 'Shell'],
-		Go,
-		Java,
-		Jira,
-		Linux,
-		MongoDB,
-		NodeJS,
-		Passport,
-		PostgreSQL,
-		React,
-		Redis,
-		Svelte,
-		Ubuntu,
+		{ icon: Cloudflare.path, title: 'Cloudflare' },
+		{ icon: Express.path, title: 'Express.js' },
+		{ icon: Git.path, title: 'Git' },
+		{ icon: GnuBash.path, title: 'Shell' },
+		{ icon: Go.path, title: 'Golang' },
+		{ icon: Java.path, title: 'Java' },
+		{ icon: Jira.path, title: 'Jira' },
+		{ icon: Linux.path, title: 'Linux' },
+		{ icon: MongoDB.path, title: 'MongoDB' },
+		{ icon: NodeJS.path, title: 'Node.js' },
+		{ icon: Passport.path, title: 'Passport.js' },
+		{ icon: PostgreSQL.path, title: 'PostgreSQL' },
+		{ icon: React.path, title: 'React' },
+		{ icon: Redis.path, title: 'Redis' },
+		{ icon: Svelte.path, title: 'SvelteKit' },
+		{ icon: Ubuntu.path, title: 'Ubuntu' },
 	];
 </script>
 
@@ -48,22 +54,22 @@
 	<hr />
 	<div class="table">
 		<div class="column">
-			{#each standout.splice(0, Math.ceil(standout.length / 2)) as icon}
+			{#each standout.splice(0, Math.ceil(standout.length / 2)) as { icon, title }}
 				<div class="skill">
 					<svg height="32" width="32" fill="currentColor">
-						<path d="{icon.path}"></path>
+						<path d="{icon}"></path>
 					</svg>
-					<span>{icon.title}</span>
+					<span>{title}</span>
 				</div>
 			{/each}
 		</div>
 		<div class="column">
-			{#each standout as icon}
+			{#each standout as { icon, title }}
 				<div class="skill">
 					<svg height="32" width="32" fill="currentColor">
-						<path d="{icon.path}"></path>
+						<path d="{icon}"></path>
 					</svg>
-					<span>{icon.title}</span>
+					<span>{title}</span>
 				</div>
 			{/each}
 		</div>
@@ -71,41 +77,23 @@
 	<hr />
 	<div class="table">
 		<div class="column">
-			{#each icons.splice(0, Math.ceil(icons.length / 2)) as icon}
-				{#if Array.isArray(icon) && typeof icon[0] !== 'string'}
-					<div class="skill">
-						<svg height="32" width="32" fill="currentColor">
-							<path d="{icon[0].path}"></path>
-						</svg>
-						<span>{icon[1]}</span>
-					</div>
-				{:else}
-					<div class="skill">
-						<svg height="32" width="32" fill="currentColor">
-							<path d="{icon.path}"></path>
-						</svg>
-						<span>{icon.title}</span>
-					</div>
-				{/if}
+			{#each icons.splice(0, Math.ceil(icons.length / 2)) as { icon, title }}
+			<div class="skill">
+				<svg height="32" width="32" fill="currentColor">
+					<path d="{icon}"></path>
+				</svg>
+				<span>{title}</span>
+			</div>
 			{/each}
 		</div>
 		<div class="column">
-			{#each icons as icon}
-				{#if Array.isArray(icon) && typeof icon[0] !== 'string'}
-					<div class="skill">
-						<svg height="32" width="32" fill="currentColor">
-							<path d="{icon[0].path}"></path>
-						</svg>
-						<span>{icon[1]}</span>
-					</div>
-				{:else if icon.hasOwnProperty('path') && icon.hasOwnProperty('title')}
-					<div class="skill">
-						<svg height="32" width="32" fill="currentColor">
-							<path d="{icon.path}"></path>
-						</svg>
-						<span>{icon.title}</span>
-					</div>
-				{/if}
+			{#each icons as { icon, title }}
+			<div class="skill">
+				<svg height="32" width="32" fill="currentColor">
+					<path d="{icon}"></path>
+				</svg>
+				<span>{title}</span>
+			</div>
 			{/each}
 		</div>
 	</div>
