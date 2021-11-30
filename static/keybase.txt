@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/aarnavtale
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://tale.me
+  * I am aarnavtale (https://keybase.io/aarnavtale) on keybase.
+  * I have a public key ASDhPdiqdZSGkpJaMqSYJK50pAr6qyQQgvqhslTvjwPHZAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120e13dd8aa75948692925a32a49824ae74a40afaab241082faa1b254ef8f03c7640a",
+      "host": "keybase.io",
+      "kid": "0120e13dd8aa75948692925a32a49824ae74a40afaab241082faa1b254ef8f03c7640a",
+      "uid": "7239cfa059e939f53ea3cbfb95564519",
+      "username": "aarnavtale"
+    },
+    "merkle_root": {
+      "ctime": 1638295760,
+      "hash": "705cf770d6d0ace0addec81a66038806581907150e0312c331b77087203d8b4aa5c440293ba7f4345192674107d27044a92db0961d4cae5986c14b8bcb606f53",
+      "hash_meta": "a9f26208662b13dddef74fd6216f6601592433df281b9e9e0981696ebdb351dc",
+      "seqno": 21332582
+    },
+    "service": {
+      "entropy": "upL4J0p3CgfPoXURttHRSCHF",
+      "hostname": "tale.me",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.8.0"
+  },
+  "ctime": 1638295775,
+  "expire_in": 504576000,
+  "prev": "060e93d4c0809cc95c602855f615a085edb1d4f9510fd9a07ce5da54b00abe38",
+  "seqno": 24,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg4T3YqnWUhpKSWjKkmCSudKQK+qskEIL6obJU748Dx2QKp3BheWxvYWTESpcCGMQgBg6T1MCAnMlcYChV9hWghe2x1PlRD9mgfOXaVLAKvjjEIPLxpoTCif7qN5E8PWK883DskunMJGmkcwKyFEWIvJRJAgHCo3NpZ8RAaXIkF+2x1D27B0aYnl6PohRBsEI9ccvDTdr88mpPm282DavrshA8ycnsVD21B12qtvMQnYHNgU63FofbAdxrDahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIAZemleJAiYtjS9IoAFp+yhFUawGxxjo04zStKZ+YZj0o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/aarnavtale
+
+==================================================================
