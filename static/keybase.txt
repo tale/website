@@ -54,3 +54,65 @@ appending to this document.
 View my publicly-auditable identity here: https://keybase.io/aarnavtale
 
 ==================================================================
+==================================================================
+https://keybase.io/aarnavtale
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://aarnavtale.com
+  * I am aarnavtale (https://keybase.io/aarnavtale) on keybase.
+  * I have a public key with fingerprint ADA5 612C 057F C6C1 FB63  E0E5 F5C3 FD85 94B0 444C
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120e13dd8aa75948692925a32a49824ae74a40afaab241082faa1b254ef8f03c7640a",
+      "fingerprint": "ada5612c057fc6c1fb63e0e5f5c3fd8594b0444c",
+      "host": "keybase.io",
+      "key_id": "f5c3fd8594b0444c",
+      "kid": "0116ad5a1bd63e23b2102f9b35e4a070bb935d442cd4f6ec9b98532c469d7eb7de7f0a",
+      "uid": "7239cfa059e939f53ea3cbfb95564519",
+      "username": "aarnavtale"
+    },
+    "service": {
+      "hostname": "aarnavtale.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1640065753,
+  "expire_in": 157680000,
+  "prev": "42e8b80152d2d87ea5e93e17911a6c1204719a984874d8439129ff2ad98a1ee7",
+  "seqno": 27,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owFtUj1oFEEY3WhSeCCIxTVq4TSChDC/OzOXwsrCTq0CIsf8fJOsueyeu3tnzmAT
+VLTxJ4KVnSBISGVhE4sIkkK0tdQ2IEJCNJ04e5hKp5mZb95789438+T40aTVfnet
+3iXbq3cnPu7YxGzd2FlBtvAj1FlBizCeoOehqruLmUcdhAnFQJj3yhgpNFepppoK
+w6jhWlFuQHLDsQnGWMoJVjSuiKWCQ1ABMyfTeIqmUcjyeSj7ZZbXUdZ4I1JCHRYy
+uNSRYFMGGEQQjgWv4kUWc85dJC4UVcOI5qypYCYrYi1uumN7/8Ef+iap8SJa8VGZ
+MksJpkFbJoAbLLG1mgnPOXWehxSctloJRh1PtZdgpQcZxr4HYzlJmXbBYKFBMx0E
+A8OcDVYLkXJBdAOsoMzNEjTpTFwNa9MDdGcaxfowc9C0tsnyD2bGFUuR3y+LunBF
+L54t1HW/6jTcetRvwLfAdv/KdG2W+9jLyBhCWWVFjjokIl2dNbokthunQgo2jWC5
+n5XQzRqEkKnCcTT3wDBKcgrXlVWYCOqpVxKMiNGASE2IiS9CMZdEG624ktwrzjSh
+OgRqvFaGAEjUJLuZF6hDZTRq5qNolc3nph6UMXfrwWAyabeSM+2zk4P7Wxen3ohe
+e3bz1+H/mzrSfL6kdezEYeVbMZG8mLo9d/n15/VzD39MXml9fzo72j54u7a3sXt+
+7uDS6iec/EYLez/3722+fF/n+8nGq+cXOicfP3r2dW391NUPX5ZPJ38A
+=rp0l
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/aarnavtale
+
+==================================================================
