@@ -7,18 +7,23 @@
 			link: 'https://chariz.com',
 		},
 		{
-			name: 'Lyricify',
-			description: 'A lockscreen extension to view song lyrics on your iPhone',
-			link: 'https://chariz.com/buy/lyricify',
+			name: 'Canister',
+			description: 'A high-speed search engine created for Jailbreaking.',
+			link: 'https://canister.me',
+		},
+		{
+			name: 'Zebra',
+			description: 'A package manager for Jailbroken iOS devices.',
+			link: 'https://github.com/Zbrateam/Zebra'
+		},
+		{
+			name: 'Iconset',
+			description: 'A nifty command line tool to manage macOS icons.',
+			link: 'https://github.com/tale/iconset'
 		},
 		{
 			name: 'bruh',
-			description: 'A replacement to the CLI provided by homebrew (brew.sh)',
-			link: 'https://github.com/tale/bruh',
-		},
-		{
-			name: 'Canister',
-			description: 'A search engine for packages used by the iOS Jailbreaking community',
+			description: 'A drop-in replacement for brew on macOS.',
 		},
 	];
 </script>
@@ -31,7 +36,7 @@
 			<div class="column">
 				{#if project.link}
 					<span>
-						<a href={project.link} id="title">
+						<a href="{project.link}" id="title">
 							{project.name}:
 						</a>
 						{project.description}
