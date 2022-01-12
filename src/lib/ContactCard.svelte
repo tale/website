@@ -1,30 +1,31 @@
 <script lang="ts">
-	import Github from 'simple-icons/icons/github.js';
-	import Twitter from 'simple-icons/icons/twitter.js';
-	import Resume from 'simple-icons/icons/adobeacrobatreader.js';
-	import LinkedIn from 'simple-icons/icons/linkedin.js';
-
+	import {
+		siGithub,
+		siTwitter,
+		siAdobeacrobatreader,
+		siLinkedin
+	} from 'simple-icons/icons';
 	import Card from '$lib/Card.svelte';
 
 	const contacts = [
 		{
 			name: 'Github',
-			svg: Github,
+			svg: siGithub,
 			link: 'https://github.com/tale',
 		},
 		{
 			name: 'Twitter',
-			svg: Twitter,
+			svg: siTwitter,
 			link: 'https://twitter.com/aarnavtale',
 		},
 		{
 			name: 'Resume',
-			svg: Resume,
+			svg: siAdobeacrobatreader,
 			link: '/Aarnav_Tale_Resume.pdf',
 		},
 		{
 			name: 'LinkedIn',
-			svg: LinkedIn,
+			svg: siLinkedin,
 			link: 'https://www.linkedin.com/in/aarnavtale',
 		},
 	];
