@@ -3,12 +3,12 @@
 	const projects = [
 		{
 			name: 'Chariz',
-			description: 'A payments processing platform and marketplace for app developers',
+			description: 'A payments processing platform and marketplace for app developers.',
 			link: 'https://chariz.com',
 		},
 		{
 			name: 'Canister',
-			description: 'A high-speed search engine created for Jailbreaking.',
+			description: 'A powerful search engine created for software.',
 			link: 'https://canister.me',
 		},
 		{

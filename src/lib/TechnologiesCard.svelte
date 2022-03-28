@@ -54,20 +54,24 @@
 		<div class="column">
 			{#each standout.splice(0, Math.ceil(standout.length / 2)) as { icon, title }}
 				<div class="skill">
-					<svg height="32" width="32" fill="currentColor">
-						<path d="{icon}"></path>
-					</svg>
-					<span>{title}</span>
+					<div class="padded-svg">
+						<svg class="icon" height="32" width="32" fill="currentColor">
+							<path d="{icon}"></path>
+						</svg>
+					</div>
+					<span class="skill-title">{title}</span>
 				</div>
 			{/each}
 		</div>
 		<div class="column">
 			{#each standout as { icon, title }}
 				<div class="skill">
-					<svg height="32" width="32" fill="currentColor">
-						<path d="{icon}"></path>
-					</svg>
-					<span>{title}</span>
+					<div class="padded-svg">
+						<svg class="icon" height="32" width="32" fill="currentColor">
+							<path d="{icon}"></path>
+						</svg>
+					</div>
+					<span class="skill-title">{title}</span>
 				</div>
 			{/each}
 		</div>
@@ -77,20 +81,20 @@
 		<div class="column">
 			{#each icons.splice(0, Math.ceil(icons.length / 2)) as { icon, title }}
 			<div class="skill">
-				<svg height="32" width="32" fill="currentColor">
+				<svg class="icon" height="32" width="32" fill="currentColor">
 					<path d={icon}></path>
 				</svg>
-				<span>{title}</span>
+				<span class="skill-title">{title}</span>
 			</div>
 			{/each}
 		</div>
 		<div class="column">
 			{#each icons as { icon, title }}
 			<div class="skill">
-				<svg height="32" width="32" fill="currentColor" class="icon">
+				<svg class="icon" height="32" width="32" fill="currentColor">
 					<path d="{icon}"></path>
 				</svg>
-				<span>{title}</span>
+				<span class="skill-title">{title}</span>
 			</div>
 			{/each}
 		</div>
@@ -102,9 +106,22 @@
 		display: flex;
 	}
 
-	.icon {
+	.padded-svg {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		width: 32px;
 		height: 32px;
+	}
+
+	.skill-title {
+		display: flex;
+		align-items: center;
+		margin-right: 16px;
+		/* justify-content: center; */
+	}
+	.icon {
+		display: block;
 	}
 
 	.table {
@@ -113,8 +130,8 @@
 
 	.column {
 		flex: 50%;
-		margin-left: 13px;
-		margin-right: 13px;
+		margin-left: 10px;
+		margin-right: 10px;
 		overflow-x: hidden;
 	}
 
