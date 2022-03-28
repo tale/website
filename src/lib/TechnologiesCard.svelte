@@ -78,7 +78,7 @@
 			{#each icons.splice(0, Math.ceil(icons.length / 2)) as { icon, title }}
 			<div class="skill">
 				<svg height="32" width="32" fill="currentColor">
-					<path d="{icon}"></path>
+					<path d={icon}></path>
 				</svg>
 				<span>{title}</span>
 			</div>
@@ -87,7 +87,7 @@
 		<div class="column">
 			{#each icons as { icon, title }}
 			<div class="skill">
-				<svg height="32" width="32" fill="currentColor">
+				<svg height="32" width="32" fill="currentColor" class="icon">
 					<path d="{icon}"></path>
 				</svg>
 				<span>{title}</span>
@@ -100,6 +100,11 @@
 <style>
 	.skill {
 		display: flex;
+	}
+
+	.icon {
+		width: 32px;
+		height: 32px;
 	}
 
 	.table {

@@ -1,6 +1,8 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@fontsource/epilogue': ^4.5.7
+  '@fontsource/roboto-serif': ^4.5.4
   '@sveltejs/adapter-static': ^1.0.0-next.26
   '@sveltejs/kit': ^1.0.0-next.225
   simple-icons: ^6.6.0
@@ -10,6 +12,10 @@ specifiers:
   svelte-preprocess: ^4.10.1
   tslib: ^2.3.1
   typescript: ^4.5.4
+
+dependencies:
+  '@fontsource/epilogue': 4.5.7
+  '@fontsource/roboto-serif': 4.5.4
 
 devDependencies:
   '@sveltejs/adapter-static': 1.0.0-next.26
@@ -23,6 +29,14 @@ devDependencies:
   typescript: 4.5.4
 
 packages:
+
+  /@fontsource/epilogue/4.5.7:
+    resolution: {integrity: sha512-tfGpDia6K+Uwj2+u3TOYamaYyvkakMuB9SNtGrjiRMtfGSsxZFpY7SHGI9ar6O7q4Y8INIzQDIL3wD1YwuJbAA==}
+    dev: false
+
+  /@fontsource/roboto-serif/4.5.4:
+    resolution: {integrity: sha512-/a4/xz+Gxf1wext8ByWAR1Y+c2buT+fJUTawHQDLlEps+7bZ1d8p0SVjb7UkUu0vJIMUUWIp0UyUlKU7Ra0NbA==}
+    dev: false
 
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}

@@ -11,8 +11,7 @@
 		backdrop-filter: blur(5px);
 		-webkit-backdrop-filter: blur(5px);
 		border-radius: 0.8rem;
-		color: black;
-		background-color: rgba(255, 255, 255, 0.5);
+		color: white;
 		border: 1px solid rgba(255, 255, 255, 0.25);
 		box-shadow: 0px 0px 0.5px 1px rgba(0, 0, 0, 0.25);
 		-webkit-box-shadow: 0px 0px 0.5px 1px rgba(0, 0, 0, 0.25);
@@ -20,13 +19,13 @@
 	}
 
 	:global(.card h1) {
-		font-family: 'Lora', serif;
+		font-family: 'Roboto Serif', serif;
 		letter-spacing: 2px;
 		font-size: 48px;
 	}
 
 	:global(.card h1) {
-		font-family: 'Lora', serif;
+		font-family: 'Roboto Serif', serif;
 		letter-spacing: 2px;
 		font-size: 32px;
 	}
@@ -59,11 +58,6 @@
 	}
 
 	@media (prefers-color-scheme: dark) {
-		.card {
-			color: white;
-			background-color: rgba(0, 0, 0, 0.75);
-		}
-
 		:global(.card hr) {
 			border: 0.75px solid rgba(255, 255, 255, 0.25);
 			margin-bottom: 10px;
