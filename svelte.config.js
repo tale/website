@@ -5,7 +5,6 @@ import adapter from '@sveltejs/adapter-static'
 export default {
 	preprocess: preprocess(),
 	kit: {
-		target: '#mount',
 		adapter: adapter({
 			pages: 'build',
 			assets: 'build'
