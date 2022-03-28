@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@fontsource/epilogue': ^4.5.7
   '@fontsource/roboto-serif': ^4.5.4
-  '@sveltejs/adapter-static': 1.0.0-next.29
+  '@sveltejs/adapter-netlify': ^1.0.0-next.51
   '@sveltejs/kit': 1.0.0-next.303
   simple-icons: ^6.16.0
   svelte: ^3.46.4
@@ -18,7 +18,7 @@ dependencies:
   '@fontsource/roboto-serif': 4.5.4
 
 devDependencies:
-  '@sveltejs/adapter-static': 1.0.0-next.29
+  '@sveltejs/adapter-netlify': 1.0.0-next.51
   '@sveltejs/kit': 1.0.0-next.303_svelte@3.46.4
   simple-icons: 6.16.0
   svelte: 3.46.4
@@ -37,6 +37,10 @@ packages:
   /@fontsource/roboto-serif/4.5.4:
     resolution: {integrity: sha512-/a4/xz+Gxf1wext8ByWAR1Y+c2buT+fJUTawHQDLlEps+7bZ1d8p0SVjb7UkUu0vJIMUUWIp0UyUlKU7Ra0NbA==}
     dev: false
+
+  /@iarna/toml/2.2.5:
+    resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
+    dev: true
 
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -67,9 +71,11 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@sveltejs/adapter-static/1.0.0-next.29:
-    resolution: {integrity: sha512-0hjGnfT3BRyoHnzJ2w0/xL+xICRpKneDTm45ZzggiRrc0r71WJfF6toGeg8N4QUQnj8EJ3Itm453gsS1kt7VUQ==}
+  /@sveltejs/adapter-netlify/1.0.0-next.51:
+    resolution: {integrity: sha512-P7/cW/0z8zd8J6DOI2yxKZG0+HRMMuzfOf0yzFXX0vRwBePhKlZ/H4qhTOo2NrCmj3Len545o+ugj5gyMXl1+g==}
     dependencies:
+      '@iarna/toml': 2.2.5
+      esbuild: 0.14.28
       tiny-glob: 0.2.9
     dev: true
 
