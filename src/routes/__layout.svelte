@@ -1,11 +1,11 @@
 <script lang="ts">
 	import Lazy from 'svelte-lazy';
-	import '@fontsource/manrope'
+	import '@fontsource/manrope';
 	import '@fontsource/epilogue';
 </script>
 
 <Lazy>
-	<div id="background" />
+	<div id="background"></div>
 </Lazy>
 
 <div id="content">
@@ -13,6 +13,29 @@
 </div>
 
 <style>
+	:global(html),
+	:global(body) {
+		font-family: 'Epilogue', sans-serif;
+		font-weight: 400;
+		color: #444;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:global(html),
+		:global(body) {
+			background-color: black;
+		}
+	}
+
+	:global(*) {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		list-style: none;
+	}
+
 	:global(hr) {
 		border: 0.75px solid rgba(255, 255, 255, 0.25);
 		margin: 8px 0px 8px 0px;
@@ -25,7 +48,8 @@
 	}
 
 	#background {
-		background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6) ), url('https://source.unsplash.com/featured/1920x1080/daily/?ski%20resort');
+		background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
+			url('https://source.unsplash.com/featured/1920x1080/daily/?ski%20resort');
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
@@ -49,21 +73,24 @@
 
 	@media (orientation: portrait) {
 		#background {
-			background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6) ), url('https://source.unsplash.com/featured/1080x1920/daily/?ski%20resort');
+			background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
+				url('https://source.unsplash.com/featured/1080x1920/daily/?ski%20resort');
 			background-color: white;
 		}
 	}
 
 	@media (prefers-color-scheme: dark) {
 		#background {
-			background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9) ), url('https://source.unsplash.com/featured/1920x1080/daily/?ski%20resort');
+			background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)),
+				url('https://source.unsplash.com/featured/1920x1080/daily/?ski%20resort');
 			background-color: black;
 		}
 	}
 
 	@media (prefers-color-scheme: dark) and (orientation: portrait) {
 		#background {
-			background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9) ), url('https://source.unsplash.com/featured/1080x1920/daily/?ski%20resort');
+			background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)),
+				url('https://source.unsplash.com/featured/1080x1920/daily/?ski%20resort');
 			background-color: black;
 		}
 	}
