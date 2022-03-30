@@ -20,6 +20,6 @@
 	},
 	"dependencies": {
 		"@fontsource/epilogue": "^4.5.7",
-		"@fontsource/roboto-serif": "^4.5.4"
+		"@fontsource/manrope": "^4.5.6"
 	}
 }

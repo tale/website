@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { siGithub, siTwitter, siAdobeacrobatreader, siLinkedin } from 'simple-icons/icons';
+	import { siGithub, siTwitter, siAdobeacrobatreader, siLinkedin, siMajorleaguehacking } from 'simple-icons/icons';
 	import Card from '$lib/Card.svelte';
 
 	const contacts = [
 		{
-			name: 'Github',
-			svg: siGithub,
-			link: 'https://github.com/tale',
+			name: 'DevPost',
+			svg: siMajorleaguehacking,
+			link: 'https://devpost.com/tale',
 		},
 		{
 			name: 'Twitter',

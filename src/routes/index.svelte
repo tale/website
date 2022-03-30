@@ -1,35 +1,43 @@
 <script>
-	import AboutCard from '$lib/AboutCard.svelte';
-	import LinksCard from '$lib/LinksCard.svelte';
+	import Header from '$lib/Header.svelte';
 	import ProjectsCard from '$lib/ProjectsCard.svelte';
-	import TechnologiesCard from '$lib/TechnologiesCard.svelte';
+	import InfoCard from '$lib/InfoCard.svelte';
+	import ToolsCard from '$lib/ToolsCard.svelte';
+	import LinksCard from '$lib/LinksCard.svelte';
 </script>
 
-<div class="root">
-	<div id="presenter">
-		<AboutCard />
+<div>
+	<Header />
+	<div class="presenter">
+		<InfoCard />
+		<LinksCard />
+	</div>
+	<div class="presenter">
+		<ProjectsCard />
+		<ToolsCard />
+	</div>
+</div>
+<!-- <AboutCard /> -->
+
+<!-- <div id="presenter">
+
 		<LinksCard />
 	</div>
 	<div id="presenter">
 		<TechnologiesCard />
 		<ProjectsCard />
-	</div>
-</div>
-
+	</div> -->
 <style>
-	.root {
+	.presenter {
 		display: flex;
-		align-items: center;
-		flex-direction: column;
-	}
-
-	#presenter {
-		display: flex;
+		column-gap: 8px;
+		margin: 8px;
 	}
 
 	@media (max-device-width: 480px) {
-		#presenter {
-			display: inline-block;
+		.presenter {
+			flex-direction: column;
+			margin: 0px;
 		}
 	}
 </style>

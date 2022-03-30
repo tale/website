@@ -2,18 +2,18 @@
 	import Card from '$lib/Card.svelte';
 	const projects = [
 		{
+			name: 'Canister',
+			description: 'A very powerful search engine created for software.',
+			link: 'https://canister.me',
+		},
+		{
 			name: 'Chariz',
 			description: 'A payments processing platform and marketplace for app developers.',
 			link: 'https://chariz.com',
 		},
 		{
-			name: 'Canister',
-			description: 'A powerful search engine created for software.',
-			link: 'https://canister.me',
-		},
-		{
 			name: 'Zebra',
-			description: 'A package manager for Jailbroken iOS devices.',
+			description: 'A reliable package manager for Jailbroken iOS devices.',
 			link: 'https://github.com/Zbrateam/Zebra'
 		},
 		{
@@ -29,22 +29,22 @@
 </script>
 
 <Card>
-	<h2>Latest Projects</h2>
+	<h2>Notable Projects</h2>
 	<hr />
 	<div class="table">
 		{#each projects as project}
-			<div class="column">
+			<div class="project">
 				{#if project.link}
-					<span>
+					<p>
 						<a href="{project.link}" id="title">
-							{project.name}:
+							<strong>{project.name}</strong>:
 						</a>
 						{project.description}
-					</span>
+					</p>
 				{:else}
-					<span>
-						<span id="title">{project.name}</span>: {project.description}
-					</span>
+					<p>
+						<strong>{project.name}</strong>: {project.description}
+					</p>
 				{/if}
 			</div>
 		{/each}
@@ -52,26 +52,11 @@
 </Card>
 
 <style>
+	.project {
+		margin-bottom: 8px;
+	}
+
 	.table {
-		display: flex;
-		flex-direction: column;
-		max-width: 25vw;
-	}
-
-	.column {
-		flex: 50%;
-		margin: 8px;
-		overflow-x: hidden;
-		display: inline-flex;
-	}
-
-	#title {
-		font-weight: bolder;
-	}
-
-	@media (max-device-width: 480px) {
-		.table {
-			max-width: initial;
-		}
+		padding-top: 6px;
 	}
 </style>

@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@fontsource/epilogue': ^4.5.7
-  '@fontsource/roboto-serif': ^4.5.4
+  '@fontsource/manrope': ^4.5.6
   '@sveltejs/adapter-netlify': ^1.0.0-next.51
   '@sveltejs/kit': 1.0.0-next.303
   simple-icons: ^6.16.0
@@ -15,7 +15,7 @@ specifiers:
 
 dependencies:
   '@fontsource/epilogue': 4.5.7
-  '@fontsource/roboto-serif': 4.5.4
+  '@fontsource/manrope': 4.5.6
 
 devDependencies:
   '@sveltejs/adapter-netlify': 1.0.0-next.51
@@ -34,8 +34,8 @@ packages:
     resolution: {integrity: sha512-tfGpDia6K+Uwj2+u3TOYamaYyvkakMuB9SNtGrjiRMtfGSsxZFpY7SHGI9ar6O7q4Y8INIzQDIL3wD1YwuJbAA==}
     dev: false
 
-  /@fontsource/roboto-serif/4.5.4:
-    resolution: {integrity: sha512-/a4/xz+Gxf1wext8ByWAR1Y+c2buT+fJUTawHQDLlEps+7bZ1d8p0SVjb7UkUu0vJIMUUWIp0UyUlKU7Ra0NbA==}
+  /@fontsource/manrope/4.5.6:
+    resolution: {integrity: sha512-83F87+ir+KaIDzIpAdICHu8CzbkD9DabjXQxO3Q4/86AahbLB5wktjGqx3LpvE2uIWAMyiwhhjo7KcJVGxRyTg==}
     dev: false
 
   /@iarna/toml/2.2.5:

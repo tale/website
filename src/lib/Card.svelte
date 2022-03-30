@@ -4,9 +4,9 @@
 
 <style>
 	.card {
-		margin: 8px;
-		padding: 14px;
-		width: fit-content;
+		max-width: 30vw;
+		width: 30vw;
+		padding: 16px;
 		height: auto;
 		backdrop-filter: blur(5px);
 		-webkit-backdrop-filter: blur(5px);
@@ -18,42 +18,38 @@
 		-moz-box-shadow: 0px 0px 0.5px 1px rgba(0, 0, 0, 0.25);
 	}
 
-	:global(.card h1) {
-		font-family: 'Roboto Serif', serif;
+	:global(.card h2) {
+		font-family: 'Manrope', sans-serif;
 		letter-spacing: 2px;
-		font-size: 48px;
+		font-size: 24px;
 	}
 
-	:global(.card h1) {
-		font-family: 'Roboto Serif', serif;
-		letter-spacing: 2px;
-		font-size: 32px;
-	}
-
-	:global(.card hr) {
-		border: 0.75px solid rgba(0, 0, 0, 0.25);
-		margin-bottom: 10px;
-		margin-top: 10px;
-	}
-
-	:global(.card p) {
-		font-size: 22px;
-		font-weight: bold;
-	}
-
-	:global(.card span) {
-		font-size: 18px;
+	:global(.card span, p) {
+		font-size: 16px;
 	}
 
 	:global(.card a) {
-		font-size: 18px;
+		font-size: 16px;
 		color: inherit;
 		text-decoration: underline;
 	}
 
+	:global(.intro) {
+		padding: 6px 0px 16px 0px;
+	}
+
+	@media (max-device-width: 948px) {
+		.card {
+			max-width: 50vw;
+			width: 50vw;
+		}
+	}
+
 	@media (max-device-width: 480px) {
 		.card {
-			width: calc(100vw - 16px);
+			max-width: 100vw;
+			width: initial;
+			margin: 4px 8px 4px 8px;
 		}
 	}
 
