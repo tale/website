@@ -4,8 +4,8 @@
 
 <style>
 	.card {
-		max-width: 30vw;
-		width: 30vw;
+		max-width: 30%;
+		width: 30%;
 		padding: 16px;
 		height: auto;
 		backdrop-filter: blur(5px);
@@ -40,14 +40,14 @@
 
 	@media (max-device-width: 948px) {
 		.card {
-			max-width: 50vw;
-			width: 50vw;
+			max-width: 50%;
+			width: 50%;
 		}
 	}
 
 	@media (max-device-width: 480px) {
 		.card {
-			max-width: 100vw;
+			max-width: 100%;
 			width: initial;
 			margin: 4px 8px 4px 8px;
 		}

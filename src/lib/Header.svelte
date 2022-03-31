@@ -69,8 +69,8 @@
 	}
 
 	.banner {
-		min-width: 50vw;
-		max-width: 90vw;
+		min-width: 50%;
+		max-width: 90%;
 		margin: auto;
 		display: flex;
 		justify-content: space-between;

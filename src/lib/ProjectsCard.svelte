@@ -31,6 +31,7 @@
 <Card>
 	<h2>Notable Projects</h2>
 	<hr />
+	<p class="intro">I've built or contributed to many projects using my skills and technologies, here are a few of the most notable ones.</p>
 	<div class="table">
 		{#each projects as project}
 			<div class="project">
