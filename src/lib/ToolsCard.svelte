@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Card from '$lib/Card.svelte';
 	import {
-siChakraui,
+		siChakraui,
 		siCloudflare,
 		siCplusplus,
 		siCsharp,
@@ -15,7 +15,6 @@ siChakraui,
 		siKubernetes,
 		siLinux,
 		siMongodb,
-		siNodedotjs,
 		siPassport,
 		siPostgresql,
 		siReact,
@@ -87,7 +86,7 @@ siChakraui,
 		{ icon: siSvelte.path, title: 'SvelteKit' },
 		{ icon: siUbuntu.path, title: 'Ubuntu' },
 		{ icon: siVercel.path, title: 'Vercel' },
-		{ icon: siVisualstudiocode.path, title: 'VS Code' }
+		{ icon: siVisualstudiocode.path, title: 'VS Code' },
 	].map(({ icon, title }) => {
 		return {
 			icon,
@@ -101,7 +100,8 @@ siChakraui,
 	<h2>Technologies</h2>
 	<hr />
 	<p class="intro">
-		I've come across many different tools and technologies in my work. My strongest ones have a certification/mastery level.
+		I've come across many different tools and technologies in my work. My strongest ones have a
+		certification/mastery level.
 	</p>
 
 	<div>
@@ -193,6 +193,6 @@ siChakraui,
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-		width: 100%
+		width: 100%;
 	}
 </style>

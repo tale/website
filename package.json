@@ -8,7 +8,7 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-netlify": "^1.0.0-next.51",
+		"@sveltejs/adapter-static": "1.0.0-next.29",
 		"@sveltejs/kit": "1.0.0-next.303",
 		"simple-icons": "^6.16.0",
 		"svelte": "^3.46.4",
