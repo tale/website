@@ -70,7 +70,7 @@
 
 	.banner {
 		min-width: 50%;
-		max-width: 90%;
+		max-width: 60%;
 		margin: auto;
 		display: flex;
 		justify-content: space-between;
@@ -106,6 +106,12 @@
 
 		h1 {
 			margin-left: 0px;
+		}
+	}
+
+	@media (max-device-width: 768px) {
+		.banner {
+			max-width: 90%;
 		}
 	}
 </style>
