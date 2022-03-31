@@ -17,27 +17,19 @@
 		<ToolsCard />
 	</div>
 </div>
-<!-- <AboutCard /> -->
 
-<!-- <div id="presenter">
-
-		<LinksCard />
-	</div>
-	<div id="presenter">
-		<TechnologiesCard />
-		<ProjectsCard />
-	</div> -->
 <style>
 	.presenter {
 		display: flex;
 		column-gap: 8px;
-		margin: 8px;
+		justify-content: center;
+		padding: 0px 8px 8px 8px;
 	}
 
 	@media (max-device-width: 480px) {
 		.presenter {
 			flex-direction: column;
-			margin: 0px;
+			padding: 0px;
 		}
 	}
 </style>
