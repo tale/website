@@ -1,38 +1,22 @@
 <script lang="ts">
-	import { siGithub, siTwitter, siAdobeacrobatreader, siLinkedin, siMajorleaguehacking } from 'simple-icons/icons';
 	import Card from '$lib/Card.svelte';
-
-	const contacts = [
-		{
-			name: 'DevPost',
-			svg: siMajorleaguehacking,
-			link: 'https://devpost.com/tale',
-		},
-		{
-			name: 'Twitter',
-			svg: siTwitter,
-			link: 'https://twitter.com/aarnavtale',
-		},
-		{
-			name: 'Resume',
-			svg: siAdobeacrobatreader,
-			link: '/Aarnav_Tale_Resume.pdf',
-		},
-		{
-			name: 'LinkedIn',
-			svg: siLinkedin,
-			link: 'https://www.linkedin.com/in/aarnavtale',
-		},
-	];
 
 	const links = [
 		{
-			name: 'PGP Key',
-			link: 'https://keys.openpgp.org/search?q=aarnav@tale.me',
+			name: 'DevPost',
+			link: 'https://devpost.com/tale',
+		},
+		{
+			name: 'Keybase',
+			link: 'https://keybase.io/aarnavtale'
 		},
 		{
 			name: 'Status Page',
 			link: 'https://status.aerum.co',
+		},
+		{
+			name: 'GPG Public Key',
+			link: 'https://keys.openpgp.org/search?q=aarnav@tale.me',
 		},
 		{
 			name: 'APT Repository',
@@ -42,44 +26,25 @@
 </script>
 
 <Card>
-	<div class="table">
-		<div class="column" id="contact-parent">
-			{#each contacts.splice(0, Math.ceil(contacts.length / 2)) as contact}
-				<a rel="external" href="{contact.link}">
-					<div class="contact">
-						<svg height="32" width="32" fill="currentColor">
-							<path d="{contact.svg.path}"></path>
-						</svg>
-						<span>{contact.name}</span>
-					</div>
-				</a>
-			{/each}
-		</div>
-		<div class="column" id="contact-parent">
-			{#each contacts as contact}
-				<a rel="external" href="{contact.link}">
-					<div class="contact">
-						<svg height="32" width="32" fill="currentColor">
-							<path d="{contact.svg.path}"></path>
-						</svg>
-						<span>{contact.name}</span>
-					</div>
-				</a>
-			{/each}
-		</div>
-	</div>
+	<h2>Contact</h2>
 	<hr />
-	<div class="table">
-		<div class="column" id="contact-parent">
-			{#each links as link}
+	<p class="intro">
+		If you'd like a copy of my CV, please email
+		<a rel="external" href="mailto:aarnav@tale.me"> aarnav@tale.me </a>
+		. Feel free to connect with me on LinkedIn too.
+	</p>
+	<p><strong>Other Links:</strong></p>
+	<ul>
+		{#each links as link}
+			<li>
 				<a href="{link.link}" id="link">
 					<div class="contact">
-						<span>{link.name}</span>
+						<p>{link.name}</p>
 					</div>
 				</a>
-			{/each}
-		</div>
-	</div>
+			</li>
+		{/each}
+	</ul>
 </Card>
 
 <style>
@@ -88,24 +53,11 @@
 		text-decoration: underline;
 	}
 
-	#contact-parent {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
+	ul {
+		margin: 16px;
 	}
 
-	#link {
-		padding-top: 8px;
-	}
-
-	.table {
-		display: flex;
-		flex-shrink: 4;
-		align-items: center;
-	}
-
-	.column {
-		margin-left: 13px;
-		margin-right: 13px;
+	li:not(:last-child) {
+		margin-bottom: 5px;
 	}
 </style>
