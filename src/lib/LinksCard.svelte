@@ -49,7 +49,7 @@
 
 <style>
 	.contact {
-		display: flex;
+		display: inline-flex;
 		text-decoration: underline;
 	}
 
