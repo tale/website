@@ -1,13 +1,16 @@
-import preprocess from 'svelte-preprocess'
-import adapter from '@sveltejs/adapter-static'
+import adapter from '@sveltejs/adapter-vercel';
+import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
-export default {
+const config = {
 	preprocess: preprocess(),
 	kit: {
-		adapter: adapter(),
-		prerender: {
-			default: true
-		}
+		adapter: adapter({
+			edge: false,
+			external: [],
+			split: false
+		})
 	}
-}
+};
+
+export default config;
