@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import RouteLink from './RouteLink.svelte';
-	const links = ['/', '/portfolio', '/blog'];
+	const links = ['/', '/portfolio'];
 
 	let innerWidth = 100000;
 	let isDropped = false;
