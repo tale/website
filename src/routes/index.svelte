@@ -1,35 +1,35 @@
 <script>
-	import Header from '$lib/Header.svelte';
-	import ProjectsCard from '$lib/ProjectsCard.svelte';
-	import InfoCard from '$lib/InfoCard.svelte';
-	import ToolsCard from '$lib/ToolsCard.svelte';
-	import LinksCard from '$lib/LinksCard.svelte';
+	import Projects from '$lib/components/Projects.svelte';
 </script>
 
 <div>
-	<Header />
-	<div class="presenter">
-		<InfoCard />
-		<LinksCard />
-	</div>
-	<div class="presenter">
-		<ProjectsCard />
-		<ToolsCard />
-	</div>
+	<p>
+		Hey! I'm <strong>Aarnav</strong>, a <strong>software engineering</strong> from
+		<strong>Northern Virginia, United States</strong>.
+		<br />
+		I specialize in building out systems with <strong>high-reliability</strong> requirements.
+	</p>
+
+	<p>
+		Currently I'm studying Computer Science at
+		<a href="https://gmu.edu/"> George Mason University, </a>
+		for a Bachelor of Science degree. You may also see me jumping around the various public and personal projects I'm constantly
+		working on to improve and build new features.
+	</p>
+
+	<p>
+		I've also recently picked up writing. Combined with my interest in politics and policy, I'm trying to use writing as
+		a way to express both sides of political issues. I'm also rediscovering my love for debate, utilizing my speaking
+		skills in various ways.
+	</p>
+	<hr />
+	<Projects />
 </div>
 
 <style>
-	.presenter {
+	div {
 		display: flex;
-		column-gap: 8px;
-		justify-content: center;
-		padding: 0px 8px 8px 8px;
-	}
-
-	@media (max-device-width: 480px) {
-		.presenter {
-			flex-direction: column;
-			padding: 0px;
-		}
+		flex-direction: column;
+		row-gap: 16px;
 	}
 </style>
