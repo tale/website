@@ -1,4 +1,5 @@
 <script>
+	import Links from '$lib/components/Links.svelte';
 	import Projects from '$lib/components/Projects.svelte';
 </script>
 
@@ -13,17 +14,19 @@
 	<p>
 		Currently I'm studying Computer Science at
 		<a href="https://gmu.edu/"> George Mason University, </a>
-		for a Bachelor of Science degree. You may also see me jumping around the various public and personal projects I'm constantly
-		working on to improve and build new features.
+		for a Bachelor of Science degree. You may also see me jumping around the various public and personal projects I'm
+		constantly working on to improve and build new features.
 	</p>
 
 	<p>
-		I've also recently picked up writing. Combined with my interest in politics and policy, I'm trying to use writing as
-		a way to express both sides of political issues. I'm also rediscovering my love for debate, utilizing my speaking
-		skills in various ways.
+		I've also recently picked up writing. Combined with my interest in politics and policy, I'm trying to use
+		writing as a way to express both sides of political issues. I'm also rediscovering my love for debate, utilizing
+		my speaking skills in various ways.
 	</p>
 	<hr />
 	<Projects />
+	<hr />
+	<Links />
 </div>
 
 <style>
