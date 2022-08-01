@@ -4,14 +4,11 @@
 
 <style>
 	.card {
-		max-width: 30%;
-		width: 30%;
 		padding: 16px;
 		height: auto;
 		backdrop-filter: blur(5px);
 		-webkit-backdrop-filter: blur(5px);
 		border-radius: 0.8rem;
-		color: white;
 		border: 1px solid rgba(255, 255, 255, 0.25);
 		box-shadow: 0px 0px 0.5px 1px rgba(0, 0, 0, 0.25);
 		-webkit-box-shadow: 0px 0px 0.5px 1px rgba(0, 0, 0, 0.25);
@@ -19,7 +16,6 @@
 	}
 
 	:global(.card h2) {
-		font-family: 'Manrope', sans-serif;
 		letter-spacing: 2px;
 		font-size: 24px;
 	}
