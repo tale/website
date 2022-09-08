@@ -5,7 +5,7 @@
 
 <a href={route} class="link">
 	<div class={active ? "token active" : "token"}>
-		{route}
+		{route === '/' ? '/home' : route}
 	</div>
 </a>
 
@@ -18,6 +18,16 @@
 		.link {
 			color: #dedede;
 		}
+	}
+
+	.token {
+		margin: 4px auto;
+	}
+
+	@media (max-device-width: 425px) {
+		.token {
+		max-width: 60%;
+	}
 	}
 
 	.active {

@@ -41,8 +41,17 @@
 	button {
 		border: none;
 		background: none;
-		padding: 4px;
-		margin-top: 8px;
+		padding: 16px;
+		margin: 8px -16px 0 0;
+		color: black;
+		border-radius: 1rem;
+		touch-action: manipulation;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		button {
+			color: white;
+		}
 	}
 
 	button:hover {
@@ -51,7 +60,7 @@
 
 	h1 {
 		font-size: xx-large;
-		font-style: oblique;
+		font-weight: 1000;
 	}
 
 	.flex {

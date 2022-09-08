@@ -21,6 +21,11 @@
 </script>
 
 <div>
+	<span>
+		<a href='https://keys.openpgp.org/search?q=aarnav@tale.me' target="_blank" alt='OpenPGP Site'>
+			Click this link to view my GPG key.
+		</a>
+	</span>
 	<div class="table">
 		{#each links as link}
 			<a href={link.link} alt={link.name}>
@@ -32,12 +37,6 @@
 			</a>
 		{/each}
 	</div>
-
-	<span>
-		<a href='https://keys.openpgp.org/search?q=aarnav@tale.me' target="_blank" alt='OpenPGP Site'>
-			Click this link to view my GPG key.
-		</a>
-	</span>
 </div>
 
 <style>
@@ -45,6 +44,9 @@
 		font-size: small;
 		text-align: center;
 		color: gray;
+		display: flex;
+		justify-content: center;
+		padding-bottom: 8px;
 	}
 
 	.padded-svg {

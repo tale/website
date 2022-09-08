@@ -5,7 +5,7 @@
 
 <div>
 	<p>
-		Hey! I'm <strong>Aarnav</strong>, a <strong>software engineering</strong> from
+		Hey! I'm <strong>Aarnav</strong>, a <strong>software engineer</strong> from
 		<strong>Northern Virginia, United States</strong>.
 		<br />
 		I specialize in building out systems with <strong>high-reliability</strong> requirements.
