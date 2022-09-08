@@ -3,8 +3,8 @@
 	export let active: boolean;
 </script>
 
-<a href={route} class="link">
-	<div class={active ? "token active" : "token"}>
+<a href="{route}" class="link">
+	<div class="{active ? 'token active' : 'token'}">
 		{route === '/' ? '/home' : route}
 	</div>
 </a>
@@ -26,13 +26,12 @@
 
 	@media (max-device-width: 425px) {
 		.token {
-		max-width: 60%;
-	}
+			max-width: 60%;
+		}
 	}
 
 	.active {
 		background-color: rgba(136, 136, 136, 0.5);
-
 	}
 
 	.token:hover {
