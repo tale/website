@@ -128,8 +128,6 @@
 	{#each icons as icon}
 		<div
 			class="padded-svg"
-			on:mouseenter="{() => (icon.visible = true)}"
-			on:mouseleave="{() => (icon.visible = false)}"
 		>
 			{#if icon.visible}
 				<div class="token tooltip">
@@ -142,17 +140,10 @@
 		</div>
 	{/each}
 </div>
-<span>({innerWidth <= 425 ? 'Tap on' : 'Hover over'} each icon to see the technology's name)</span>
 
 <style>
 	.no-wrap {
 		white-space: nowrap;
-	}
-
-	span {
-		font-size: small;
-		text-align: center;
-		color: gray;
 	}
 
 	.tooltip {

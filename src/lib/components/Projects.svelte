@@ -28,6 +28,7 @@
 		{
 			name: 'bruh',
 			description: 'A replacement for homebrew on macOS that performs 10x faster.',
+			link: 'https://github.com/tale/bruh'
 		},
 	];
 </script>

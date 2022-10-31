@@ -22,7 +22,7 @@
 
 <div>
 	<span>
-		<a href='https://keys.openpgp.org/search?q=aarnav@tale.me' target="_blank" alt='OpenPGP Site'>
+		<a href='https://keys.openpgp.org/search?q=aarnav@tale.me' rel='noreferrer' target="_blank" alt='OpenPGP Site'>
 			Click this link to view my GPG key.
 		</a>
 	</span>
