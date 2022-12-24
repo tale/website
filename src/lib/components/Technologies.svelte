@@ -24,7 +24,7 @@
 		siVercel,
 		siVisualstudiocode,
 		siXcode,
-	} from 'simple-icons/icons';
+	} from 'simple-icons';
 
 	const standouts = [
 		{
@@ -76,18 +76,12 @@
 		{ icon: siVercel.path, title: 'Vercel' },
 		{ icon: siVisualstudiocode.path, title: 'VS Code' },
 		{ icon: siXcode.path, title: 'Xcode (LLVM)' },
-	].map(({ icon, title }) => {
-		return {
-			icon,
-			title,
-			visible: false,
-		};
-	});
+	];
 
 	let innerWidth = 100000;
 </script>
 
-<svelte:window bind:innerWidth />
+<svelte:window bind:innerWidth="{innerWidth}" />
 
 <h2>Technologies</h2>
 <p>
@@ -121,25 +115,24 @@
 </div>
 
 <p>
-	Additionally, I've worked with a variety of technologies, libraries, and programming languages. I'm constantly learning new things, some of which may replace the technologies below.
+	Additionally, I've worked with a variety of technologies, libraries, and programming languages. I'm constantly
+	learning new things, some of which may replace the technologies below.
 </p>
 
 <div class="table">
 	{#each icons as icon}
-		<div
-			class="padded-svg"
-		>
-			{#if icon.visible}
-				<div class="token tooltip">
-					{icon.title}
-				</div>
-			{/if}
+		<div class="padded-svg">
+			<div class="token tooltip">
+				{icon.title}
+			</div>
 			<svg height="24" width="32" fill="currentColor">
 				<path d="{icon.icon}"></path>
 			</svg>
 		</div>
 	{/each}
 </div>
+<span>({innerWidth <= 425 ? 'Tap on' : 'Hover over'} each icon to see the technology's name)</span>
+
 
 <style>
 	.no-wrap {
@@ -147,7 +140,8 @@
 	}
 
 	.tooltip {
-		margin-top: 5rem;
+		visibility: hidden;
+		margin-top: 4rem;
 		position: absolute;
 		background-color: rgba(136, 136, 136, 0.5);
 		-webkit-backdrop-filter: blur(3px);
@@ -168,10 +162,20 @@
 		height: 24px;
 	}
 
+	.padded-svg:hover .tooltip {
+		visibility: visible;
+	}
+
 	.skill {
 		display: flex;
 		align-items: center;
 		padding: 0px 1rem 0px 1rem;
+	}
+
+	span {
+		font-size: small;
+		text-align: center;
+		color: gray;
 	}
 
 	.table {

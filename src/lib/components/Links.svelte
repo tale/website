@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { siGithub, siLinkedin, siTwitter, siMastodon } from 'simple-icons/icons';
+	import { siGithub, siLinkedin, siTwitter, siMastodon } from 'simple-icons';
 
 	const links = [
 		{
@@ -27,13 +27,13 @@
 
 <div>
 	<span>
-		<a href='https://keys.openpgp.org/search?q=aarnav@tale.me' rel='noreferrer' target="_blank" alt='OpenPGP Site'>
+		<a href='https://keys.openpgp.org/search?q=aarnav@tale.me' rel='noreferrer' target="_blank">
 			Click this link to view my GPG key.
 		</a>
 	</span>
 	<div class="table">
 		{#each links as link}
-			<a rel="me" href={link.link} alt={link.name}>
+			<a rel="me" href={link.link}>
 				<div class="padded-svg">
 					<svg height="24" width="32" fill="currentColor">
 						<path d="{link.icon}"></path>
