@@ -81,7 +81,7 @@
 	#background {
 		background-color: rgb(230, 244, 252);
 		position: fixed;
-		height: 100%;
+		height: 200%;
 		width: 100%;
 		z-index: -1;
 	}
