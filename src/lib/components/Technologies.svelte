@@ -76,7 +76,13 @@
 		{ icon: siVercel.path, title: 'Vercel' },
 		{ icon: siVisualstudiocode.path, title: 'VS Code' },
 		{ icon: siXcode.path, title: 'Xcode (LLVM)' },
-	];
+	].map(({ icon, title }) => {
+		return {
+			icon,
+			title,
+			visible: false,
+		};
+	});
 
 	let innerWidth = 100000;
 </script>
@@ -121,10 +127,16 @@
 
 <div class="table">
 	{#each icons as icon}
-		<div class="padded-svg">
-			<div class="token tooltip">
-				{icon.title}
-			</div>
+		<div
+			class="padded-svg"
+			on:mouseenter="{() => (icon.visible = true)}"
+			on:mouseleave="{() => (icon.visible = false)}"
+		>
+			{#if icon.visible}
+				<div class="token tooltip">
+					{icon.title}
+				</div>
+			{/if}
 			<svg height="24" width="32" fill="currentColor">
 				<path d="{icon.icon}"></path>
 			</svg>
@@ -132,7 +144,6 @@
 	{/each}
 </div>
 <span>({innerWidth <= 425 ? 'Tap on' : 'Hover over'} each icon to see the technology's name)</span>
-
 
 <style>
 	.no-wrap {
