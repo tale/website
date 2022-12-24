@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { siGithub, siLinkedin, siTwitter } from 'simple-icons/icons';
+	import { siGithub, siLinkedin, siTwitter, siMastodon } from 'simple-icons/icons';
 
 	const links = [
 		{
@@ -17,6 +17,11 @@
 			link: 'https://www.linkedin.com/in/aarnavtale/',
 			icon: siLinkedin.path,
 		},
+		{
+			name: 'Mastodon',
+			link: 'https://hachyderm.io/@tale',
+			icon: siMastodon.path
+		},
 	];
 </script>
 
@@ -28,7 +33,7 @@
 	</span>
 	<div class="table">
 		{#each links as link}
-			<a href={link.link} alt={link.name}>
+			<a rel="me" href={link.link} alt={link.name}>
 				<div class="padded-svg">
 					<svg height="24" width="32" fill="currentColor">
 						<path d="{link.icon}"></path>
