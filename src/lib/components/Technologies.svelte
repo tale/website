@@ -24,7 +24,7 @@
 		siVercel,
 		siVisualstudiocode,
 		siXcode,
-	} from 'simple-icons';
+	} from 'simple-icons/icons';
 
 	const standouts = [
 		{
