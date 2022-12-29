@@ -32,14 +32,14 @@
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="Donate • Aarnav Tale">
 	<meta property="og:description" content="Donate to support Aarnav Tale">
-	<meta property="og:image" content="https://aarnavtale.com/apple-icon-180x180.png">
+	<meta property="og:image" content="https://aarnavtale.com/og.png">
 
 	<meta name="twitter:card" content="summary_large_image">
 	<meta property="twitter:domain" content="aarnavtale.com">
 	<meta property="twitter:url" content="https://aarnavtale.com/donate">
 	<meta name="twitter:title" content="Donate • Aarnav Tale">
 	<meta name="twitter:description" content="Donate to support Aarnav Tale">
-	<meta name="twitter:image" content="https://aarnavtale.com/apple-icon-180x180.png">
+	<meta name="twitter:image" content="https://aarnavtale.com/og.png">
 </svelte:head>
 
 <div class="container">
