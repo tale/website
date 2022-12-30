@@ -35,7 +35,7 @@
 		{#each links as link}
 			<a rel="me" href={link.link}>
 				<div class="padded-svg">
-					<svg height="24" width="32" fill="currentColor">
+					<svg name={link.name} height="24" width="32" fill="currentColor">
 						<path d="{link.icon}"></path>
 					</svg>
 				</div>
