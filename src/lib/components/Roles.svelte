@@ -15,13 +15,6 @@
 			time: '2022 - 2026',
 			description:
 				"I'm currently studying for a Bachelor of Science degree in Computer Science and a minor in Software Engineering (SWE). I also participate in various debate and writing related student organizations on campus.",
-		},
-		{
-			name: 'Competitive Skier',
-			place: 'Vail Ski',
-			time: '2016 - Present',
-			description:
-				"I'm a competitive skier and I've been participating in many different activities throughout my life. While it isn't something I focus on too much these days, opting for more casual skiing, I still practice and train with a competitive mindset. It's also a great stress reliever."
 		}
 	];
 </script>
