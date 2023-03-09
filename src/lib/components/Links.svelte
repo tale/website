@@ -27,16 +27,16 @@
 
 <div>
 	<span>
-		<a href='https://keys.openpgp.org/search?q=aarnav@tale.me' rel='noreferrer' target="_blank">
-			Click this link to view my GPG key.
+		<a href='https://keys.openpgp.org/vks/v1/by-email/aarnavtale@icloud.com' rel="noreferrer" target="_blank">
+			Send me an encrypted message via PGP
 		</a>
 	</span>
 	<div class="table">
 		{#each links as link}
-			<a rel="me" href={link.link}>
+			<a href={link.link} rel="noreferrer" target="_blank">
 				<div class="padded-svg">
 					<svg name={link.name} height="24" width="32" fill="currentColor">
-						<path d="{link.icon}"></path>
+						<path d={link.icon}></path>
 					</svg>
 				</div>
 			</a>
