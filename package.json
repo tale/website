@@ -21,6 +21,6 @@
 		"vite": "^4.0.3"
 	},
 	"dependencies": {
-		"@fontsource/source-serif-pro": "^4.5.9"
+		"@fontsource/dm-serif-display": "^4.5.10"
 	}
 }

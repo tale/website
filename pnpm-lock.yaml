@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@fontsource/source-serif-pro': ^4.5.9
+  '@fontsource/dm-serif-display': ^4.5.10
   '@sveltejs/adapter-cloudflare': 1.0.0
   '@sveltejs/kit': 1.0.1
   simple-icons: ^8.1.0
@@ -14,7 +14,7 @@ specifiers:
   vite: ^4.0.3
 
 dependencies:
-  '@fontsource/source-serif-pro': 4.5.9
+  '@fontsource/dm-serif-display': 4.5.10
 
 devDependencies:
   '@sveltejs/adapter-cloudflare': 1.0.0_@sveltejs+kit@1.0.1
@@ -232,8 +232,8 @@ packages:
     dev: true
     optional: true
 
-  /@fontsource/source-serif-pro/4.5.9:
-    resolution: {integrity: sha512-VgDvUvd3An3v9HtKgYk9TJuhB/4ZXw4huv/uqTXO4gES7CUbqGcf6tSb69TwG6o5AZzEVt6jnN7FN18OaO5J9A==}
+  /@fontsource/dm-serif-display/4.5.10:
+    resolution: {integrity: sha512-YK21qvUvwRx/Z10rzxNM5cLIkNg8R17wWPqA9+sNS8uTLrIX7WfC8OMTMOJLwrNRu9EDVB1gVUso0LayJPRCOw==}
     dev: false
 
   /@jridgewell/resolve-uri/3.1.0:
