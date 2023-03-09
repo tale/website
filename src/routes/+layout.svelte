@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Header from '$lib/Header.svelte';
+	import '@fontsource/source-serif-pro';
 </script>
 
 <div id="background"></div>
@@ -79,7 +80,7 @@
 	}
 
 	#background {
-		background-color: rgb(230, 244, 252);
+		background-color: #efe9e7;
 		position: fixed;
 		height: 200%;
 		width: 100%;
@@ -89,12 +90,12 @@
 	@media (prefers-color-scheme: dark) {
 		:global(html),
 		:global(body) {
-			background-color: black;
+			background-color: #001f3f;
 			color: #dedede;
 		}
 
 		#background {
-			background-color: black;
+			background-color: #001f3f;
 		}
 	}
 

@@ -59,6 +59,7 @@
 	}
 
 	h1 {
+		font-family: 'Source Serif Pro', serif;
 		font-size: xx-large;
 		font-weight: 1000;
 	}

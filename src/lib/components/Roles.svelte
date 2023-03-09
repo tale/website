@@ -1,7 +1,7 @@
 <script>
 	const roles = [
 		{
-			name: 'Co-Founder',
+			name: 'Software Engineer',
 			link: 'https://chariz.org',
 			place: 'Chariz',
 			time: '2021 - Present',
