@@ -43,6 +43,10 @@
 </div>
 
 <style>
+	h2 {
+		font-family: 'DM Serif Display', serif;
+	}
+
 	span {
 		font-style: oblique;
 		font-size: large;

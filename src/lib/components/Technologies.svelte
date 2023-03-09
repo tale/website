@@ -183,6 +183,10 @@
 		padding: 0px 1rem 0px 1rem;
 	}
 
+	h2 {
+		font-family: 'DM Serif Display', serif;
+	}
+
 	span {
 		font-size: small;
 		text-align: center;

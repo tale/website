@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '@fontsource/dm-serif-display';
 	import { page } from '$app/stores';
 	import RouteLink from './RouteLink.svelte';
 	const links = ['/', '/portfolio', '/donate'];
@@ -59,9 +60,9 @@
 	}
 
 	h1 {
-		font-family: 'Source Serif Pro', serif;
 		font-size: xx-large;
-		font-weight: 1000;
+		font-family: 'DM Serif Display', serif;
+		font-size: 3rem;
 	}
 
 	.flex {
