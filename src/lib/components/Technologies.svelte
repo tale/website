@@ -1,26 +1,5 @@
 <script lang="ts">
-    import { siElastic, siRust, siSwift, siTailwindcss, siOpenjdk, siC, siPython } from 'simple-icons';
-	import {
-		siChakraui,
-		siCplusplus,
-		siCsharp,
-		siDocker,
-		siExpress,
-		siGit,
-		siGnubash,
-		siKubernetes,
-		siMongodb,
-		siPassport,
-		siPostgresql,
-		siReact,
-		siRedis,
-		siSass,
-		siSvelte,
-		siTypescript,
-		siUbuntu,
-		siVercel,
-		siXcode,
-	} from 'simple-icons/icons';
+    import { siElastic, siRust, siSwift, siTailwindcss, siOpenjdk, siC, siPython, siKubernetes, siTypescript, siDocker, siReact, siCplusplus, siGit, siPostgresql, siChakraui, siSvelte, siVercel, siExpress, siUbuntu, siMongodb, siXcode, siRedis, siPassport, siGnubash, siCsharp, siSass } from 'simple-icons';
 
 	const standouts = [
 		{

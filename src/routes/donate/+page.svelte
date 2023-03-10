@@ -1,5 +1,5 @@
-<script>
-	import { siGithubsponsors, siPatreon, siPaypal } from 'simple-icons/icons';
+<script lang="ts">
+	import { siGithubsponsors, siPatreon, siPaypal } from 'simple-icons';
 
 	const sponsorLinks = [
 		{

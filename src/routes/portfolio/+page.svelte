@@ -1,8 +1,6 @@
-<script>
-import Roles from "$lib/components/Roles.svelte";
-
-import Technologies from "$lib/components/Technologies.svelte";
-
+<script lang="ts">
+	import Roles from "$lib/components/Roles.svelte";
+	import Technologies from "$lib/components/Technologies.svelte";
 </script>
 
 <div>

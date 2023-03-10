@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { siGithub, siLinkedin, siTwitter, siMastodon } from 'simple-icons/icons';
+	import { siGithub, siLinkedin, siTwitter, siMastodon } from 'simple-icons';
 
 	const links = [
 		{

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Links from '$lib/components/Links.svelte';
 	import Projects from '$lib/components/Projects.svelte';
 </script>
