@@ -70,4 +70,10 @@
 		align-items: center;
 		column-gap: 24px;
 	}
+
+	@media (max-device-width: 425px) {
+		h1 {
+			font-size: 2rem;
+		}
+	}
 </style>
