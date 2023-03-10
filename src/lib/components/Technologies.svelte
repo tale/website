@@ -202,4 +202,10 @@
 		justify-content: center;
 		align-items: center;
 	}
+
+	@media (max-device-width: 425px) {
+		.grid {
+			grid-template-columns: 1fr;
+		}
+	}
 </style>
