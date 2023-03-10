@@ -100,7 +100,7 @@
 
 	:global(.grid) {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 		row-gap: 8px;
 		column-gap: 8px;
 		margin: 0 1rem;
