@@ -1,81 +1,81 @@
 <script lang="ts">
+    import { siElastic, siRust, siSwift, siTailwindcss, siOpenjdk, siC, siPython } from 'simple-icons';
 	import {
 		siChakraui,
-		siCloudflare,
 		siCplusplus,
 		siCsharp,
 		siDocker,
 		siExpress,
 		siGit,
 		siGnubash,
-		siGooglecloud,
 		siKubernetes,
-		siLinux,
 		siMongodb,
 		siPassport,
 		siPostgresql,
 		siReact,
 		siRedis,
 		siSass,
-		siSentry,
 		siSvelte,
 		siTypescript,
 		siUbuntu,
 		siVercel,
-		siVisualstudiocode,
 		siXcode,
 	} from 'simple-icons/icons';
 
 	const standouts = [
 		{
-			icon: siKubernetes.path,
+			icon: siKubernetes,
 			title: 'Kubernetes',
-			level: 'CKA Certification',
-			link: 'https://www.cncf.io/certification/cka/',
+			experience: '2 years of experience running a bare-metal cluster with high availability to host my own services.',
 		},
 		{
-			icon: siTypescript.path,
-			title: 'TypeScript/JavaScript',
-			level: 'JSNAD Certification',
-			link: 'https://training.linuxfoundation.org/certification/jsnad/',
+			icon: siTypescript,
+			title: 'TypeScript (Node.js)',
+			experience: '6 years of experience, utilizing many different libraries like Express, Passport, and Prisma.',
 		},
 		{
-			icon: siDocker.path,
-			title: 'Docker (+Compose)',
-			level: 'Expert',
+			icon: siDocker,
+			title: 'Docker (Compose)',
+			experience: '3 years of experience and widespread usage of Docker Compose for development environments.',
 		},
 		{
-			icon: siReact.path,
-			title: 'React (+Router)',
-			level: 'Expert',
+			icon: siReact,
+			title: 'React',
+			experience: '4 years of experience, using many popular frameworks like Next.js, Chakra UI, and Tailwind CSS.',
 		},
 		{
-			icon: siPostgresql.path,
-			title: 'PostgreSQL',
-			level: 'Advanced',
+			icon: siSwift,
+			title: 'Swift & Objective-C',
+			experience: '3 years of iOS development experience, including building runtime modification tweaks like Lyricify.',
 		},
+		{
+			icon: siRust,
+			title: 'Rust',
+			experience: '6 months of experience, learning the language and recently switched Canister to Rust from Node.js.',
+		}
 	];
 
 	const icons = [
-		{ icon: siCsharp.path, title: 'C#/.NET' },
-		{ icon: siCplusplus.path, title: 'C++' },
-		{ icon: siChakraui.path, title: 'Chakra UI' },
-		{ icon: siCloudflare.path, title: 'Cloudflare' },
-		{ icon: siExpress.path, title: 'Express.js' },
-		{ icon: siGit.path, title: 'Git' },
-		{ icon: siGooglecloud.path, title: 'Google Cloud' },
-		{ icon: siLinux.path, title: 'Linux' },
-		{ icon: siMongodb.path, title: 'MongoDB' },
-		{ icon: siPassport.path, title: 'Passport.js' },
-		{ icon: siRedis.path, title: 'Redis' },
-		{ icon: siSentry.path, title: 'Sentry' },
-		{ icon: siGnubash.path, title: 'Shell' },
-		{ icon: siSass.path, title: 'Sass' },
-		{ icon: siSvelte.path, title: 'SvelteKit' },
-		{ icon: siUbuntu.path, title: 'Ubuntu' },
-		{ icon: siVercel.path, title: 'Vercel' },
-		{ icon: siVisualstudiocode.path, title: 'VS Code' },
-		{ icon: siXcode.path, title: 'Xcode (LLVM)' },
+		{ icon: siCplusplus, title: 'C++ (Qt5)' },
+		{ icon: siGit, title: 'Git' },
+		{ icon: siPostgresql, title: 'PostgreSQL' },
+		{ icon: siChakraui, title: 'Chakra UI' },
+		{ icon: siSvelte, title: 'SvelteKit' },
+		{ icon: siVercel, title: 'Vercel/Next.js' },
+		{ icon: siTailwindcss, title: 'Tailwind CSS' },
+		{ icon: siExpress, title: 'Express.js' },
+		{ icon: siUbuntu, title: 'Ubuntu' },
+		{ icon: siMongodb, title: 'MongoDB' },
+		{ icon: siElastic, title: 'Elasticsearch' },
+		{ icon: siXcode, title: 'Xcode (LLVM)' },
+		{ icon: siOpenjdk, title: 'Java/Kotlin' },
+		{ icon: siC, title: 'C' },
+		{ icon: siRedis, title: 'Redis' },
+		{ icon: siPassport, title: 'Passport.js' },
+		{ icon: siPython, title: 'Python 3' },
+		{ icon: siGnubash, title: 'Bash/Zsh' },
+		{ icon: siCsharp, title: 'C#/.NET/Mono' },
+		{ icon: siSass, title: 'Sass' },
 	].map(({ icon, title }) => {
 		return {
 			icon,
@@ -95,36 +95,26 @@
 	cloud native computing, I've embraced containerization, microservices, high availability, and Kubernetes.
 </p>
 
-<p>
-	Here are the technologies in which I express the highest proficiency. Some of these are paired with certifications
-	I've earned from Linux Foundation and CNCF, while the others show my skill level.
-</p>
-
 <div class="grid">
 	{#each standouts as standout}
 		<div class="skill">
-			<svg class="icon" height="24" width="32" fill="currentColor">
-				<path d="{standout.icon}"></path>
-			</svg>
 			<div>
-				<p class="skill-title no-wrap">{standout.title}</p>
-				{#if standout.link}
-					<a rel="external" href="{standout.link}">
-						<p class="no-wrap">{standout.level}</p>
-					</a>
-				{:else}
-					<p class="no-wrap">{standout.level}</p>
-				{/if}
+				<svg class="icon" height="24" width="32" fill="currentColor">
+					<path d={standout.icon.path}></path>
+				</svg>
+			</div>
+			<div>
+				<p class="skill-title">{standout.title}</p>
+				<p>{standout.experience}</p>
 			</div>
 		</div>
 	{/each}
 </div>
 
-<p>
-	Additionally, I've worked with a variety of technologies, libraries, and programming languages. I'm constantly
-	learning new things, some of which may replace the technologies below.
+<p class="center">
+	These are some of the technologies I've interacted with before, but not necessarily in-depth.
+	They're generally ordered in terms of how well-versed I am in each of them.
 </p>
-
 <div class="table">
 	{#each icons as icon}
 		<div
@@ -138,16 +128,20 @@
 				</div>
 			{/if}
 			<svg height="24" width="32" fill="currentColor">
-				<path d="{icon.icon}"></path>
+				<path d={icon.icon.path}></path>
 			</svg>
 		</div>
 	{/each}
 </div>
-<span>({innerWidth <= 425 ? 'Tap on' : 'Hover over'} each icon to see the technology's name)</span>
+<span>(Tip: {innerWidth <= 425 ? 'Tap on' : 'Hover over'} icons to see their names)</span>
 
 <style>
-	.no-wrap {
-		white-space: nowrap;
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		row-gap: 16px;
+		column-gap: 24px;
+		margin: 1rem;
 	}
 
 	.tooltip {
@@ -180,7 +174,11 @@
 	.skill {
 		display: flex;
 		align-items: center;
-		padding: 0px 1rem 0px 1rem;
+		column-gap: 8px;
+	}
+
+	.skill-title {
+		font-weight: bold;
 	}
 
 	h2 {
@@ -191,6 +189,10 @@
 		font-size: small;
 		text-align: center;
 		color: gray;
+	}
+
+	.center {
+		text-align: center;
 	}
 
 	.table {
