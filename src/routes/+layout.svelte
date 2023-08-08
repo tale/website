@@ -51,6 +51,8 @@
 		display: flex;
 		flex-direction: column;
 		row-gap: 2px;
+		padding-top: 8px;
+		padding-bottom: 8px;
 	}
 
 	:global(.token) {

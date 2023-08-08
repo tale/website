@@ -155,7 +155,7 @@
 	.grid {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		row-gap: 16px;
+		row-gap: 8px;
 		column-gap: 24px;
 		margin: 1rem;
 	}
