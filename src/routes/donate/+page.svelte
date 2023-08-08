@@ -103,10 +103,18 @@
 		margin: auto;
 	}
 
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 8px;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+
 	.sponsor {
 		display: flex;
 		align-items: center;
-		flex-direction: column;
+		justify-content: center;
 		padding: 1rem;
 		border: 1px solid #444;
 		border-radius: 0.5rem;
@@ -120,6 +128,12 @@
 	@media (prefers-color-scheme: dark) {
 		.sponsor {
 			border: 1px solid #dedede;
+		}
+	}
+
+	@media (max-device-width: 768px) {
+		.grid {
+			grid-template-columns: 1fr;
 		}
 	}
 
