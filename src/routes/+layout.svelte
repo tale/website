@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Header from '$lib/Header.svelte';
+	import Header from "$lib/Header.svelte";
 </script>
 
-<div id="background"></div>
+<div id="background" />
 <div class="container">
 	<div class="layout">
 		<Header />
@@ -13,20 +13,20 @@
 
 <style>
 	@font-face {
-		font-family: 'Sohne';
+		font-family: "Sohne";
 		font-style: oblique;
-		src: url('/Sohne-Halbfett.woff2');
+		src: url("/Sohne-Halbfett.woff2");
 	}
 
 	@font-face {
-		font-family: 'Sohne';
+		font-family: "Sohne";
 		font-style: normal;
-		src: url('/Sohne-Buch.woff2');
+		src: url("/Sohne-Buch.woff2");
 	}
 
 	:global(html),
 	:global(body) {
-		font-family: 'Sohne', sans-serif;
+		font-family: "Sohne", sans-serif;
 		color: #444;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
@@ -75,7 +75,6 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		/* margin-bottom: 4rem; */
 	}
 
 	#background {
@@ -95,28 +94,6 @@
 
 		#background {
 			background-color: #001f3f;
-		}
-	}
-
-	:global(.grid) {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		row-gap: 8px;
-		column-gap: 8px;
-		margin: 0 1rem;
-	}
-
-	@media (max-device-width: 600px) {
-		:global(.grid) {
-			grid-template-columns: repeat(2, 1fr);
-			row-gap: 4px;
-		}
-	}
-
-	@media (max-device-width: 425px) {
-		:global(.grid) {
-			grid-template-columns: 1fr;
-			row-gap: 4px;
 		}
 	}
 </style>

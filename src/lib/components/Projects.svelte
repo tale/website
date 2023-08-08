@@ -1,42 +1,59 @@
 <script lang="ts">
-	import { siKubernetes, siPostgresql, siPrisma, siRust, siSwift, siTypescript, siXcode, siGithubactions, siHomebrew, siIos } from 'simple-icons'
+	import {
+		siKubernetes,
+		siPostgresql,
+		siPrisma,
+		siRust,
+		siSwift,
+		siTypescript,
+		siXcode,
+		siGithubactions,
+		siHomebrew,
+		siIos,
+	} from "simple-icons";
 
 	const projects = [
 		{
-			name: 'Canister',
+			name: "Canister",
 			icons: [siRust, siTypescript, siPostgresql, siKubernetes],
-			description: 'High-speed search engine and indexer for APT repositories, written in Rust.',
-			link: 'https://canister.me',
+			description:
+				"High-speed search engine and indexer for APT repositories, written in Rust.",
+			link: "https://canister.me",
 		},
 		{
-			name: 'kubectl-action',
+			name: "kubectl-action",
 			icons: [siTypescript, siGithubactions],
-			description: 'A GitHub Action to interact with Kubernetes clusters using the kubectl CLI.',
-			link: 'https://github.com/tale/kubectl-action',
+			description:
+				"A GitHub Action to interact with Kubernetes clusters using the kubectl CLI.",
+			link: "https://github.com/tale/kubectl-action",
 		},
 		{
-			name: 'iconset',
+			name: "iconset",
 			icons: [siSwift, siXcode],
-			description: 'A nifty command-line tool to automatically set custom icons for macOS apps.',
-			link: 'https://github.com/tale/iconset'
+			description:
+				"A nifty command-line tool to automatically set custom icons for macOS apps.",
+			link: "https://github.com/tale/iconset",
 		},
 		{
-			name: 'Chariz',
+			name: "Chariz",
 			icons: [siTypescript, siPostgresql, siPrisma],
-			description: 'External payment platform for iOS developers to monetize their products.',
-			link: 'https://chariz.com',
+			description:
+				"External payment platform for iOS developers to monetize their products.",
+			link: "https://chariz.com",
 		},
 		{
-			name: 'Lyricify',
+			name: "Lyricify",
 			icons: [siSwift, siIos],
-			description: 'View lyrics to your favorite songs directly from your iPhone\'s lock screen.',
-			link: 'https://chariz.com/buy/lyricify',
+			description:
+				"View lyrics to your favorite songs directly from your iPhone's lock screen.",
+			link: "https://chariz.com/buy/lyricify",
 		},
 		{
-			name: 'bruh',
+			name: "bruh",
 			icons: [siTypescript, siHomebrew],
-			description: 'A drop-in replacement for homebrew on macOS that runs up to 100x faster.',
-			link: 'https://github.com/tale/bruh'
+			description:
+				"A drop-in replacement for homebrew on macOS that runs up to 100x faster.",
+			link: "https://github.com/tale/bruh",
 		},
 	];
 </script>
@@ -44,23 +61,30 @@
 <h2>Current Projects</h2>
 
 <p>
-	I'm always utilizing my skillset across a handful of projects at once. I've even created products with teams of
-	developers from around the world. My most notable projects are listed below.
+	I'm always utilizing my skillset across a handful of projects at once. I've
+	even created products with teams of developers from around the world. My
+	most notable projects are listed below.
 </p>
 
 <div class="grid">
 	{#each projects as project}
 		<div>
 			{#if project.link}
-				<a href="{project.link}">
+				<a href={project.link}>
 					<div class="flex">
 						<span>{project.name}</span>
 						<div class="icons">
-						{#each project.icons as icon}
-								<svg name={icon.title} height="20" width="20" fill="currentColor" viewBox="0 -6 24 32"> 
-									<path d={icon.path}></path>
+							{#each project.icons as icon}
+								<svg
+									name={icon.title}
+									height="20"
+									width="20"
+									fill="currentColor"
+									viewBox="0 -6 24 32"
+								>
+									<path d={icon.path} />
 								</svg>
-						{/each}
+							{/each}
 						</div>
 					</div>
 				</a>
@@ -75,7 +99,7 @@
 
 <style>
 	h2 {
-		font-family: 'DM Serif Display', serif;
+		font-family: "DM Serif Display", serif;
 	}
 
 	span {
@@ -100,5 +124,11 @@
 		row-gap: 8px;
 		column-gap: 24px;
 		margin: 0 1rem;
+	}
+
+	@media (max-device-width: 425px) {
+		.grid {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>
