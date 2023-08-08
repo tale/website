@@ -65,7 +65,7 @@
 	.layout {
 		display: flex;
 		flex-direction: column;
-		row-gap: 16px;
+		row-gap: 8px;
 		padding: 16px;
 		max-width: 46rem;
 		width: auto;
