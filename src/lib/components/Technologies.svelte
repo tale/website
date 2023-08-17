@@ -6,7 +6,6 @@
 		siTailwindcss,
 		siOpenjdk,
 		siC,
-		siPython,
 		siKubernetes,
 		siTypescript,
 		siDocker,
@@ -17,15 +16,11 @@
 		siChakraui,
 		siSvelte,
 		siVercel,
-		siExpress,
-		siUbuntu,
 		siMongodb,
 		siXcode,
 		siRedis,
-		siPassport,
-		siGnubash,
-		siCsharp,
-		siSass,
+		siTimescale,
+		siClickhouse,
 	} from "simple-icons";
 
 	const standouts = [
@@ -33,61 +28,56 @@
 			icon: siKubernetes,
 			title: "Kubernetes",
 			experience:
-				"2 years of experience running a bare-metal cluster with high availability to host my own services.",
+				"3 years of experience, including a fully self-managed bare-metal cluster.",
 		},
 		{
 			icon: siTypescript,
-			title: "TypeScript (Node.js)",
+			title: "TypeScript",
 			experience:
-				"6 years of experience, utilizing many different libraries like Express, Passport, and Prisma.",
+				"7 years of experience building out highly performant system backends.",
 		},
 		{
 			icon: siDocker,
 			title: "Docker (Compose)",
 			experience:
-				"3 years of experience and widespread usage of Docker Compose for development environments.",
+				"4 years of experience building secure and optimized applications.",
 		},
 		{
 			icon: siReact,
 			title: "React",
 			experience:
-				"4 years of experience, using many popular frameworks like Next.js, Chakra UI, and Tailwind CSS.",
+				"5 years of experience building complex enterprise-grade web applications.",
 		},
 		{
 			icon: siSwift,
 			title: "Swift & Objective-C",
 			experience:
-				"3 years of iOS development experience, including building runtime modification tweaks like Lyricify.",
+				"3 years of iOS development experience and low-level runtime modification.",
 		},
 		{
-			icon: siRust,
-			title: "Rust",
+			icon: siCplusplus,
+			title: "C++",
 			experience:
-				"6 months of experience, learning the language and recently switched Canister to Rust from Node.js.",
+				"4 years of experience, including a deep understanding of the Qt framework.",
 		},
 	];
 
 	const icons = [
-		{ icon: siCplusplus, title: "C++ (Qt5)" },
+		{ icon: siRust, title: "Rust" },
 		{ icon: siGit, title: "Git" },
 		{ icon: siPostgresql, title: "PostgreSQL" },
+		{ icon: siOpenjdk, title: "Java" },
 		{ icon: siChakraui, title: "Chakra UI" },
-		{ icon: siSvelte, title: "SvelteKit" },
+		{ icon: siSvelte, title: "Svelte/SvelteKit" },
 		{ icon: siVercel, title: "Vercel/Next.js" },
 		{ icon: siTailwindcss, title: "Tailwind CSS" },
-		{ icon: siExpress, title: "Express.js" },
-		{ icon: siUbuntu, title: "Ubuntu" },
+		{ icon: siC, title: "C" },
 		{ icon: siMongodb, title: "MongoDB" },
+		{ icon: siTimescale, title: "TimescaleDB" },
+		{ icon: siClickhouse, title: "ClickHouse" },
 		{ icon: siElastic, title: "Elasticsearch" },
 		{ icon: siXcode, title: "Xcode (LLVM)" },
-		{ icon: siOpenjdk, title: "Java/Kotlin" },
-		{ icon: siC, title: "C" },
 		{ icon: siRedis, title: "Redis" },
-		{ icon: siPassport, title: "Passport.js" },
-		{ icon: siPython, title: "Python 3" },
-		{ icon: siGnubash, title: "Bash/Zsh" },
-		{ icon: siCsharp, title: "C#/.NET/Mono" },
-		{ icon: siSass, title: "Sass" },
 	].map(({ icon, title }) => {
 		return {
 			icon,
