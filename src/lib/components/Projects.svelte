@@ -10,6 +10,7 @@
 		siGithubactions,
 		siHomebrew,
 		siIos,
+		siMongodb,
 	} from "simple-icons";
 
 	const projects = [
@@ -17,14 +18,14 @@
 			name: "Canister",
 			icons: [siRust, siTypescript, siPostgresql, siKubernetes],
 			description:
-				"High-speed search engine and indexer for APT repositories, written in Rust.",
+				"High speed search engine and analytics aggregator for iOS APT repositories.",
 			link: "https://canister.me",
 		},
 		{
 			name: "kubectl-action",
 			icons: [siTypescript, siGithubactions],
 			description:
-				"A GitHub Action to interact with Kubernetes clusters using the kubectl CLI.",
+				"A GitHub Action to interact with Kubernetes clusters via kubectl.",
 			link: "https://github.com/tale/kubectl-action",
 		},
 		{
@@ -36,9 +37,9 @@
 		},
 		{
 			name: "Chariz",
-			icons: [siTypescript, siPostgresql, siPrisma],
+			icons: [siTypescript, siPostgresql, siMongodb, siKubernetes],
 			description:
-				"External payment platform for iOS developers to monetize their products.",
+				"Enabling developers to easily distribute and sell their software worldwide.",
 			link: "https://chariz.com",
 		},
 		{
