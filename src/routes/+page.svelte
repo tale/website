@@ -9,7 +9,7 @@
 		from
 		<strong>Northern Virginia, United States</strong>.
 		<br />
-		I specialize in building out systems with
+		I specialize in building out enterprise systems with
 		<strong>high-reliability</strong> requirements.
 	</p>
 
@@ -22,10 +22,10 @@
 	</p>
 
 	<p>
-		I've also recently picked up writing. Combined with my interest in
-		politics and policy, I'm trying to use writing as a way to express both
-		sides of political issues. I'm also rediscovering my love for debate,
-		utilizing my speaking skills in various ways.
+		I value <strong>simplicity</strong> and <strong>efficiency</strong> in both
+		my code and my life. I'm always looking for new ways to improve my workflow
+		and make my life easier. Away from the computer, I enjoy reading, exercising,
+		and attending social events.
 	</p>
 	<hr />
 	<Projects />
