@@ -69,7 +69,7 @@
 
 <div class="grid">
 	{#each projects as project}
-		<div>
+		<div class="card">
 			{#if project.link}
 				<a href={project.link}>
 					<div class="flex">
@@ -125,6 +125,10 @@
 		row-gap: 8px;
 		column-gap: 24px;
 		margin: 0 1rem;
+	}
+
+	.card {
+		padding: 0.5rem;
 	}
 
 	@media (max-device-width: 425px) {
