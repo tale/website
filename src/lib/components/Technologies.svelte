@@ -2,7 +2,6 @@
 	import {
 		siElastic,
 		siRust,
-		siSwift,
 		siTailwindcss,
 		siOpenjdk,
 		siC,
@@ -10,7 +9,6 @@
 		siTypescript,
 		siDocker,
 		siReact,
-		siCplusplus,
 		siGit,
 		siPostgresql,
 		siChakraui,
@@ -21,44 +19,39 @@
 		siRedis,
 		siTimescale,
 		siClickhouse,
+		siAmazonaws,
 	} from "simple-icons";
 
 	const standouts = [
 		{
-			icon: siKubernetes,
-			title: "Kubernetes",
-			experience:
-				"3 years of experience, including a fully self-managed bare-metal cluster.",
-		},
-		{
 			icon: siTypescript,
 			title: "TypeScript",
-			experience:
-				"7 years of experience building out highly performant system backends.",
+			experience: 8,
 		},
 		{
-			icon: siDocker,
-			title: "Docker (Compose)",
-			experience:
-				"4 years of experience building secure and optimized applications.",
+			icon: siC,
+			title: "C/C++",
+			experience: 5,
 		},
 		{
 			icon: siReact,
 			title: "React",
-			experience:
-				"5 years of experience building complex enterprise-grade web applications.",
+			experience: 6,
 		},
 		{
-			icon: siSwift,
-			title: "Swift & Objective-C",
-			experience:
-				"3 years of iOS development experience and low-level runtime modification.",
+			icon: siKubernetes,
+			title: "Kubernetes",
+			experience: 3,
 		},
 		{
-			icon: siCplusplus,
-			title: "C++",
-			experience:
-				"4 years of experience, including a deep understanding of the Qt framework.",
+			icon: siDocker,
+			title: "Docker (Compose)",
+			experience: 5,
+		},
+		{
+			icon: siAmazonaws,
+			title: "AWS",
+			experience: 2,
 		},
 	];
 
@@ -71,7 +64,6 @@
 		{ icon: siSvelte, title: "Svelte/SvelteKit" },
 		{ icon: siVercel, title: "Vercel/Next.js" },
 		{ icon: siTailwindcss, title: "Tailwind CSS" },
-		{ icon: siC, title: "C" },
 		{ icon: siMongodb, title: "MongoDB" },
 		{ icon: siTimescale, title: "TimescaleDB" },
 		{ icon: siClickhouse, title: "ClickHouse" },
@@ -92,11 +84,6 @@
 <svelte:window bind:innerWidth />
 
 <h2>Technologies</h2>
-<p>
-	I use a vast range of tools and technologies to build efficient, reliable
-	systems and services. As a follower of cloud native computing, I've embraced
-	containerization, microservices, high availability, and Kubernetes.
-</p>
 
 <div class="grid">
 	{#each standouts as standout}
@@ -108,21 +95,17 @@
 			</div>
 			<div>
 				<p class="skill-title">{standout.title}</p>
-				<p>{standout.experience}</p>
+				<p>{standout.experience}+ Years</p>
 			</div>
 		</div>
 	{/each}
 </div>
 
-<p class="center">
-	These are some of the technologies I've interacted with before, but not
-	necessarily in-depth. They're generally ordered in terms of how well-versed
-	I am in each of them.
-</p>
 <div class="table">
 	{#each icons as icon}
 		<div
 			class="padded-svg"
+			role="tooltip"
 			on:mouseenter={() => (icon.visible = true)}
 			on:mouseleave={() => (icon.visible = false)}
 		>
@@ -144,7 +127,7 @@
 <style>
 	.grid {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 		row-gap: 8px;
 		column-gap: 24px;
 		margin: 1rem;
@@ -187,19 +170,15 @@
 
 	span {
 		font-size: small;
-		text-align: center;
+		margin-left: 1rem;
 		color: gray;
-	}
-
-	.center {
-		text-align: center;
 	}
 
 	.table {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		justify-content: center;
+		margin-left: 1rem;
 		align-items: center;
 	}
 
