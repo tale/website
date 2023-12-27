@@ -1,20 +1,12 @@
 <script lang="ts">
 	const roles = [
 		{
-			name: "Software Engineer",
-			link: "https://chariz.org",
-			place: "Chariz",
-			time: "2021 - Present",
-			description:
-				"On top of managing company operations in the United States, I also work on the backend of the Chariz platform, building out features to provide the best experience for our sellers and  users.",
-		},
-		{
-			name: "Computer Science Student",
+			name: "Computer Science B.S.",
 			link: "https://gmu.edu/",
 			place: "George Mason University",
 			time: "2022 - Present",
 			description:
-				"I'm studying towards my Bachelor of Science in Computer Science. I've also involved myself in various other activities on campus including research and teaching.",
+				"I pursued an undergraduate degree at GMU, publishing a paper on the dangers of artifical intelligence and building a safety framework for AI systems.",
 		},
 		{
 			name: "Teaching Assistant",
@@ -22,7 +14,15 @@
 			place: "George Mason University",
 			time: "2023 - Present",
 			description:
-				"I'm a teaching assistant for CS262: Introduction to Low-level Programming, a fundamentals oriented class that focuses on teaching students how to use C and work with hardware.",
+				"I taught students in classes covering an introduction to C, Unix, and various deep-dives into the fundamentals of systems programming.",
+		},
+		{
+			name: "Engineering Intern",
+			link: "https://splunk.com/",
+			place: "Splunk",
+			time: "Summer 2023",
+			description:
+				"I worked on the Splunk Cloud Platform, assisting the team working on VictorOps, the on-call incident management platform.",
 		},
 	];
 
@@ -69,6 +69,8 @@
 
 	.spaced {
 		margin-top: 6px;
+		opacity: 0.5;
+		max-width: 75%;
 	}
 
 	.meta {
