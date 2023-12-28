@@ -103,18 +103,11 @@
 
 <div class="table">
 	{#each icons as icon}
-		<div
-			class="padded-svg"
-			role="tooltip"
-			on:mouseenter={() => (icon.visible = true)}
-			on:mouseleave={() => (icon.visible = false)}
-		>
-			{#if icon.visible}
-				<div class="token tooltip">
-					{icon.title}
-				</div>
-			{/if}
-			<svg height="24" width="32" fill="currentColor">
+		<div class="padded-svg" role="tooltip">
+			<div class="token tooltip">
+				{icon.title}
+			</div>
+			<svg height="24" width="24" fill="currentColor">
 				<path d={icon.icon.path} />
 			</svg>
 		</div>
@@ -135,7 +128,7 @@
 
 	.tooltip {
 		visibility: hidden;
-		margin-top: 4rem;
+		margin-bottom: 4rem;
 		position: absolute;
 		background-color: rgba(136, 136, 136, 0.5);
 		-webkit-backdrop-filter: blur(3px);
@@ -146,8 +139,9 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 32px;
+		width: 24px;
 		height: 24px;
+		margin: 0.25rem;
 	}
 
 	.padded-svg:hover .tooltip {
@@ -188,7 +182,7 @@
 		}
 
 		.tooltip {
-			margin-top: 4rem;
+			margin-bottom: 4rem;
 		}
 	}
 </style>
