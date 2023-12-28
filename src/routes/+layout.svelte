@@ -1,5 +1,8 @@
 <script lang="ts">
 	import Header from "$lib/Header.svelte";
+	import { fly, fade } from "svelte/transition";
+
+	export let data: { url: string };
 </script>
 
 <div id="background" />
@@ -7,7 +10,14 @@
 	<div class="layout">
 		<Header />
 		<hr />
-		<slot />
+		{#key data.url}
+			<div
+				in:fly={{ x: -200, duration: 150, delay: 100 }}
+				out:fade={{ duration: 100 }}
+			>
+				<slot />
+			</div>
+		{/key}
 	</div>
 </div>
 
