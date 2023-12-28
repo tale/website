@@ -22,6 +22,11 @@
 </div>
 
 <style>
+	:root {
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+
 	@font-face {
 		font-family: "Sohne";
 		font-style: oblique;
