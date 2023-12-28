@@ -55,7 +55,7 @@
 
 <style>
 	h2 {
-		font-family: "DM Serif Display", serif;
+		margin-bottom: 1rem;
 	}
 
 	span {

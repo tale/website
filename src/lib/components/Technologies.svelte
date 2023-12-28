@@ -158,10 +158,6 @@
 		font-weight: bold;
 	}
 
-	h2 {
-		font-family: "DM Serif Display", serif;
-	}
-
 	span {
 		font-size: small;
 		margin-left: 1rem;

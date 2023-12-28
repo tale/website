@@ -80,10 +80,6 @@
 </div>
 
 <style>
-	h2 {
-		font-family: "DM Serif Display", serif;
-	}
-
 	.container {
 		display: flex;
 		flex-direction: column;
