@@ -82,5 +82,9 @@
 		.meta {
 			display: initial;
 		}
+
+		.spaced {
+			max-width: initial;
+		}
 	}
 </style>
