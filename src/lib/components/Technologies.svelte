@@ -56,27 +56,21 @@
 	];
 
 	const icons = [
-		{ icon: siRust, title: "Rust" },
-		{ icon: siGit, title: "Git" },
-		{ icon: siPostgresql, title: "PostgreSQL" },
-		{ icon: siOpenjdk, title: "Java" },
-		{ icon: siChakraui, title: "Chakra UI" },
-		{ icon: siSvelte, title: "Svelte/SvelteKit" },
-		{ icon: siVercel, title: "Vercel/Next.js" },
-		{ icon: siTailwindcss, title: "Tailwind CSS" },
-		{ icon: siMongodb, title: "MongoDB" },
-		{ icon: siTimescale, title: "TimescaleDB" },
-		{ icon: siClickhouse, title: "ClickHouse" },
-		{ icon: siElastic, title: "Elasticsearch" },
-		{ icon: siXcode, title: "Xcode (LLVM)" },
-		{ icon: siRedis, title: "Redis" },
-	].map(({ icon, title }) => {
-		return {
-			icon,
-			title,
-			visible: false,
-		};
-	});
+		siRust,
+		siGit,
+		siPostgresql,
+		siOpenjdk,
+		siChakraui,
+		siSvelte,
+		siVercel,
+		siTailwindcss,
+		siMongodb,
+		siTimescale,
+		siClickhouse,
+		siElastic,
+		siXcode,
+		siRedis,
+	];
 
 	let innerWidth = 100000;
 </script>
@@ -108,7 +102,7 @@
 				{icon.title}
 			</div>
 			<svg height="24" width="24" fill="currentColor">
-				<path d={icon.icon.path} />
+				<path d={icon.path} />
 			</svg>
 		</div>
 	{/each}
