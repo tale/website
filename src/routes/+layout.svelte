@@ -5,7 +5,6 @@
 	export let data: { url: string };
 </script>
 
-<div id="background" />
 <div class="container">
 	<div class="layout">
 		<Header />
@@ -43,6 +42,7 @@
 	:global(body) {
 		font-family: "Sohne", sans-serif;
 		color: #444;
+		background-color: #fff;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
@@ -94,17 +94,12 @@
 		align-items: center;
 	}
 
-	#background {
-		position: fixed;
-		height: 200%;
-		width: 100%;
-		z-index: -1;
-	}
-
 	@media (prefers-color-scheme: dark) {
 		:global(html),
-		:global(body) {
+		:global(body),
+		:root {
 			color: #dedede;
+			background-color: #111;
 		}
 	}
 </style>
