@@ -104,7 +104,7 @@
 		align-items: center;
 		justify-content: space-between;
 		column-gap: 24px;
-		margin-bottom: 1rem;
+		margin-bottom: 0.5rem;
 	}
 
 	.icons {
