@@ -66,11 +66,16 @@
 	{#each projects as project}
 		<div class="card">
 			{#if project.link}
-				<a href={project.link}>
-					<div class="flex">
+				<div class="flex">
+					<a href={project.link}>
 						<span>{project.name}</span>
-						<div class="icons">
-							{#each project.icons as icon}
+					</a>
+					<div class="icons">
+						{#each project.icons as icon}
+							<div class="padded-svg" role="tooltip">
+								<div class="token tooltip">
+									{icon.title}
+								</div>
 								<svg
 									name={icon.title}
 									height="20"
@@ -80,10 +85,10 @@
 								>
 									<path d={icon.path} />
 								</svg>
-							{/each}
-						</div>
+							</div>
+						{/each}
 					</div>
-				</a>
+				</div>
 				<p>{project.description}</p>
 			{:else}
 				<span>{project.name}</span>
@@ -97,6 +102,27 @@
 	span {
 		font-style: oblique;
 		display: flex;
+	}
+
+	.tooltip {
+		visibility: hidden;
+		margin-bottom: 4rem;
+		position: absolute;
+		background-color: rgba(136, 136, 136, 0.5);
+		-webkit-backdrop-filter: blur(3px);
+		backdrop-filter: blur(3px);
+	}
+
+	.padded-svg {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 24px;
+		height: 24px;
+	}
+
+	.padded-svg:hover .tooltip {
+		visibility: visible;
 	}
 
 	.flex {
