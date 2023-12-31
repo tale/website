@@ -12,7 +12,7 @@
 		<hr />
 		{#key data.url}
 			<div
-				in:fly={{ x: -200, duration: 150, delay: 75 }}
+				in:fly={{ x: 200, duration: 150, delay: 75 }}
 				out:fade={{ duration: 75 }}
 			>
 				<slot />
