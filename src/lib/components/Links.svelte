@@ -22,7 +22,12 @@
 
 <div class="table">
 	{#each links as link}
-		<a href={link.link} rel="noreferrer" target="_blank">
+		<a
+			href={link.link}
+			rel="noreferrer"
+			target="_blank"
+			aria-label={link.name}
+		>
 			<div class="padded-svg">
 				<svg
 					name={link.name}

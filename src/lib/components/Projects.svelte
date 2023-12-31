@@ -72,7 +72,11 @@
 					</a>
 					<div class="icons">
 						{#each project.icons as icon}
-							<div class="padded-svg" role="tooltip">
+							<div
+								class="padded-svg"
+								role="tooltip"
+								aria-label={icon.title}
+							>
 								<div class="token tooltip">
 									{icon.title}
 								</div>
