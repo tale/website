@@ -1,65 +1,50 @@
 <script lang="ts">
-	import { siGithub, siLinkedin, siTwitter, siMastodon } from 'simple-icons';
+	import { siGithub, siLinkedin, siX } from "simple-icons";
 
 	const links = [
 		{
-			name: 'Twitter',
-			link: 'https://twitter.com/aarnavtale',
-			icon: siTwitter.path,
+			name: "Twitter",
+			link: "https://x.com/aarnavtale",
+			icon: siX,
 		},
 		{
-			name: 'Github',
-			link: 'https://github.com/tale',
-			icon: siGithub.path,
+			name: "Github",
+			link: "https://github.com/tale",
+			icon: siGithub,
 		},
 		{
-			name: 'LinkedIn',
-			link: 'https://www.linkedin.com/in/aarnavtale/',
-			icon: siLinkedin.path,
-		},
-		{
-			name: 'Mastodon',
-			link: 'https://hachyderm.io/@tale',
-			icon: siMastodon.path
+			name: "LinkedIn",
+			link: "https://www.linkedin.com/in/aarnavtale/",
+			icon: siLinkedin,
 		},
 	];
 </script>
 
-<div>
-	<span>
-		<a href='https://keys.openpgp.org/vks/v1/by-email/aarnavtale@icloud.com' rel="noreferrer" target="_blank">
-			Send me an encrypted message via PGP
+<div class="table">
+	{#each links as link}
+		<a href={link.link} rel="noreferrer" target="_blank">
+			<div class="padded-svg">
+				<svg
+					name={link.name}
+					height="24"
+					width="24"
+					fill="currentColor"
+				>
+					<path d={link.icon.path} />
+				</svg>
+			</div>
 		</a>
-	</span>
-	<div class="table">
-		{#each links as link}
-			<a href={link.link} rel="noreferrer" target="_blank">
-				<div class="padded-svg">
-					<svg name={link.name} height="24" width="32" fill="currentColor">
-						<path d={link.icon}></path>
-					</svg>
-				</div>
-			</a>
-		{/each}
-	</div>
+	{/each}
 </div>
 
 <style>
-	span {
-		font-size: small;
-		text-align: center;
-		color: gray;
-		display: flex;
-		justify-content: center;
-		padding-bottom: 8px;
-	}
-
 	.padded-svg {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 32px;
+		width: 24px;
 		height: 24px;
+		margin: 0 0.5rem;
 	}
 
 	.table {
