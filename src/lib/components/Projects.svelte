@@ -149,7 +149,7 @@
 		padding: 0.5rem;
 	}
 
-	@media (max-device-width: 425px) {
+	@media (max-device-width: 480px) {
 		.grid {
 			grid-template-columns: 1fr;
 		}

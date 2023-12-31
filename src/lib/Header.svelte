@@ -32,7 +32,7 @@
 		column-gap: 20px;
 	}
 
-	@media (max-device-width: 425px) {
+	@media (max-device-width: 480px) {
 		h1 {
 			font-size: 2rem;
 		}

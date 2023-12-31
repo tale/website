@@ -35,7 +35,7 @@
 <div>
 	{#each roles as role}
 		<div class="meta">
-			{#if innerWidth <= 425}
+			{#if innerWidth <= 480}
 				<span>{role.name}</span>
 				<p>@<a href={role.link}>{role.place}</a></p>
 				<p>{role.time}</p>
@@ -78,7 +78,7 @@
 		justify-content: space-between;
 	}
 
-	@media (max-width: 425px) {
+	@media (max-width: 480px) {
 		.meta {
 			display: initial;
 		}

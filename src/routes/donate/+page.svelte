@@ -133,7 +133,7 @@
 		}
 	}
 
-	@media (max-device-width: 425px) {
+	@media (max-device-width: 480px) {
 		.contain {
 			width: 100%;
 		}

@@ -108,7 +108,7 @@
 	{/each}
 </div>
 <span
-	>(Tip: {innerWidth <= 425 ? "Tap on" : "Hover over"} icons to see their names)</span
+	>(Tip: {innerWidth <= 480 ? "Tap on" : "Hover over"} icons to see their names)</span
 >
 
 <style>
@@ -166,7 +166,7 @@
 		align-items: center;
 	}
 
-	@media (max-device-width: 425px) {
+	@media (max-device-width: 480px) {
 		.grid {
 			grid-template-columns: 1fr;
 		}
