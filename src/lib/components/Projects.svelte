@@ -2,15 +2,16 @@
 	import {
 		siKubernetes,
 		siPostgresql,
-		siPrisma,
 		siRust,
 		siSwift,
 		siTypescript,
 		siXcode,
 		siGithubactions,
 		siHomebrew,
-		siIos,
 		siMongodb,
+		siC,
+		siOpengl,
+		siCmake,
 	} from "simple-icons";
 
 	const projects = [
@@ -36,18 +37,11 @@
 			link: "https://github.com/tale/iconset",
 		},
 		{
-			name: "Chariz",
-			icons: [siTypescript, siPostgresql, siMongodb, siKubernetes],
+			name: "trap2",
+			icons: [siC, siOpengl, siCmake],
 			description:
-				"Enabling developers to easily distribute and sell their software worldwide.",
-			link: "https://chariz.com",
-		},
-		{
-			name: "Lyricify",
-			icons: [siSwift, siIos],
-			description:
-				"View lyrics to your favorite songs directly from your iPhone's lock screen.",
-			link: "https://chariz.com/buy/lyricify",
+				"GPU accelerated state-machine terminal emulator for macOS.",
+			link: "https://github.com/tale/trap2",
 		},
 		{
 			name: "bruh",
@@ -56,16 +50,17 @@
 				"A drop-in replacement for homebrew on macOS that runs up to 100x faster.",
 			link: "https://github.com/tale/bruh",
 		},
+		{
+			name: "Chariz",
+			icons: [siTypescript, siPostgresql, siMongodb, siKubernetes],
+			description:
+				"Enabling developers to easily distribute and sell their software worldwide.",
+			link: "https://chariz.com",
+		},
 	];
 </script>
 
 <h2>Current Projects</h2>
-
-<p>
-	I'm always utilizing my skillset across a handful of projects at once. I've
-	even created products with teams of developers from around the world. My
-	most notable projects are listed below.
-</p>
 
 <div class="grid">
 	{#each projects as project}
@@ -107,7 +102,9 @@
 	.flex {
 		display: flex;
 		align-items: center;
+		justify-content: space-between;
 		column-gap: 24px;
+		margin-bottom: 1rem;
 	}
 
 	.icons {
@@ -118,8 +115,7 @@
 	.grid {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		row-gap: 8px;
-		column-gap: 24px;
+		gap: 1.5rem;
 		margin: 0 1rem;
 	}
 
