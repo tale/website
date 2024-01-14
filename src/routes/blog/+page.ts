@@ -7,4 +7,3 @@ export async function load({ fetch }) {
 	}
 }
 
-export const prerender = true;
