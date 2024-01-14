@@ -2,7 +2,7 @@
 	import "@fontsource/dm-serif-display";
 	import { page } from "$app/stores";
 	import RouteLink from "./RouteLink.svelte";
-	const links = ["/", "/portfolio", "/donate"];
+	const links = ["/", "/portfolio", "/blog", "/donate"];
 </script>
 
 <div class="header">
