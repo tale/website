@@ -16,14 +16,14 @@
 			description:
 				"I taught students in classes covering an introduction to C, Unix, and various deep-dives into the fundamentals of systems programming.",
 		},
-		{
-			name: "Engineering Intern",
-			link: "https://splunk.com/",
-			place: "Splunk",
-			time: "Summer 2023",
-			description:
-				"I worked on the Splunk Cloud Platform, assisting the team working on VictorOps, the on-call incident management platform.",
-		},
+		// {
+		// 	name: "Engineering Intern",
+		// 	link: "https://splunk.com/",
+		// 	place: "Splunk",
+		// 	time: "Summer 2023",
+		// 	description:
+		// 		"I worked on the Splunk Cloud Platform, assisting the team working on VictorOps, the on-call incident management platform.",
+		// },
 	];
 
 	let innerWidth: number;
