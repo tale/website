@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { siGithubsponsors, siPatreon, siPaypal } from "simple-icons";
+	import { siGithubsponsors } from "simple-icons";
 
 	const sponsorLinks = [
 		{
@@ -7,22 +7,8 @@
 			title: "GitHub Sponsors",
 			link: "https://github.com/sponsors/tale",
 		},
-		{
-			icon: siPatreon,
-			title: "Patreon",
-			link: "https://www.patreon.com/aarnavtale",
-		},
-		{
-			icon: siPaypal,
-			title: "PayPal",
-			link: "https://paypal.me/aatale",
-		},
 	];
-
-	let innerWidth = 100000;
 </script>
-
-<svelte:window bind:innerWidth />
 
 <svelte:head>
 	<title>Donate • Aarnav Tale</title>
@@ -45,38 +31,27 @@
 <div class="container">
 	<h2>Support Me</h2>
 	<p>
-		A lot of my free projects are hosted on my own servers and are
-		completely free to use. However, the high volume of traffic and users on
-		these products can be a financial and technical strain. In addition, I'm
-		a full-time undergraduate student who's strapped on both money and time
-		for projects.
+		All of my projects are hosted by me and are completely free to use. If
+		you like my work, please consider supporting me by donating to me on
+		GitHub Sponsors. Your support helps me:
 	</p>
 
-	<hr />
-	<p class="center">
-		You can sponsor me on GitHub Sponsors, Patreon, or PayPal. As a token of
-		my gratitude, you'll be listed on all of my websites and products as a
-		donor.
-	</p>
-	<div class="grid contain">
-		{#each sponsorLinks as sponsor}
-			<a rel="noreferrer" target="_blank" href={sponsor.link}>
-				<div class="sponsor">
-					<svg
-						class="icon"
-						height="24"
-						width="32"
-						fill="currentColor"
-					>
-						<path d={sponsor.icon.path} />
-					</svg>
-					<div>
-						<p class="no-wrap">{sponsor.title}</p>
-					</div>
-				</div>
-			</a>
-		{/each}
-	</div>
+	<ul>
+		<li>Pay for hosting</li>
+		<li>Buy new hardware</li>
+		<li>Buy coffee</li>
+	</ul>
+
+	<a rel="noreferrer" target="_blank" href="https://github.com/sponsors/tale">
+		<div class="sponsor">
+			<svg class="icon" height="24" width="32" fill="currentColor">
+				<path d={siGithubsponsors.path} />
+			</svg>
+			<div>
+				<p>GitHub Sponsors</p>
+			</div>
+		</div>
+	</a>
 </div>
 
 <style>
@@ -86,35 +61,28 @@
 		row-gap: 8px;
 	}
 
-	.center {
-		text-align: center;
+	a,
+	a:link,
+	a:visited,
+	a:hover,
+	a:active {
+		color: inherit;
+		text-decoration: inherit;
+		font-weight: inherit;
 	}
 
-	.no-wrap {
-		white-space: nowrap;
-	}
-
-	.contain {
-		max-width: 80%;
-		margin: auto;
-	}
-
-	.grid {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 8px;
-		padding-top: 1rem;
-		padding-bottom: 1rem;
+	ul {
+		margin-left: 1rem;
 	}
 
 	.sponsor {
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: center;
 		padding: 1rem;
-		border: 1px solid #444;
+		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
 		border-radius: 0.5rem;
-		cursor: pointer;
+		margin-top: 1rem;
 	}
 
 	.sponsor:hover {
@@ -123,19 +91,11 @@
 
 	@media (prefers-color-scheme: dark) {
 		.sponsor {
-			border: 1px solid #dedede;
+			box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
 		}
-	}
 
-	@media (max-device-width: 768px) {
-		.grid {
-			grid-template-columns: 1fr;
-		}
-	}
-
-	@media (max-device-width: 480px) {
-		.contain {
-			width: 100%;
+		.sponsor:hover {
+			background-color: rgba(255, 255, 255, 0.1);
 		}
 	}
 </style>
