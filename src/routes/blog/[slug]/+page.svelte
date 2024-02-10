@@ -41,6 +41,12 @@
 	.content {
 		display: flex;
 		flex-direction: column;
-		gap: 0.5rem;
+		line-height: 1.5;
+		gap: 1.5rem;
+	}
+
+	.content > :global(ul),
+	.content > :global(ol) {
+		padding: 0 2rem;
 	}
 </style>
