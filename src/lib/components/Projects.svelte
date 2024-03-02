@@ -60,7 +60,7 @@
 	];
 </script>
 
-<h2>Current Projects</h2>
+<h2>Public Projects</h2>
 
 <div class="grid">
 	{#each projects as project}
