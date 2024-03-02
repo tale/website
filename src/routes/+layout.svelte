@@ -76,7 +76,9 @@
 		line-height: 28px;
 		text-align: center;
 		padding: 0 8px;
-		transition: background-color 0.25s ease, color 0.25s ease;
+		transition:
+			background-color 0.25s ease,
+			color 0.25s ease;
 	}
 
 	.layout {
@@ -85,7 +87,7 @@
 		row-gap: 8px;
 		padding: 16px;
 		max-width: 46rem;
-		width: auto;
+		width: min(100%, 46rem);
 	}
 
 	.container {
