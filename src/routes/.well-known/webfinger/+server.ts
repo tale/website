@@ -13,16 +13,13 @@ export async function GET({ url }: RequestEvent) {
 	switch (resourceType) {
 		case 'acct':
 			return json({
-				status: 200,
-				body: JSON.stringify({
-					subject: resource,
-					links: [
-						{
-							rel: 'http://webfinger.net/rel/profile-page',
-							href: 'https://authelia-sso-us-east-1-connect-pingsaas.tale.me'
-						}
-					]
-				})
+				subject: resource,
+				links: [
+					{
+						rel: 'http://openid.net/specs/connect/1.0/issuer',
+						href: 'https://authelia-sso-us-east-1-connect-pingsaas.tale.me'
+					}
+				]
 			});
 
 		default:
