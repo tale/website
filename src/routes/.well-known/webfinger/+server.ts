@@ -17,7 +17,7 @@ export async function GET({ url }: RequestEvent) {
 				links: [
 					{
 						rel: 'http://openid.net/specs/connect/1.0/issuer',
-						href: 'https://authelia-sso-us-east-1-connect-pingsaas.tale.me'
+						href: 'https://authelia-sso-us-east-1-connect.tale.me'
 					}
 				]
 			});
