@@ -14,12 +14,6 @@
 	export let data: { posts: Post[] };
 
 	$: query = $page.url.searchParams.get("category") || "";
-	$: date = new Date().toLocaleDateString("en-US", {
-		year: "numeric",
-		month: "long",
-		day: "numeric",
-	});
-
 	const categories = [
 		{ name: "All", slug: "" },
 		...new Set(data.posts.map((post) => post.meta.category)),
@@ -48,7 +42,13 @@
 		{#each data.posts as post}
 			<a href={`/blog/${post.path}`} class="header">
 				<h2>{post.meta.title}</h2>
-				<p class="tagline">{date} — {post.meta.category.name}</p>
+				<p class="tagline">{
+					new Date(post.meta.date).toLocaleDateString("en-US", {
+						year: "numeric",
+						month: "long",
+						day: "numeric",
+					})
+				} — {post.meta.category.name}</p>
 				<span class="link">Read more...</span>
 			</a>
 		{/each}
