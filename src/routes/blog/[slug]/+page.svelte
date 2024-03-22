@@ -43,10 +43,32 @@
 		flex-direction: column;
 		line-height: 1.5;
 		gap: 1.5rem;
+		font-size: 1.15rem;
+		padding-bottom: 10vh;
 	}
 
-	.content > :global(ul),
-	.content > :global(ol) {
+	.content :global(ul),
+	.content :global(ol) {
 		padding: 0 2rem;
+	}
+
+	.content :global(code) {
+		background-color: #f4f4f4;
+		padding: 0.1rem 0.2rem;
+		border-radius: 0.35rem;
+	}
+
+	.content :global(img) {
+		display: block;
+		margin: 0 auto;
+		max-width: 100%;
+		text-align: center;
+		border-radius: 0.35rem;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		.content :global(code) {
+			background-color: #1e1e1e;
+		}
 	}
 </style>
