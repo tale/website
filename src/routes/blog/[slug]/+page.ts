@@ -11,6 +11,7 @@ export async function load({ params }) {
 		content,
 		title,
 		date,
+		slug: params.slug,
 		category: categories[category],
 	};
 }
