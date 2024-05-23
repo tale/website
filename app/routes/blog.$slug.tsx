@@ -55,7 +55,9 @@ export default function Page() {
 					{title}
 				</h1>
 				<p className="text-neutral-500 dark:text-neutral-400 mt-1 mb-6">
-					{new Date(date).toLocaleDateString()}
+					<span suppressHydrationWarning={true}>
+						{new Date(date).toLocaleDateString()}
+					</span>
 					{' | '}
 					{categories.map(category => (
 						<span

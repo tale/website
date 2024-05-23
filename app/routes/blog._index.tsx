@@ -63,7 +63,9 @@ export default function Page() {
 								{post.title}
 							</h3>
 							<p className="text-neutral-500 dark:text-neutral-400 mt-1">
-								{new Date(post.date).toLocaleDateString()}
+								<span suppressHydrationWarning={true}>
+									{new Date(post.date).toLocaleDateString()}
+								</span>
 								{' | '}
 								{post.categories.map(category => (
 									<span
