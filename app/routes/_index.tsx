@@ -1,6 +1,7 @@
 import {
 	SiGithub,
 	SiGithubactions,
+	SiGo,
 	SiKubernetes,
 	SiLinkedin,
 	SiMongodb,
@@ -11,6 +12,7 @@ import {
 	SiTypescript,
 	SiX,
 } from '@icons-pack/react-simple-icons'
+import { Link } from '@remix-run/react'
 
 import Project from '~/components/Project'
 
@@ -37,7 +39,7 @@ export default function Page() {
 					name="Canister"
 					description="High-speed search engine and analytics aggregator for iOS APT repositories"
 					link="https://canister.me"
-					icons={[SiRust, SiTypescript, SiPostgresql, SiKubernetes]}
+					icons={[SiRust, SiGo, SiTypescript, SiPostgresql, SiKubernetes]}
 				/>
 				<Project
 					name="kubectl-action"
@@ -59,7 +61,16 @@ export default function Page() {
 				/>
 			</div>
 			<p className="my-4 text-sm">
-				To see more of my work, check out my
+				View
+				{' '}
+				<Link
+					to="/portfolio#projects"
+					className="underline"
+				>
+					all projects
+				</Link>
+				{' '}
+				or visit my
 				{' '}
 				<a
 					className="underline"
