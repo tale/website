@@ -1,54 +1,32 @@
 import { Link, useLoaderData } from '@remix-run/react'
 import clsx from 'clsx'
-import { bundleMDX } from 'mdx-bundler'
+import { load } from 'js-yaml'
 
 import { Document, validateFrontmatter } from '~/utils/blog'
 
-type FixedFile = string & {
-	content: string
-	excerpt: string
-}
-
-export async function loader() {
+export function loader() {
 	const posts = import.meta.glob<Document>('../posts/*.md', {
 		eager: true,
 		query: '?raw',
 	})
 
-	const bundled = await Promise.all(Object.entries(posts)
-		.map(async ([path, content]) => {
-			const { frontmatter, matter } = await bundleMDX({
-				source: content.default.trim(),
-				grayMatterOptions: (o) => {
-					o.excerpt = (file) => {
-						const fixed = file as FixedFile
-						const lines = fixed.content
-
-						const excerpt = lines.split('\n')
-							.slice(0, 2)
-							.join(' ')
-
-						fixed.excerpt = excerpt
-						return excerpt
-					}
-
-					return o
-				},
-			})
-
+	const bundled = Object.entries(posts)
+		.map(([path, blog]) => {
+			const content = blog.default.split('---').slice(1)
+			const frontmatter = load(content[0])
 			const { title, date, categories } = validateFrontmatter(frontmatter)
-			if (!matter.excerpt) {
-				throw new Error('No excerpt found')
-			}
+
+			const excerpt = content[1].split(' ').slice(0, 15)
+				.join(' ')
 
 			return {
 				title,
 				date,
 				categories,
 				path: path.replace('../posts/', '').replace('.md', ''),
-				excerpt: `${matter.excerpt}...`,
+				excerpt: `${excerpt}...`,
 			}
-		}))
+		})
 
 	return bundled
 }

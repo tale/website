@@ -2,9 +2,8 @@ import { LoaderFunctionArgs } from '@remix-run/cloudflare'
 import { Link, useLoaderData } from '@remix-run/react'
 import { IconChevronLeft } from '@tabler/icons-react'
 import clsx from 'clsx'
-import { bundleMDX } from 'mdx-bundler'
-import { getMDXComponent } from 'mdx-bundler/client'
-import { useMemo } from 'react'
+import { load } from 'js-yaml'
+import markdownit from 'markdown-it'
 
 import { Document, validateFrontmatter } from '~/utils/blog'
 
@@ -28,11 +27,10 @@ export async function loader({ params }: LoaderFunctionArgs) {
 		})
 	}
 
-	const result = await bundleMDX({
-		source: blog.default.trim(),
-	})
-
-	const { code, frontmatter } = result
+	const md = markdownit()
+	const content = blog.default.split('---').slice(1)
+	const code = md.render(content[1])
+	const frontmatter = load(content[0])
 	const { title, date, categories } = validateFrontmatter(frontmatter)
 
 	return {
@@ -45,7 +43,6 @@ export async function loader({ params }: LoaderFunctionArgs) {
 
 export default function Page() {
 	const { title, date, categories, code } = useLoaderData<typeof loader>()
-	const Md = useMemo(() => getMDXComponent(code), [code])
 
 	return (
 		<>
@@ -73,15 +70,16 @@ export default function Page() {
 					))}
 				</p>
 			</div>
-			<div className={clsx(
-				'prose prose-neutral prose-lg dark:prose-invert',
-				'prose-img:rounded-lg prose-img:shadow-md prose-img:mx-auto',
-				'prose-video:rounded-lg prose-video:shadow-md prose-video:mx-auto',
-				'prose-code:bg-neutral-300 dark:prose-code:bg-neutral-700',
-				'prose-code:rounded-md prose-code:px-1 prose-code:py-0.5',
-			)}
+			<div
+				className={clsx(
+					'prose prose-neutral prose-lg dark:prose-invert',
+					'prose-img:rounded-lg prose-img:shadow-md prose-img:mx-auto',
+					'prose-video:rounded-lg prose-video:shadow-md prose-video:mx-auto',
+					'prose-code:bg-neutral-300 dark:prose-code:bg-neutral-700',
+					'prose-code:rounded-md prose-code:px-1 prose-code:py-0.5',
+				)}
+				dangerouslySetInnerHTML={{ __html: code }}
 			>
-				<Md />
 			</div>
 		</>
 	)

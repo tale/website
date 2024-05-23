@@ -8,8 +8,12 @@ const categories: Record<string, string> = {
 	thoughts: 'Thoughts',
 }
 
-export function validateFrontmatter(frontmatter: Record<string, unknown>) {
-	const { title, date, categories } = frontmatter
+export function validateFrontmatter(frontmatter: unknown) {
+	if (!frontmatter || typeof frontmatter !== 'object') {
+		throw new Error('Invalid Frontmatter')
+	}
+
+	const { title, date, categories } = frontmatter as Record<string, unknown>
 
 	if (!title || typeof title !== 'string') {
 		throw new Error('Invalid Title')
