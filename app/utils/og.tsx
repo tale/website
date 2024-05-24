@@ -1,10 +1,16 @@
-import { Resvg } from '@resvg/resvg-js'
+import { initWasm, Resvg } from '@resvg/resvg-wasm'
 import satori, { SatoriOptions } from 'satori'
 import colors from 'tailwindcss/colors'
 
 import { Post } from './blog'
+let loaded = false
 
 export async function renderImage(post: Post, url: string) {
+	if (!loaded) {
+		await initWasm(fetch(new URL('/index_bg.wasm', url).toString()))
+		loaded = true
+	}
+
 	const fontBuffer = await fontSans(url)
 	const opts = {
 		width: 1200,
