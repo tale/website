@@ -19,6 +19,7 @@ import stylesheet from '~/tailwind.css?url'
 
 export const meta: MetaFunction = () => [
 	{ title: 'Aarnav Tale' },
+	{ name: 'darkreader-lock' },
 ]
 
 export const links: LinksFunction = () => [
