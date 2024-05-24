@@ -2,6 +2,8 @@
 title: Nix Might be Overengineered
 date: 2024-03-21
 categories: productivity, thoughts
+description: After using Nix for the past year or so, I decided it was time to switch back to normal tooling.
+image: /posts/nix-preview.png
 ---
 
 For around the past 18 months, I've been using [Nix](https://nixos.org) on my MacBook Pro for many things.

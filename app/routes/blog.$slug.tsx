@@ -1,25 +1,18 @@
-import { LoaderFunctionArgs } from '@remix-run/cloudflare'
+import { LoaderFunctionArgs, MetaFunction } from '@remix-run/cloudflare'
 import { Link, useLoaderData } from '@remix-run/react'
 import { IconChevronLeft } from '@tabler/icons-react'
 import clsx from 'clsx'
-import { load } from 'js-yaml'
-import markdownit from 'markdown-it'
 
-import { Document, validateFrontmatter } from '~/utils/blog'
+import { loadPost } from '~/utils/blog'
 
-export async function loader({ params }: LoaderFunctionArgs) {
+export async function loader({ params, request }: LoaderFunctionArgs) {
 	if (!params.slug) {
 		throw new Error('No Blog Post Found')
 	}
 
-	let blog: Document
-
-	try {
-		blog = await import(`../posts/${params.slug}.md?raw`) as Document
-		if (!blog.default) {
-			throw new Error('Invalid Blog Post')
-		}
-	} catch {
+	const { origin } = new URL(request.url)
+	const post = await loadPost(params.slug, origin, true)
+	if (!post) {
 		// eslint-disable-next-line @typescript-eslint/only-throw-error
 		throw new Response(null, {
 			status: 404,
@@ -27,22 +20,72 @@ export async function loader({ params }: LoaderFunctionArgs) {
 		})
 	}
 
-	const md = markdownit()
-	const content = blog.default.split('---').slice(1)
-	const code = md.render(content[1])
-	const frontmatter = load(content[0])
-	const { title, date, categories } = validateFrontmatter(frontmatter)
+	if (!post.content) {
+		throw new Error('No Blog Post Found')
+	}
 
 	return {
-		title,
-		date,
-		categories,
-		code,
+		md: post.content,
+		fm: post.matter,
+		slug: params.slug,
+		origin,
 	}
 }
 
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
+	if (!data) {
+		return []
+	}
+
+	const image = new URL(`/blog/${data.slug}.png`, data.origin)
+	return [
+		{ title: data.fm.title },
+		{
+			name: 'twitter:title',
+			content: data.fm.title,
+		},
+		{
+			property: 'og:title',
+			content: data.fm.title,
+		},
+		{
+			name: 'description',
+			content: data.fm.description,
+		},
+		{
+			name: 'twitter:description',
+			content: data.fm.description,
+		},
+		{
+			property: 'og:description',
+			content: data.fm.description,
+		},
+		{
+			name: 'twitter:image',
+			content: image.toString(),
+		},
+		{
+			property: 'og:image',
+			content: image.toString(),
+		},
+		{
+			name: 'twitter:card',
+			content: 'summary_large_image',
+		},
+		{ name: 'twitter:site', content: '@aarnavtale' },
+		{ name: 'twitter:creator', content: '@aarnavtale' },
+		{
+			property: 'og:url',
+			content: new URL(`/blog/${data.slug}`, data.origin).toString(),
+		},
+		{ property: 'og:type', content: 'article' },
+		{ property: 'og:site_name', content: 'Aarnav Tale' },
+		{ property: 'og:locale', content: 'en_US' },
+	]
+}
+
 export default function Page() {
-	const { title, date, categories, code } = useLoaderData<typeof loader>()
+	const { fm, md } = useLoaderData<typeof loader>()
 
 	return (
 		<>
@@ -52,14 +95,14 @@ export default function Page() {
 			</Link>
 			<div className="mb-8">
 				<h1 className="text-3xl">
-					{title}
+					{fm.title}
 				</h1>
 				<p className="text-neutral-500 dark:text-neutral-400 mt-1 mb-6">
 					<span suppressHydrationWarning={true}>
-						{new Date(date).toLocaleDateString()}
+						{new Date(fm.date).toLocaleDateString()}
 					</span>
 					{' | '}
-					{categories.map(category => (
+					{fm.categories.map(category => (
 						<span
 							key={category}
 							className={clsx(
@@ -80,7 +123,7 @@ export default function Page() {
 					'prose-code:bg-neutral-300 dark:prose-code:bg-neutral-700',
 					'prose-code:rounded-md prose-code:px-1 prose-code:py-0.5',
 				)}
-				dangerouslySetInnerHTML={{ __html: code }}
+				dangerouslySetInnerHTML={{ __html: md }}
 			>
 			</div>
 		</>

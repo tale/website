@@ -2,7 +2,11 @@
 title: There is no Perfect Note-Taking App
 date: 2024-02-09
 categories: productivity
+description: I attempted to integrate Obsidian.md with Neovim, but realized why the setup didn't work for me.
+image: /posts/obsync-preview.png
 ---
+
+![Preview of Obsync](/posts/obsync-preview.png)
 
 As a student, I find it important to take notes during lectures.
 I've spent my fair share of time looking for a proper note-taking app and I ultimately settled on [Craft](https://craft.do).

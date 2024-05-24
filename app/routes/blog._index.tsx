@@ -1,34 +1,13 @@
+import { LoaderFunctionArgs } from '@remix-run/cloudflare'
 import { Link, useLoaderData } from '@remix-run/react'
 import clsx from 'clsx'
-import { load } from 'js-yaml'
 
-import { Document, validateFrontmatter } from '~/utils/blog'
+import { loadPosts } from '~/utils/blog'
 
-export function loader() {
-	const posts = import.meta.glob<Document>('../posts/*.md', {
-		eager: true,
-		query: '?raw',
-	})
-
-	const bundled = Object.entries(posts)
-		.map(([path, blog]) => {
-			const content = blog.default.split('---').slice(1)
-			const frontmatter = load(content[0])
-			const { title, date, categories } = validateFrontmatter(frontmatter)
-
-			const excerpt = content[1].split(' ').slice(0, 15)
-				.join(' ')
-
-			return {
-				title,
-				date,
-				categories,
-				path: path.replace('../posts/', '').replace('.md', ''),
-				excerpt: `${excerpt}...`,
-			}
-		})
-
-	return bundled
+export function loader({ request }: LoaderFunctionArgs) {
+	const { origin } = new URL(request.url)
+	const posts = loadPosts(origin)
+	return posts
 }
 
 export default function Page() {
@@ -48,8 +27,8 @@ export default function Page() {
 			<div className="flex flex-col gap-4">
 				{posts.map(post => (
 					<Link
-						key={post.path}
-						to={`/blog/${post.path}`}
+						key={post.slug}
+						to={`/blog/${post.slug}`}
 					>
 						<div
 							className={clsx(
@@ -60,14 +39,14 @@ export default function Page() {
 							)}
 						>
 							<h3 className="font-bold">
-								{post.title}
+								{post.matter.title}
 							</h3>
 							<p className="text-neutral-500 dark:text-neutral-400 mt-1">
 								<span suppressHydrationWarning={true}>
-									{new Date(post.date).toLocaleDateString()}
+									{new Date(post.matter.date).toLocaleDateString()}
 								</span>
 								{' | '}
-								{post.categories.map(category => (
+								{post.matter.categories.map(category => (
 									<span
 										key={category}
 										className={clsx(
@@ -80,7 +59,7 @@ export default function Page() {
 								))}
 							</p>
 							<p className="opacity-50 mt-3">
-								{post.excerpt}
+								{post.matter.description}
 							</p>
 						</div>
 					</Link>
