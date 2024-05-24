@@ -1,4 +1,4 @@
-import { LoaderFunctionArgs } from '@remix-run/cloudflare'
+import { LoaderFunctionArgs } from '@remix-run/node'
 
 import { loadPost } from '~/utils/blog'
 import { renderImage } from '~/utils/og'

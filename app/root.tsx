@@ -1,8 +1,7 @@
 import atkinson400 from '@fontsource/atkinson-hyperlegible/400.css?url'
 import atkinson700 from '@fontsource/atkinson-hyperlegible/700.css?url'
 import dm from '@fontsource/dm-serif-display?url'
-import bitter from '@fontsource-variable/bitter?url'
-import type { LinksFunction, MetaFunction } from '@remix-run/cloudflare'
+import type { LinksFunction, MetaFunction } from '@remix-run/node'
 import {
 	isRouteErrorResponse,
 	Links,
@@ -24,7 +23,6 @@ export const meta: MetaFunction = () => [
 
 export const links: LinksFunction = () => [
 	{ rel: 'stylesheet', href: stylesheet },
-	{ rel: 'stylesheet', href: bitter },
 	{ rel: 'stylesheet', href: dm },
 	{ rel: 'stylesheet', href: atkinson400 },
 	{ rel: 'stylesheet', href: atkinson700 },

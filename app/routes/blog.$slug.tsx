@@ -1,4 +1,4 @@
-import { LoaderFunctionArgs, MetaFunction } from '@remix-run/cloudflare'
+import { LoaderFunctionArgs, MetaFunction } from '@remix-run/node'
 import { Link, useLoaderData } from '@remix-run/react'
 import { IconChevronLeft } from '@tabler/icons-react'
 import clsx from 'clsx'
