@@ -2,6 +2,8 @@ import { LoaderFunctionArgs, MetaFunction } from '@remix-run/node'
 import { Link, useLoaderData } from '@remix-run/react'
 import { IconChevronLeft } from '@tabler/icons-react'
 import clsx from 'clsx'
+import { getMDXComponent } from 'mdx-bundler/client'
+import { DetailedHTMLProps, ImgHTMLAttributes, useMemo } from 'react'
 
 import { loadPost } from '~/utils/blog'
 
@@ -11,7 +13,7 @@ export async function loader({ params, request }: LoaderFunctionArgs) {
 	}
 
 	const { origin } = new URL(request.url)
-	const post = await loadPost(params.slug, origin, true)
+	const post = await loadPost(params.slug, origin)
 	if (!post) {
 		// eslint-disable-next-line @typescript-eslint/only-throw-error
 		throw new Response(null, {
@@ -20,13 +22,12 @@ export async function loader({ params, request }: LoaderFunctionArgs) {
 		})
 	}
 
-	if (!post.content) {
+	if (!post.code) {
 		throw new Error('No Blog Post Found')
 	}
 
 	return {
-		md: post.content,
-		fm: post.matter,
+		...post,
 		slug: params.slug,
 		origin,
 	}
@@ -39,26 +40,26 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 
 	const image = new URL(`/blog/${data.slug}.png`, data.origin)
 	return [
-		{ title: data.fm.title },
+		{ title: data.matter.title },
 		{
 			name: 'twitter:title',
-			content: data.fm.title,
+			content: data.matter.title,
 		},
 		{
 			property: 'og:title',
-			content: data.fm.title,
+			content: data.matter.title,
 		},
 		{
 			name: 'description',
-			content: data.fm.description,
+			content: data.matter.description,
 		},
 		{
 			name: 'twitter:description',
-			content: data.fm.description,
+			content: data.matter.description,
 		},
 		{
 			property: 'og:description',
-			content: data.fm.description,
+			content: data.matter.description,
 		},
 		{
 			name: 'twitter:image',
@@ -84,8 +85,21 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 	]
 }
 
+type ImageProps = DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>
+function CaptionedImage(props: ImageProps) {
+	return (
+		<figure>
+			<img {...props} />
+			<figcaption>
+				{props.alt}
+			</figcaption>
+		</figure>
+	)
+}
+
 export default function Page() {
-	const { fm, md } = useLoaderData<typeof loader>()
+	const { matter, code } = useLoaderData<typeof loader>()
+	const Component = useMemo(() => getMDXComponent(code), [code])
 
 	return (
 		<>
@@ -95,14 +109,14 @@ export default function Page() {
 			</Link>
 			<div className="mb-8">
 				<h1 className="text-3xl">
-					{fm.title}
+					{matter.title}
 				</h1>
 				<p className="text-neutral-500 dark:text-neutral-400 mt-1 mb-6">
 					<span suppressHydrationWarning={true}>
-						{new Date(fm.date).toLocaleDateString()}
+						{new Date(matter.date).toLocaleDateString()}
 					</span>
 					{' | '}
-					{fm.categories.map(category => (
+					{matter.categories.map(category => (
 						<span
 							key={category}
 							className={clsx(
@@ -122,9 +136,10 @@ export default function Page() {
 					'prose-video:rounded-lg prose-video:shadow-md prose-video:mx-auto',
 					'prose-code:bg-neutral-300 dark:prose-code:bg-neutral-700',
 					'prose-code:rounded-md prose-code:px-1 prose-code:py-0.5',
+					'prose-figcaption:mt-1 prose-figcaption:text-center',
 				)}
-				dangerouslySetInnerHTML={{ __html: md }}
 			>
+				<Component components={{ img: CaptionedImage }} />
 			</div>
 		</>
 	)

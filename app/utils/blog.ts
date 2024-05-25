@@ -1,5 +1,4 @@
-import { load } from 'js-yaml'
-import markdownit from 'markdown-it'
+import { bundleMDX } from 'mdx-bundler'
 
 interface Document {
 	default: string
@@ -19,28 +18,29 @@ const categories: Record<string, string> = {
 	thoughts: 'Thoughts',
 }
 
-export function loadPosts(origin: string) {
+export async function loadPosts(origin: string) {
 	const posts = import.meta.glob<Document>('../posts/*.md', {
-		eager: true,
 		query: '?raw',
 	})
 
 	const loadedPosts = Object.entries(posts)
-		.map(([path, blog]) => {
-			const content = blog.default.split('---').slice(1)
-			const frontmatter = load(content[0])
-			const matter = validateFrontmatter(frontmatter, origin)
+		.map(async ([path, blog]) => {
+			const content = await blog()
+			const result = await bundleMDX({
+				source: content.default,
+			})
 
+			const matter = validateFrontmatter(result.frontmatter, origin)
 			return {
 				slug: path.replace('../posts/', '').replace('.md', ''),
 				matter,
 			}
 		})
 
-	return loadedPosts
+	return Promise.all(loadedPosts)
 }
 
-export async function loadPost(slug: string, origin: string, md = false) {
+export async function loadPost(slug: string, origin: string) {
 	let blog: Document
 
 	try {
@@ -52,21 +52,13 @@ export async function loadPost(slug: string, origin: string, md = false) {
 		return
 	}
 
-	const content = blog.default.split('---').slice(1)
-	const frontmatter = load(content[0])
-
-	if (!md) {
-		return {
-			matter: validateFrontmatter(frontmatter, origin),
-		}
-	}
-
-	const it = markdownit()
-	const html = it.render(content[1])
+	const result = await bundleMDX({
+		source: blog.default,
+	})
 
 	return {
-		matter: validateFrontmatter(frontmatter, origin),
-		content: html,
+		matter: validateFrontmatter(result.frontmatter, origin),
+		code: result.code,
 	}
 }
 
