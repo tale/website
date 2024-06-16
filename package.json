@@ -1,0 +1,24 @@
+{
+	"name": "@tale/website",
+	"type": "module",
+	"version": "3.0.0",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro check && astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/check": "^0.7.0",
+		"astro": "^4.10.2",
+		"typescript": "^5.4.5"
+	},
+	"devDependencies": {
+		"@astrojs/mdx": "^3.1.0",
+		"@astrojs/tailwind": "^5.1.0",
+		"@resvg/resvg-js": "^2.6.2",
+		"gray-matter": "^4.0.3",
+		"satori": "^0.10.13"
+	}
+}
