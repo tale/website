@@ -1,0 +1,32 @@
+---
+interface Props {
+	name: string;
+	year: number;
+	icon: Function;
+}
+
+const { name, year, icon: Icon } = Astro.props
+
+const years = () => {
+	const currentYear = new Date().getFullYear()
+	const diff = currentYear - year
+
+	if (diff === 0) {
+		return '<1 year'
+	}
+
+	if (diff === 1) {
+		return '1 year'
+	}
+
+	return `${diff.toString()} years`
+}
+---
+
+<div class="flex items-center gap-4">
+	<Icon size={24} class="inline-block" />
+	<div>
+		<h3 class="font-bold">{name}</h3>
+		<p>{years()}</p>
+	</div>
+</div>
