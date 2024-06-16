@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Project from '../components/Project.astro'
 import Skill from '../components/Skill.astro'
 import TinySkill from '../components/TinySkill.astro'
+import Experience from '../components/Experience.astro'
 
 import {
 	Amazonwebservices,
@@ -51,46 +52,47 @@ import {
 		Experience
 	</h2>
 	<div class="grid grid-cols-1 gap-8">
-		<!-- <Experience -->
-		<!-- 	name="SWIFTnet Automation Intern" -->
-		<!-- 	where="Swift" -->
-		<!-- 	when="June 2024 - August 2024" -->
-		<!-- 	description={` -->
-		<!-- 		This summer I'm working at Swift, the world standard -->
-		<!-- 		for secure financial messaging across global financial -->
-		<!-- 		institutions. -->
-		<!-- 	`} -->
-		<!-- 	link="https://swift.com" -->
-		<!-- 	icon={Swift} -->
-		<!-- /> -->
-		<!-- <Experience -->
-		<!-- 	name="Teaching Assistant (Adjunct)" -->
-		<!-- 	where="GMU" -->
-		<!-- 	when="August 2023 - May 2025" -->
-		<!-- 	description={` -->
-		<!-- 		I teach a variety of students for the Computer Science -->
-		<!-- 		CS 161: Introduction to Low-level Programming course. -->
-		<!-- 		The class covers C, Unix, and a dive into how -->
-		<!-- 		systems programming works. My responsibilities include -->
-		<!-- 		handling labs, conducting review sessions, and -->
-		<!-- 		proctoring exams. -->
-		<!-- 	`} -->
-		<!-- 	link="https://cs.gmu.edu" -->
-		<!-- 	icon={GMU} -->
-		<!-- /> -->
-		<!-- <Experience -->
-		<!-- 	name="Computer Science, B.S." -->
-		<!-- 	where="GMU" -->
-		<!-- 	when="August 2022 - May 2025" -->
-		<!-- 	description={` -->
-		<!-- 		I'm pursuing a Bachelor of Science in Computer Science -->
-		<!-- 		at George Mason University. I've written a paper on the -->
-		<!-- 		dangers posed by artificial intelligence and created a -->
-		<!-- 		set of guidelines to make a safety framework for AI. -->
-		<!-- 	`} -->
-		<!-- 	link="https://gmu.edu" -->
-		<!-- 	icon={GMU} -->
-		<!-- /> -->
+		<Experience
+			name="SWIFTnet Automation Intern"
+			where="Swift"
+			when="June 2024 - August 2024"
+			description={`
+				SWIFTNet handles nearly 80% of global financial traffic.
+				I'm rebuilding a core component of the testing infrastructure
+				which is responsible for creating and managing different testing
+				rules for end-to-end tests on the SWIFT messaging network.
+			`}
+			link="https://swift.com"
+			icon="swift"
+		/>
+		<Experience
+			name="Teaching Assistant (Adjunct)"
+			where="GMU"
+			when="August 2023 - May 2025"
+			description={`
+				I teach a variety of students for the Computer Science
+				CS 161: Introduction to Low-level Programming course.
+				The class covers C, Unix, and a dive into how
+				systems programming works. My responsibilities include
+				handling labs, conducting review sessions, and
+				proctoring exams.
+			`}
+			link="https://cs.gmu.edu"
+			icon="gmu"
+		/>
+		<Experience
+			name="Computer Science, B.S."
+			where="GMU"
+			when="August 2022 - May 2025"
+			description={`
+				I'm pursuing a Bachelor of Science in Computer Science
+				at George Mason University. I've written a paper on the
+				dangers posed by artificial intelligence and created a
+				set of guidelines to make a safety framework for AI.
+			`}
+			link="https://gmu.edu"
+			icon="gmu"
+		/>
 	</div>
 
 	<hr class="mt-2" />
