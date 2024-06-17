@@ -11,6 +11,8 @@
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.7.0",
+		"@fontsource/arvo": "^5.0.19",
+		"@fontsource/atkinson-hyperlegible": "^5.0.20",
 		"astro": "^4.10.2",
 		"astro-icon": "^1.1.0",
 		"simple-icons-astro": "^12.3.0",

@@ -7,7 +7,7 @@ export default {
 		extend: {},
 		fontFamily: {
 			sans: ['Atkinson Hyperlegible', 'sans-serif'],
-			serif: ['DM Serif Display', 'serif'],
+			serif: ['Arvo', 'serif'],
 		},
 	},
 	plugins: [prose],
