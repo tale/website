@@ -12,8 +12,8 @@
 	"dependencies": {
 		"@astrojs/check": "^0.7.0",
 		"@astrojs/tailwind": "^5.1.0",
-		"@fontsource/arvo": "^5.0.19",
 		"@fontsource/atkinson-hyperlegible": "^5.0.20",
+		"@fontsource/crimson-pro": "^5.0.18",
 		"@resvg/resvg-js": "^2.6.2",
 		"@tailwindcss/typography": "^0.5.13",
 		"astro": "^4.10.3",
