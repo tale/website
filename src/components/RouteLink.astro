@@ -1,0 +1,16 @@
+---
+interface Props {
+	href: string;
+	name: string;
+}
+
+const { href, name } = Astro.props
+const path = Astro.url.pathname
+---
+
+<a
+	href={href}
+	class={path === href ? 'font-bold' : ''}
+>
+	{name}
+</a>
