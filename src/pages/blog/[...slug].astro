@@ -15,7 +15,27 @@ type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
 const { Content } = await post.render();
+
+const imageUrl = new URL(Astro.url.href);
+imageUrl.pathname = `${imageUrl.pathname.endsWith('/') ? imageUrl.pathname.slice(0, -1) : imageUrl.pathname}.png`;
 ---
+
+<Fragment slot="head">
+	<meta name="description" content={post.data.description} />
+
+	<meta property="og:url" content={Astro.url.href} />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content={post.data.title} />
+	<meta property="og:description" content={post.data.description} />
+	<meta property="og:image" content={imageUrl.href} />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@aarnavtale" />
+	<meta name="twitter:creator" content="@aarnavtale" />
+	<meta name="twitter:title" content={post.data.title} />
+	<meta name="twitter:description" content={post.data.description} />
+	<meta name="twitter:image" content={imageUrl.href} />
+</Fragment>
 
 <Layout title={post.data.title}>
 	<a href="/blog" class="flex items-center gap-1 my-6">
