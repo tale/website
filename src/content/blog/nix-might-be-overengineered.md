@@ -5,7 +5,6 @@ categories:
 - productivity
 - thoughts
 description: After using Nix for the past year or so, I decided it was time to switch back to normal tooling.
-image: '@/assets/nix-preview.png'
 ---
 
 For around the past 18 months, I've been using [Nix](https://nixos.org) on my MacBook Pro for many things.
