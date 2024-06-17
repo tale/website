@@ -2,11 +2,12 @@ import { defineConfig } from 'astro/config'
 import { readFile } from 'node:fs/promises'
 import tailwind from '@astrojs/tailwind'
 import icon from 'astro-icon'
+import meta from 'astro-meta-tags'
 
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://tale.me',
-	integrations: [tailwind(), icon()],
+	integrations: [tailwind(), icon(), meta()],
 	vite: {
 		plugins: [{
 			name: 'vite-plugin-woff',
