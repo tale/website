@@ -1,4 +1,6 @@
 ---
+import '@fontsource/arvo'
+import '@fontsource/atkinson-hyperlegible'
 import Header from '../components/Header.astro'
 
 interface Props {
@@ -15,8 +17,10 @@ const { title } = Astro.props
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
+		<meta name="generator" content={Astro.generator} />
+		<meta name="darkreader-lock" />
 	</head>
 
 	<body class="overscroll-none bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
