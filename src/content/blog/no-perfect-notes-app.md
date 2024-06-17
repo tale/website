@@ -4,7 +4,6 @@ date: 2024-02-09
 categories:
 - productivity
 description: I attempted to integrate Obsidian.md with Neovim, but realized why the setup didn't work for me.
-image: '@/assets/obsync-preview.png'
 ---
 
 ![Preview of Obsync](@/assets/obsync-preview.png)
