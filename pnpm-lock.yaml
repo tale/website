@@ -14,12 +14,12 @@ importers:
       '@astrojs/tailwind':
         specifier: ^5.1.0
         version: 5.1.0(astro@4.10.3(@types/node@20.14.2)(typescript@5.4.5))(tailwindcss@3.4.4)
-      '@fontsource/arvo':
-        specifier: ^5.0.19
-        version: 5.0.19
       '@fontsource/atkinson-hyperlegible':
         specifier: ^5.0.20
         version: 5.0.20
+      '@fontsource/crimson-pro':
+        specifier: ^5.0.18
+        version: 5.0.18
       '@resvg/resvg-js':
         specifier: ^2.6.2
         version: 2.6.2
@@ -380,11 +380,11 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@fontsource/arvo@5.0.19':
-    resolution: {integrity: sha512-TP08tqO54IuYJI47/584nuG6onQ7e/b+G5Rj8Sj4TrtUH5evi25o+fU9yjkU4Ph78AcXn49wlrPvpENuf3tDAw==}
-
   '@fontsource/atkinson-hyperlegible@5.0.20':
     resolution: {integrity: sha512-YczGmDvJ23lheBaEJGNdUDTUwl1uG6xrU1rG+ftOVCdkmOaXtuZI/zq1KW+02d1eGsqKCrtaabHQMrtLjCYQbg==}
+
+  '@fontsource/crimson-pro@5.0.18':
+    resolution: {integrity: sha512-c59oYv2heFJi5WFuSkANTUo4QoZOXJBjDYW0fhIPBASFs3HaMWVxEXluwxfbSNoIVeCoMcn7RPSy2bDhnmB4rQ==}
 
   '@iconify/tools@3.0.7':
     resolution: {integrity: sha512-DxfhFLMnooS34dHelpGUnnYrxLZHs0czC1CgrBhAbuL8ddVzBb2VEQm8kh9qGh7A34qeXAB5iSHH3A72rAaFrg==}
@@ -2887,9 +2887,9 @@ snapshots:
   '@esbuild/win32-x64@0.21.5':
     optional: true
 
-  '@fontsource/arvo@5.0.19': {}
-
   '@fontsource/atkinson-hyperlegible@5.0.20': {}
+
+  '@fontsource/crimson-pro@5.0.18': {}
 
   '@iconify/tools@3.0.7':
     dependencies:

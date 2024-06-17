@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 import type { APIContext } from "astro";
 
 import Atkinson from '@fontsource/atkinson-hyperlegible/files/atkinson-hyperlegible-latin-400-normal.woff'
-import Arvo from '@fontsource/arvo/files/arvo-latin-700-normal.woff'
+import Crimson from '@fontsource/crimson-pro/files/crimson-pro-latin-700-normal.woff'
 
 interface Props {
 	title: string
@@ -36,14 +36,12 @@ export async function GET(context: APIContext<Props>) {
 			</div>
 			<div tw="flex flex-col">
 				<p
-					tw="
-						text-7xl w-full font-serif text-transparent
-						leading-tight tracking-tight
-					"
+					tw="text-7xl w-full font-serif text-transparent leading-tight"
 					style="
 						background-clip: text;
 						-webkit-background-clip: text;
 						-webkit-text-fill-color: transparent;
+						font-family: 'Crimson Pro', serif;
 						background: linear-gradient(
 							90deg,
 							#0B5ACF,
@@ -76,8 +74,8 @@ export async function GET(context: APIContext<Props>) {
 				weight: 400,
 			},
 			{
-				name: 'Arvo',
-				data: Buffer.from(Arvo),
+				name: 'Crimson Pro',
+				data: Buffer.from(Crimson),
 				weight: 700
 			}
 		],
