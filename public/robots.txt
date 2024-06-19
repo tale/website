@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tale.me/sitemap-index.xml
