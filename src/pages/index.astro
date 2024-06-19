@@ -15,9 +15,15 @@ import {
 	Typescript,
 	X
 } from 'simple-icons-astro'
+
+const desc = [
+	'I\'m Aarnav, a student and software engineer based in Washington, D.C.',
+	'I specialize in building low-level backend systems and DevOps.',
+	'I also enjoy working on open-source projects and contributing to the community.',
+].join(' ');
 ---
 
-<Layout>
+<Layout desc={desc}>
 	<p>
 		Hey! I'm Aarnav, a software engineer based in Washington, D.C.
 		I specialize in building low-level backend systems and DevOps.

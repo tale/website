@@ -42,9 +42,14 @@ import {
 	Visualstudiocode,
 	Xcode,
 } from 'simple-icons-astro'
+
+const desc = [
+	'I\'m Aarnav, a student and software engineer based in Washington, D.C.',
+	'This is my portfolio, where I showcase my work and experience.',
+].join(' ')
 ---
 
-<Layout title="Portfolio">
+<Layout title="Portfolio" desc={desc}>
 	<h2
 		id="experience"
 		class="font-serif text-2xl my-4"
