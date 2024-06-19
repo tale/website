@@ -3,9 +3,13 @@ import { getCollection } from "astro:content"
 import Layout from '@/layouts/Layout.astro'
 
 const posts = await getCollection("blog")
+const desc = [
+	"My posts range from technical explanations to random thoughts.",
+	"If you enjoy reading any of these posts, please feel free to share them."
+].join(" ")
 ---
 
-<Layout title="Blog">
+<Layout title="Blog" desc={desc}>
 	<p class="mb-4">
 		My blog ranges from technical explanations to random thoughts.
 		If you enjoy reading any of these posts, please feel free to
