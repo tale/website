@@ -22,5 +22,11 @@ export default defineConfig({
 				return null
 			}
 		}]
-	}
+	},
+
+	markdown: {
+		shikiConfig: {
+			theme: 'github-dark'
+		}
+	},
 })
