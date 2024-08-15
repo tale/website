@@ -11,6 +11,9 @@ importers:
       '@astrojs/check':
         specifier: ^0.9.2
         version: 0.9.2(typescript@5.5.4)
+      '@astrojs/rss':
+        specifier: ^4.0.7
+        version: 4.0.7
       '@astrojs/sitemap':
         specifier: ^3.1.6
         version: 3.1.6
@@ -48,8 +51,8 @@ importers:
         specifier: ^0.33.4
         version: 0.33.4
       simple-icons-astro:
-        specifier: ^13.5.0
-        version: 13.5.0(astro@4.13.3(@types/node@22.2.0)(typescript@5.5.4))
+        specifier: ^12.3.0
+        version: 12.4.0(astro@4.13.3(@types/node@22.2.0)(typescript@5.5.4))
       tailwindcss:
         specifier: ^3.4.10
         version: 3.4.10
@@ -103,6 +106,9 @@ packages:
   '@astrojs/prism@3.1.0':
     resolution: {integrity: sha512-Z9IYjuXSArkAUx3N6xj6+Bnvx8OdUSHA8YoOgyepp3+zJmtVYJIl/I18GozdJVW1p5u/CNpl3Km7/gwTJK85cw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
+
+  '@astrojs/rss@4.0.7':
+    resolution: {integrity: sha512-ZEG55XFB19l+DplUvBISmz04UbjDtKliRO4Y5+ERRhAMjgCVVobEBNE6ZwWG1h6orWUocy4nfPihKXDyB73x9g==}
 
   '@astrojs/sitemap@3.1.6':
     resolution: {integrity: sha512-1Qp2NvAzVImqA6y+LubKi1DVhve/hXXgFvB0szxiipzh7BvtuKe4oJJ9dXSqaubaTkt4nMa6dv6RCCAYeB6xaQ==}
@@ -1234,6 +1240,10 @@ packages:
     resolution: {integrity: sha512-oX2ruAFQwf/Orj8m737Y5adxDQO0LAB7/S5MnxCdTNDd4p6BsyIVsv9JQsATbTSq8KHRpLwIHbVlUNatxd+1Ow==}
     engines: {node: '>=8.6.0'}
 
+  fast-xml-parser@4.4.1:
+    resolution: {integrity: sha512-xkjOecfnKGkSsOwtZ5Pz7Us/T6mrbPQrq0nh+aCO5V9nk5NLWmasAHumTKjiPJPWANe+kAZ84Jc8ooJkzZ88Sw==}
+    hasBin: true
+
   fastq@1.17.1:
     resolution: {integrity: sha512-sRVD3lWVIXWg6By68ZN7vho9a1pQcN/WBFaAAsDDFzlJjvoGx0P8z7V1t72grFJfJhu3YPZBuu25f7Kaw2jN1w==}
 
@@ -2130,8 +2140,8 @@ packages:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
 
-  simple-icons-astro@13.5.0:
-    resolution: {integrity: sha512-dpkeSI8vyA39yq/lHX0B+fZzA7GJlrVtPTbFaXlNKfXtEBTAuHY7+AvJqH/q4TfoqUEyVcn1JOt6/8mbLaWIXw==}
+  simple-icons-astro@12.4.0:
+    resolution: {integrity: sha512-2m7DAKACCT7ZAS1xfYwUngMGHjJuoBcEmGh/LXHK3CQbCBlXQJWucAYg6vUHVWekdqXkYWL/pPmudgK2KjGWXw==}
     peerDependencies:
       astro: '>=2.7.1'
 
@@ -2204,6 +2214,9 @@ packages:
   strip-final-newline@3.0.0:
     resolution: {integrity: sha512-dOESqjYr96iWYylGObzd39EuNTa5VJxyvVAEm5Jnh7KGo75V43Hk1odPQkNDyXNmUR6k+gEiDVXnjB8HJ3crXw==}
     engines: {node: '>=12'}
+
+  strnum@1.0.5:
+    resolution: {integrity: sha512-J8bbNyKKXl5qYcR36TIO8W3mVGVHrmmxsd5PAItGkmyzwJvybiw2IVq5nqd0i4LSNSkB/sx9VHllbfFdr9k1JA==}
 
   sucrase@3.35.0:
     resolution: {integrity: sha512-8EbVDiu9iN/nESwxeSxDKe0dunta1GOlHufmSSXxMD2z2/tMZpDMpvXQGsc+ajGo8y2uYUmixaSRUc/QPoQ0GA==}
@@ -2637,6 +2650,11 @@ snapshots:
   '@astrojs/prism@3.1.0':
     dependencies:
       prismjs: 1.29.0
+
+  '@astrojs/rss@4.0.7':
+    dependencies:
+      fast-xml-parser: 4.4.1
+      kleur: 4.1.5
 
   '@astrojs/sitemap@3.1.6':
     dependencies:
@@ -3811,6 +3829,10 @@ snapshots:
       merge2: 1.4.1
       micromatch: 4.0.7
 
+  fast-xml-parser@4.4.1:
+    dependencies:
+      strnum: 1.0.5
+
   fastq@1.17.1:
     dependencies:
       reusify: 1.0.4
@@ -4964,7 +4986,7 @@ snapshots:
 
   signal-exit@4.1.0: {}
 
-  simple-icons-astro@13.5.0(astro@4.13.3(@types/node@22.2.0)(typescript@5.5.4)):
+  simple-icons-astro@12.4.0(astro@4.13.3(@types/node@22.2.0)(typescript@5.5.4)):
     dependencies:
       astro: 4.13.3(@types/node@22.2.0)(typescript@5.5.4)
 
@@ -5031,6 +5053,8 @@ snapshots:
   strip-final-newline@2.0.0: {}
 
   strip-final-newline@3.0.0: {}
+
+  strnum@1.0.5: {}
 
   sucrase@3.35.0:
     dependencies:
