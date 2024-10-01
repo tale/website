@@ -11,7 +11,7 @@ export default function loc(key: string, ...args: string[]): string {
 	// English is always available as a fallback
 	const str = keys[LOCALE]?.[key] || keys['en']![key]
 	if (!str) {
-		return key
+		return ''
 	}
 
 	if (args.length === 0) {
