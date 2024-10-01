@@ -1,9 +1,10 @@
 import { defineCollection, z } from 'astro:content'
+import loc from '@/utils/locale'
 
 const categories: Record<string, string> = {
-	productivity: 'Productivity',
-	technical: 'Technical',
-	thoughts: 'Thoughts',
+	productivity: loc('blog.productivity'),
+	technical: loc('blog.technical'),
+	thoughts: loc('blog.thoughts'),
 }
 
 export const collections = {

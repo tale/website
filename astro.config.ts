@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config'
+import { defineConfig, envField } from 'astro/config'
 import { readFile } from 'node:fs/promises'
 import tailwind from '@astrojs/tailwind'
 import icon from 'astro-icon'
@@ -9,6 +9,17 @@ import sitemap from '@astrojs/sitemap'
 export default defineConfig({
 	site: 'https://tale.me',
 	integrations: [tailwind(), icon(), meta(), sitemap()],
+	experimental: {
+		env: {
+			schema: {
+				LOCALE: envField.string({
+					context: 'client',
+					access: 'public',
+					default: 'en',
+				})
+			}
+		}
+	},
 	vite: {
 		plugins: [{
 			name: 'vite-plugin-woff',
