@@ -1,0 +1,26 @@
+{
+	"layout.name": "Aarnav Tale",
+	"layout.home": "Home",
+	"layout.blog": "Blog",
+	"layout.portfolio": "Portfolio",
+	"layout.notice": "Since I am a Native English speaker, this is my main site.",
+
+	"home.intro1": "Hey! I'm Aarnav, a software engineer based in Washington, D.C.",
+	"home.intro2": "I specialize in building low-level backend systems and DevOps.",
+	"home.intro3": "I'm currently working on my Bachelor's degree in Computer Science at George Mason University in Fairfax, VA.",
+	"home.intro4": "You may have seen me around the internet as I maintain and contribute to a few open-source projects.",
+	"home.intro5": "I work on whatever interests me or serves to improve my own workflows.",
+	"home.intro6": "Outside of programming, I value spending time outdoors.",
+
+	"home.current.header": "Current Projects",
+	"home.current.footer": "View {all projects} or visit my {GitHub} profile.",
+
+	"blog.intro1": "My blog ranges from technical explanations to random thoughts.",
+	"blog.intro2": "If you enjoy reading any of these posts, please feel free to share them.",
+	"blog.intro3": "Posts are organized in chronological order and are tagged with categories that I feel best describe them",
+	"blog.intro4": "",
+
+	"blog.productivity": "Productivity",
+	"blog.technical": "Technical",
+	"blog.thoughts": "Thoughts"
+}
