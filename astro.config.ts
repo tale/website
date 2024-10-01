@@ -5,9 +5,15 @@ import icon from 'astro-icon'
 import meta from 'astro-meta-tags'
 import sitemap from '@astrojs/sitemap'
 
+const sites: Record<string, string> = {
+	en: 'https://tale.me',
+	ja: 'https://aarnav.jp',
+	hi: 'https://aarnav.in'
+}
+
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://tale.me',
+	site: sites[process.env.LOCALE ?? 'en']!,
 	integrations: [tailwind(), icon(), meta(), sitemap()],
 	experimental: {
 		env: {

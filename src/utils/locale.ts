@@ -2,11 +2,17 @@ import { LOCALE } from 'astro:env/client'
 import en from './strings/en.json'
 import ja from './strings/ja.json'
 
-const keys = { en, ja }
+const keys: Record<string, Record<string, string>> = {
+	en,
+	ja,
+}
 
 export default function loc(key: string, ...args: string[]): string {
 	// English is always available as a fallback
-	const str = keys[LOCALE][key] || keys['en'][key]
+	const str = keys[LOCALE]?.[key] || keys['en']![key]
+	if (!str) {
+		return key
+	}
 
 	if (args.length === 0) {
 		return str
