@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content"
 import Layout from '@/layouts/Layout.astro'
+import loc from '@/utils/locale'
 
 const posts = await getCollection("blog")
 const desc = [
@@ -11,12 +12,10 @@ const desc = [
 
 <Layout title="Blog" desc={desc}>
 	<p class="mb-4">
-		My blog ranges from technical explanations to random thoughts.
-		If you enjoy reading any of these posts, please feel free to
-		share them.
-
-		Posts are organized in chronological order and are tagged with
-		the categories that I feel best describe them.
+		{loc('blog.intro1')}
+		{loc('blog.intro2')}
+		{loc('blog.intro3')}
+		{loc('blog.intro4')}
 	</p>
 	<div class="flex flex-col gap-4">
 		{posts.map(post => (
