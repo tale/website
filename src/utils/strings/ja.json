@@ -22,5 +22,12 @@
 
 	"blog.productivity": "生産性",
 	"blog.technical": "技術",
-	"blog.thoughts": "考え"
+	"blog.thoughts": "考え",
+
+	"404.title": "404 Not Found",
+	"404.message": "お探しのページは見つかりませんでした。",
+
+	"portfolio.experience": "実務経験",
+	"portfolio.skills": "技術的スキル",
+	"portfolio.projects": "プロジェクト"
 }
