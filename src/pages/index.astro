@@ -70,27 +70,26 @@ const desc = [
 	<p class="my-4 text-sm" set:html={loc(
 		'home.current.footer',
 		'/portfolio#projects',
-		'https://github.com/tale'
-		)}
-	/>
+		loc('links.github'),
+	)} />
 	<hr class="my-2" />
 	<div>
 		<a
-			href="https://github.com/tale"
+			href={loc('links.github')}
 			target="_blank"
 			rel="noreferrer"
 		>
 			<Github size={24} class="inline-block mr-2" />
 		</a>
 		<a
-			href="https://x.com/aarnavtale"
+			href={loc('links.x')}
 			target="_blank"
 			rel="noreferrer"
 		>
 			<X size={24} class="inline-block mr-2" />
 		</a>
 		<a
-			href="https://linkedin.com/in/aarnavtale"
+			href={loc('links.linkedin')}
 			target="_blank"
 			rel="noreferrer"
 		>
