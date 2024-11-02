@@ -4,6 +4,7 @@ import Project from '@/components/Project.astro'
 import Skill from '@/components/Skill.astro'
 import TinySkill from '@/components/TinySkill.astro'
 import Experience from '@/components/Experience.astro'
+import loc from '@/utils/locale'
 
 import {
 	Amazonwebservices,
@@ -54,7 +55,7 @@ const desc = [
 		id="experience"
 		class="font-serif text-2xl my-4"
 	>
-		Experience
+		{loc('portfolio.experience')}
 	</h2>
 	<div class="grid grid-cols-1 gap-8">
 		<Experience
@@ -71,12 +72,12 @@ const desc = [
 			icon="swift"
 		/>
 		<Experience
-			name="Teaching Assistant (Adjunct)"
+			name="Teaching Assistant"
 			where="GMU"
 			when="August 2023 - May 2025"
 			description={`
 				I teach a variety of students for the Computer Science
-				CS 161: Introduction to Low-level Programming course.
+				CS 262: Introduction to Low-level Programming course.
 				The class covers C, Unix, and a dive into how
 				systems programming works. My responsibilities include
 				handling labs, conducting review sessions, and
@@ -105,7 +106,7 @@ const desc = [
 		id="skills"
 		class="font-serif text-2xl my-4"
 	>
-		Technical Skills
+		{loc('portfolio.skills')}
 	</h2>
 
 	<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -148,7 +149,7 @@ const desc = [
 		id="projects"
 		class="font-serif text-2xl mt-4 mb-2"
 	>
-		Projects
+		{loc('portfolio.projects')}
 	</h2>
 	<p class="my-4">
 		This is a chronological list of projects I have worked on that are publicly available.
