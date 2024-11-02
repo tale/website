@@ -29,5 +29,9 @@
 
 	"portfolio.experience": "Experience",
 	"portfolio.skills": "Technical Skills",
-	"portfolio.projects": "Projects"
+	"portfolio.projects": "Projects",
+
+	"links.github": "https://github.com/tale",
+	"links.x": "https://x.com/aarnavtale",
+	"links.linkedin": "https://www.linkedin.com/in/aarnavtale/"
 }
