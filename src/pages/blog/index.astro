@@ -18,38 +18,41 @@ const desc = [
 		{loc('blog.intro4')}
 	</p>
 	<div class="flex flex-col gap-4">
-		{posts.map(post => (
-			<a href={`/blog/${post.slug}`}>
-				<div
-					class={`
-						border duration-100 p-4 rounded-sm
-						border-neutral-200 dark:border-neutral-700
-						hover:bg-neutral-100 dark:hover:bg-neutral-800
-						w-full h-full
-					`}
-				>
-					<h3 class="font-bold">
-						{post.data.title}
-					</h3>
-					<p class="text-neutral-500 dark:text-neutral-400 mt-1">
-						<span>
-							{post.data.date.toLocaleDateString()}
-						</span>
-						{' | '}
-						{post.data.categories.map(category => (
-							<span class={`
-								inline-block text-sm rounded-md mr-2
-								bg-neutral-200 dark:bg-neutral-700 px-1
-							`}>
-								{category}
+		{posts
+			.sort((a, b) => a.data.date > b.data.date ? -1 : 1)
+			.map(post => (
+				<a href={`/blog/${post.slug}`}>
+					<div
+						class={`
+							border duration-100 p-4 rounded-sm
+							border-neutral-200 dark:border-neutral-700
+							hover:bg-neutral-100 dark:hover:bg-neutral-800
+							w-full h-full
+						`}
+					>
+						<h3 class="font-bold">
+							{post.data.title}
+						</h3>
+						<p class="text-neutral-500 dark:text-neutral-400 mt-1">
+							<span>
+								{post.data.date.toLocaleDateString()}
 							</span>
-						))}
-					</p>
-					<p class="opacity-50 mt-3">
-						{post.data.description}
-					</p>
-				</div>
-			</a>
-		))}
+							{' | '}
+							{post.data.categories.map(category => (
+								<span class={`
+									inline-block text-sm rounded-md mr-2
+									bg-neutral-200 dark:bg-neutral-700 px-1
+								`}>
+									{category}
+								</span>
+							))}
+						</p>
+						<p class="opacity-50 mt-3">
+							{post.data.description}
+						</p>
+					</div>
+				</a>
+			))
+		}
 	</div>
 </Layout>
