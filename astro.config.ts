@@ -15,15 +15,13 @@ const sites: Record<string, string> = {
 export default defineConfig({
 	site: sites[process.env.LOCALE ?? 'en']!,
 	integrations: [tailwind(), icon(), meta(), sitemap()],
-	experimental: {
-		env: {
-			schema: {
-				LOCALE: envField.string({
-					context: 'client',
-					access: 'public',
-					default: 'en',
-				})
-			}
+	env: {
+		schema: {
+			LOCALE: envField.string({
+				context: 'client',
+				access: 'public',
+				default: 'en',
+			})
 		}
 	},
 	vite: {
