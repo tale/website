@@ -2,12 +2,12 @@
 import loc from '@/utils/locale'
 import Layout from '@/layouts/Layout.astro';
 import Project from '@/components/Project.astro';
+import { Icon } from 'astro-icon/components';
 import {
 	Github,
 	Githubactions,
 	Go,
 	Kubernetes,
-	Linkedin,
 	Mongodb,
 	Postgresql,
 	React,
@@ -96,7 +96,7 @@ const desc = [
 			rel="noreferrer"
 			class="inline-block mr-2"
 		>
-			<Linkedin size={24} class="inline-block" />
+			<Icon name="linkedin" size={24} class="inline-block" />
 		</a>
 	</div>
 </Layout>
