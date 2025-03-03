@@ -16,6 +16,7 @@
 		"@astrojs/tailwind": "^6.0.0",
 		"@fontsource/atkinson-hyperlegible": "^5.0.20",
 		"@fontsource/crimson-pro": "^5.0.18",
+		"@microflash/rehype-figure": "^2.1.3",
 		"@resvg/resvg-js": "^2.6.2",
 		"@tailwindcss/typography": "^0.5.14",
 		"astro": "^5.4.1",
