@@ -6,11 +6,19 @@ interface Props {
 
 const { href, name } = Astro.props
 const path = Astro.url.pathname
+
+// We need this because of how the homepage is '/'
+// Also this code is so unbelievably ugly (wtf)
+const isCurrent = href === '/'
+	? path === '/'
+	: path.endsWith('/')
+		? path.startsWith(href)
+		: `${path}/`.startsWith(href)
 ---
 
 <a
 	href={href}
-	class={path === href ? 'font-bold' : ''}
+	class={isCurrent ? 'font-bold' : ''}
 >
 	{name}
 </a>
