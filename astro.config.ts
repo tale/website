@@ -40,6 +40,7 @@ export default defineConfig({
 	},
 
 	markdown: {
+		rehypePlugins: ['@microflash/rehype-figure'],
 		shikiConfig: {
 			theme: 'github-dark'
 		}
