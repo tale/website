@@ -1,5 +1,4 @@
 ---
-import loc from '@/utils/locale'
 import Layout from '@/layouts/Layout.astro';
 import Project from '@/components/Project.astro';
 import { Icon } from 'astro-icon/components';
@@ -17,29 +16,29 @@ import {
 	X
 } from 'simple-icons-astro'
 
-const desc = [
-	'I\'m Aarnav, a student and software engineer based in Washington, D.C.',
-	'I specialize in building low-level backend systems and DevOps.',
-	'I also enjoy working on open-source projects and contributing to the community.',
-].join(' ');
+const desc = `
+I'm Aarnav, a student and software engineer based in Washington, D.C.
+I specialize in building low-level backend systems and DevOps.
+I also enjoy working on open-source projects and contributing to the community.
+`.replace('\n', ' ');
 ---
 
 <Layout desc={desc}>
 	<p>
-		{loc('home.intro1')}
-		{loc('home.intro2')}
-		{loc('home.intro3')}
+		Hey! I'm Aarnav, a software engineer based in Washington, D.C.
+		I specialize in building low-level backend systems and DevOps.
+		I'm currently working on my Bachelor's degree in Computer Science at George Mason University in Fairfax, VA.
 	</p>
 	<br />
 	<p>
-		{loc('home.intro4')}
-		{loc('home.intro5')}
-		{loc('home.intro6')}
+		You may have seen me around the internet as I maintain and contribute to a few open-source projects.
+		I work on whatever interests me or serves to improve my own workflows.
+		Outside of programming, I value spending time outdoors.
 	</p>
 
 	<hr class="mt-2" />
 	<h2 class="font-serif text-2xl my-4">
-		{loc('home.current.header')}
+		Current Projects
 	</h2>
 	<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 		<Project
@@ -67,15 +66,29 @@ const desc = [
 			icons={[Typescript, Mongodb, React, Kubernetes]}
 		/>
 	</div>
-	<p class="my-4 text-sm" set:html={loc(
-		'home.current.footer',
-		'/portfolio#projects',
-		loc('links.github'),
-	)} />
+	<p class="my-4 text-sm">
+		View{' '}
+		<a
+			href="/portfolio#projects"
+			class="underline"
+		>
+			all projects
+		</a>
+		{' '}or visit my{' '}
+		<a
+			href="https://github.com/tale"
+			class="underline"
+			target="_blank"
+			rel="noreferrer"
+		>
+			GitHub
+		</a>
+		{' '}profile
+	</p>
 	<hr class="my-2" />
 	<div>
 		<a
-			href={loc('links.github')}
+			href="https://github.com/tale"
 			target="_blank"
 			rel="noreferrer"
 			class="inline-block mr-2"
@@ -83,7 +96,7 @@ const desc = [
 			<Github size={24} class="inline-block" />
 		</a>
 		<a
-			href={loc('links.x')}
+			href="https://x.com/aarnavtale"
 			target="_blank"
 			rel="noreferrer"
 			class="inline-block mr-2"
@@ -91,7 +104,7 @@ const desc = [
 			<X size={24} class="inline-block" />
 		</a>
 		<a
-			href={loc('links.linkedin')}
+			href="https://www.linkedin.com/in/aarnavtale"
 			target="_blank"
 			rel="noreferrer"
 			class="inline-block mr-2"

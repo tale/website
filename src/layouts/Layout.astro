@@ -3,7 +3,6 @@ import '@fontsource/atkinson-hyperlegible'
 import '@fontsource/crimson-pro/700.css'
 import '@/styles/global.css'
 import Header from '@/components/Header.astro'
-import loc from '@/utils/locale'
 
 interface Props {
 	title?: string;
@@ -11,7 +10,7 @@ interface Props {
 }
 
 const { title, desc } = Astro.props
-const name = loc('layout.name')
+const name = 'Aarnav Tale'
 const headline = title ? `${title} • ${name}` : name
 ---
 

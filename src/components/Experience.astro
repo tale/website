@@ -13,14 +13,11 @@ const { name, where, when, description, link, icon } = Astro.props
 ---
 
 <div>
-	<div class="flex justify-between items-center">
+	<div class="flex justify-between items-start">
 		<div>
 			<h3 class="font-bold">{name}</h3>
-			<p>{when}</p>
-		</div>
-		<div class="sm:pr-8">
 			<a
-				class="flex items-center gap-3 font-bold"
+				class="flex items-center gap-1 group"
 				href={link}
 				target="_blank"
 				rel="noreferrer"
@@ -28,14 +25,14 @@ const { name, where, when, description, link, icon } = Astro.props
 				<Icon
 					name={icon}
 					class={`
-						w-10 h-10 text-neutral-500 dark:text-neutral-400
-						border border-neutral-200 dark:border-neutral-700
-						rounded-xl p-1 hover:bg-neutral-200 dark:hover:bg-neutral-700
+						inline size-7 border border-neutral-200 dark:border-neutral-700
+						rounded-lg grayscale group-hover:bg-neutral-200 dark:group-hover:bg-neutral-700
 					`}
 				/>
-				<p class="hidden sm:block">{where}</p>
+				{where}
 			</a>
 		</div>
+		<p>{when}</p>
 	</div>
 	<p class="mt-3 text-md text-neutral-600 dark:text-neutral-300">
 		{description}
