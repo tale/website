@@ -1,26 +1,15 @@
 ---
 import RouteLink from '@/components/RouteLink.astro'
-import loc, { isMain } from '@/utils/locale'
 ---
-
-{!isMain() && (
-	<div class={`
-		border p-4 flex items-center mb-8 rounded-xs
-		border-neutral-200 dark:border-neutral-700 w-full h-full
-	`}>
-		<p class="text-sm" set:html={loc('layout.notice', 'https://tale.me')}>
-		</p>
-	</div>
-)}
 
 <div class="flex items-center justify-between pr-2 gap-4 flex-col sm:flex-row">
 	<h1 class="text-3xl font-serif">
-		{loc('layout.name')}
+		Aarnav Tale
 	</h1>
 	<div class="flex items-center gap-4">
-		<RouteLink href="/" name={loc('layout.home')} />
-		<RouteLink href="/blog/" name={loc('layout.blog')} />
-		<RouteLink href="/portfolio/" name={loc('layout.portfolio')} />
+		<RouteLink href="/" name="Home" />
+		<RouteLink href="/blog/" name="Blog" />
+		<RouteLink href="/portfolio/" name="Portfolio" />
 	</div>
 </div>
 <hr class="my-2" />

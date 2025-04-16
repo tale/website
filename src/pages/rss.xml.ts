@@ -7,7 +7,7 @@ export async function GET(context: APIContext) {
 	return rss({
 		title: "Aarnav Tale's Blog",
 		description: 'Just a collection of thoughts, ideas, and technical notes.',
-		customData: `<language>en-us</language>`,
+		customData: '<language>en-us</language>',
 		site: context.site ?? '',
 		items: posts.map(post => ({
 			title: post.data.title,

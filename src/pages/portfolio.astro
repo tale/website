@@ -4,7 +4,6 @@ import Project from '@/components/Project.astro'
 import Skill from '@/components/Skill.astro'
 import TinySkill from '@/components/TinySkill.astro'
 import Experience from '@/components/Experience.astro'
-import loc from '@/utils/locale'
 
 import {
 	Amazonwebservices,
@@ -52,12 +51,12 @@ const desc = [
 		id="experience"
 		class="font-serif text-2xl my-4"
 	>
-		{loc('portfolio.experience')}
+		Experience
 	</h2>
 	<div class="grid grid-cols-1 gap-8">
 		<Experience
 			name="SWIFTnet Automation Intern"
-			where="Swift"
+			where="Swift, Inc"
 			when="June 2024 - August 2024"
 			description={`
 				SWIFTNet handles nearly 80% of global financial traffic.
@@ -70,7 +69,7 @@ const desc = [
 		/>
 		<Experience
 			name="Teaching Assistant"
-			where="GMU"
+			where="George Mason University"
 			when="August 2023 - May 2025"
 			description={`
 				I teach a variety of students for the Computer Science
@@ -83,9 +82,18 @@ const desc = [
 			link="https://cs.gmu.edu"
 			icon="gmu"
 		/>
+	</div>
+
+	<h2
+		id="skills"
+		class="font-serif text-2xl my-4"
+	>
+		Education
+	</h2>
+	<div class="grid grid-cols-1 gap-8">
 		<Experience
 			name="Computer Science, B.S."
-			where="GMU"
+			where="George Mason University"
 			when="August 2022 - May 2025"
 			description={`
 				I'm pursuing a Bachelor of Science in Computer Science
@@ -103,7 +111,7 @@ const desc = [
 		id="skills"
 		class="font-serif text-2xl my-4"
 	>
-		{loc('portfolio.skills')}
+		Skills
 	</h2>
 
 	<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -143,7 +151,7 @@ const desc = [
 		id="projects"
 		class="font-serif text-2xl mt-4 mb-2"
 	>
-		{loc('portfolio.projects')}
+		Projects
 	</h2>
 	<p class="my-4">
 		This is a chronological list of projects I have worked on that are publicly available.
