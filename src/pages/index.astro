@@ -4,23 +4,23 @@ import Project from '@/components/Project.astro';
 import { Icon } from 'astro-icon/components';
 
 const desc = `
-I'm Aarnav, a student and software engineer based in Washington, D.C.
-I specialize in building low-level backend systems and DevOps.
-I also enjoy working on open-source projects and contributing to the community.
+I'm Aarnav Tale, a software engineer and student based in Washington, D.C.
+I specialize in low-level backend optimizations, DevOps, and React frontends.
+I also work on various open-source and personal interest projects.
 `.replace('\n', ' ');
 ---
 
 <Layout desc={desc}>
 	<p>
-		Hey! I'm Aarnav, a software engineer based in Washington, D.C.
-		I specialize in building low-level backend systems and DevOps.
-		I'm currently working on my Bachelor's degree in Computer Science at George Mason University in Fairfax, VA.
+		I'm Aarnav Tale, a software engineer and student based in Washington, D.C.
+		I specialize in low-level backend optimizations, DevOps, and React frontends.
+		I'm currently pursuing my Master's degree in Computer Science at Virginia Tech in Alexandria, VA.
 	</p>
 	<br />
 	<p>
-		You may have seen me around the internet as I maintain and contribute to a few open-source projects.
-		I work on whatever interests me or serves to improve my own workflows.
-		Outside of programming, I value spending time outdoors.
+		You may have seen me around the internet working on various open-source projects.
+		I work what things that interest me or can potentially improve my own workflows.
+		Besides programming, I value spending time outdoors and exploring new places.
 	</p>
 
 	<hr class="my-4" />
@@ -88,12 +88,14 @@ I also enjoy working on open-source projects and contributing to the community.
 		{' '}profile
 	</p>
 	<hr class="my-4" />
-	<div>
+	<div class={`
+		inline-flex gap-1.5 items-center py-1 px-1.5 rounded-md
+		bg-neutral-200 dark:bg-neutral-700
+	`}>
 		<a
 			href="https://github.com/tale"
 			target="_blank"
 			rel="noreferrer"
-			class="inline-block mr-2"
 		>
 			<Icon name="logos:github-icon" size={24} class="inline-block" />
 		</a>
@@ -101,7 +103,6 @@ I also enjoy working on open-source projects and contributing to the community.
 			href="https://x.com/aarnavtale"
 			target="_blank"
 			rel="noreferrer"
-			class="inline-block mr-2"
 		>
 			<Icon name="logos:x" size={24} class="inline-block" />
 		</a>
@@ -109,7 +110,6 @@ I also enjoy working on open-source projects and contributing to the community.
 			href="https://www.linkedin.com/in/aarnavtale"
 			target="_blank"
 			rel="noreferrer"
-			class="inline-block mr-2"
 		>
 			<Icon name="logos:linkedin-icon" size={24} class="inline-block" />
 		</a>
