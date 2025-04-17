@@ -2,19 +2,6 @@
 import Layout from '@/layouts/Layout.astro';
 import Project from '@/components/Project.astro';
 import { Icon } from 'astro-icon/components';
-import {
-	Github,
-	Githubactions,
-	Go,
-	Kubernetes,
-	Mongodb,
-	Postgresql,
-	React,
-	Remix,
-	Rust,
-	Typescript,
-	X
-} from 'simple-icons-astro'
 
 const desc = `
 I'm Aarnav, a student and software engineer based in Washington, D.C.
@@ -36,56 +23,71 @@ I also enjoy working on open-source projects and contributing to the community.
 		Outside of programming, I value spending time outdoors.
 	</p>
 
-	<hr class="mt-2" />
-	<h2 class="font-serif text-2xl my-4">
+	<hr class="my-4" />
+	<h2 class="font-bold text-xl mb-4">
 		Current Projects
 	</h2>
-	<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
 		<Project
 			name="Canister"
 			description="High-speed search engine and analytics aggregator for iOS APT repositories"
 			link="https://canister.me"
-			icons={[Rust, Go, Typescript, Postgresql, Kubernetes]}
+			icons={[
+				"logos:rust",
+				"logos:go",
+				"logos:typescript-icon",
+				"logos:postgresql",
+				"logos:kubernetes"
+			]}
 		/>
 		<Project
 			name="kubectl-action"
 			description="GitHub Action to interact with Kubernetes clusters using kubectl"
 			link="https://github.com/tale/kubectl-action"
-			icons={[Typescript, Githubactions, Kubernetes]}
+			icons={[
+				"logos:typescript-icon",
+				"logos:github-actions",
+				"logos:kubernetes"
+			]}
 		/>
 		<Project
 			name="Headplane"
-			description="A proper management plane for Headscale, the self-hosted Tailscale controller"
+			description="A full-featured dashboard to control your self hosted Tailscale instance"
 			link="https://github.com/tale/headplane"
-			icons={[Remix, React, Typescript]}
+			icons={[
+				"logos:react",
+				"logos:react-router",
+				"logos:typescript-icon"
+			]}
 		/>
 		<Project
 			name="Chariz"
 			description="Enabling developers to easily sell and distribute their software on iOS"
 			link="https://chariz.com"
-			icons={[Typescript, Mongodb, React, Kubernetes]}
+			icons={[
+				"logos:typescript-icon",
+				"logos:react",
+				"logos:mongodb-icon",
+				"logos:kubernetes"
+			]}
 		/>
 	</div>
-	<p class="my-4 text-sm">
+	<p class="mt-4 font-mono text-sm">
 		View{' '}
 		<a
 			href="/portfolio#projects"
 			class="underline"
-		>
-			all projects
-		</a>
+		>all projects</a>
 		{' '}or visit my{' '}
 		<a
 			href="https://github.com/tale"
 			class="underline"
 			target="_blank"
 			rel="noreferrer"
-		>
-			GitHub
-		</a>
+		>GitHub</a>
 		{' '}profile
 	</p>
-	<hr class="my-2" />
+	<hr class="my-4" />
 	<div>
 		<a
 			href="https://github.com/tale"
@@ -93,7 +95,7 @@ I also enjoy working on open-source projects and contributing to the community.
 			rel="noreferrer"
 			class="inline-block mr-2"
 		>
-			<Github size={24} class="inline-block" />
+			<Icon name="logos:github-icon" size={24} class="inline-block" />
 		</a>
 		<a
 			href="https://x.com/aarnavtale"
@@ -101,7 +103,7 @@ I also enjoy working on open-source projects and contributing to the community.
 			rel="noreferrer"
 			class="inline-block mr-2"
 		>
-			<X size={24} class="inline-block" />
+			<Icon name="logos:x" size={24} class="inline-block" />
 		</a>
 		<a
 			href="https://www.linkedin.com/in/aarnavtale"
@@ -109,7 +111,7 @@ I also enjoy working on open-source projects and contributing to the community.
 			rel="noreferrer"
 			class="inline-block mr-2"
 		>
-			<Icon name="linkedin" size={24} class="inline-block" />
+			<Icon name="logos:linkedin-icon" size={24} class="inline-block" />
 		</a>
 	</div>
 </Layout>

@@ -1,7 +1,25 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+@font-face {
+	font-family: "Berkeley Mono";
+	font-style: normal;
+	font-weight: 400;
+	font-display: block;
+	src: url("/fonts/berkeley-normal.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Berkeley Mono";
+	font-style: normal;
+	font-weight: 700;
+	font-display: block;
+	src: url("/fonts/berkeley-bold.woff2") format("woff2");
+}
+
 @theme {
-	--font-sans: "Atkinson Hyperlegible", "sans-serif";
+	--font-sans: "Work Sans Variable", "Arial", "sans-serif";
 	--font-serif: "Crimson Pro", "serif";
+	--font-mono: "Berkeley Mono", "monospace";
+	--breakpoint-xs: 28rem;
 }

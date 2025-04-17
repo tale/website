@@ -1,11 +1,13 @@
 ---
+import { Icon } from 'astro-icon/components';
+
 interface Props {
 	name: string;
 	year: number;
-	icon: Function;
+	icon: string;
 }
 
-const { name, year, icon: Icon } = Astro.props
+const { name, year, icon } = Astro.props
 
 const years = () => {
 	const currentYear = new Date().getFullYear()
@@ -24,9 +26,9 @@ const years = () => {
 ---
 
 <div class="flex items-center gap-4">
-	<Icon size={24} class="inline-block" />
+	<Icon name={icon} size={24} />
 	<div>
-		<h3 class="font-bold">{name}</h3>
-		<p>{years()}</p>
+		<h3 class="font-mono font-bold">{name}</h3>
+		<p class="font-mono">{years()}</p>
 	</div>
 </div>

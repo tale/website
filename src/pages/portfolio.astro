@@ -5,59 +5,57 @@ import Skill from '@/components/Skill.astro'
 import TinySkill from '@/components/TinySkill.astro'
 import Experience from '@/components/Experience.astro'
 
-import {
-	Amazonwebservices,
-	C,
-	Clickhouse,
-	Cloudflare,
-	Cloudflareworkers,
-	Cmake,
-	Docker,
-	Dotnet,
-	Elastic,
-	Git,
-	Githubactions,
-	Go,
-	Hetzner,
-	Homebrew,
-	Ios,
-	Kubernetes,
-	Macos,
-	Mongodb,
-	Monogame,
-	Nextdotjs,
-	Opengl,
-	Openjdk,
-	Postgresql,
-	Python,
-	React,
-	Redis,
-	Remix,
-	Rust,
-	Spring,
-	Svelte,
-	Swift,
-	Typescript,
-} from 'simple-icons-astro'
-
-const desc = [
-	'I\'m Aarnav, a student and software engineer based in Washington, D.C.',
-	'This is my portfolio, where I showcase my work and experience.',
-].join(' ')
+const desc = `
+'I'm Aarnav, a student and software engineer based in Washington, D.C.',
+'This is my portfolio, where I showcase my work and experience.',
+`.replace('\n', ' ');
 ---
 
 <Layout title="Portfolio" desc={desc}>
-	<h2
-		id="experience"
-		class="font-serif text-2xl my-4"
-	>
+	<h2 id="skills" class="text-xl font-bold mb-4">
+		Skills
+	</h2>
+
+	<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+		<Skill name="TypeScript" year={2016} icon="logos:typescript-icon" />
+		<Skill name="Java/Kotlin" year={2016} icon="logos:java" />
+		<Skill name="C (99 & 11)" year={2021} icon="logos:c" />
+		<Skill name="Rust" year={2021} icon="logos:rust" />
+		<Skill name="React" year={2018} icon="logos:react" />
+		<Skill name="Kubernetes" year={2021} icon="logos:kubernetes" />
+		<Skill name="Docker" year={2020} icon="logos:docker-icon" />
+		<Skill name="AWS" year={2021} icon="logos:aws" />
+	</div>
+
+	<div class="flex gap-2 mt-8 flex-wrap">
+		<TinySkill name="Git" year={2016} icon="logos:git-icon" />
+		<TinySkill name="PostgreSQL" year={2020} icon="logos:postgresql" />
+		<TinySkill name="Python" year={2017} icon="logos:python" />
+		<TinySkill name="Spring" year={2023} icon="logos:spring-icon" />
+		<TinySkill name="Objective-C" year={2020} icon="logos:xcode" />
+		<TinySkill name="Swift" year={2020} icon="logos:swift" />
+		<TinySkill name="MongoDB" year={2020} icon="logos:mongodb-icon" />
+		<TinySkill name="Redis" year={2021} icon="logos:redis" />
+		<TinySkill name="Cloudflare" year={2019} icon="logos:cloudflare" />
+		<TinySkill name="Svelte" year={2020} icon="logos:svelte-icon" />
+		<TinySkill name="Remix" year={2021} icon="logos:remix-icon" />
+		<TinySkill name="React Router" year={2021} icon="logos:react-router" />
+		<TinySkill name="Next.js" year={2021} icon="logos:nextjs-icon" />
+		<TinySkill name="Go" year={2023} icon="logos:go" />
+	</div>
+	<p class="mt-4 text-sm font-mono text-neutral-500 dark:text-neutral-400">
+		Tip: Hover/Tap on each icon for more information.
+	</p>
+	<hr class="my-4" />
+	<h2 id="experience" class="text-xl font-bold mb-4">
 		Experience
 	</h2>
-	<div class="grid grid-cols-1 gap-8">
+	<div class="grid grid-cols-1 gap-2">
 		<Experience
 			name="SWIFTnet Automation Intern"
 			where="Swift, Inc"
 			when="June 2024 - August 2024"
+			tint="#acf9e9"
 			description={`
 				SWIFTNet handles nearly 80% of global financial traffic.
 				I'm rebuilding a core component of the testing infrastructure
@@ -71,6 +69,7 @@ const desc = [
 			name="Teaching Assistant"
 			where="George Mason University"
 			when="August 2023 - May 2025"
+			tint="#f0f0f0"
 			description={`
 				I teach a variety of students for the Computer Science
 				CS 262: Introduction to Low-level Programming course.
@@ -84,17 +83,28 @@ const desc = [
 		/>
 	</div>
 
-	<h2
-		id="skills"
-		class="font-serif text-2xl my-4"
-	>
+	<h2 id="education" class="font-mono font-bold text-xl my-4">
 		Education
 	</h2>
-	<div class="grid grid-cols-1 gap-8">
+	<div class="grid grid-cols-1 gap-2">
+		<Experience
+			name="Computer Science, M.S."
+			where="Virginia Tech"
+			when="August 2025 - December 2026"
+			tint="#861f41"
+			description={`
+				I'll be pursuing a Master's in Computer Science
+				at Virginia Tech, focusing on software engineering,
+				system design, and software architecture.
+			`}
+			link="https://vt.edu"
+			icon="vt"
+		/>
 		<Experience
 			name="Computer Science, B.S."
 			where="George Mason University"
 			when="August 2022 - May 2025"
+			tint="#f0f0f0"
 			description={`
 				I'm pursuing a Bachelor of Science in Computer Science
 				at George Mason University. I've written a paper on the
@@ -105,185 +115,152 @@ const desc = [
 			icon="gmu"
 		/>
 	</div>
-
-	<hr class="mt-2" />
-	<h2
-		id="skills"
-		class="font-serif text-2xl my-4"
-	>
-		Skills
-	</h2>
-
-	<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-		<Skill name="TypeScript" year={2016} icon={Typescript} />
-		<Skill name="Java/Kotlin" year={2016} icon={Openjdk} />
-		<Skill name="C/C++" year={2021} icon={C} />
-		<Skill name="Rust" year={2021} icon={Rust} />
-		<Skill name="React" year={2018} icon={React} />
-		<Skill name="Kubernetes" year={2021} icon={Kubernetes} />
-		<Skill name="Docker (Compose)" year={2020} icon={Docker} />
-		<Skill name="AWS" year={2021} icon={Amazonwebservices} />
-	</div>
-
-	<div class="flex gap-2 mt-10 flex-wrap">
-		<TinySkill name="Git" year={2016} icon={Git} />
-		<TinySkill name="PostgreSQL" year={2020} icon={Postgresql} />
-		<TinySkill name="Python" year={2017} icon={Python} />
-		<TinySkill name="Spring" year={2023} icon={Spring} />
-		<TinySkill name="Objective-C" year={2020} icon={Ios} />
-		<TinySkill name="Swift" year={2020} icon={Swift} />
-		<TinySkill name="MongoDB" year={2020} icon={Mongodb} />
-		<TinySkill name="Elasticsearch" year={2021} icon={Elastic} />
-		<TinySkill name="Clickhouse" year={2021} icon={Clickhouse} />
-		<TinySkill name="Redis" year={2021} icon={Redis} />
-		<TinySkill name="Cloudflare" year={2019} icon={Cloudflare} />
-		<TinySkill name="Svelte" year={2020} icon={Svelte} />
-		<TinySkill name="Remix" year={2021} icon={Remix} />
-		<TinySkill name="Next.js" year={2021} icon={Nextdotjs} />
-		<TinySkill name="Go" year={2023} icon={Go} />
-	</div>
-	<p class="my-4 text-sm text-neutral-500 dark:text-neutral-400">
-		Tip: Hover/Tap on each icon for more information.
-	</p>
-
-	<hr class="mt-2" />
-	<h2
-		id="projects"
-		class="font-serif text-2xl mt-4 mb-2"
-	>
+	<hr class="my-4" />
+	<h2 id="projects" class="font-mono font-bold text-xl mb-4">
 		Projects
 	</h2>
-	<p class="my-4">
+	<p class="mb-4">
 		This is a chronological list of projects I have worked on that are publicly available.
-		There are many more private projects that I have worked on, but they are not listed here.
-		The best place to learn about them is on my
-		{' '}
+		There are many more private projects that are not listed here.
+		The best place to learn about them is on my{' '}
 		<a
 			href="/blog"
 			class="underline"
-		>
-			blog
-		</a>
-		{' '}
-		or contacting me directly at
-		{' '}
+		>blog</a>
+		{' '}or contacting me directly at{' '}
 		<a
 			class="underline"
-			href="mailto:aarnavtale@icloud.com"
-		>
-			aarnavtale@icloud.com
-		</a>
-		{' '}
-		if you are a recruiter.
+			href="mailto:aarnav@tale.me"
+		>aarnav@tale.me</a>
+		{' '}if you are a recruiter.
 	</p>
-	<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-		<Project
-			name="Headplane"
-			description="A proper management plane for Headscale, the self-hosted Tailscale controller"
-			link="https://github.com/tale/headplane"
-			icons={[Remix, React, Typescript]}
-		/>
-		<Project
-			name="trap2"
-			description="A suckless-inspired, GPU accelerated terminal emulator built on libvterm"
-			link="https://github.com/tale/trap2"
-			icons={[C, Cmake, Opengl]}
-		/>
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
 		<Project
 			name="Canister"
 			description="High-speed search engine and analytics aggregator for iOS APT repositories"
 			link="https://canister.me"
-			icons={[Rust, Go, Typescript, Postgresql, Kubernetes]}
+			icons={[
+				"logos:rust",
+				"logos:go",
+				"logos:typescript-icon",
+				"logos:postgresql",
+				"logos:kubernetes"
+			]}
 		/>
 		<Project
 			name="kubectl-action"
 			description="GitHub Action to interact with Kubernetes clusters using kubectl"
 			link="https://github.com/tale/kubectl-action"
-			icons={[Typescript, Githubactions, Kubernetes]}
+			icons={[
+				"logos:typescript-icon",
+				"logos:github-actions",
+				"logos:kubernetes"
+			]}
+		/>
+		<Project
+			name="Headplane"
+			description="A full-featured dashboard to control your self hosted Tailscale instance"
+			link="https://github.com/tale/headplane"
+			icons={[
+				"logos:react",
+				"logos:react-router",
+				"logos:typescript-icon"
+			]}
 		/>
 		<Project
 			name="Chariz"
 			description="Enabling developers to easily sell and distribute their software on iOS"
 			link="https://chariz.com"
-			icons={[Typescript, Mongodb, React, Kubernetes]}
+			icons={[
+				"logos:typescript-icon",
+				"logos:react",
+				"logos:mongodb-icon",
+				"logos:kubernetes"
+			]}
+		/>
+		<Project
+			name="trap2"
+			description="A suckless-inspired, GPU accelerated terminal emulator built on libvterm"
+			link="https://github.com/tale/trap2"
+			icons={["logos:c", "logos:opengl"]}
 		/>
 		<Project
 			name="bruh"
 			description="A much faster alternative to the brew CLI for macOS packaging"
 			link="https://github.com/tale/bruh"
-			icons={[Typescript, Homebrew]}
+			icons={["logos:typescript-icon", "logos:homebrew"]}
 		/>
 		<Project
 			name="masonmaps"
 			description="A clone of the popular GeoGuessr game for George Mason University"
 			link="https://github.com/tale/masonmaps"
-			icons={[Openjdk, Spring]}
+			icons={["logos:java", "logos:spring-icon"]}
 		/>
 		<Project
 			name="calboard"
 			description="Minimal BlackBoard calendar proxy that fixes deadlines and cleans up clutter"
 			link="https://github.com/tale/calboard"
-			icons={[Typescript, Cloudflareworkers]}
+			icons={["logos:typescript-icon", "logos:cloudflare-workers-icon"]}
 		/>
 		<Project
 			name="kittea-bot"
 			description="A bridge between Minecraft Hypixel's in-game chat and a Discord server"
 			link="https://github.com/tale/kittea-bot"
-			icons={[Typescript, Kubernetes]}
+			icons={["logos:typescript-icon", "logos:kubernetes"]}
 		/>
 		<Project
 			name="daview"
 			description="Proxy a WebDAV instance with a nicer UI and authentication"
 			link="https://github.com/tale/daview"
-			icons={[Typescript, Kubernetes, Hetzner]}
+			icons={["logos:typescript-icon", "logos:kubernetes"]}
 		/>
 		<Project
 			name="iconset"
 			description="A nifty command-line tool to customize macOS icons quickly"
 			link="https://github.com/tale/iconset"
-			icons={[Swift, Macos]}
+			icons={["logos:swift", "logos:macos"]}
 		/>
 		<Project
 			name="logos-vscode"
 			description="Syntax and rich editor support for the Logos preprocessing language in VS Code"
 			link="https://github.com/tale/logos-vscode"
-			icons={[Typescript]}
+			icons={["logos:visual-studio-code", "logos:typescript-icon"]}
 		/>
 		<Project
 			name="Sileo"
 			description="The standard package manager that ships on thousands of jailbroken iOS devices"
 			link="https://getsileo.app"
-			icons={[Swift, Ios]}
+			icons={["logos:swift", "logos:xcode"]}
 		/>
 		<Project
 			name="lyricify"
 			description="View song lyrics from your lock screen on iOS or iPadOS, regardless of the music app"
 			link="https://chariz.com/buy/lyricify"
-			icons={[Swift, Ios]}
+			icons={["logos:swift", "logos:xcode"]}
 		/>
 		<Project
 			name="notations"
 			description="The sticky notes experience reimagined for iOS and iPadOS"
 			link="https://github.com/tale/notations"
-			icons={[Swift, Ios]}
+			icons={["logos:swift", "logos:xcode"]}
 		/>
 		<Project
 			name="Slinky.codes"
 			description="An incentive-based Python learning platform targeted towards kids (VTHacks IX)"
 			link="https://devpost.com/software/learn-py"
-			icons={[React, Postgresql, Typescript, Docker]}
+			icons={["logos:react", "logos:postgresql", "logos:typescript-icon", "logos:docker-icon"]}
 		/>
 		<Project
 			name="Grapple"
-			description="A wild space grappling game! (AcademiesHacks2 winning project)"
+			description="A wild space grappling game! (AcademiesHacks2 winning project, built using MonoGame)"
 			link="https://devpost.com/software/grappel"
-			icons={[Dotnet, Monogame]}
+			icons={["logos:c-sharp", "logos:dotnet"]}
 		/>
 		<Project
 			name="Supernova"
-			description="A procedurally generated, infinite space shooter! (HackBI IV winning project)"
+			description="A procedurally generated, infinite space shooter! (HackBI IV winning project, built using MonoGame)"
 			link="https://devpost.com/software/supernova-18oqzl"
-			icons={[Dotnet, Monogame]}
+			icons={["logos:c-sharp", "logos:dotnet"]}
 		/>
 	</div>
 </Layout>

@@ -2,14 +2,14 @@
 import RouteLink from '@/components/RouteLink.astro'
 ---
 
-<div class="flex items-center justify-between pr-2 gap-4 flex-col sm:flex-row">
-	<h1 class="text-3xl font-serif">
+<div class="grid grid-cols-1 xs:grid-cols-2 gap-1">
+	<h1 class="text-2xl font-bold">
 		Aarnav Tale
 	</h1>
-	<div class="flex items-center gap-4">
+	<div class="flex xs:justify-end items-center gap-4 font-mono">
 		<RouteLink href="/" name="Home" />
 		<RouteLink href="/blog/" name="Blog" />
 		<RouteLink href="/portfolio/" name="Portfolio" />
 	</div>
 </div>
-<hr class="my-2" />
+<hr class="my-4" />
