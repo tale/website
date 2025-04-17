@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config'
+import { readFile } from 'node:fs/promises'
 import icon from 'astro-icon'
 import sitemap from '@astrojs/sitemap'
 
@@ -9,7 +10,21 @@ export default defineConfig({
 	site: 'https://tale.me',
 	integrations: [icon(), sitemap()],
 	vite: {
-		plugins: [tailwindcss()]
+		plugins: [
+			tailwindcss(),
+			{
+				name: 'vite-plugin-ttf',
+				transform: async (_, id) => {
+					if (id.endsWith('.ttf')) {
+						const buffer = await readFile(id)
+						return {
+							code: `export default ${JSON.stringify(buffer)}`
+						}
+					}
+					return null
+				}
+			}
+		]
 	},
 
 	markdown: {

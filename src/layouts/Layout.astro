@@ -1,7 +1,8 @@
 ---
-import '@fontsource/atkinson-hyperlegible'
-import '@fontsource/crimson-pro/700.css'
+// import '@fontsource/atkinson-hyperlegible'
+// import '@fontsource/crimson-pro/700.css'
 import '@/styles/global.css'
+import '@fontsource-variable/work-sans'
 import Header from '@/components/Header.astro'
 
 interface Props {
@@ -21,6 +22,20 @@ const headline = title ? `${title} • ${name}` : name
 		<meta name="description" content={desc} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link
+			rel="preload"
+			type="font/woff2"
+			href="/fonts/berkeley-normal.woff2"
+			as="font"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			type="font/woff2"
+			href="/fonts/berkeley-bold.woff2"
+			as="font"
+			crossorigin
+		/>
 		<link rel="canonical" href={Astro.url.href} />
 		<link
 			rel="alternate"
@@ -38,7 +53,7 @@ const headline = title ? `${title} • ${name}` : name
 		<slot name="head" />
 	</head>
 
-	<body class="overscroll-none bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+	<body class="overscroll-none bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 text-base/snug">
 		<div class="max-w-3xl mx-auto p-4 my-4">
 			<Header />
 			<slot />
