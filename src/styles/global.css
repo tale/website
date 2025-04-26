@@ -1,6 +1,12 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+@layer base {
+	*:focus-visible {
+		@apply outline-none ring-2 ring-offset-3 ring-offset-neutral-50 dark:ring-offset-neutral-900 ring-blue-500;
+	}
+}
+
 @font-face {
 	font-family: "Berkeley Mono";
 	font-style: normal;
