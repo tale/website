@@ -25,10 +25,11 @@ const years = () => {
 }
 ---
 
-<div class="flex gap-4 group items-center justify-center">
+<button class="flex gap-4 group items-center justify-center">
 	<Icon name={icon} size={24} />
 	<div class={`
-		hidden absolute group-hover:block z-10 mb-20 shadow-xs font-mono
+		hidden absolute group-hover:block group-focus-within:block
+		z-10 mb-20 shadow-xs font-mono
 		bg-neutral-300 dark:bg-neutral-700 rounded-lg px-2 py-1
 		border border-neutral-400/50 dark:border-neutral-600/50
 	`}
@@ -39,4 +40,4 @@ const years = () => {
 			{`(${years()})`}
 		</p>
 	</div>
-</div>
+</button>
