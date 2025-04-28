@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content"
 import Layout from '@/layouts/Layout.astro'
+import IconButton from '@/components/IconButton.astro'
 
 const posts = await getCollection("blog")
 const desc = `
@@ -25,29 +26,41 @@ If you enjoy reading any of these posts, please feel free to share them.
 							border duration-100 p-4 rounded-lg
 							border-neutral-200 dark:border-neutral-700
 							hover:bg-neutral-100 dark:hover:bg-neutral-800
-							w-full h-full
+							w-full h-full flex justify-between items-start
 						`}
 					>
-						<h3 class="font-mono font-bold mb-1">
-							{post.data.title}
-						</h3>
-						<p class="text-neutral-500 dark:text-neutral-400 font-mono">
-							<span>
-								{post.data.date.toLocaleDateString()}
-							</span>
-							{' | '}
-							{post.data.categories.map(category => (
-								<span class={`
-									inline-block text-sm rounded-md mr-2 font-mono
-									bg-neutral-200 dark:bg-neutral-700 px-1
-								`}>
-									{category}
+						<div>
+							<h3 class="font-mono font-bold mb-1">
+								{post.data.title}
+							</h3>
+							<p class="text-neutral-500 dark:text-neutral-400 font-mono">
+								<span>
+									{post.data.date.toLocaleDateString()}
 								</span>
+								{' | '}
+								{post.data.categories.map(category => (
+									<span class={`
+										inline-block text-sm rounded-md mr-2 font-mono
+										bg-neutral-200 dark:bg-neutral-700 px-1
+									`}>
+										{category}
+									</span>
+								))}
+							</p>
+							<p class="opacity-75 mt-4">
+								{post.data.description}
+							</p>
+						</div>
+						<div
+							class={`
+								inline-flex gap-1.5 items-center p-1 rounded-md
+								bg-neutral-200 dark:bg-neutral-700
+							`}
+						>
+							{post.data.icons.map(name => (
+								<IconButton name={name} size={20} />
 							))}
-						</p>
-						<p class="opacity-75 mt-4">
-							{post.data.description}
-						</p>
+						</div>
 					</div>
 				</a>
 			))
