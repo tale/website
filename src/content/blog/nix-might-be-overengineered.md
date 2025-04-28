@@ -5,6 +5,10 @@ categories:
 - productivity
 - thoughts
 description: After using Nix for the past year or so, I decided it was time to switch back to normal tooling.
+icons:
+- material-icon-theme:nix
+- logos:macos
+- logos:git-icon
 ---
 
 > Hello! This title is pretty clickbaity, but I just wanted to clarify I spent most of this article
@@ -187,4 +191,3 @@ exists for posterity.
 I do hope that Nix will continue to grow and improve, and I'm excited to see where it goes in the future.
 Maybe one day I might revisit it and find that it's a perfect fit for me, but for now I'm content with my
 current setup.
-

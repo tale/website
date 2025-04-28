@@ -14,6 +14,7 @@ export const collections = {
 			description: z.string(),
 			date: z.string().or(z.date()).transform((val) => new Date(val)),
 			categories: z.array(z.string()).transform((val) => val.map((v) => categories[v])),
+			icons: z.array(z.string()).default([])
 		}),
 	}),
 }
