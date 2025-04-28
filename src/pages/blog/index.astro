@@ -51,16 +51,18 @@ If you enjoy reading any of these posts, please feel free to share them.
 								{post.data.description}
 							</p>
 						</div>
-						<div
-							class={`
-								inline-flex gap-1.5 items-center p-1 rounded-md
-								bg-neutral-200 dark:bg-neutral-700
-							`}
-						>
-							{post.data.icons.map(name => (
-								<IconButton name={name} size={20} />
-							))}
-						</div>
+						{post.data.icons.length > 0 ? (
+							<div
+								class={`
+									inline-flex gap-1.5 items-center p-1 rounded-md
+									bg-neutral-200 dark:bg-neutral-700
+								`}
+							>
+								{post.data.icons.map(name => (
+									<IconButton name={name} size={20} />
+								))}
+							</div>
+						) : undefined}
 					</div>
 				</a>
 			))
