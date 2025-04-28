@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon/components'
+import IconButton from './IconButton.astro'
 
 interface Props {
 	name: string
@@ -28,7 +28,7 @@ const { name, description, link, icons } = Astro.props;
 				`}
 			>
 				{icons.map(name => (
-					<Icon name={name} size={20} />
+					<IconButton name={name} size={20} />
 				))}
 			</div>
 		</div>
