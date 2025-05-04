@@ -7,7 +7,7 @@ categories:
 description: After using Nix for the past year or so, I decided it was time to switch back to normal tooling.
 icons:
 - material-icon-theme:nix
-- logos:macos
+- logos:apple
 - logos:git-icon
 ---
 
