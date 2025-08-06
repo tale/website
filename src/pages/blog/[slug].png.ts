@@ -8,9 +8,9 @@ import { fileURLToPath } from "node:url";
 import { join } from "node:path";
 import { readFile } from "node:fs/promises";
 
-import WorkSansRegular from '@/fonts/WorkSans-Regular.ttf?url'
-import WorkSansBold from '@/fonts/WorkSans-Bold.ttf?url'
-import BerkeleyMonoRegular from '@/fonts/BerkeleyMono-Regular.ttf?url';
+import WorkSansRegular from '@/assets/fonts/WorkSans-Regular.ttf?url'
+import WorkSansBold from '@/assets/fonts/WorkSans-Bold.ttf?url'
+import BerkeleyMonoRegular from '@/assets/fonts/BerkeleyMono-Regular.ttf?url';
 
 interface Props {
 	title: string
@@ -51,7 +51,7 @@ export async function GET(context: APIContext<Props>) {
 							tw="w-24 rounded-full border border-2 border-stone-300"
 						/>
 						<div
-							tw="flex flex-col ml-6 gap-4 text-stone-300"
+							tw="flex flex-col ml-6 text-stone-300"
 							style="font-family: 'Berkeley Mono';"
 						>
 							<span tw="text-4xl font-bold">
@@ -108,7 +108,12 @@ export async function getStaticPaths() {
 }
 
 async function loadFontConfig() {
-	const root = fileURLToPath(new URL('../../../', import.meta.url).href);
+	// This is horrible, horrible code
+	const root = fileURLToPath(new URL(import.meta.env.DEV
+		? '../../../'
+		: '../../',
+		import.meta.url).href);
+
 	const fonts = [
 		{ name: 'Work Sans', weight: 400, path: join(root, WorkSansRegular) },
 		{ name: 'Work Sans', weight: 700, path: join(root, WorkSansBold) },
