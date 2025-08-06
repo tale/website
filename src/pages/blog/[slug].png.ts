@@ -1,12 +1,16 @@
-import satori from "satori";
+import satori, { type FontWeight, type SatoriOptions } from "satori";
 import { html } from "satori-html";
-import { Resvg } from "@resvg/resvg-js";
+import { Resvg, type ResvgRenderOptions } from "@resvg/resvg-js";
 import { getCollection } from "astro:content";
 import type { APIContext } from "astro";
+import sharp from "sharp";
+import { fileURLToPath } from "node:url";
+import { join } from "node:path";
+import { readFile } from "node:fs/promises";
 
-import WorkSansRegular from '@/fonts/WorkSans-Regular.ttf'
-import WorkSansBold from '@/fonts/WorkSans-Bold.ttf'
-import BerkeleyMonoRegular from '@/fonts/BerkeleyMono-Regular.ttf'
+import WorkSansRegular from '@/fonts/WorkSans-Regular.ttf?url'
+import WorkSansBold from '@/fonts/WorkSans-Bold.ttf?url'
+import BerkeleyMonoRegular from '@/fonts/BerkeleyMono-Regular.ttf?url';
 
 interface Props {
 	title: string
@@ -16,9 +20,10 @@ interface Props {
 
 const dimensions = {
 	width: 1200,
-	height: 675,
+	height: 630,
 }
 
+const { satoriConfig, resvgConfig } = await loadFontConfig();
 export async function GET(context: APIContext<Props>) {
 	const { title, date, desc } = context.props
 	const dateView = date.toLocaleDateString('en-US', {
@@ -26,83 +31,58 @@ export async function GET(context: APIContext<Props>) {
 	});
 
 	const view = html`
-		<div
-			tw="flex w-full h-full p-8"
-			style="background-image: linear-gradient(85.2deg, rgba(33,3,40,1) 7.5%, rgba(65,5,72,1) 88.7%);"
-		>
-			<div tw="
-				flex flex-col w-full h-full p-8 pt-0 justify-between
-				border border-1 border-neutral-100
-			">
-				<div tw="flex flex-col my-24">
-					<div
-						tw="text-7xl font-bold"
-						style="
-							background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
-							background-clip: text;
-							-webkit-background-clip: text;
-							color: transparent;
-						"
-					>
+		<div tw="flex w-full h-full p-8 bg-slate-900">
+			<div tw="flex flex-col w-full h-full p-8 pt-0 justify-between border-2 border-stone-300">
+				<div
+					tw="flex flex-col my-24"
+					style="font-family: 'Work Sans'; font-weight: 400;"
+				>
+					<div tw="text-7xl font-bold text-stone-100">
 						${title}
 					</div>
-					<p tw="text-3xl text-neutral-300 w-3/4 mt-8">
+					<p tw="text-3xl text-stone-200 w-3/4 mt-8">
 						${desc}
 					</p>
 				</div>
-				<div tw="flex items-center justify-between">
+				<div tw="flex items-end justify-between">
 					<div tw="flex items-center">
 						<img
 							src="https://github.com/tale.png?s=300"
-							tw="w-16 rounded-full border border-2 border-neutral-700"
+							tw="w-24 rounded-full border border-2 border-stone-300"
 						/>
-						<p
-							tw="ml-6 text-3xl text-neutral-300"
-							style="font-family: 'Berkeley Mono', 'Courier New', monospace;"
+						<div
+							tw="flex flex-col ml-6 gap-4 text-stone-300"
+							style="font-family: 'Berkeley Mono';"
 						>
-							Aarnav Tale • ${dateView}
-						</p>
+							<span tw="text-4xl font-bold">
+								Aarnav Tale
+							</span>
+							<span tw="text-3xl">
+								tale.me
+							</span>
+						</div>
 					</div>
 					<p
-						tw="text-3xl text-neutral-300 mr-3"
-						style="font-family: 'Berkeley Mono', 'Courier New', monospace;"
+						tw="text-4xl text-stone-300 mr-3"
+						style="font-family: 'Berkeley Mono';"
 					>
-						tale.me
+						${dateView}
 					</p>
 				</div>
 			</div>
 		</div>
 	`
-	const svg = await satori(view, {
-		fonts: [
-			{
-				name: 'Work Sans',
-				data: Buffer.from(WorkSansRegular),
-				weight: 400,
-			},
-			{
-				name: 'Work Sans',
-				data: Buffer.from(WorkSansBold),
-				weight: 700,
-			},
-			{
-				name: 'Berkeley Mono',
-				data: Buffer.from(BerkeleyMonoRegular),
-				weight: 400,
-			}
-		],
-		height: dimensions.height,
-		width: dimensions.width,
-	});
+	const svg = await satori(view, satoriConfig);
+	const image = new Resvg(svg, resvgConfig).render();
+	const downsampled = await sharp(image.asPng())
+		.resize(dimensions.width, dimensions.height, {
+			kernel: 'lanczos2',
+			withoutEnlargement: true,
+		})
+		.png()
+		.toBuffer();
 
-	const image = new Resvg(svg, {
-		fitTo: {
-			mode: 'width',
-			value: dimensions.width,
-		},
-	}).render()
-
-	return new Response(image.asPng(), {
+	return new Response(new Uint8Array(downsampled), {
 		headers: {
 			'Content-Type': 'image/png',
 		},
@@ -125,4 +105,45 @@ export async function getStaticPaths() {
 	})
 
 	return paths
+}
+
+async function loadFontConfig() {
+	const root = fileURLToPath(new URL('../../../', import.meta.url).href);
+	const fonts = [
+		{ name: 'Work Sans', weight: 400, path: join(root, WorkSansRegular) },
+		{ name: 'Work Sans', weight: 700, path: join(root, WorkSansBold) },
+		{ name: 'Berkeley Mono', weight: 400, path: join(root, BerkeleyMonoRegular) }
+	]
+
+	const paths = fonts.map(f => f.path);
+
+	const resvgConfig = {
+		dpi: 288,
+		fitTo: { mode: 'zoom', value: 8 },
+		shapeRendering: 2,
+		textRendering: 2,
+		imageRendering: 0,
+		font: {
+			loadSystemFonts: false,
+			fontFiles: paths,
+		},
+	} satisfies ResvgRenderOptions
+
+	const satoriConfig = {
+		height: dimensions.height,
+		width: dimensions.width,
+		embedFont: false,
+		pointScaleFactor: 3,
+		fonts: await Promise.all(
+			fonts.map(async (font) => {
+				const data = await readFile(font.path);
+				return {
+					name: font.name,
+					data: Buffer.from(data),
+					weight: font.weight as FontWeight,
+				};
+			})
+		),
+	} satisfies SatoriOptions;
+	return { satoriConfig, resvgConfig };
 }
