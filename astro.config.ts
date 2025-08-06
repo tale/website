@@ -2,7 +2,6 @@ import { defineConfig } from 'astro/config'
 import { readFile } from 'node:fs/promises'
 import icon from 'astro-icon'
 import sitemap from '@astrojs/sitemap'
-
 import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
