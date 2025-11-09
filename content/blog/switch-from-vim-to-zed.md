@@ -1,14 +1,7 @@
 ---
 title: Why I Switched from Vim to Zed
 date: 2025-03-03
-categories:
-- technical
-- productivity
 description: A graphical text editor that might be better than Vim?
-icons:
-- simple-icons:zedindustries
-- devicon:neovim
-- simple-icons:tmux
 ---
 
 ![Preview of Zed](@/assets/zed-preview.png)

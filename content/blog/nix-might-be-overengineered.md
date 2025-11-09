@@ -1,14 +1,7 @@
 ---
 title: Nix Might be Overengineered
 date: 2024-03-21
-categories:
-- productivity
-- thoughts
 description: After using Nix for the past year or so, I decided it was time to switch back to normal tooling.
-icons:
-- material-icon-theme:nix
-- logos:apple
-- logos:git-icon
 ---
 
 > Hello! This title is pretty clickbaity, but I just wanted to clarify I spent most of this article

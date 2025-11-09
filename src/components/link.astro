@@ -1,0 +1,20 @@
+---
+interface Props {
+	to: string;
+	external?: boolean;
+	wrap?: boolean;
+	active?: boolean;
+}
+
+const { to, external = false, wrap = false, active = false } = Astro.props;
+const text = await Astro.slots.render("default");
+---
+
+<a
+	href={to}
+	target={external ? "_blank" : "_self"}
+	rel={external ? "noopener noreferrer" : undefined}
+	class={`text-blue-500 dark:text-blue-400 hover:underline
+		${wrap ? "" : "text-nowrap"} ${active ? "font-bold underline" : ""}`}
+	set:html={text}
+/>

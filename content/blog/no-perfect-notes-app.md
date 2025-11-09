@@ -1,13 +1,7 @@
 ---
 title: There is no Perfect Note-Taking App
 date: 2024-02-09
-categories:
-- productivity
 description: I attempted to integrate Obsidian.md with Neovim, but realized why the setup didn't work for me.
-icons:
-- logos:obsidian-icon
-- logos:vim
-- logos:javascript
 ---
 
 ![Preview of Obsync](@/assets/obsync-preview.png)

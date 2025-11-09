@@ -1,0 +1,14 @@
+---
+import ascii from "@/assets/ascii.txt?raw";
+const [mountain, base] = ascii.split("\n\n");
+const html = mountain?.replace(/\*/g, '<span class="flake">*</span>');
+---
+
+<div
+	class={`
+	whitespace-pre select-none leading-tight text-[0.4rem] xs:text-[0.6rem]
+	sm:text-xs w-full mx-auto mb-4 flex flex-col items-center justify-center
+`}
+>
+	<pre class="opacity-50" set:html={html} /><pre class="opacity-70">{base}</pre>
+</div>

@@ -1,0 +1,76 @@
+[
+	{
+		"id": "headplane",
+		"name": "Headplane",
+		"description": "Full-featured admin interface for Headscale",
+		"link": "https://headplane.net",
+		"icons": [
+			"go",
+			"react",
+			"typescript"
+		]
+	},
+	{
+		"id": "canister",
+		"name": "Canister",
+		"description": "Search engine and analytics aggregator for iOS",
+		"link": "https://canister.me",
+		"icons": [
+			"kubernetes",
+			"rust",
+			"typescript"
+		]
+	},
+	{
+		"id": "rootbeer",
+		"name": "Rootbeer",
+		"description": "Deterministic system configurations in Lua",
+		"link": "https://tale.github.io/rootbeer",
+		"icons": [
+			"c",
+			"lua"
+		]
+	},
+	{
+		"id": "kubectl-action",
+		"name": "kubectl-action",
+		"description": "Manage Kubernetes clusters from GitHub Actions",
+		"link": "https://github.com/tale/kubectl-action",
+		"icons": [
+			"github_actions",
+			"typescript"
+		]
+	},
+	{
+		"id": "masonmaps",
+		"name": "masonmaps",
+		"description": "A clone of the popular GeoGuessr game for GMU",
+		"link": "https://github.com/tale/masonmaps",
+		"icons": [
+			"java",
+			"react",
+			"spring"
+		]
+	},
+	{
+		"id": "lyricify",
+		"name": "Lyricify",
+		"description": "View song lyrics from your lock screen",
+		"link": "https://chariz.com/buy/lyricify",
+		"icons": [
+			"swift",
+			"xcode"
+		]
+	},
+	{
+		"id": "grapple",
+		"name": "Grapple",
+		"description": "Hackathon winning wild-space grappling game",
+		"link": "https://devpost.com/software/grappel",
+		"icons": [
+			"c_sharp",
+			"dotnet",
+			"monogame"
+		]
+	}
+]

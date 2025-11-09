@@ -9,23 +9,76 @@
 
 @font-face {
 	font-family: "Berkeley Mono";
+	font-display: swap;
 	font-style: normal;
-	font-weight: 400;
-	font-display: block;
-	src: url("/fonts/berkeley-normal.woff2") format("woff2");
-}
-
-@font-face {
-	font-family: "Berkeley Mono";
-	font-style: normal;
-	font-weight: 700;
-	font-display: block;
-	src: url("/fonts/berkeley-bold.woff2") format("woff2");
+	font-weight: 100 150;
+	src: url("/fonts/berkeley.woff2") format("woff2-variations");
 }
 
 @theme {
-	--font-sans: "Work Sans Variable", "Arial", "sans-serif";
-	--font-serif: "Crimson Pro", "serif";
+	--font-weight-normal: 100;
+	--font-weight-bold: 150;
 	--font-mono: "Berkeley Mono", "monospace";
 	--breakpoint-xs: 28rem;
+}
+
+.flake {
+	animation: diagonal-snow 4.5s linear infinite;
+	display: inline-block;
+	position: relative;
+	font-weight: 150;
+	text-shadow:
+		0 0 1px rgba(255,255,255,0.8),
+		0 0 2px rgba(255,255,255,0.5),
+		0 0 3px rgba(255,255,255,0.2);
+}
+
+.flake:nth-of-type(3n) {
+	animation-delay: 1s;
+	animation-duration: 3s;
+}
+
+.flake:nth-of-type(4n) {
+	animation-delay: 2s;
+	animation-duration: 4s;
+}
+
+.flake:nth-of-type(5n) {
+	animation-delay: 0.5s;
+	animation-duration: 2.8s;
+}
+
+.flake:nth-of-type(6n) {
+	animation-delay: 1.8s;
+	animation-duration: 3.8s;
+	opacity: 0.9;
+}
+
+.flake:nth-of-type(7n) {
+	animation-delay: 0s;
+	animation-duration: 4.5s;
+	opacity: 0.7;
+}
+
+@keyframes diagonal-snow {
+	0% {
+		transform: translate(-0.5em, -0.5em) rotate(0.5deg);
+		opacity: 0;
+	}
+	10% {
+		transform: translate(0em, 0em) rotate(1deg);
+		opacity: 1;
+	}
+	70% {
+		transform: translate(2em, 2.5em) rotate(3deg);
+		opacity: 0.9;
+	}
+	90% {
+		transform: translate(2.5em, 3em) rotate(4deg);
+		opacity: 0.5;
+	}
+	100% {
+		transform: translate(3em, 3.5em) rotate(5deg);
+		opacity: 0;
+	}
 }

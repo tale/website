@@ -1,119 +1,25 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import Project from '@/components/Project.astro';
-import { Icon } from 'astro-icon/components';
-
-const desc = `
-I'm Aarnav Tale, a software engineer and Computer Science Master's student
-at USC. I specialize in low-level backend optimizations, DevOps, and React frontends.
-I also work on various open-source and personal interest projects.
-`.replace('\n', ' ');
+import Blog from "@/components/blog.astro";
+import Gear from "@/components/gear.astro";
+import Link from "@/components/link.astro";
+import Site from "@/layouts/site.astro";
 ---
 
-<Layout desc={desc}>
+<Site desc="Aarnav Tale's personal website and blog.">
 	<p>
-		I'm Aarnav Tale, a software engineer at Spear AI and Computer Science
-		Master's student at the University of Southern California. I specialize
-		in defense and security, with experience in low-level backend, DevOps,
-		and React.
+		Software engineer by day with a passion for solving big-data problems and
+		building scalable systems. I also dabble in open-source projects on the side
+		<Link external to="https://github.com/tale">[github ->]</Link>.
 	</p>
 	<br />
 	<p>
-		You may have seen me around the internet working on various open-source
-		projects. I work on things that interest me or can potentially improve
-		my own workflows. Besides programming, I value spending time outdoors,
-		rock climbing, and exploring new places.
+		When away from the keyboard, I'm either rock climbing, or skiing if it's
+		winter. Feel free to get in touch with me for any reason, both professional
+		or personal
+		<Link external to="mailto:aarnav@tale.me">[aarnav@tale.me ->]</Link>.
 	</p>
-
-	<hr class="my-4" />
-	<h2 class="font-bold text-xl mb-4">
-		Current Projects
-	</h2>
-	<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
-		<Project
-			name="Canister"
-			description="High-speed search engine and analytics aggregator for iOS APT repositories"
-			link="https://canister.me"
-			icons={[
-				"logos:rust",
-				"logos:go",
-				"logos:typescript-icon",
-				"logos:postgresql",
-				"logos:kubernetes"
-			]}
-		/>
-		<Project
-			name="rootbeer"
-			description="An in-progress tool to deterministically manage your system configuration in Lua"
-			link="https://tale.github.io/rootbeer"
-			icons={[
-				"logos:c",
-				"devicon:lua",
-				"material-icon-theme:meson",
-			]}
-		/>
-		<Project
-			name="Headplane"
-			description="A full-featured dashboard to control your self hosted Tailscale instance"
-			link="https://github.com/tale/headplane"
-			icons={[
-				"logos:react",
-				"logos:react-router",
-				"logos:typescript-icon"
-			]}
-		/>
-		<Project
-			name="Chariz"
-			description="Enabling developers to easily sell and distribute their software on iOS"
-			link="https://chariz.com"
-			icons={[
-				"logos:typescript-icon",
-				"logos:react",
-				"logos:mongodb-icon",
-				"logos:kubernetes"
-			]}
-		/>
-	</div>
-	<p class="mt-4 font-mono text-sm">
-		View{' '}
-		<a
-			href="/portfolio#projects"
-			class="underline"
-		>all projects</a>
-		{' '}or visit my{' '}
-		<a
-			href="https://github.com/tale"
-			class="underline"
-			target="_blank"
-			rel="noreferrer"
-		>GitHub</a>
-		{' '}profile
-	</p>
-	<hr class="my-4" />
-	<div class={`
-		inline-flex gap-1.5 items-center p-1 rounded-md
-		bg-neutral-200 dark:bg-neutral-700
-	`}>
-		<a
-			href="https://github.com/tale"
-			target="_blank"
-			rel="noreferrer"
-		>
-			<Icon name="logos:github-icon" size={24} class="inline-block" />
-		</a>
-		<a
-			href="https://x.com/aarnavtale"
-			target="_blank"
-			rel="noreferrer"
-		>
-			<Icon name="logos:x" size={24} class="inline-block" />
-		</a>
-		<a
-			href="https://www.linkedin.com/in/aarnavtale"
-			target="_blank"
-			rel="noreferrer"
-		>
-			<Icon name="logos:linkedin-icon" size={24} class="inline-block" />
-		</a>
-	</div>
-</Layout>
+	<br />
+	<Blog />
+	<br />
+	<Gear />
+</Site>

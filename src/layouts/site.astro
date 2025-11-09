@@ -1,0 +1,75 @@
+---
+import "@/styles/global.css";
+import Link from "@/components/link.astro";
+import ASCII from "@/components/ascii.astro";
+
+interface Props {
+	title?: string;
+	desc?: string;
+}
+
+const { title, desc } = Astro.props;
+const { pathname } = Astro.url;
+
+const name = "Aarnav Tale";
+const headline = title ? `${title} • ${name}` : name;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={desc} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link
+			as="font"
+			crossorigin
+			rel="preload"
+			href="/fonts/berkeley.woff2"
+			type="font/woff2"
+		/>
+		<link rel="canonical" href={Astro.url.href} />
+		<link
+			rel="alternate"
+			type="application/rss+xml"
+			title={headline}
+			href={new URL("rss.xml", Astro.site)}
+		/>
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<title>{headline}</title>
+
+		<meta name="title" content={headline} />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="darkreader-lock" />
+
+		<slot name="head" />
+	</head>
+
+	<body
+		class="flex min-h-screen flex-col overscroll-none bg-neutral-50 text-base/snug text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100"
+	>
+		<div class="mx-auto my-4 w-full max-w-3xl flex-1 p-4 font-mono font-normal">
+			<div class="xs:flex-row flex flex-col items-center gap-2">
+				<h1 class="text-2xl font-bold">
+					<span class="opacity-50">ᨒ</span>
+					Aarnav Tale
+				</h1>
+				<nav class="xs:ml-auto w-fit">
+					<Link active={pathname === "/"} to="/">[Home]</Link>
+					<Link active={pathname.startsWith("/portfolio")} to="/portfolio/">
+						[Portfolio]
+					</Link>
+				</nav>
+			</div>
+			<hr class="my-4" />
+			<slot />
+		</div>
+		<footer class="my-8 w-full font-mono font-normal">
+			<ASCII />
+			<p class="text-center text-sm opacity-50">
+				&copy; {new Date().getFullYear()} Aarnav Tale
+			</p>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+import Link from "@/components/link.astro";
+
+const posts = await getCollection("blog");
+const formatter = new Intl.DateTimeFormat("en-US", {
+	year: "numeric",
+	month: "long",
+	day: "numeric",
+});
+---
+
+<h2 class="font-bold">Blog Posts</h2>
+<ul class="xs:space-y-1 list-inside space-y-3 sm:space-y-0">
+	{
+		posts
+			.sort((a, b) => (a.data.date > b.data.date ? -1 : 1))
+			.map((post) => (
+				<li>
+					*
+					<Link wrap to={`/blog/${post.id}`}>
+						{post.data.title}
+					</Link>
+					<span class="opacity-60">({formatter.format(post.data.date)})</span>
+				</li>
+			))
+	}
+</ul>
