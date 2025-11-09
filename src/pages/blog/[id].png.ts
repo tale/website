@@ -53,6 +53,7 @@ export async function GET({
 				backgroundColor: "#101010",
 				color: "white",
 				fontFamily: "Berkeley Mono",
+				lineHeight: 1,
 			},
 			children: [
 				{
@@ -117,9 +118,7 @@ export async function GET({
 							whiteSpace: "pre",
 							fontFamily: "Berkeley Mono",
 							fontSize: 16,
-							lineHeight: 1,
-							opacity: 0.7,
-							color: "#888888",
+							color: "#707070",
 						},
 						children: mountain,
 					},
