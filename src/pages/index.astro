@@ -3,9 +3,26 @@ import Blog from "@/components/blog.astro";
 import Gear from "@/components/gear.astro";
 import Link from "@/components/link.astro";
 import Site from "@/layouts/site.astro";
+
+const desc = "Aarnav Tale's personal website and blog.";
+const imageUrl = new URL("/assets/default.png", Astro.url);
 ---
 
-<Site desc="Aarnav Tale's personal website and blog.">
+<Fragment slot="head">
+	<meta property="og:url" content={Astro.url.href} />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Aarnav Tale" />
+	<meta property="og:description" content={desc} />
+	<meta property="og:image" content={imageUrl.href} />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@aarnavtale" />
+	<meta name="twitter:creator" content="@aarnavtale" />
+	<meta name="twitter:title" content="Aarnav Tale" />
+	<meta name="twitter:description" content={desc} />
+	<meta name="twitter:image" content={imageUrl.href} />
+</Fragment>
+
+<Site desc={desc}>
 	<p>
 		Software engineer by day with a passion for solving big-data problems and
 		building scalable systems. I also dabble in open-source projects on the side

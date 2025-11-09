@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
-const imageUrl = new URL(`/blog/${post.id}.png`, Astro.url);
+const imageUrl = new URL(`/assets/${post.id}.png`, Astro.url);
 const formatter = new Intl.DateTimeFormat("en-US", {
 	year: "numeric",
 	month: "long",

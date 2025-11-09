@@ -7,10 +7,22 @@ import ascii from "@/assets/ascii.txt?raw";
 
 export async function getStaticPaths() {
 	const posts = await getCollection("blog");
-	return posts.map((post) => ({
-		params: { id: post.id },
-		props: post.data,
-	}));
+	return [
+		...posts.map((post) => ({
+			params: { id: post.id },
+			props: post.data,
+		})),
+		{
+			params: { id: "default" },
+			props: {
+				title: "Aarnav Tale",
+				date: null,
+				description:
+					"Software engineer, writer, open-source enthusiast," +
+					" rock climber, and skier.",
+			},
+		},
+	];
 }
 
 const WIDTH = 1200;
@@ -74,7 +86,7 @@ export async function GET({
 									style: {
 										opacity: 0.6,
 									},
-									children: formatter.format(date),
+									children: date ? formatter.format(date) : "",
 								},
 							},
 						],
@@ -115,6 +127,7 @@ export async function GET({
 					props: {
 						style: {
 							marginLeft: "auto",
+							marginTop: "auto",
 							whiteSpace: "pre",
 							fontFamily: "Berkeley Mono",
 							fontSize: 16,
