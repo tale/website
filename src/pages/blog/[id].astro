@@ -1,0 +1,62 @@
+---
+import { getCollection, render } from "astro:content";
+import Link from "@/components/link.astro";
+import Site from "@/layouts/site.astro";
+
+export async function getStaticPaths() {
+	const posts = await getCollection("blog");
+	return posts.map((post) => ({
+		params: { id: post.id },
+		props: { post },
+	}));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const imageUrl = new URL(`/blog/${post.id}.png`, Astro.url);
+const formatter = new Intl.DateTimeFormat("en-US", {
+	year: "numeric",
+	month: "long",
+	day: "numeric",
+});
+---
+
+<Fragment slot="head">
+	<meta property="og:url" content={Astro.url.href} />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content={post.data.title} />
+	<meta property="og:description" content={post.data.description} />
+	<meta property="og:image" content={imageUrl.href} />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@aarnavtale" />
+	<meta name="twitter:creator" content="@aarnavtale" />
+	<meta name="twitter:title" content={post.data.title} />
+	<meta name="twitter:description" content={post.data.description} />
+	<meta name="twitter:image" content={imageUrl.href} />
+</Fragment>
+
+<Site title={post.data.title} desc={post.data.description}>
+	<p class="flex items-center">
+		<Link to="/">{"[<- Back]"}</Link>
+		<span class="ml-auto opacity-60">{formatter.format(post.data.date)}</span>
+	</p>
+	<br />
+	<h1 class="text-2xl font-bold">
+		{post.data.title}
+	</h1>
+	<br />
+	<div
+		class={`
+			prose prose-md dark:prose-invert prose-md
+			prose-img:rounded-none prose-img:shadow-lg prose-img:mx-auto
+			prose-video:rounded-none prose-video:shadow-md prose-video:mx-auto
+			prose-figcaption:mt-2 prose-figcaption:text-center
+			prose-figcaption:font-bold prose-figcaption:text-sm
+			prose-blockquote:font-normal prose-blockquote:opacity-80
+			prose-pre:font-normal mb-16 max-w-3xl
+		`}
+	>
+		<Content />
+	</div>
+</Site>

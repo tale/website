@@ -1,0 +1,32 @@
+---
+const gear = [
+	{
+		name: "Scarpa Arpia V",
+		desc: "Climbing shoes",
+	},
+	{
+		name: "Dalbello Asolo 130s",
+		desc: "Ski boots",
+	},
+	{
+		name: "Nordica Enforcer 99s",
+		desc: "All-rounder skis",
+	},
+	{
+		name: "K2 Mindbender 85s",
+		desc: "Carving skis",
+	},
+];
+---
+
+<h2 class="font-bold">Ski/Climbing Gear</h2>
+<ul class="xs:space-y-1 list-inside space-y-3 sm:space-y-0">
+	{
+		gear.map((item) => (
+			<li>
+				*{item.name}
+				<span class="opacity-60">({item.desc})</span>
+			</li>
+		))
+	}
+</ul>

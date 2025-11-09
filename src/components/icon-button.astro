@@ -1,0 +1,45 @@
+---
+import { Icon } from "astro-icon/components";
+const mapping = {
+	c: ["logos:c", "C"],
+	c_sharp: ["logos:c-sharp", "C#"],
+	dotnet: ["logos:dotnet", ".NET"],
+	go: ["logos:go", "Go"],
+	github_actions: ["logos:github-actions", "GitHub Actions"],
+	java: ["logos:java", "Java"],
+	kubernetes: ["logos:kubernetes", "Kubernetes"],
+	lua: ["devicon:lua", "Lua"],
+	monogame: ["devicon:monogame", "MonoGame"],
+	react: ["logos:react", "React"],
+	spring: ["logos:spring-icon", "Spring Boot"],
+	swift: ["logos:swift", "Swift"],
+	rust: ["logos:rust", "Rust"],
+	typescript: ["logos:typescript-icon", "TypeScript"],
+	xcode: ["logos:xcode", "Xcode"],
+};
+
+interface Props {
+	name: (string & {}) | keyof typeof mapping;
+	size?: number;
+}
+
+const { name, size = 20 } = Astro.props;
+const lookup = mapping[name as keyof typeof mapping];
+if (!lookup) {
+	throw new Error(`Icon "${name}" not mapped yet`);
+}
+
+const [icon, label] = lookup;
+---
+
+<button class="group flex items-center justify-center gap-4">
+	<Icon name={icon} size={size} />
+	<div
+		class={`
+			hidden absolute group-hover:block group-focus-within:block z-10 mb-20 px-0.5
+			bg-neutral-700 text-neutral-100 dark:bg-neutral-300 dark:text-neutral-900
+	`}
+	>
+		<p>{label}</p>
+	</div>
+</button>
