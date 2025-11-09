@@ -28,6 +28,7 @@ export const collections = {
 			id: z.string().startsWith("edu:").or(z.string().startsWith("exp:")),
 			role: z.string(),
 			org: z.string(),
+			abbr: z.string().optional(),
 			range: z.number().or(z.tuple([z.number(), z.number()])),
 			tint: z.string().startsWith("#"),
 			link: z.string().url().optional(),

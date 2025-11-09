@@ -14,11 +14,12 @@ const projects = await getCollection("projects");
 				<span>
 					{data.link ? (
 						<Link external to={data.link}>
-							[{data.name} ->]:
+							[{data.name} ->]
 						</Link>
 					) : (
-						`${data.name}:`
+						data.name
 					)}
+					<br class="sm:hidden" />
 					{data.description}
 				</span>
 
