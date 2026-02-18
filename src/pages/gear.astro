@@ -1,0 +1,88 @@
+---
+import Site from "@/layouts/site.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+const gear = await getCollection("gear");
+const skis = gear.filter((item) => item.data.type.includes("ski"));
+const shoes = gear.filter((item) => item.data.type.includes("shoe"));
+const rest = gear.filter(
+	(item) =>
+		!item.data.type.includes("ski") && !item.data.type.includes("shoe"),
+);
+
+const imageImports = import.meta.glob<{ default: ImageMetadata }>(
+	"@/assets/gear/*.{jpg,png}",
+	{ eager: true },
+);
+const images = new Map(
+	Object.entries(imageImports).map(([path, meta]) => [
+		path.split("/").pop()!.split(".")[0],
+		meta.default,
+	]),
+);
+
+const desc = "Aarnav Tale's ski and climbing gear.";
+---
+
+<Site title="Gear" {desc}>
+	<p>
+		A non-comprehensive list of the outdoor gear I use for skiing, climbing,
+		and the start of some mountaineering. Only the major pieces of gear are
+		listed here.
+	</p>
+	<br />
+	<h2 class="font-bold">Skis</h2>
+	<div class="mt-2 space-y-3">
+		{
+			skis.map((item) => (
+				<div class="group border border-neutral-300 p-3 dark:border-neutral-700">
+					{images.has(item.id) && (
+						<div class="flex h-40 items-center overflow-hidden bg-neutral-100 dark:bg-neutral-800">
+							<Image
+								src={images.get(item.id)!}
+								alt={item.data.name}
+								class="w-full object-cover transition-transform group-hover:scale-105"
+							/>
+						</div>
+					)}
+					<p class="mt-2 font-bold">{item.data.name}</p>
+					<p class="text-sm opacity-60">{item.data.desc}</p>
+				</div>
+			))
+		}
+	</div>
+	<br />
+	<h2 class="font-bold">Shoes</h2>
+	<div class="mt-2 grid grid-cols-1 gap-3 sm:grid-cols-2">
+		{
+			shoes.map((item) => (
+				<div class="group border border-neutral-300 p-3 dark:border-neutral-700">
+					{images.has(item.id) && (
+						<div class="flex h-56 items-center justify-center overflow-hidden bg-neutral-100 dark:bg-neutral-800">
+							<Image
+								src={images.get(item.id)!}
+								alt={item.data.name}
+								class="h-full object-contain transition-transform group-hover:scale-105"
+							/>
+						</div>
+					)}
+					<p class="mt-2 font-bold">{item.data.name}</p>
+					<p class="text-sm opacity-60">{item.data.desc}</p>
+				</div>
+			))
+		}
+	</div>
+	<br />
+	<h2 class="font-bold">Other</h2>
+	<div class="mt-2 grid grid-cols-1 gap-3 sm:grid-cols-2">
+		{
+			rest.map((item) => (
+				<div class="border border-neutral-300 p-3 dark:border-neutral-700">
+					<p class="font-bold">{item.data.name}</p>
+					<p class="text-sm opacity-60">{item.data.desc}</p>
+				</div>
+			))
+		}
+	</div>
+</Site>

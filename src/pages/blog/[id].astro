@@ -12,13 +12,20 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
 const imageUrl = new URL(`/assets/${post.id}.png`, Astro.url);
 const formatter = new Intl.DateTimeFormat("en-US", {
 	year: "numeric",
 	month: "long",
 	day: "numeric",
 });
+
+const tableOfContents = headings
+	.filter((heading) => heading.depth <= 3)
+	.map((heading) => ({
+		text: heading.text,
+		href: `#${heading.slug}`,
+	}));
 ---
 
 <Fragment slot="head">
@@ -37,6 +44,34 @@ const formatter = new Intl.DateTimeFormat("en-US", {
 </Fragment>
 
 <Site title={post.data.title} desc={post.data.description}>
+	{
+		tableOfContents.length > 0 && (
+			<div class="fixed top-32 right-8 hidden max-h-[70vh] w-64 overflow-y-auto xl:block">
+				<h2 class="mb-2 font-bold">On this page</h2>
+				<ul class="list-inside space-y-1 text-sm">
+					{tableOfContents.map((item) => (
+						<li>
+							<a href={item.href} class="hover:underline">
+								- {item.text}
+							</a>
+						</li>
+					))}
+				</ul>
+			</div>
+			<div class="block xl:hidden">
+				<h2 class="mb-2 font-bold">On this page</h2>
+				<ul class="list-inside space-y-1 text-sm">
+					{tableOfContents.map((item) => (
+						<li>
+							<a href={item.href} class="hover:underline">
+								- {item.text}
+							</a>
+						</li>
+					))}
+				</ul>
+			</div>
+		)
+	}
 	<p class="flex items-center">
 		<Link to="/">{"[<- Back]"}</Link>
 		<span class="ml-auto opacity-60">{formatter.format(post.data.date)}</span>
@@ -55,6 +90,7 @@ const formatter = new Intl.DateTimeFormat("en-US", {
 			prose-figcaption:font-bold prose-figcaption:text-sm
 			prose-blockquote:font-normal prose-blockquote:opacity-80
 			prose-pre:font-normal mb-16 max-w-3xl prose-p:leading-relaxed
+			prose-h2:text-xl prose-h3:text-lg
 		`}
 	>
 		<Content />
