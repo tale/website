@@ -49,7 +49,9 @@ const headline = title ? `${title} • ${name}` : name;
 	<body
 		class="flex min-h-screen flex-col overscroll-none bg-neutral-50 text-base/snug text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100"
 	>
-		<div class="mx-auto my-4 w-full max-w-3xl flex-1 p-4 font-mono font-normal">
+		<div
+			class="mx-auto my-4 w-full max-w-3xl flex-1 p-4 font-mono font-normal"
+		>
 			<div class="xs:flex-row flex flex-col items-center gap-2">
 				<h1 class="text-2xl font-bold">
 					<span class="opacity-50">ᨒ</span>
@@ -57,9 +59,15 @@ const headline = title ? `${title} • ${name}` : name;
 				</h1>
 				<nav class="xs:ml-auto w-fit">
 					<Link active={pathname === "/"} to="/">[Home]</Link>
-					<Link active={pathname.startsWith("/portfolio")} to="/portfolio/">
+					<Link
+						active={pathname.startsWith("/portfolio")}
+						to="/portfolio/"
+					>
 						[Portfolio]
 					</Link>
+					<Link active={pathname.startsWith("/gear")} to="/gear/"
+						>[Gear]</Link
+					>
 				</nav>
 			</div>
 			<hr class="my-4" />

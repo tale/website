@@ -1,0 +1,44 @@
+[
+	{
+		"id": "scarpa-instinct-vs",
+		"name": "Scarpa Instinct VS",
+		"desc": "Climbing shoes",
+		"type": ["climbing", "shoe"]
+	},
+	{
+		"id": "dalbello-ds-asolo-130",
+		"name": "Dalbello DS Asolo 130",
+		"desc": "130 Flex Ski Boots",
+		"type": ["skiing", "shoe"]
+	},
+	{
+		"id": "nordica-enforcer-99",
+		"name": "Nordica Enforcer 99",
+		"desc": "173cm Powder Skis",
+		"type": ["ski"]
+	},
+	{
+		"id": "armada-arv-94",
+		"name": "Armada ARV 94",
+		"desc": "164cm Freeride Skis",
+		"type": ["ski"]
+	},
+	{
+		"id": "arcteryx-sabre-sv",
+		"name": "Arc'teryx Sabre SV",
+		"desc": "Backcountry GORE-TEX Pro Shell",
+		"type": ["clothing", "skiing"]
+	},
+	{
+		"id": "stio-figment",
+		"name": "Stio Figment",
+		"desc": "150 Denier Membrane Pants",
+		"type": ["clothing", "skiing"]
+	},
+	{
+		"id": "arcteryx-atom-hoody",
+		"name": "Arc'teryx Atom Hoody",
+		"desc": "Insulated Mid-Layer Hoody",
+		"type": ["clothing"]
+	}
+]

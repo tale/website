@@ -34,4 +34,20 @@ export const collections = {
 			link: z.string().url().optional(),
 		}),
 	}),
+	gear: defineCollection({
+		loader: file("content/gear.json"),
+		schema: z.object({
+			name: z.string(),
+			desc: z.string(),
+			type: z.array(
+				z.union([
+					z.literal("climbing"),
+					z.literal("clothing"),
+					z.literal("shoe"),
+					z.literal("ski"),
+					z.literal("skiing"),
+				]),
+			),
+		}),
+	}),
 };
