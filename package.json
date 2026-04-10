@@ -1,42 +1,50 @@
 {
-	"name": "@tale/website",
-	"type": "module",
-	"version": "3.0.0",
-	"scripts": {
-		"dev": "astro dev",
-		"start": "astro dev",
-		"build": "astro check && astro build",
-		"preview": "astro preview",
-		"astro": "astro"
-	},
-	"dependencies": {
-		"@astrojs/check": "^0.9.6",
-		"@astrojs/rss": "^4.0.15",
-		"@astrojs/sitemap": "^3.7.0",
-		"@astrojs/ts-plugin": "^1.10.6",
-		"@iconify-json/devicon": "^1.2.58",
-		"@iconify-json/logos": "^1.2.10",
-		"@microflash/rehype-figure": "^2.1.4",
-		"@tailwindcss/typography": "^0.5.19",
-		"@tailwindcss/vite": "^4.2.0",
-		"astro": "^5.17.2",
-		"astro-icon": "^1.1.5",
-		"astro-meta-tags": "^0.4.0",
-		"prettier": "3.8.1",
-		"prettier-plugin-astro": "0.14.1",
-		"prettier-plugin-tailwindcss": "^0.7.2",
-		"satori": "^0.19.2",
-		"sharp": "^0.34.5",
-		"tailwindcss": "^4.2.0",
-		"typescript": "^5.9.3"
-	},
-	"pnpm": {
-		"overrides": {
-			"@iconify/tools": "^4.0.5"
-		},
-		"onlyBuiltDependencies": [
-			"esbuild",
-			"sharp"
-		]
-	}
+  "name": "@tale/website",
+  "version": "3.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "prebuild": "node scripts/fetch-sponsors.ts",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.8",
+    "@astrojs/rss": "^4.0.18",
+    "@astrojs/sitemap": "^3.7.2",
+    "@astrojs/ts-plugin": "^1.10.7",
+    "@iconify-json/devicon": "^1.2.62",
+    "@iconify-json/logos": "^1.2.11",
+    "@microflash/rehype-figure": "^2.1.4",
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.2.2",
+    "astro": "^6.1.5",
+    "astro-icon": "^1.1.5",
+    "astro-meta-tags": "^0.4.1",
+    "prettier": "3.8.2",
+    "prettier-plugin-astro": "0.14.1",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "satori": "^0.26.0",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4.2.2",
+    "typescript": "^6.0.2"
+  },
+  "devDependencies": {
+    "@octokit/graphql": "^9.0.3",
+    "oxfmt": "^0.44.0"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@iconify/tools": "^4.0.5"
+    },
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
+  }
 }
