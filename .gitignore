@@ -13,6 +13,9 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# generated content
+content/sponsors.json
+
 # environment variables
 .env
 .env.production

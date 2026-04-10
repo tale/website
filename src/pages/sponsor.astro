@@ -1,23 +1,23 @@
 ---
 import Site from "@/layouts/site.astro";
 import Link from "@/components/link.astro";
+import Sponsors from "@/components/sponsors.astro";
 
 const desc = "Support Aarnav Tale's open-source work.";
 ---
 
 <Site title="Sponsor Me" {desc}>
 	<p>
-		Support my open-source work by sponsoring me on GitHub. Your sponsorship
-		helps me dedicate more time to developing and maintaining my projects,
-		ensuring they continue to be free and open for everyone to use and
-		contribute to. Every contribution, big or small, makes a difference and
-		is greatly appreciated. Thank you for considering supporting my work!
+		Support my open-source work by sponsoring me on GitHub. I work full-time
+		so any support helps me dedicate more time to maintaining my projects.
+		Every contribution makes a difference and is greatly appreciated. Thank
+		you for considering supporting my work!
 	</p>
 	<br />
-	<h2 class="font-bold">Skis</h2>
+	<h2 class="font-bold">Options</h2>
 	<ul class="xs:space-y-1 list-inside space-y-3 sm:space-y-0">
 		<li>
-			* <Link external to="https://github.com/tale"
+			* <Link external to="https://github.com/sponsors/tale"
 				>[GitHub Sponsors ->]</Link
 			> for direct support through GitHub.
 		</li>
@@ -26,4 +26,6 @@ const desc = "Support Aarnav Tale's open-source work.";
 			are unable to use GitHub Sponsors).
 		</li>
 	</ul>
+	<br />
+	<Sponsors />
 </Site>
