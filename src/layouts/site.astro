@@ -65,9 +65,15 @@ const headline = title ? `${title} • ${name}` : name;
 					>
 						[Portfolio]
 					</Link>
-					<Link active={pathname.startsWith("/gear")} to="/gear/"
-						>[Gear]</Link
+					<Link active={pathname.startsWith("/gear")} to="/gear/">
+						[Gear]
+					</Link>
+					<Link
+						active={pathname.startsWith("/sponsor")}
+						to="/sponsor/"
 					>
+						[Sponsor]
+					</Link>
 				</nav>
 			</div>
 			<hr class="my-4" />
