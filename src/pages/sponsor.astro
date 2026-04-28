@@ -1,6 +1,7 @@
 ---
 import Site from "@/layouts/site.astro";
 import Link from "@/components/link.astro";
+import Section from "@/components/section.astro";
 import Sponsors from "@/components/sponsors.astro";
 
 const desc = "Support Aarnav Tale's open-source work.";
@@ -14,18 +15,44 @@ const desc = "Support Aarnav Tale's open-source work.";
 		you for considering supporting my work!
 	</p>
 	<br />
-	<h2 class="font-bold">Options</h2>
-	<ul class="xs:space-y-1 list-inside space-y-3 sm:space-y-0">
-		<li>
-			* <Link external to="https://github.com/sponsors/tale"
-				>[GitHub Sponsors ->]</Link
-			> for direct support through GitHub.
+
+	<Section title="Where to Sponsor" />
+	<ul class="space-y-1">
+		<li class="flex flex-wrap items-baseline gap-x-2">
+			<span class="opacity-50">*</span>
+			<Link external to="https://github.com/sponsors/tale">
+				[GitHub Sponsors ->]
+			</Link>
+			<span class="opacity-60">
+				— preferred, recurring or one-time tiers.
+			</span>
 		</li>
-		<li>
-			* <Link external to="https://ko-fi.com/atale">[Ko-fi ->]</Link> (if you
-			are unable to use GitHub Sponsors).
+		<li class="flex flex-wrap items-baseline gap-x-2">
+			<span class="opacity-50">*</span>
+			<Link external to="https://ko-fi.com/atale">[Ko-fi ->]</Link>
+			<span class="opacity-60">
+				— if you can't use GitHub Sponsors.
+			</span>
 		</li>
 	</ul>
 	<br />
+
+	<Section title="Where the Support Goes" />
+	<ul class="space-y-1">
+		<li>
+			<span class="opacity-50">*</span> Hosting and infrastructure for projects
+			like Headplane and Canister.
+		</li>
+		<li>
+			<span class="opacity-50">*</span> Time to triage issues, ship features,
+			and review community PRs.
+		</li>
+		<li>
+			<span class="opacity-50">*</span> The occasional cup of coffee that
+			keeps the late-night commits flowing.
+		</li>
+	</ul>
+	<br />
+
 	<Sponsors />
 </Site>

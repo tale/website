@@ -1,28 +1,30 @@
 ---
 import { getCollection } from "astro:content";
 import Link from "@/components/link.astro";
+import Section from "@/components/section.astro";
 
-const posts = await getCollection("blog");
-const formatter = new Intl.DateTimeFormat("en-US", {
-	year: "numeric",
-	month: "long",
-	day: "numeric",
-});
+const posts = (await getCollection("blog")).sort((a, b) =>
+	a.data.date > b.data.date ? -1 : 1,
+);
+
+const pad = (n: number) => n.toString().padStart(2, "0");
+const fmt = (d: Date) =>
+	`${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}`;
 ---
 
-<h2 class="font-bold">Blog Posts</h2>
-<ul class="xs:space-y-1 list-inside space-y-3 sm:space-y-0">
+<Section title="Blog Posts" />
+<ul class="space-y-1">
 	{
-		posts
-			.sort((a, b) => (a.data.date > b.data.date ? -1 : 1))
-			.map((post) => (
-				<li>
-					*
-					<Link wrap to={`/blog/${post.id}`}>
-						{post.data.title}
-					</Link>
-					<span class="opacity-60">({formatter.format(post.data.date)})</span>
-				</li>
-			))
+		posts.map((post) => (
+			<li class="flex flex-wrap items-baseline gap-x-2">
+				<span class="opacity-50">*</span>
+				<Link wrap to={`/blog/${post.id}`}>
+					{post.data.title}
+				</Link>
+				<span class="ml-auto text-sm tabular-nums opacity-50">
+					{fmt(post.data.date)}
+				</span>
+			</li>
+		))
 	}
 </ul>

@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import Section from "@/components/section.astro";
 const users = await getCollection("sponsorUsers");
 const orgs = await getCollection("sponsorOrganizations");
 const [totalBreakdown] = await getCollection("sponsorTotal");
@@ -9,52 +10,63 @@ if (totalBreakdown == null) {
 }
 
 const { total } = totalBreakdown.data;
+const active = users.length + orgs.length;
 ---
 
-<h2 class="font-bold">Sponsors</h2>
-<p class="mt-1 text-sm opacity-60">
-	Thank you to all active sponsors and {total} total all-time sponsors!
+<Section title="Sponsors" />
+<div class="mb-3 flex flex-wrap gap-x-6 gap-y-1 text-sm opacity-60">
+	<span><span class="opacity-70">active:</span> {active}</span>
+	<span><span class="opacity-70">all-time:</span> {total}</span>
+</div>
+<p class="mb-3 text-sm opacity-60">
+	Thank you to everyone who has ever supported my work — past and present.
 </p>
-
-{
-	users.length > 0 && (
-		<div class="mt-3 flex flex-wrap gap-3">
-			{users.map((sponsor) => (
-				<a
-					href={sponsor.data.url}
-					target="_blank"
-					rel="noopener noreferrer"
-					class="group flex items-center gap-2 border border-neutral-300 p-2 hover:border-blue-400 dark:border-neutral-700 dark:hover:border-blue-500"
-				>
-					<img
-						src={sponsor.data.avatar}
-						alt={sponsor.data.name}
-						width="32"
-						height="32"
-						class="rounded-full"
-						loading="lazy"
-					/>
-					<span class="text-sm group-hover:underline">
-						{sponsor.data.name}
-					</span>
-				</a>
-			))}
-		</div>
-	)
-}
 
 {
 	orgs.length > 0 && (
 		<>
-			<br />
-			<h2 class="font-bold">Organizations</h2>
-			<div class="mt-3 flex flex-wrap gap-3">
+			<h3 class="mt-4 mb-2 text-sm tracking-wide opacity-60">
+				<span class="opacity-70">## </span>Organizations
+			</h3>
+			<div class="flex flex-wrap gap-2">
 				{orgs.map((sponsor) => (
 					<a
 						href={sponsor.data.url}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="group flex items-center gap-2 border border-neutral-300 p-2 hover:border-blue-400 dark:border-neutral-700 dark:hover:border-blue-500"
+						class="group flex items-center gap-2 border border-neutral-300 p-2 transition-colors hover:border-blue-400 dark:border-neutral-700 dark:hover:border-blue-500"
+					>
+						<img
+							src={sponsor.data.avatar}
+							alt={sponsor.data.name}
+							width="32"
+							height="32"
+							class="rounded-full"
+							loading="lazy"
+						/>
+						<span class="text-sm group-hover:underline">
+							{sponsor.data.name}
+						</span>
+					</a>
+				))}
+			</div>
+		</>
+	)
+}
+
+{
+	users.length > 0 && (
+		<>
+			<h3 class="mt-4 mb-2 text-sm tracking-wide opacity-60">
+				<span class="opacity-70">## </span>Individuals
+			</h3>
+			<div class="flex flex-wrap gap-2">
+				{users.map((sponsor) => (
+					<a
+						href={sponsor.data.url}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="group flex items-center gap-2 border border-neutral-300 p-2 transition-colors hover:border-blue-400 dark:border-neutral-700 dark:hover:border-blue-500"
 					>
 						<img
 							src={sponsor.data.avatar}

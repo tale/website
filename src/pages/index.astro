@@ -1,6 +1,5 @@
 ---
 import Blog from "@/components/blog.astro";
-import Gear from "@/components/gear.astro";
 import Link from "@/components/link.astro";
 import Site from "@/layouts/site.astro";
 
@@ -30,13 +29,11 @@ const imageUrl = new URL("/assets/default.png", Astro.url);
 	</p>
 	<br />
 	<p>
-		When away from the keyboard, I'm either rock climbing, or skiing if it's
-		winter. Feel free to get in touch with me for any reason, both professional
-		or personal
+		When away from the keyboard, I'm rock climbing, skiing, or in the
+		mountains chasing the next summit. Feel free to get in touch with me for
+		any reason, both professional or personal
 		<Link external to="mailto:aarnav@tale.me">[aarnav@tale.me ->]</Link>.
 	</p>
 	<br />
 	<Blog />
-	<br />
-	<Gear />
 </Site>

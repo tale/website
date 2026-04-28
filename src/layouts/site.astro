@@ -47,7 +47,7 @@ const headline = title ? `${title} • ${name}` : name;
 	</head>
 
 	<body
-		class="flex min-h-screen flex-col overscroll-none bg-neutral-50 text-base/snug text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100"
+		class="flex min-h-screen flex-col overscroll-none bg-neutral-50 text-base/snug text-neutral-900 antialiased dark:bg-neutral-900 dark:text-neutral-100"
 	>
 		<div
 			class="mx-auto my-4 w-full max-w-3xl flex-1 p-4 font-mono font-normal"
@@ -61,19 +61,12 @@ const headline = title ? `${title} • ${name}` : name;
 					<Link active={pathname === "/"} to="/">[Home]</Link>
 					<Link
 						active={pathname.startsWith("/portfolio")}
-						to="/portfolio/"
+						to="/portfolio/">[Portfolio]</Link
 					>
-						[Portfolio]
-					</Link>
-					<Link active={pathname.startsWith("/gear")} to="/gear/">
-						[Gear]
-					</Link>
 					<Link
 						active={pathname.startsWith("/sponsor")}
-						to="/sponsor/"
+						to="/sponsor/">[Sponsor]</Link
 					>
-						[Sponsor]
-					</Link>
 				</nav>
 			</div>
 			<hr class="my-4" />

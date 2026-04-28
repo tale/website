@@ -2,16 +2,18 @@
 import { getCollection } from "astro:content";
 import IconButton from "@/components/icon-button.astro";
 import Link from "@/components/link.astro";
+import Section from "@/components/section.astro";
 
 const projects = await getCollection("projects");
 ---
 
-<h2 class="mb-1.5 font-bold">Projects</h2>
-<ul class="list-inside space-y-1.5">
+<Section title="Projects" />
+<ul class="space-y-1.5">
 	{
 		projects.map(({ data }) => (
 			<li class="flex w-full items-start justify-between gap-4">
 				<span>
+					<span class="opacity-50">*</span>{" "}
 					{data.link ? (
 						<Link external to={data.link}>
 							[{data.name} ->]
@@ -20,10 +22,10 @@ const projects = await getCollection("projects");
 						data.name
 					)}
 					<br class="sm:hidden" />
-					{data.description}
+					<span class="opacity-80"> {data.description}</span>
 				</span>
 
-				<span class="flex gap-1 pt-0.5">
+				<span class="flex shrink-0 gap-1 pt-0.5">
 					{data.icons.sort().map((icon) => (
 						<IconButton name={icon} />
 					))}
