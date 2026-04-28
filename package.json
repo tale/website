@@ -8,7 +8,10 @@
     "prebuild": "node scripts/fetch-sponsors.ts",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "prepare": "lefthook install"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.8",
@@ -23,9 +26,6 @@
     "astro": "^6.1.9",
     "astro-icon": "^1.1.5",
     "astro-meta-tags": "^0.4.1",
-    "prettier": "3.8.3",
-    "prettier-plugin-astro": "0.14.1",
-    "prettier-plugin-tailwindcss": "^0.8.0",
     "satori": "^0.26.0",
     "sharp": "^0.34.5",
     "tailwindcss": "^4.2.4",
@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "@octokit/graphql": "^9.0.3",
+    "lefthook": "^2.1.6",
     "oxfmt": "^0.47.0"
   },
   "engines": {
@@ -45,6 +46,7 @@
     },
     "onlyBuiltDependencies": [
       "esbuild",
+      "lefthook",
       "sharp"
     ]
   }
