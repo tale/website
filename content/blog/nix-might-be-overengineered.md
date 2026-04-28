@@ -5,7 +5,7 @@ description: After using Nix for the past year or so, I decided it was time to s
 ---
 
 > Hello! This title is pretty clickbaity, but I just wanted to clarify I spent most of this article
-> talking about using Nix on macOS for system configuration *only*. I know NixOS is a better experience 🙂.
+> talking about using Nix on macOS for system configuration _only_. I know NixOS is a better experience 🙂.
 
 In late 2022, I decided to try out an interesting new tool called [Nix](https://nixos.org).
 It is both a package manager and a Linux distribution built on the idea of a declarative system configuration.
@@ -29,6 +29,7 @@ easily installed and managed on any system. Now if I needed to jump to a new mac
 a simple script which installed Nix, cloned my dotfiles, and handed everything over to home-manager.
 
 ### Flakes? Home-Manager? Nix-Darwin? What's that?
+
 The Nix ecosystem is massive and it can be a little overwhelming at first.
 There's so many different tools, concepts, and systems that you'll plug together when you start using Nix.
 Flakes are a very simple concept in Nix that allows you to define a set of inputs and outputs.
@@ -130,12 +131,14 @@ This particular snippet was nice because it allowed me to use Touch ID without n
 system file on every update.
 
 ## So what went wrong?
+
 You might be looking at all of this and thinking, "Wow, this is amazing! Why would you ever switch back?".
 I had similar thoughts when I first switched too, but the bliss period wore off and I started to notice
 some of the uglier parts of Nix. It wasn't necessarily a single issue, but a combination of many different
 problems and a realization that I didn't need any of this.
 
 ### macOS is not a first-class citizen
+
 Nix is primarily built for use on Linux via NixOS. That's what makes it such a strong contender in the
 Linux ecosystem. The first issue was that even with Nix I still needed to use `brew` in order to get some
 specific packages that weren't available on Nixpkgs and cask applications that I needed.
@@ -148,6 +151,7 @@ Xcode or other macOS specific tools were a pain to get working. The overall expe
 desired and I found myself spending more time debugging issues than actually using my system.
 
 ### Poor Error Messages & Mediocre Documentation
+
 The documentation for an ecosystem along with its error messages are crucial to its success.
 Nix has tons of documentation due to how extensive it is, but it ends up being an overload of knowledge
 most of the time instead of being helpful. It's more of an API spec than proper guided documentation.
@@ -159,6 +163,7 @@ I tried to find a good example, but this is something about the kind of error yo
 ![Nix error message](@/assets/nix-error.png)
 
 ### Things are Overengineered for the use case
+
 Naturally a complex tool will have some level of over-engineered design, but I for my use-case Nix was too much.
 Think about it, I was using an entire build system that ran as a permanent daemon and took up tons of space
 on a partition just to manage some dotfiles and system configurations. Not to mention the various different
@@ -169,6 +174,7 @@ I never used NixOS nor the features of the build environments (like `direnv` int
 a system that was too complex for my needs.
 
 ### Takeaways
+
 I think Nix is a very powerful tool if used for the right use-case. If you're managing a large fleet of servers
 or need to have a per-project build environment (like Python's `virtualenv`), then Nix is a great choice.
 If you're using NixOS I'm sure it's a great experience too, otherwise I can't recommend it.

@@ -11,9 +11,10 @@ Visual Studio Code with a high-performance, GPU powered editing experience. Afte
 trying it out, I've decided to permanently switch from Vim to Zed. Here's why.
 
 ### Vim
+
 Before 2020, I was a heavy Visual Studio Code user as it was the defacto editor which included all of the bells and whistles in the
 modern programming experience including code completions and AI suggestions through Copilot. My only issue with the program was the
-absolutely *abysmal* performance on my 2020 MacBook Pro. Working through any relatively large codebase would cause my fans to spin up
+absolutely _abysmal_ performance on my 2020 MacBook Pro. Working through any relatively large codebase would cause my fans to spin up
 bring the editor to its knees.
 
 This is when I decided it was time to learn Vim and gear myself up to switch. After a few months of learning the motions and many hours
@@ -28,6 +29,7 @@ would ultimately create a new Vim configuration with a minimal amount of plugins
 ![My Minimal Vim Configuration](@/assets/vim-setup.png)
 
 ### Zed
+
 Fast forward to November 2024 and my developer environment had significantly changed. With the recent release of
 [Ghostty](https://ghostty.org), I learned a lot more about the terminal and I stopped using `tmux` in order to take advantage of
 Ghostty's performance and features. This meant I started using Neovim within an external GUI, similar to a different app running.
@@ -40,6 +42,7 @@ I then stumbled upon Zed, a newly popular text editor that leveraged the GPU to 
 it's written in Rust btw). Time to give it a try.
 
 ## The Setup
+
 After playing around with keybindings for a few weeks, I finally had a Vim-mode setup that I was happy with. The editor offered such a
 solid core experience around the text editing experience (albeit with a few missing vim bindings) that I was able to get up and running
 quickly. Performance is incredibly snappy, allowing me to open up large codebases without issue. Code completion and LSP tooling is
@@ -57,6 +60,7 @@ the `:b#` command to switch between buffers. There's also some customization fea
 the Zed team will get to them eventually.
 
 ### Remote Development
+
 Zed has a Remote Development feature that essentially mimicks VS Code's `code-server` functionality. I'm yet to try this out as I don't
 particularly like the clunkiness of using a remote editor. So, I'm still using good old Vim when I SSH into other systems. No more
 Neovim and no more customization, just plain old default Vim. It's good enough for now and I think it will continue to be good enough

@@ -1,16 +1,14 @@
 {
-	"extends": "astro/tsconfigs/strictest",
-	"compilerOptions": {
-		"paths": {
-			"@/*": [
-				"./src/*"
-			]
-		},
-		"plugins": [
-			{
-				"name": "@astrojs/ts-plugin"
-			}
-		]
-	},
-	"exclude": ["scripts"]
+  "extends": "astro/tsconfigs/strictest",
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "plugins": [
+      {
+        "name": "@astrojs/ts-plugin"
+      }
+    ]
+  },
+  "exclude": ["scripts"]
 }
