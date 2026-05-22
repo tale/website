@@ -3,6 +3,8 @@ import { readFile } from "node:fs/promises";
 import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
+import remarkAssetAlias from "./src/plugins/remark-asset-alias.ts";
+import rehypeHeadingStyle from "./src/plugins/rehype-heading-style.ts";
 
 // https://astro.build/config
 export default defineConfig({
@@ -27,7 +29,8 @@ export default defineConfig({
   },
 
   markdown: {
-    rehypePlugins: ["@microflash/rehype-figure"],
+    remarkPlugins: [remarkAssetAlias],
+    rehypePlugins: [rehypeHeadingStyle, "@microflash/rehype-figure"],
     shikiConfig: {
       theme: "github-dark",
     },

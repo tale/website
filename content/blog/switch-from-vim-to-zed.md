@@ -4,7 +4,7 @@ date: 2025-03-03
 description: A graphical text editor that might be better than Vim?
 ---
 
-![Preview of Zed](@/assets/zed-preview.png)
+![Preview of Zed](~/zed-preview.png)
 
 Over the past several weeks, I've been experimenting with [Zed](https://zed.dev), a relatively new text editor that aims to replace
 Visual Studio Code with a high-performance, GPU powered editing experience. After spending a few hours setting up my configuration and
@@ -26,7 +26,7 @@ Neovim installed, nor would Neovim's plugin system fit well in this environment.
 on my code completions, relying on codebase and language knowledge to remain productive. Second, I found myself using vanilla Vim more and
 would ultimately create a new Vim configuration with a minimal amount of plugins.
 
-![My Minimal Vim Configuration](@/assets/vim-setup.png)
+![My Minimal Vim Configuration](~/vim-setup.png)
 
 ### Zed
 
@@ -48,7 +48,7 @@ solid core experience around the text editing experience (albeit with a few miss
 quickly. Performance is incredibly snappy, allowing me to open up large codebases without issue. Code completion and LSP tooling is
 built-in and works well, staying out of my way most of the time.
 
-![A small snippet of my Zed keybindings](@/assets/zed-bindings.png)
+![A small snippet of my Zed keybindings](~/zed-bindings.png)
 
 One of the best features of Zed is the high level of control when setting keybindings. I wanted to replicate as much of
 my Neovim workflow as I possibly could and the `context` system in Zed is so complex and smart that it lets me tweak the conditions

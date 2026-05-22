@@ -160,7 +160,7 @@ The error messages are also horrendous. They're often too cryptic and provide no
 They'll be polluted with tons of internal stack traces and it's hard to figure out what the actual issue is.
 I tried to find a good example, but this is something about the kind of error you can expect
 
-![Nix error message](@/assets/nix-error.png)
+![Nix error message](~/nix-error.png)
 
 ### Things are Overengineered for the use case
 
