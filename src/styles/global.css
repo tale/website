@@ -5,6 +5,38 @@
   *:focus-visible {
     @apply outline-none ring-2 ring-offset-3 ring-offset-neutral-50 dark:ring-offset-neutral-900 ring-blue-500;
   }
+
+  html {
+    scrollbar-gutter: stable;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-neutral-300);
+    border-radius: 5px;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-neutral-300) transparent;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar-thumb {
+      background: var(--color-neutral-700);
+    }
+
+    * {
+      scrollbar-color: var(--color-neutral-700) transparent;
+    }
+  }
 }
 
 @font-face {
