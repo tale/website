@@ -7,6 +7,7 @@
     "start": "astro dev",
     "prebuild": "node scripts/fetch-sponsors.ts",
     "build": "astro check && astro build",
+    "postbuild": "node scripts/subset-fonts.ts",
     "preview": "astro preview",
     "astro": "astro",
     "format": "oxfmt",
@@ -35,7 +36,8 @@
   "devDependencies": {
     "@octokit/graphql": "^9.0.3",
     "lefthook": "^2.1.9",
-    "oxfmt": "^0.52.0"
+    "oxfmt": "^0.52.0",
+    "subset-font": "^2.5.0"
   },
   "engines": {
     "node": ">=24.0.0"
