@@ -16,7 +16,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.9",
     "@astrojs/rss": "^4.0.18",
-    "@astrojs/sitemap": "^3.7.2",
+    "@astrojs/sitemap": "^3.7.3",
     "@astrojs/ts-plugin": "^1.10.9",
     "@iconify-json/devicon": "^1.2.62",
     "@iconify-json/logos": "^1.2.11",
@@ -34,21 +34,11 @@
   },
   "devDependencies": {
     "@octokit/graphql": "^9.0.3",
-    "lefthook": "^2.1.8",
-    "oxfmt": "^0.51.0"
+    "lefthook": "^2.1.9",
+    "oxfmt": "^0.52.0"
   },
   "engines": {
     "node": ">=24.0.0"
   },
-  "packageManager": "pnpm@10.30.0",
-  "pnpm": {
-    "overrides": {
-      "@iconify/tools": "^4.0.5"
-    },
-    "onlyBuiltDependencies": [
-      "esbuild",
-      "lefthook",
-      "sharp"
-    ]
-  }
+  "packageManager": "pnpm@11.5.0"
 }
