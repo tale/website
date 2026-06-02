@@ -92,7 +92,7 @@ const output = {
   ],
 };
 
-await writeFile("content/sponsors.json", JSON.stringify(output, null, "\t") + "\n");
+await writeFile("content/sponsors.json", JSON.stringify(output, null, "  ") + "\n");
 console.log(
   `Fetched ${sponsorIndividuals.length} individual sponsors and ${sponsorOrganizations.length} organization sponsors (total: ${total})`,
 );
