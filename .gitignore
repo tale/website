@@ -25,3 +25,10 @@ content/sponsors.json
 
 # jetbrains setting folder
 .idea/
+
+# decrypted font files (commit only the .age siblings)
+public/fonts/berkeley-regular.woff2
+public/fonts/berkeley-bold.woff2
+public/fonts/berkeley-italic.woff2
+public/fonts/berkeley-bold-italic.woff2
+src/assets/berkeley.ttf

@@ -36,7 +36,7 @@ const options: SatoriOptions = {
     {
       name: "Berkeley Mono",
       data: Buffer.from(berkeley),
-      weight: 100,
+      weight: 400,
     },
   ],
 };

@@ -38,6 +38,22 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Install rage
+        run: |
+          curl -fsSL https://github.com/str4d/rage/releases/download/v0.11.1/rage-v0.11.1-x86_64-linux.tar.gz \
+            | sudo tar -xz -C /usr/local/bin --strip-components=1 rage/rage
+          rage --version
+
+      - name: Decrypt fonts
+        env:
+          RAGE_IDENTITY: ${{ secrets.RAGE_IDENTITY }}
+        run: |
+          umask 077
+          KEY="$(mktemp)"
+          printf '%s\n' "$RAGE_IDENTITY" > "$KEY"
+          ./scripts/fonts-decrypt.sh "$KEY"
+          rm -f "$KEY"
+
       - name: Build
         run: pnpm build
         env:

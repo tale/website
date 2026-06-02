@@ -11,13 +11,35 @@
   font-family: "Berkeley Mono";
   font-display: swap;
   font-style: normal;
-  font-weight: 100 150;
-  src: url("/fonts/berkeley.woff2") format("woff2-variations");
+  font-weight: 400;
+  src: url("/fonts/berkeley-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Berkeley Mono";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/berkeley-bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Berkeley Mono";
+  font-display: swap;
+  font-style: italic;
+  font-weight: 400;
+  src: url("/fonts/berkeley-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Berkeley Mono";
+  font-display: swap;
+  font-style: italic;
+  font-weight: 700;
+  src: url("/fonts/berkeley-bold-italic.woff2") format("woff2");
 }
 
 @theme {
-  --font-weight-normal: 100;
-  --font-weight-bold: 150;
   --font-mono: "Berkeley Mono", "monospace";
   --breakpoint-xs: 28rem;
 }
@@ -26,7 +48,7 @@
   animation: diagonal-snow 4.5s linear infinite;
   display: inline-block;
   position: relative;
-  font-weight: 150;
+  font-weight: 700;
   text-shadow:
     0 0 1px rgba(255, 255, 255, 0.8),
     0 0 2px rgba(255, 255, 255, 0.5),
