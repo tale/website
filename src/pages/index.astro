@@ -21,19 +21,18 @@ const imageUrl = new URL("/assets/default.png", Astro.url);
 	<meta name="twitter:image" content={imageUrl.href} />
 </Fragment>
 
-<Site desc={desc}>
-	<p>
+<Site {desc}>
+	<p class="mb-4">
 		Software engineer by day with a passion for solving big-data problems and
 		building scalable systems. I also dabble in open-source projects on the side
-		<Link external to="https://github.com/tale">[github ->]</Link>.
+		<Link external to="https://github.com/tale">[github]</Link>.
 	</p>
-	<br />
-	<p>
+	<p class="mb-6">
 		When away from the keyboard, I'm rock climbing, skiing, or in the
 		mountains chasing the next summit. Feel free to get in touch with me for
 		any reason, both professional or personal
-		<Link external to="mailto:aarnav@tale.me">[aarnav@tale.me ->]</Link>.
+		<Link external to="mailto:aarnav@tale.me">[aarnav@tale.me]</Link>.
 	</p>
-	<br />
+
 	<Blog />
 </Site>

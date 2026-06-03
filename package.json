@@ -37,6 +37,7 @@
     "@octokit/graphql": "^9.0.3",
     "lefthook": "^2.1.9",
     "oxfmt": "^0.52.0",
+    "prettier-plugin-astro": "^0.14.1",
     "subset-font": "^2.5.0"
   },
   "engines": {

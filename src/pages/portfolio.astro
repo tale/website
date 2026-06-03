@@ -1,8 +1,8 @@
 ---
-import Link from "@/components/link.astro";
-import Site from "@/layouts/site.astro";
-import Projects from "@/components/projects.astro";
 import Credentials from "@/components/credentials.astro";
+import Link from "@/components/link.astro";
+import Projects from "@/components/projects.astro";
+import Site from "@/layouts/site.astro";
 
 const desc = "Aarnav Tale's personal portfolio.";
 const imageUrl = new URL("/assets/default.png", Astro.url);
@@ -22,15 +22,16 @@ const imageUrl = new URL("/assets/default.png", Astro.url);
 	<meta name="twitter:image" content={imageUrl.href} />
 </Fragment>
 
-<Site title="Portfolio" desc="">
-	<p>
-		A small snippet of my resume and a list of publicly available projects that
-		I have worked on. If you are a recruiter looking to get in touch, please
-		email me at
-		<Link external to="mailto:aarnav@tale.me">[aarnav@tale.me ->]</Link>.
+<Site title="Portfolio" {desc}>
+	<p class="mb-6">
+		A small snippet of my resume and a list of publicly available projects
+		that I have worked on. If you are a recruiter looking to get in touch,
+		please email me at
+		<Link external to="mailto:aarnav@tale.me">[aarnav@tale.me]</Link>.
 	</p>
-	<br />
-	<Credentials />
-	<br />
+
+	<div class="mb-6">
+		<Credentials />
+	</div>
 	<Projects />
 </Site>

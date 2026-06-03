@@ -15,6 +15,6 @@ const text = await Astro.slots.render("default");
 	target={external ? "_blank" : "_self"}
 	rel={external ? "noopener noreferrer" : undefined}
 	class={`text-blue-500 dark:text-blue-400 hover:underline
-		${wrap ? "" : "text-nowrap"} ${active ? "font-bold underline" : ""}`}
+		${wrap ? "" : "text-nowrap"} ${active ? "font-bold" : ""}`}
 	set:html={text}
 />

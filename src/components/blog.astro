@@ -12,19 +12,36 @@ const fmt = (d: Date) =>
 	`${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}`;
 ---
 
-<Section title="Blog Posts" />
-<ul class="space-y-1">
-	{
-		posts.map((post) => (
-			<li class="flex flex-wrap items-baseline gap-x-2">
-				<span class="opacity-50">*</span>
-				<Link wrap to={`/blog/${post.id}`}>
-					{post.data.title}
-				</Link>
-				<span class="ml-auto text-sm tabular-nums opacity-50">
-					{fmt(post.data.date)}
-				</span>
-			</li>
-		))
-	}
-</ul>
+<Section title="Blog Posts" meta={`[${posts.length} entries]`} />
+<table class="w-full border-collapse border border-neutral-300 dark:border-neutral-700">
+	<thead>
+		<tr class="border-b border-neutral-300 uppercase opacity-50 dark:border-neutral-700">
+			<th class="border-r border-neutral-300 px-2 py-1 text-right font-bold dark:border-neutral-700">
+				#
+			</th>
+			<th class="border-r border-neutral-300 px-2 py-1 text-left font-bold dark:border-neutral-700">
+				Title
+			</th>
+			<th class="px-2 py-1 text-right font-bold">Published</th>
+		</tr>
+	</thead>
+	<tbody>
+		{
+			posts.map((post, i) => (
+				<tr class="border-b border-neutral-300 last:border-b-0 hover:bg-neutral-200/60 dark:border-neutral-700 dark:hover:bg-neutral-700/40">
+					<td class="border-r border-neutral-300 dark:border-neutral-700 px-2 py-1 tabular-nums opacity-50 text-right">
+						{pad(i + 1)}
+					</td>
+					<td class="border-r border-neutral-300 dark:border-neutral-700 px-2 py-1">
+						<Link wrap to={`/blog/${post.id}`}>
+							{post.data.title}
+						</Link>
+					</td>
+					<td class="px-2 py-1 tabular-nums opacity-50 text-right whitespace-nowrap">
+						{fmt(post.data.date)}
+					</td>
+				</tr>
+			))
+		}
+	</tbody>
+</table>

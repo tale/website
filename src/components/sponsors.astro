@@ -13,40 +13,34 @@ const { total } = totalBreakdown.data;
 const active = users.length + orgs.length;
 ---
 
-<Section title="Sponsors" />
-<div class="mb-3 flex flex-wrap gap-x-6 gap-y-1 text-sm opacity-60">
-	<span><span class="opacity-70">active:</span> {active}</span>
-	<span><span class="opacity-70">all-time:</span> {total}</span>
-</div>
-<p class="mb-3 text-sm opacity-60">
+<Section title="Sponsors" meta={`[${active} active / ${total} all-time]`} />
+<p class="mb-3 opacity-80">
 	Thank you to everyone who has ever supported my work — past and present.
 </p>
 
 {
 	orgs.length > 0 && (
 		<>
-			<h3 class="mt-4 mb-2 text-sm tracking-wide opacity-60">
-				<span class="opacity-70">## </span>Organizations
-			</h3>
-			<div class="flex flex-wrap gap-2">
+			<Section level={3} title="Organizations" meta={`[${orgs.length}]`} class="mt-4" />
+			<div class="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(14rem,1fr))] sm:gap-2">
 				{orgs.map((sponsor) => (
 					<a
 						href={sponsor.data.url}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="group flex items-center gap-2 border border-neutral-300 p-2 transition-colors hover:border-blue-400 dark:border-neutral-700 dark:hover:border-blue-500"
+						class="group flex items-center border border-neutral-300 not-first:border-t-0 hover:bg-neutral-200/60 dark:border-neutral-700 dark:hover:bg-neutral-700/40 sm:not-first:border-t"
 					>
-						<img
-							src={sponsor.data.avatar}
-							alt={sponsor.data.name}
-							width="32"
-							height="32"
-							class="rounded-full"
-							loading="lazy"
-						/>
-						<span class="text-sm group-hover:underline">
-							{sponsor.data.name}
+						<span class="border-r border-neutral-300 px-2 py-1 dark:border-neutral-700">
+							<img
+								src={sponsor.data.avatar}
+								alt={sponsor.data.name}
+								width="24"
+								height="24"
+								class="rounded-full"
+								loading="lazy"
+							/>
 						</span>
+						<span class="px-2 py-1">{sponsor.data.name}</span>
 					</a>
 				))}
 			</div>
@@ -57,28 +51,26 @@ const active = users.length + orgs.length;
 {
 	users.length > 0 && (
 		<>
-			<h3 class="mt-4 mb-2 text-sm tracking-wide opacity-60">
-				<span class="opacity-70">## </span>Individuals
-			</h3>
-			<div class="flex flex-wrap gap-2">
+			<Section level={3} title="Individuals" meta={`[${users.length}]`} class="mt-4" />
+			<div class="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(14rem,1fr))] sm:gap-2">
 				{users.map((sponsor) => (
 					<a
 						href={sponsor.data.url}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="group flex items-center gap-2 border border-neutral-300 p-2 transition-colors hover:border-blue-400 dark:border-neutral-700 dark:hover:border-blue-500"
+						class="group flex items-center border border-neutral-300 not-first:border-t-0 hover:bg-neutral-200/60 dark:border-neutral-700 dark:hover:bg-neutral-700/40 sm:not-first:border-t"
 					>
-						<img
-							src={sponsor.data.avatar}
-							alt={sponsor.data.name}
-							width="32"
-							height="32"
-							class="rounded-full"
-							loading="lazy"
-						/>
-						<span class="text-sm group-hover:underline">
-							{sponsor.data.name}
+						<span class="border-r border-neutral-300 px-2 py-1 dark:border-neutral-700">
+							<img
+								src={sponsor.data.avatar}
+								alt={sponsor.data.name}
+								width="24"
+								height="24"
+								class="rounded-full"
+								loading="lazy"
+							/>
 						</span>
+						<span class="px-2 py-1">{sponsor.data.name}</span>
 					</a>
 				))}
 			</div>

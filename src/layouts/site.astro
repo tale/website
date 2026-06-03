@@ -12,7 +12,12 @@ const { title, desc } = Astro.props;
 const { pathname } = Astro.url;
 
 const name = "Aarnav Tale";
+const ref = "tale.me(7)";
 const headline = title ? `${title} • ${name}` : name;
+
+const pad = (n: number) => n.toString().padStart(2, "0");
+const now = new Date();
+const buildDate = `${now.getUTCFullYear()}-${pad(now.getUTCMonth() + 1)}-${pad(now.getUTCDate())}`;
 ---
 
 <!doctype html>
@@ -59,36 +64,49 @@ const headline = title ? `${title} • ${name}` : name;
 	</head>
 
 	<body
-		class="flex min-h-screen flex-col overscroll-none bg-neutral-50 text-base/snug text-neutral-900 antialiased dark:bg-neutral-900 dark:text-neutral-100"
+		class={`
+		flex min-h-screen flex-col overscroll-none bg-neutral-200 text-base/snug
+		text-neutral-900 antialiased dark:bg-black dark:text-neutral-50
+		`}
 	>
-		<div
-			class="mx-auto my-4 w-full max-w-3xl flex-1 p-4 font-mono font-normal"
+		<main
+			class={`
+				mx-auto my-4 w-full max-w-3xl flex-1 p-4 font-mono font-normal
+				border border-neutral-300 bg-neutral-50 dark:bg-neutral-950 dark:border-neutral-700
+			`}
 		>
-			<div class="xs:flex-row flex flex-col items-center gap-2">
-				<h1 class="text-2xl font-bold">
-					<span class="opacity-50">ᨒ</span>
-					Aarnav Tale
-				</h1>
-				<nav class="xs:ml-auto w-fit">
-					<Link active={pathname === "/"} to="/">[Home]</Link>
+			<header
+				class="flex flex-col items-center gap-x-4 uppercase sm:flex-row sm:items-baseline"
+			>
+				<h1 class="font-bold tracking-wide">{name}</h1>
+				<nav class="flex flex-wrap gap-x-2 sm:ml-auto">
+					<Link active={pathname === "/"} to="/"
+						>[{pathname === "/" ? "*" : ""}home]</Link
+					>
 					<Link
 						active={pathname.startsWith("/portfolio")}
-						to="/portfolio/">[Portfolio]</Link
+						to="/portfolio/"
+						>[{pathname.startsWith("/portfolio") ? "*" : ""}portfolio]</Link
 					>
 					<Link
 						active={pathname.startsWith("/sponsor")}
-						to="/sponsor/">[Sponsor]</Link
+						to="/sponsor/"
+						>[{pathname.startsWith("/sponsor") ? "*" : ""}sponsor]</Link
 					>
 				</nav>
-			</div>
-			<hr class="my-4" />
+			</header>
+			<hr class="my-3 border-neutral-300 dark:border-neutral-700" />
 			<slot />
-		</div>
-		<footer class="my-8 w-full font-mono font-normal">
+			<hr class="mt-8 mb-3 border-neutral-300 dark:border-neutral-700" />
+			<footer
+				class="flex flex-wrap items-baseline gap-x-4 uppercase opacity-50"
+			>
+				<span>{buildDate}</span>
+				<span class="ml-auto">{ref}</span>
+			</footer>
+		</main>
+		<div class="my-8 w-full font-mono font-normal">
 			<ASCII />
-			<p class="text-center text-sm opacity-50">
-				&copy; {new Date().getFullYear()} Aarnav Tale
-			</p>
-		</footer>
+		</div>
 	</body>
 </html>

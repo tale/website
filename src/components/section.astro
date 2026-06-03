@@ -3,14 +3,18 @@ interface Props {
 	title: string;
 	id?: string;
 	level?: 2 | 3;
+	meta?: string;
 	class?: string;
 }
 
-const { title, id, level = 2, class: extra = "" } = Astro.props;
+const { title, id, level = 2, meta, class: extra = "" } = Astro.props;
 const Tag = `h${level}` as "h2" | "h3";
 ---
 
-<Tag id={id} class={`mb-2 font-bold ${extra}`}>
-	<span class="opacity-50">{level === 2 ? "##" : "###"}</span>
-	{title}
+<Tag
+	id={id}
+	class={`mb-2 flex items-baseline gap-x-2 font-bold uppercase ${extra}`}
+>
+	<span>{title}</span>
+	{meta && <span class="ml-auto tabular-nums opacity-50">{meta}</span>}
 </Tag>

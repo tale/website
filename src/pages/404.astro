@@ -4,11 +4,11 @@ import Site from "@/layouts/site.astro";
 ---
 
 <Site title="404 Not Found" desc="The page you are looking for does not exist">
-	<div class="mx-auto flex flex-col items-center justify-center py-24">
-		<h1 class="text-center text-xl font-bold">Not Found</h1>
-		<p class="pb-4 text-center">
-			You took a wrong turn, head back to base camp.
-		</p>
-		<Link to="/">{"[<- Head Home]"}</Link>
-	</div>
+	<p class="mb-4">
+		The requested resource could not be located on this server. The URL may
+		be mistyped, or the page may have been moved or removed.
+	</p>
+	<p>
+		<Link to="/">[head home]</Link>
+	</p>
 </Site>
