@@ -3,8 +3,10 @@ import { readFile } from "node:fs/promises";
 import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
-import remarkAssetAlias from "./src/plugins/remark-asset-alias.ts";
-import rehypeHeadingStyle from "./src/plugins/rehype-heading-style.ts";
+import { satteri } from "@astrojs/markdown-satteri";
+import satteriAssetAlias from "./src/plugins/satteri-asset-alias.ts";
+import satteriFigure, { satteriUnwrapImageParagraphs } from "./src/plugins/satteri-figure.ts";
+import satteriHeadingStyle from "./src/plugins/satteri-heading-style.ts";
 
 // https://astro.build/config
 export default defineConfig({
@@ -29,8 +31,10 @@ export default defineConfig({
   },
 
   markdown: {
-    remarkPlugins: [remarkAssetAlias],
-    rehypePlugins: [rehypeHeadingStyle, "@microflash/rehype-figure"],
+    processor: satteri({
+      mdastPlugins: [satteriAssetAlias()],
+      hastPlugins: [satteriUnwrapImageParagraphs(), satteriFigure(), satteriHeadingStyle()],
+    }),
     shikiConfig: {
       theme: "github-dark",
     },

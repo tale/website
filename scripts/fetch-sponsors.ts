@@ -2,9 +2,16 @@ import { writeFile } from "node:fs/promises";
 import { graphql } from "@octokit/graphql";
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+const CI = process.env.CI === "true";
+
 if (!GITHUB_TOKEN) {
-  console.error("GITHUB_TOKEN environment variable is required");
-  process.exit(1);
+  if (CI) {
+    console.error("GITHUB_TOKEN environment variable is required");
+    process.exit(1);
+  }
+
+  console.warn("GITHUB_TOKEN is not set, skipping sponsor fetch");
+  process.exit(0);
 }
 
 const api = graphql.defaults({
