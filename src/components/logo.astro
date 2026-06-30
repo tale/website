@@ -1,0 +1,21 @@
+---
+import type { SvgComponent } from "astro/types";
+
+interface Props extends astroHTML.JSX.SVGAttributes {
+	name: string;
+}
+
+const icons = import.meta.glob("/src/icons/*.svg", {
+	eager: true,
+	import: "default",
+}) as Record<string, SvgComponent>;
+
+const { name, ...attrs } = Astro.props;
+const Svg = icons[`/src/icons/${name}.svg`];
+
+if (!Svg) {
+	throw new Error(`No vendored SVG named "${name}" found in src/icons/`);
+}
+---
+
+<Svg {...attrs} />

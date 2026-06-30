@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 import { readFile } from "node:fs/promises";
-import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { satteri } from "@astrojs/markdown-satteri";
@@ -11,7 +10,7 @@ import satteriHeadingStyle from "./src/plugins/satteri-heading-style.ts";
 // https://astro.build/config
 export default defineConfig({
   site: "https://tale.me",
-  integrations: [icon(), sitemap()],
+  integrations: [sitemap()],
   vite: {
     plugins: [
       tailwindcss(),

@@ -1,5 +1,10 @@
 ---
-import { Icon } from "astro-icon/components";
+import { getIconData, iconToHTML, iconToSVG, replaceIDs } from "@iconify/utils";
+import { icons as devicon } from "@iconify-json/devicon";
+import { icons as logos } from "@iconify-json/logos";
+
+const sets = { logos, devicon };
+
 const mapping = {
 	c: ["logos:c", "C"],
 	c_sharp: ["logos:c-sharp", "C#"],
@@ -16,7 +21,7 @@ const mapping = {
 	rust: ["logos:rust", "Rust"],
 	typescript: ["logos:typescript-icon", "TypeScript"],
 	xcode: ["logos:xcode", "Xcode"],
-};
+} as const;
 
 interface Props {
 	name: (string & {}) | keyof typeof mapping;
@@ -30,10 +35,18 @@ if (!lookup) {
 }
 
 const [icon, label] = lookup;
+const [prefix, iconName] = icon.split(":");
+const set = sets[prefix as keyof typeof sets];
+const iconData = set && iconName ? getIconData(set, iconName) : null;
+if (!iconData) {
+	throw new Error(`Icon "${icon}" not found in @iconify-json/${prefix}`);
+}
+const { attributes, body } = iconToSVG(iconData, { width: size, height: size });
+const svg = iconToHTML(replaceIDs(body), attributes);
 ---
 
 <button class="group flex items-center justify-center gap-4">
-	<Icon name={icon} size={size} />
+	<Fragment set:html={svg} />
 	<div
 		class={`
 			hidden absolute group-hover:block group-focus-within:block z-10 mb-20 px-0.5
