@@ -10,5 +10,6 @@ const html = mountain?.replace(/\*/g, '<span class="flake">*</span>');
 	sm:text-xs w-full mx-auto mb-4 flex flex-col items-center justify-center
 `}
 >
-	<pre class="opacity-50" set:html={html} /><pre class="opacity-70">{base}</pre>
+	<pre class="opacity-50" set:html={html} /><pre
+		class="opacity-70">{base}</pre>
 </div>

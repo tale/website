@@ -52,11 +52,7 @@ const tableOfContents = headings
 				<Section level={3} title="On This Page" />
 				<ul class="space-y-1">
 					{tableOfContents.map((item) => (
-						<li
-							class={
-								item.depth === 3 ? "pl-4 opacity-80" : ""
-							}
-						>
+						<li class={item.depth === 3 ? "pl-4 opacity-80" : ""}>
 							<a href={item.href} class="hover:underline">
 								<span class="opacity-50">-</span> {item.text}
 							</a>
@@ -106,18 +102,12 @@ const tableOfContents = headings
 	{
 		tableOfContents.length > 0 && (
 			<details class="mb-6 border border-neutral-300 p-3 xl:hidden dark:border-neutral-700">
-				<summary
-					class="cursor-pointer font-bold uppercase select-none"
-				>
+				<summary class="cursor-pointer font-bold uppercase select-none">
 					On This Page
 				</summary>
 				<ul class="mt-2 space-y-1">
 					{tableOfContents.map((item) => (
-						<li
-							class={
-								item.depth === 3 ? "pl-4 opacity-80" : ""
-							}
-						>
+						<li class={item.depth === 3 ? "pl-4 opacity-80" : ""}>
 							<a href={item.href} class="hover:underline">
 								<span class="opacity-50">-</span> {item.text}
 							</a>

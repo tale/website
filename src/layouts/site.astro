@@ -86,12 +86,16 @@ const buildDate = `${now.getUTCFullYear()}-${pad(now.getUTCMonth() + 1)}-${pad(n
 					<Link
 						active={pathname.startsWith("/portfolio")}
 						to="/portfolio/"
-						>[{pathname.startsWith("/portfolio") ? "*" : ""}portfolio]</Link
+						>[{
+							pathname.startsWith("/portfolio") ? "*" : ""
+						}portfolio]</Link
 					>
 					<Link
 						active={pathname.startsWith("/sponsor")}
 						to="/sponsor/"
-						>[{pathname.startsWith("/sponsor") ? "*" : ""}sponsor]</Link
+						>[{
+							pathname.startsWith("/sponsor") ? "*" : ""
+						}sponsor]</Link
 					>
 				</nav>
 			</header>

@@ -21,7 +21,12 @@ const active = users.length + orgs.length;
 {
 	orgs.length > 0 && (
 		<>
-			<Section level={3} title="Organizations" meta={`[${orgs.length}]`} class="mt-4" />
+			<Section
+				level={3}
+				title="Organizations"
+				meta={`[${orgs.length}]`}
+				class="mt-4"
+			/>
 			<div class="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(14rem,1fr))] sm:gap-2">
 				{orgs.map((sponsor) => (
 					<a
@@ -51,7 +56,12 @@ const active = users.length + orgs.length;
 {
 	users.length > 0 && (
 		<>
-			<Section level={3} title="Individuals" meta={`[${users.length}]`} class="mt-4" />
+			<Section
+				level={3}
+				title="Individuals"
+				meta={`[${users.length}]`}
+				class="mt-4"
+			/>
 			<div class="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(14rem,1fr))] sm:gap-2">
 				{users.map((sponsor) => (
 					<a
