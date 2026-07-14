@@ -4,5 +4,7 @@ allowBuilds:
   sharp: true
 minimumReleaseAgeExclude:
   - yaml@2.8.3
+  - "@astrojs/markdown-satteri@0.3.4"
+  - astro@7.0.9
 overrides:
   yaml@>=2.0.0 <2.8.3: ^2.8.3
