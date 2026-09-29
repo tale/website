@@ -32,7 +32,7 @@ const tableOfContents = headings
 <Site title={post.data.title} desc={post.data.description} date={post.data.date}>
 	{
 		tableOfContents.length > 0 && (
-			<aside class="fixed top-32 right-8 hidden max-h-[70vh] w-64 overflow-y-auto border-l border-neutral-300 pl-4 xl:block dark:border-neutral-700">
+			<aside class="fixed top-32 right-8 hidden max-h-[70vh] w-64 overflow-y-auto border-l border-neutral-300 pl-4 2xl:block dark:border-neutral-700">
 				<Section level={3} title="On This Page" />
 				<ul class="space-y-1">
 					{tableOfContents.map((item) => (
@@ -85,7 +85,7 @@ const tableOfContents = headings
 
 	{
 		tableOfContents.length > 0 && (
-			<details class="mb-6 border border-neutral-300 p-3 xl:hidden dark:border-neutral-700">
+			<details class="mb-6 border border-neutral-300 p-3 2xl:hidden dark:border-neutral-700">
 				<summary class="cursor-pointer font-bold uppercase select-none">
 					On This Page
 				</summary>
@@ -104,7 +104,7 @@ const tableOfContents = headings
 
 	<div
 		class={`
-			prose prose-md dark:prose-invert prose-md
+			prose dark:prose-invert
 			prose-img:rounded-none prose-img:shadow-lg prose-img:mx-auto
 			prose-video:rounded-none prose-video:shadow-md prose-video:mx-auto
 			prose-figcaption:mt-2 prose-figcaption:text-center

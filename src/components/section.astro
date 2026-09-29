@@ -13,8 +13,12 @@ const Tag = `h${level}` as "h2" | "h3";
 
 <Tag
 	id={id}
-	class={`mb-2 flex items-baseline gap-x-2 font-bold uppercase ${extra}`}
+	class={`mb-2 flex flex-wrap items-baseline gap-x-2 font-bold uppercase ${extra}`}
 >
 	<span>{title}</span>
-	{meta && <span class="ml-auto tabular-nums opacity-50">{meta}</span>}
+	{meta && (
+		<span class="ml-auto whitespace-nowrap tabular-nums opacity-50">
+			{meta}
+		</span>
+	)}
 </Tag>

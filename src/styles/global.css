@@ -3,7 +3,7 @@
 
 @layer base {
   *:focus-visible {
-    @apply outline-none ring-2 ring-offset-3 ring-offset-neutral-50 dark:ring-offset-neutral-900 ring-blue-500;
+    @apply outline-none ring-2 ring-offset-3 ring-offset-neutral-50 dark:ring-offset-neutral-950 ring-blue-500;
   }
 
   html {
@@ -134,5 +134,11 @@
   100% {
     transform: translate(3em, 3.5em) rotate(5deg);
     opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flake {
+    animation: none;
   }
 }

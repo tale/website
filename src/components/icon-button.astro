@@ -45,11 +45,15 @@ const { attributes, body } = iconToSVG(iconData, { width: size, height: size });
 const svg = iconToHTML(replaceIDs(body), attributes);
 ---
 
-<button class="group flex items-center justify-center gap-4">
+<button
+	type="button"
+	aria-label={label}
+	class="group relative flex shrink-0 items-center justify-center"
+>
 	<Fragment set:html={svg} />
 	<div
 		class={`
-			hidden absolute group-hover:block group-focus-within:block z-10 mb-20 px-0.5
+			hidden absolute right-0 bottom-full group-hover:block group-focus-visible:block z-10 mb-2 px-0.5 whitespace-nowrap
 			bg-neutral-700 text-neutral-100 dark:bg-neutral-300 dark:text-neutral-900
 	`}
 	>

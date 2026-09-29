@@ -43,7 +43,7 @@ const pad = (n: number) => n.toString().padStart(2, "0");
 	>
 		<colgroup>
 			<col class="w-[3ch]" />
-			<col class="w-[22ch]" />
+			<col class="sm:w-[22ch]" />
 			<col />
 		</colgroup>
 		<thead>
@@ -70,8 +70,8 @@ const pad = (n: number) => n.toString().padStart(2, "0");
 						<td class="border-r border-neutral-300 dark:border-neutral-700 px-2 py-1 align-top tabular-nums opacity-50 text-right">
 							{pad(i + 1)}
 						</td>
-						<td class="border-r border-neutral-300 dark:border-neutral-700 px-2 py-1 align-top whitespace-nowrap">
-							<Link external to={p.href}>
+						<td class="border-r border-neutral-300 dark:border-neutral-700 px-2 py-1 align-top">
+							<Link external wrap to={p.href}>
 								{p.name}
 							</Link>
 						</td>
