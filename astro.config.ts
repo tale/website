@@ -1,5 +1,4 @@
 import { defineConfig } from "astro/config";
-import { readFile } from "node:fs/promises";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { satteri } from "@astrojs/markdown-satteri";
@@ -12,21 +11,7 @@ export default defineConfig({
   site: "https://tale.me",
   integrations: [sitemap()],
   vite: {
-    plugins: [
-      tailwindcss(),
-      {
-        name: "vite-plugin-ttf",
-        transform: async (_, id) => {
-          if (id.endsWith(".ttf")) {
-            const buffer = await readFile(id);
-            return {
-              code: `export default ${JSON.stringify(buffer)}`,
-            };
-          }
-          return null;
-        },
-      },
-    ],
+    plugins: [tailwindcss()],
   },
 
   markdown: {

@@ -1,9 +1,12 @@
 ---
 import Link from "@/components/link.astro";
 import Site from "@/layouts/site.astro";
+import { staticPages } from "@/metadata";
+
+const { title, description: desc } = staticPages["404"];
 ---
 
-<Site title="404 Not Found" desc="The page you are looking for does not exist">
+<Site {title} {desc}>
 	<p class="mb-4">
 		The requested resource could not be located on this server. The URL may
 		be mistyped, or the page may have been moved or removed.

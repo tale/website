@@ -3,8 +3,9 @@ import Link from "@/components/link.astro";
 import Section from "@/components/section.astro";
 import Site from "@/layouts/site.astro";
 import Sponsors from "@/components/sponsors.astro";
+import { staticPages } from "@/metadata";
 
-const desc = "Support Aarnav Tale's open-source work.";
+const { title, description: desc } = staticPages.sponsor;
 
 const platforms = [
 	{
@@ -28,7 +29,7 @@ const allocations = [
 const pad = (n: number) => n.toString().padStart(2, "0");
 ---
 
-<Site title="Sponsor Me" {desc}>
+<Site {title} {desc}>
 	<p class="mb-6">
 		Support my open-source work by sponsoring me on GitHub. I work full-time
 		so any support helps me dedicate more time to maintaining my projects.
