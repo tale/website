@@ -56,7 +56,7 @@ const pad = (n: number) => n.toString().padStart(2, "0");
 						</td>
 						<td class="px-2 py-1 align-top whitespace-nowrap">
 							<span class="flex shrink-0 gap-1">
-								{data.icons.sort().map((icon) => (
+								{data.icons.map((icon) => (
 									<IconButton name={icon} />
 								))}
 							</span>
