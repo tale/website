@@ -72,8 +72,12 @@
 }
 
 @theme {
-  --font-mono: "Berkeley Mono", "monospace";
+  --font-mono: "Berkeley Mono", monospace;
   --breakpoint-xs: 28rem;
+}
+
+.font-mono {
+  font-size-adjust: ch-width 0.563;
 }
 
 .flake {
