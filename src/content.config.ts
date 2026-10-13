@@ -31,6 +31,14 @@ export const collections = {
       org: z.string(),
       abbr: z.string().optional(),
       range: z.number().or(z.tuple([z.number(), z.number()])),
+      previousRoles: z
+        .array(
+          z.object({
+            role: z.string(),
+            range: z.number().or(z.tuple([z.number(), z.number()])),
+          }),
+        )
+        .optional(),
       tint: z.string().startsWith("#"),
       link: z.url().optional(),
     }),

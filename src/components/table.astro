@@ -1,0 +1,75 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+export type Column<Row> = {
+  heading: string;
+  align?: "left" | "right";
+  width?: string;
+  class?: string;
+} & (
+  | { key: keyof Row; render?: (row: Row, index: number) => unknown }
+  | { key?: never; render: (row: Row, index: number) => unknown }
+);
+
+interface Props<Row> extends HTMLAttributes<"table"> {
+  columns: readonly Column<NoInfer<Row>>[];
+  rows: readonly Row[];
+}
+
+const { columns, rows, class: extra, ...attributes } = Astro.props;
+
+function renderCell<Row>(row: Row, column: Column<Row>, index: number) {
+  if (column.render) return column.render(row, index);
+  if (column.key === undefined) return null;
+
+  return row[column.key];
+}
+
+const alignment = { left: "text-left", right: "text-right" };
+---
+
+<table
+  {...attributes}
+  class:list={[
+    "w-full border-collapse border border-neutral-300 dark:border-neutral-700",
+    extra,
+  ]}
+>
+  <colgroup>
+    {columns.map((column) => (
+      <col class={column.width} />
+    ))}
+  </colgroup>
+  <thead>
+    <tr class="border-b border-neutral-300 uppercase opacity-50 dark:border-neutral-700">
+      {columns.map((column) => (
+        <th
+          scope="col"
+          class:list={[
+            "border-r border-neutral-300 px-2 py-1 font-bold last:border-r-0 dark:border-neutral-700",
+            alignment[column.align ?? "left"],
+          ]}
+        >
+          {column.heading}
+        </th>
+      ))}
+    </tr>
+  </thead>
+  <tbody>
+    {rows.map((row, index) => (
+      <tr class="border-b border-neutral-300 last:border-b-0 hover:bg-neutral-200/60 dark:border-neutral-700 dark:hover:bg-neutral-700/40">
+        {columns.map((column) => (
+          <td
+            class:list={[
+              "border-r border-neutral-300 px-2 py-1 align-top last:border-r-0 dark:border-neutral-700",
+              alignment[column.align ?? "left"],
+              column.class,
+            ]}
+          >
+            {renderCell(row, column, index)}
+          </td>
+        ))}
+      </tr>
+    ))}
+  </tbody>
+</table>
