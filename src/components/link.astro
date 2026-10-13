@@ -1,9 +1,9 @@
 ---
 interface Props {
-	to: string;
-	external?: boolean;
-	wrap?: boolean;
-	active?: boolean;
+  to: string;
+  external?: boolean;
+  wrap?: boolean;
+  active?: boolean;
 }
 
 const { to, external = false, wrap = false, active = false } = Astro.props;
@@ -11,10 +11,12 @@ const text = await Astro.slots.render("default");
 ---
 
 <a
-	href={to}
-	target={external ? "_blank" : "_self"}
-	rel={external ? "noopener noreferrer" : undefined}
-	class={`text-blue-500 dark:text-blue-400 hover:underline
-		${wrap ? "" : "text-nowrap"} ${active ? "font-bold" : ""}`}
-	set:html={text}
+  href={to}
+  target={external ? "_blank" : "_self"}
+  rel={external ? "noopener noreferrer" : undefined}
+  class:list={[
+    "text-blue-500 dark:text-blue-400 hover:underline",
+    { "text-nowrap": !wrap, "font-bold": active },
+  ]}
+  set:html={text}
 />

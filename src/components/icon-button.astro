@@ -40,10 +40,12 @@ const svg = iconToHTML(replaceIDs(body), attributes);
 >
   <Fragment set:html={svg} />
   <div
-    class={`
-			hidden absolute right-0 bottom-full group-hover:block group-focus-visible:block z-10 mb-2 px-0.5 whitespace-nowrap
-			bg-neutral-700 text-neutral-100 dark:bg-neutral-300 dark:text-neutral-900
-	`}
+    class:list={[
+      "hidden absolute right-0 bottom-full group-hover:block",
+      "group-focus-visible:block z-10 mb-2 px-0.5",
+      "whitespace-nowrap bg-neutral-700 text-neutral-100",
+      "dark:bg-neutral-300 dark:text-neutral-900",
+    ]}
   >
     <p>{label}</p>
   </div>

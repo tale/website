@@ -6,7 +6,7 @@ const orgs = await getCollection("sponsorOrganizations");
 const [totalBreakdown] = await getCollection("sponsorTotal");
 
 if (totalBreakdown == null) {
-	throw new Error("Missing sponsor total breakdown data");
+  throw new Error("Missing sponsor total breakdown data");
 }
 
 const { total } = totalBreakdown.data;
@@ -15,75 +15,103 @@ const active = users.length + orgs.length;
 
 <Section title="Sponsors" meta={`[${active} active / ${total} all-time]`} />
 <p class="mb-3 opacity-80">
-	Thank you to everyone who has ever supported my work — past and present.
+  Thank you to everyone who has ever supported my work — past and present.
 </p>
 
-{
-	orgs.length > 0 && (
-		<>
-			<Section
-				level={3}
-				title="Organizations"
-				meta={`[${orgs.length}]`}
-				class="mt-4"
-			/>
-			<div class="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(14rem,1fr))] sm:gap-2">
-				{orgs.map((sponsor) => (
-					<a
-						href={sponsor.data.url}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="group flex items-center border border-neutral-300 not-first:border-t-0 hover:bg-neutral-200/60 dark:border-neutral-700 dark:hover:bg-neutral-700/40 sm:not-first:border-t"
-					>
-						<span class="border-r border-neutral-300 px-2 py-1 dark:border-neutral-700">
-							<img
-								src={sponsor.data.avatar}
-								alt={sponsor.data.name}
-								width="24"
-								height="24"
-								class="rounded-full"
-								loading="lazy"
-							/>
-						</span>
-						<span class="px-2 py-1">{sponsor.data.name}</span>
-					</a>
-				))}
-			</div>
-		</>
-	)
-}
+{orgs.length > 0 && (
+  <>
+    <Section
+      level={3}
+      title="Organizations"
+      meta={`[${orgs.length}]`}
+      class="mt-4"
+    />
+    <div
+      class:list={[
+        "grid grid-cols-1",
+        "sm:grid-cols-[repeat(auto-fill,minmax(14rem,1fr))]",
+        "sm:gap-2",
+      ]}
+    >
+      {orgs.map((sponsor) => (
+        <a
+          href={sponsor.data.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class:list={[
+            "group flex items-center border border-neutral-300",
+            "not-first:border-t-0 hover:bg-neutral-200/60",
+            "dark:border-neutral-700 dark:hover:bg-neutral-700/40",
+            "sm:not-first:border-t",
+          ]}
+        >
+          <span
+            class:list={[
+              "border-r border-neutral-300 px-2 py-1",
+              "dark:border-neutral-700",
+            ]}
+          >
+            <img
+              src={sponsor.data.avatar}
+              alt={sponsor.data.name}
+              width="24"
+              height="24"
+              class="rounded-full"
+              loading="lazy"
+            />
+          </span>
+          <span class="px-2 py-1">{sponsor.data.name}</span>
+        </a>
+      ))}
+    </div>
+  </>
+)}
 
-{
-	users.length > 0 && (
-		<>
-			<Section
-				level={3}
-				title="Individuals"
-				meta={`[${users.length}]`}
-				class="mt-4"
-			/>
-			<div class="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(14rem,1fr))] sm:gap-2">
-				{users.map((sponsor) => (
-					<a
-						href={sponsor.data.url}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="group flex items-center border border-neutral-300 not-first:border-t-0 hover:bg-neutral-200/60 dark:border-neutral-700 dark:hover:bg-neutral-700/40 sm:not-first:border-t"
-					>
-						<span class="border-r border-neutral-300 px-2 py-1 dark:border-neutral-700">
-							<img
-								src={sponsor.data.avatar}
-								alt={sponsor.data.name}
-								width="24"
-								height="24"
-								class="rounded-full"
-								loading="lazy"
-							/>
-						</span>
-						<span class="px-2 py-1">{sponsor.data.name}</span>
-					</a>
-				))}
-			</div>
-		</>
-	)
-}
+{users.length > 0 && (
+  <>
+    <Section
+      level={3}
+      title="Individuals"
+      meta={`[${users.length}]`}
+      class="mt-4"
+    />
+    <div
+      class:list={[
+        "grid grid-cols-1",
+        "sm:grid-cols-[repeat(auto-fill,minmax(14rem,1fr))]",
+        "sm:gap-2",
+      ]}
+    >
+      {users.map((sponsor) => (
+        <a
+          href={sponsor.data.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class:list={[
+            "group flex items-center border border-neutral-300",
+            "not-first:border-t-0 hover:bg-neutral-200/60",
+            "dark:border-neutral-700 dark:hover:bg-neutral-700/40",
+            "sm:not-first:border-t",
+          ]}
+        >
+          <span
+            class:list={[
+              "border-r border-neutral-300 px-2 py-1",
+              "dark:border-neutral-700",
+            ]}
+          >
+            <img
+              src={sponsor.data.avatar}
+              alt={sponsor.data.name}
+              width="24"
+              height="24"
+              class="rounded-full"
+              loading="lazy"
+            />
+          </span>
+          <span class="px-2 py-1">{sponsor.data.name}</span>
+        </a>
+      ))}
+    </div>
+  </>
+)}

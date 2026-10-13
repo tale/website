@@ -9,16 +9,18 @@ const { title, description: desc } = staticPages.portfolio;
 ---
 
 <Site {title} {desc}>
-	<p class="mb-6">
-		A small snippet of my resume and a list of publicly available projects
-		that I have worked on. If you are a recruiter looking to get in touch,
-		please email me at
-		{" "}
-		<Link external to="mailto:aarnav@tale.me">[aarnav@tale.me]</Link>.
-	</p>
+  <p class="mb-6">
+    A small snippet of my resume and a list of publicly available projects that
+    I have worked on. If you are a recruiter looking to get in touch, please
+    email me at{" "}
+    <Link external to="mailto:aarnav@tale.me">
+      [aarnav@tale.me]
+    </Link>
+    .
+  </p>
 
-	<div class="mb-6">
-		<Credentials />
-	</div>
-	<Projects />
+  <div class="mb-6">
+    <Credentials />
+  </div>
+  <Projects />
 </Site>

@@ -1,10 +1,10 @@
 ---
 interface Props {
-	title: string;
-	id?: string;
-	level?: 2 | 3;
-	meta?: string;
-	class?: string;
+  title: string;
+  id?: string;
+  level?: 2 | 3;
+  meta?: string;
+  class?: string;
 }
 
 const { title, id, level = 2, meta, class: extra = "" } = Astro.props;
@@ -12,13 +12,17 @@ const Tag = `h${level}` as "h2" | "h3";
 ---
 
 <Tag
-	id={id}
-	class={`mb-2 flex flex-wrap items-baseline gap-x-2 font-bold uppercase ${extra}`}
+  id={id}
+  class:list={[
+    "mb-2 flex flex-wrap items-baseline gap-x-2 font-bold",
+    "uppercase",
+    extra,
+  ]}
 >
-	<span>{title}</span>
-	{meta && (
-		<span class="ml-auto whitespace-nowrap tabular-nums opacity-50">
-			{meta}
-		</span>
-	)}
+  <span>{title}</span>
+  {meta && (
+    <span class="ml-auto whitespace-nowrap tabular-nums opacity-50">
+      {meta}
+    </span>
+  )}
 </Tag>

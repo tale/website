@@ -5,9 +5,9 @@ import ASCII from "@/components/ascii.astro";
 import { getImageUrl, getPageTitle, siteName } from "@/metadata";
 
 interface Props {
-	title?: string;
-	desc?: string;
-	date?: Date;
+  title?: string;
+  desc?: string;
+  date?: Date;
 }
 
 const { title, desc, date } = Astro.props;
@@ -20,112 +20,118 @@ const imageUrl = getImageUrl(Astro.url);
 
 const pad = (n: number) => n.toString().padStart(2, "0");
 const now = new Date();
-const buildDate = `${now.getUTCFullYear()}-${pad(now.getUTCMonth() + 1)}-${pad(now.getUTCDate())}`;
+const buildDate = `${now.getUTCFullYear()}-${pad(
+  now.getUTCMonth() + 1,
+)}-${pad(now.getUTCDate())}`;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={desc} />
-		<meta name="viewport" content="width=device-width" />
-		<link
-			rel="icon"
-			type="image/png"
-			href="/favicon-light.png"
-			media="(prefers-color-scheme: light)"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			href="/favicon-dark.png"
-			media="(prefers-color-scheme: dark)"
-		/>
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-		<link
-			as="font"
-			crossorigin
-			rel="preload"
-			href="/fonts/berkeley-regular.woff2"
-			type="font/woff2"
-		/>
-		<link rel="canonical" href={Astro.url.href} />
-		<link
-			rel="alternate"
-			type="application/rss+xml"
-			title={headline}
-			href={new URL("rss.xml", Astro.site)}
-		/>
-		<link rel="sitemap" href="/sitemap-index.xml" />
-		<title>{headline}</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={desc} />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon-light.png"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon-dark.png"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link
+      as="font"
+      crossorigin
+      rel="preload"
+      href="/fonts/berkeley-regular.woff2"
+      type="font/woff2"
+    />
+    <link
+      as="font"
+      crossorigin
+      rel="preload"
+      href="/fonts/berkeley-bold.woff2"
+      type="font/woff2"
+    />
+    <link rel="canonical" href={Astro.url.href} />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={headline}
+      href={new URL("rss.xml", Astro.site)}
+    />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <title>{headline}</title>
 
-		<meta name="title" content={headline} />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="darkreader-lock" />
-		<meta property="og:url" content={Astro.url.href} />
-		<meta property="og:type" content={date ? "article" : "website"} />
-		<meta property="og:title" content={socialTitle} />
-		<meta property="og:description" content={desc} />
-		<meta property="og:image" content={imageUrl} />
-		{date && <meta property="article:published_time" content={date.toISOString()} />}
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:site" content="@aarnavtale" />
-		<meta name="twitter:creator" content="@aarnavtale" />
-		<meta name="twitter:title" content={socialTitle} />
-		<meta name="twitter:description" content={desc} />
-		<meta name="twitter:image" content={imageUrl} />
+    <meta name="title" content={headline} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="darkreader-lock" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:type" content={date ? "article" : "website"} />
+    <meta property="og:title" content={socialTitle} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:image" content={imageUrl} />
+    {date && (
+      <meta property="article:published_time" content={date.toISOString()} />
+    )}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@aarnavtale" />
+    <meta name="twitter:creator" content="@aarnavtale" />
+    <meta name="twitter:title" content={socialTitle} />
+    <meta name="twitter:description" content={desc} />
+    <meta name="twitter:image" content={imageUrl} />
 
-		<slot name="head" />
-	</head>
+    <slot name="head" />
+  </head>
 
-	<body
-		class={`
-		flex min-h-screen flex-col overscroll-none bg-neutral-200 text-base/snug
-		text-neutral-900 antialiased dark:bg-black dark:text-neutral-50
-		`}
-	>
-		<main
-			class={`
-				mx-auto my-4 w-full max-w-3xl flex-1 p-4 font-mono font-normal
-				border border-neutral-300 bg-neutral-50 dark:bg-neutral-950 dark:border-neutral-700
-			`}
-		>
-			<header
-				class="flex flex-col items-center gap-x-4 uppercase sm:flex-row sm:items-baseline"
-			>
-				<h1 class="font-bold tracking-wide">{siteName}</h1>
-				<nav class="flex flex-wrap gap-x-2 sm:ml-auto">
-					<Link active={pathname === "/"} to="/"
-						>[{pathname === "/" ? "*" : ""}home]</Link
-					>
-					<Link
-						active={pathname.startsWith("/portfolio")}
-						to="/portfolio/"
-						>[{
-							pathname.startsWith("/portfolio") ? "*" : ""
-						}portfolio]</Link
-					>
-					<Link
-						active={pathname.startsWith("/sponsor")}
-						to="/sponsor/"
-						>[{
-							pathname.startsWith("/sponsor") ? "*" : ""
-						}sponsor]</Link
-					>
-				</nav>
-			</header>
-			<hr class="my-3 border-neutral-300 dark:border-neutral-700" />
-			<slot />
-			<hr class="mt-8 mb-3 border-neutral-300 dark:border-neutral-700" />
-			<footer
-				class="flex flex-wrap items-baseline gap-x-4 uppercase opacity-50"
-			>
-				<span>{buildDate}</span>
-				<span class="ml-auto">{ref}</span>
-			</footer>
-		</main>
-		<div class="my-8 w-full font-mono font-normal">
-			<ASCII />
-		</div>
-	</body>
+  <body
+    class:list={[
+      "flex min-h-screen flex-col overscroll-none",
+      "bg-neutral-200 text-base/snug text-neutral-900",
+      "antialiased dark:bg-black dark:text-neutral-50",
+    ]}
+  >
+    <main
+      class:list={[
+        "mx-auto my-4 w-full max-w-3xl flex-1 p-4 font-mono",
+        "font-normal border border-neutral-300 bg-neutral-50",
+        "dark:bg-neutral-950 dark:border-neutral-700",
+      ]}
+    >
+      <header
+        class:list={[
+          "flex flex-col items-center gap-x-4 uppercase sm:flex-row",
+          "sm:items-baseline",
+        ]}
+      >
+        <h1 class="font-bold tracking-wide">{siteName}</h1>
+        <nav class="flex flex-wrap gap-x-2 sm:ml-auto">
+          <Link active={pathname === "/"} to="/">
+            [{pathname === "/" ? "*" : ""}home]
+          </Link>
+          <Link active={pathname.startsWith("/portfolio")} to="/portfolio/">
+            [{pathname.startsWith("/portfolio") ? "*" : ""}portfolio]
+          </Link>
+          <Link active={pathname.startsWith("/sponsor")} to="/sponsor/">
+            [{pathname.startsWith("/sponsor") ? "*" : ""}sponsor]
+          </Link>
+        </nav>
+      </header>
+      <hr class="my-3 border-neutral-300 dark:border-neutral-700" />
+      <slot />
+      <hr class="mt-8 mb-3 border-neutral-300 dark:border-neutral-700" />
+      <footer class="flex flex-wrap items-baseline gap-x-4 uppercase opacity-50">
+        <span>{buildDate}</span>
+        <span class="ml-auto">{ref}</span>
+      </footer>
+    </main>
+    <div class="my-8 w-full font-mono font-normal">
+      <ASCII />
+    </div>
+  </body>
 </html>
