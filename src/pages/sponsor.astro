@@ -1,6 +1,7 @@
 ---
 import Link from "@/components/link.astro";
 import Section from "@/components/section.astro";
+import Table from "@/components/table.astro";
 import Site from "@/layouts/site.astro";
 import Sponsors from "@/components/sponsors.astro";
 import { staticPages } from "@/metadata";
@@ -8,116 +9,62 @@ import { staticPages } from "@/metadata";
 const { title, description: desc } = staticPages.sponsor;
 
 const platforms = [
-	{
-		name: "GitHub Sponsors",
-		href: "https://github.com/sponsors/tale",
-		note: "Preferred, recurring or one-time tiers.",
-	},
-	{
-		name: "Ko-fi",
-		href: "https://ko-fi.com/atale",
-		note: "If you can't use GitHub Sponsors.",
-	},
+  {
+    name: "GitHub Sponsors",
+    href: "https://github.com/sponsors/tale",
+    note: "Preferred, recurring or one-time tiers.",
+  },
+  {
+    name: "Ko-fi",
+    href: "https://ko-fi.com/atale",
+    note: "If you can't use GitHub Sponsors.",
+  },
 ];
-
-const allocations = [
-	"Hosting and infrastructure for projects like Headplane and Canister.",
-	"Time to triage issues, ship features, and review community PRs.",
-	"The occasional cup of coffee that keeps the late-night commits flowing.",
-];
-
-const pad = (n: number) => n.toString().padStart(2, "0");
 ---
 
 <Site {title} {desc}>
-	<p class="mb-6">
-		Support my open-source work by sponsoring me on GitHub. I work full-time
-		so any support helps me dedicate more time to maintaining my projects.
-		Every contribution makes a difference and is greatly appreciated. Thank
-		you for considering supporting my work!
-	</p>
+  <p class="mb-6">
+    Support my open-source work by sponsoring me on GitHub. I work full-time so
+    any support helps me dedicate more time to maintaining my projects. Every
+    contribution makes a difference and is greatly appreciated. Thank you for
+    considering supporting my work!
+  </p>
 
-	<Section title="Where to Sponsor" meta={`[${platforms.length} entries]`} />
-	<table
-		class="mb-6 w-full border-collapse border border-neutral-300 dark:border-neutral-700"
-	>
-		<colgroup>
-			<col class="w-[3ch]" />
-			<col class="sm:w-[22ch]" />
-			<col />
-		</colgroup>
-		<thead>
-			<tr
-				class="border-b border-neutral-300 uppercase opacity-50 dark:border-neutral-700"
-			>
-				<th
-					class="border-r border-neutral-300 px-2 py-1 text-right font-bold dark:border-neutral-700"
-				>
-					#
-				</th>
-				<th
-					class="border-r border-neutral-300 px-2 py-1 text-left font-bold dark:border-neutral-700"
-				>
-					Platform
-				</th>
-				<th class="px-2 py-1 text-left font-bold">Notes</th>
-			</tr>
-		</thead>
-		<tbody>
-			{
-				platforms.map((p, i) => (
-					<tr class="border-b border-neutral-300 last:border-b-0 hover:bg-neutral-200/60 dark:border-neutral-700 dark:hover:bg-neutral-700/40">
-						<td class="border-r border-neutral-300 dark:border-neutral-700 px-2 py-1 align-top tabular-nums opacity-50 text-right">
-							{pad(i + 1)}
-						</td>
-						<td class="border-r border-neutral-300 dark:border-neutral-700 px-2 py-1 align-top">
-							<Link external wrap to={p.href}>
-								{p.name}
-							</Link>
-						</td>
-						<td class="px-2 py-1 align-top opacity-80">{p.note}</td>
-					</tr>
-				))
-			}
-		</tbody>
-	</table>
+  <Section title="Where to Sponsor" meta={`[${platforms.length} entries]`} />
+  <Table
+    class="mb-6"
+    columns={[
+      {
+        key: "name",
+        heading: "Platform",
+        width: "sm:w-[22ch]",
+        render: (platform) => (
+          <Link external wrap to={platform.href}>
+            {platform.name}
+          </Link>
+        ),
+      },
+      { key: "note", heading: "Notes", class: "opacity-80" },
+    ]}
+    rows={platforms}
+  />
 
-	<Section
-		title="Where the Support Goes"
-		meta={`[${allocations.length} entries]`}
-	/>
-	<table
-		class="mb-6 w-full border-collapse border border-neutral-300 dark:border-neutral-700"
-	>
-		<colgroup>
-			<col class="w-[3ch]" />
-			<col />
-		</colgroup>
-		<thead>
-			<tr
-				class="border-b border-neutral-300 uppercase opacity-50 dark:border-neutral-700"
-			>
-				<th
-					class="border-r border-neutral-300 px-2 py-1 text-right font-bold dark:border-neutral-700"
-				>
-					#
-				</th>
-				<th class="px-2 py-1 text-left font-bold">Allocation</th>
-			</tr>
-		</thead>
-		<tbody>
-			{
-				allocations.map((item, i) => (
-					<tr class="border-b border-neutral-300 last:border-b-0 hover:bg-neutral-200/60 dark:border-neutral-700 dark:hover:bg-neutral-700/40">
-						<td class="border-r border-neutral-300 dark:border-neutral-700 px-2 py-1 align-top tabular-nums opacity-50 text-right">
-							{pad(i + 1)}
-						</td>
-						<td class="px-2 py-1 align-top opacity-80">{item}</td>
-					</tr>
-				))
-			}
-		</tbody>
-	</table>
+  <Section title="Where the Support Goes" meta={`[3 entries]`} />
+  <Table
+    class="mb-6"
+    columns={[
+      {
+        heading: "Where the Support Goes",
+        class: "opacity-80",
+        render: (allocation) => allocation,
+      },
+    ]}
+    rows={[
+      "Hosting and infrastructure for projects like Rootbeer and Headplane",
+      "Time to triage issues, ship features, and review community PRs.",
+      "The occasional cup of coffee that keeps the late-night commits flowing.",
+    ]}
+  />
 
-	<Sponsors />
+  <Sponsors />
 </Site>

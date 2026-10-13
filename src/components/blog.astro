@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import Link from "@/components/link.astro";
 import Section from "@/components/section.astro";
+import Table from "@/components/table.astro";
 
 const posts = (await getCollection("blog")).sort((a, b) =>
   a.data.date > b.data.date ? -1 : 1,
@@ -11,30 +12,32 @@ const { format } = new Intl.DateTimeFormat("en-US", {
   dateStyle: "medium",
   timeZone: "UTC",
 });
+
+const rows = posts.map((post) => ({
+  id: post.id,
+  title: post.data.title,
+  published: format(post.data.date),
+}));
 ---
 
 <Section title="Blog Posts" meta={`[${posts.length} entries]`} />
-<table class="w-full border-collapse border border-neutral-300 dark:border-neutral-700">
-  <thead>
-    <tr class="border-b border-neutral-300 uppercase opacity-50 dark:border-neutral-700">
-      <th class="border-r border-neutral-300 px-2 py-1 text-left font-bold dark:border-neutral-700">
-        Title
-      </th>
-      <th class="px-2 py-1 text-right font-bold">Published</th>
-    </tr>
-  </thead>
-  <tbody>
-    {posts.map((post) => (
-      <tr class="border-b border-neutral-300 last:border-b-0 hover:bg-neutral-200/60 dark:border-neutral-700 dark:hover:bg-neutral-700/40">
-        <td class="border-r border-neutral-300 dark:border-neutral-700 px-2 py-1">
-          <Link wrap to={`/blog/${post.id}`}>
-            {post.data.title}
-          </Link>
-        </td>
-        <td class="px-2 py-1 tabular-nums opacity-50 text-right whitespace-nowrap">
-          {format(post.data.date)}
-        </td>
-      </tr>
-    ))}
-  </tbody>
-</table>
+<Table
+  columns={[
+    {
+      key: "title",
+      heading: "Title",
+      render: (post) => (
+        <Link wrap to={`/blog/${post.id}`}>
+          {post.title}
+        </Link>
+      ),
+    },
+    {
+      key: "published",
+      heading: "Published",
+      align: "right",
+      class: "opacity-50 whitespace-nowrap tabular-nums",
+    },
+  ]}
+  {rows}
+/>
