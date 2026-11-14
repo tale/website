@@ -33,16 +33,14 @@ const platforms = [
   <ul class="mb-10 space-y-1">
     {platforms.map((platform) => (
       <li>
-        <Link external to={platform.href}>
-          {platform.name}
-        </Link>
-        <span class="opacity-60"> - {platform.note}</span>
+        <Link external to={platform.href}>{platform.name}</Link>
+        <span class="text-muted"> - {platform.note}</span>
       </li>
     ))}
   </ul>
 
   <Section title="Where the support goes" />
-  <ul class="mb-10 list-disc space-y-1 pl-5 marker:opacity-50">
+  <ul class="mb-10 list-disc space-y-1 pl-5 marker:text-faint">
     <li>Hosting and infrastructure for projects like Rootbeer and Headplane.</li>
     <li>Time to triage issues, ship features, and review community PRs.</li>
     <li>The occasional cup of coffee that keeps the late-night commits flowing.</li>

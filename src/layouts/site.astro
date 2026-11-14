@@ -93,8 +93,7 @@ const nav = [
   <body
     class:list={[
       "flex min-h-screen flex-col overscroll-none",
-      "bg-neutral-50 text-base/snug text-neutral-900",
-      "antialiased dark:bg-neutral-950 dark:text-neutral-50",
+      "bg-canvas text-base/snug text-ink antialiased",
     ]}
   >
     <main class="mx-auto w-full max-w-3xl flex-1 px-4 pt-8 pb-12 font-mono sm:pt-12">
@@ -105,7 +104,7 @@ const nav = [
         ]}
       >
         <Brand class="font-bold">
-          <a href="/">{siteName}</a>
+          <a href="/" class="hover:underline">{siteName}</a>
         </Brand>
         <nav class="flex flex-wrap gap-x-4 sm:ml-auto">
           {nav.map(({ label, to, isActive }) => (
@@ -114,7 +113,7 @@ const nav = [
               aria-current={isActive ? "page" : undefined}
               class:list={[
                 "hover:underline",
-                isActive ? "font-bold" : "opacity-60 hover:opacity-100",
+                isActive ? "font-bold" : "text-muted hover:text-ink",
               ]}
             >
               {label}
@@ -124,7 +123,7 @@ const nav = [
       </header>
       <slot />
     </main>
-    <div class="mb-8 w-full font-mono font-normal">
+    <div class="mb-8 font-mono">
       <ASCII />
     </div>
   </body>

@@ -14,11 +14,10 @@ const names = {
 };
 
 interface Props {
-  name: (string & {}) | keyof typeof names;
-  size?: number;
+  name: string;
 }
 
-const { name, size = 20 } = Astro.props;
+const { name } = Astro.props;
 const label = names[name as keyof typeof names];
 if (!label) {
   throw new Error(`Icon "${name}" needs a label in icon-button.astro`);
@@ -29,24 +28,18 @@ if (!iconData) {
   throw new Error(`Icon "${name}" not found in @iconify-json/devicon`);
 }
 
-const { attributes, body } = iconToSVG(iconData, { width: size, height: size });
+const { attributes, body } = iconToSVG(iconData, { width: 20, height: 20 });
 const svg = iconToHTML(replaceIDs(body), attributes);
 ---
 
-<button
-  type="button"
-  aria-label={label}
-  class="group relative flex shrink-0 items-center justify-center"
->
+<button type="button" aria-label={label} class="group relative flex">
   <Fragment set:html={svg} />
-  <div
+  <span
     class:list={[
-      "hidden absolute right-0 bottom-full group-hover:block",
-      "group-focus-visible:block z-10 mb-2 px-0.5",
-      "whitespace-nowrap bg-neutral-700 text-neutral-100",
-      "dark:bg-neutral-300 dark:text-neutral-900",
+      "absolute right-0 bottom-full z-10 mb-2 hidden px-0.5 whitespace-nowrap",
+      "bg-ink text-canvas group-hover:block group-focus-visible:block",
     ]}
   >
-    <p>{label}</p>
-  </div>
+    {label}
+  </span>
 </button>

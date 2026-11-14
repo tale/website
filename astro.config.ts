@@ -20,7 +20,7 @@ export default defineConfig({
       hastPlugins: [satteriUnwrapImageParagraphs(), satteriFigure(), satteriHeadingStyle()],
     }),
     shikiConfig: {
-      theme: "github-dark",
+      theme: "css-variables",
     },
   },
 });

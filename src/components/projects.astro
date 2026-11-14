@@ -14,25 +14,24 @@ const projects = (await getCollection("projects")).map(({ data }) => data);
     class="min-w-xl"
     columns={[
       {
-        key: "name",
         heading: "Project",
         class: "whitespace-nowrap",
         render: (project) =>
           project.link ? (
-            <Link external to={project.link}>
-              {project.name}
-            </Link>
+            <Link external to={project.link}>{project.name}</Link>
           ) : (
             project.name
           ),
       },
-      { key: "description", heading: "Description", class: "opacity-80" },
       {
-        key: "icons",
+        heading: "Description",
+        class: "text-muted",
+        render: (project) => project.description,
+      },
+      {
         heading: "Stack",
-        class: "whitespace-nowrap",
         render: (project) => (
-          <span class="flex shrink-0 gap-1">
+          <span class="flex gap-1">
             {project.icons.map((icon) => (
               <IconButton name={icon} />
             ))}

@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import Section from "@/components/section.astro";
+import Toc from "@/components/toc.astro";
 import Site from "@/layouts/site.astro";
 
 export async function getStaticPaths() {
@@ -13,19 +14,7 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content, headings } = await render(post);
-
-const pad = (n: number) => n.toString().padStart(2, "0");
-const isoDate = `${post.data.date.getUTCFullYear()}-${pad(
-  post.data.date.getUTCMonth() + 1,
-)}-${pad(post.data.date.getUTCDate())}`;
-
-const tableOfContents = headings
-  .filter((heading) => heading.depth <= 3)
-  .map((heading) => ({
-    text: heading.text,
-    depth: heading.depth,
-    href: `#${heading.slug}`,
-  }));
+const tocHeadings = headings.filter(({ depth }) => depth <= 3);
 ---
 
 <Site
@@ -33,80 +22,33 @@ const tableOfContents = headings
   desc={post.data.description}
   date={post.data.date}
 >
-  {tableOfContents.length > 0 && (
+  {tocHeadings.length > 0 && (
     <aside
       class:list={[
-        "fixed top-32 right-8 hidden max-h-[70vh] w-64",
-        "overflow-y-auto border-l border-neutral-300 pl-4",
-        "2xl:block dark:border-neutral-700",
+        "fixed top-32 right-8 hidden max-h-[70vh] w-64 overflow-y-auto",
+        "border-l border-line pl-4 2xl:block",
       ]}
     >
       <Section level={3} title="On this page" />
-      <ul class="space-y-1">
-        {tableOfContents.map((item) => (
-          <li class={item.depth === 3 ? "pl-4 opacity-80" : ""}>
-            <a href={item.href} class="hover:underline">
-              <span class="opacity-50">-</span> {item.text}
-            </a>
-          </li>
-        ))}
-      </ul>
+      <Toc headings={tocHeadings} />
     </aside>
   )}
 
   <header class="mb-8">
     <h1 class="text-xl font-bold text-balance">{post.data.title}</h1>
-    <p class="mt-1 tabular-nums opacity-50">
-      <time datetime={post.data.date.toISOString()}>{isoDate}</time>
-    </p>
+    <time datetime={post.data.date.toISOString()} class="mt-1 block text-faint">
+      {post.data.date.toISOString().slice(0, 10)}
+    </time>
   </header>
 
-  {tableOfContents.length > 0 && (
-    <details
-      class:list={[
-        "mb-6 border border-neutral-300 p-3 2xl:hidden",
-        "dark:border-neutral-700",
-      ]}
-    >
-      <summary class="cursor-pointer font-bold select-none">
-        On this page
-      </summary>
-      <ul class="mt-2 space-y-1">
-        {tableOfContents.map((item) => (
-          <li class={item.depth === 3 ? "pl-4 opacity-80" : ""}>
-            <a href={item.href} class="hover:underline">
-              <span class="opacity-50">-</span> {item.text}
-            </a>
-          </li>
-        ))}
-      </ul>
+  {tocHeadings.length > 0 && (
+    <details class="mb-6 border border-line p-3 2xl:hidden">
+      <summary class="cursor-pointer font-bold select-none">On this page</summary>
+      <Toc headings={tocHeadings} class="mt-2" />
     </details>
   )}
 
-  <div
-    class:list={[
-      "prose dark:prose-invert prose-img:rounded-none",
-      "prose-img:shadow-lg prose-img:mx-auto",
-      "prose-video:rounded-none prose-video:shadow-md",
-      "prose-video:mx-auto prose-figcaption:mt-2",
-      "prose-figcaption:text-center",
-      "prose-blockquote:font-normal prose-pre:font-normal",
-      "max-w-3xl prose-p:leading-relaxed",
-      "prose-p:text-neutral-600 dark:prose-p:text-neutral-400",
-      "prose-li:text-neutral-600 dark:prose-li:text-neutral-400",
-      "prose-blockquote:text-neutral-600",
-      "dark:prose-blockquote:text-neutral-400",
-      "prose-figcaption:text-neutral-600",
-      "dark:prose-figcaption:text-neutral-400",
-      "prose-strong:font-normal prose-strong:text-neutral-900",
-      "dark:prose-strong:text-neutral-50",
-      "prose-headings:text-base prose-headings:font-bold",
-      "prose-headings:text-neutral-900",
-      "dark:prose-headings:text-neutral-50 prose-h2:mt-8",
-      "prose-h2:mb-2 prose-h3:mt-6 prose-h3:mb-2",
-      "prose-hr:opacity-30",
-    ]}
-  >
+  <div class="prose">
     <Content />
   </div>
 </Site>

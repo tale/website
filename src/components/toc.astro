@@ -1,0 +1,20 @@
+---
+import type { MarkdownHeading } from "astro";
+
+interface Props {
+  headings: MarkdownHeading[];
+  class?: string;
+}
+
+const { headings, class: extra } = Astro.props;
+---
+
+<ul class:list={["space-y-1", extra]}>
+  {headings.map(({ depth, slug, text }) => (
+    <li class:list={{ "pl-4 text-muted": depth === 3 }}>
+      <a href={`#${slug}`} class="hover:underline">
+        <span class="text-faint">-</span> {text}
+      </a>
+    </li>
+  ))}
+</ul>

@@ -16,22 +16,16 @@ const { previousRoles = [] } = credential;
     {previousRoles.map(({ role }) => (
       <li
         class:list={[
-          "relative pb-1 pl-7 last:pb-0",
-          "before:pointer-events-none before:absolute",
-          "before:inset-y-0",
-          "before:left-2.5 before:border-l",
-          "before:border-neutral-500",
-          "dark:before:border-neutral-400",
+          "relative pb-1 pl-7 text-muted last:pb-0",
+          "before:absolute before:inset-y-0 before:left-2.5",
+          "before:border-l before:border-faint",
           "first:before:top-[calc(20px-1lh-0.25rem)]",
           "last:before:bottom-[calc(100%-0.5lh-1px)]",
-          "after:pointer-events-none after:absolute",
-          "after:top-[0.5lh]",
-          "after:left-2.5 after:w-2.5 after:border-t",
-          "after:border-neutral-500",
-          "dark:after:border-neutral-400",
+          "after:absolute after:top-[0.5lh] after:left-2.5 after:w-2.5",
+          "after:border-t after:border-faint",
         ]}
       >
-        <span class="opacity-60">{role}</span>
+        {role}
       </li>
     ))}
   </ul>

@@ -38,15 +38,9 @@ function headingText(node: Readonly<HastNode>, fallback: string): string {
 function anchor(id: string): RawNode {
   // Raw node whose value is a single tag is skipped by Astro's heading
   // collector, so the anchor stays out of table-of-contents text.
-  const classes = [
-    "ml-[0.4em] opacity-0 transition-opacity duration-150",
-    "!text-inherit !no-underline !font-normal group-hover:opacity-50",
-    "hover:!opacity-100 focus-visible:opacity-50",
-  ].join(" ");
-
   return {
     type: "raw",
-    value: `<a class="${classes}" href="#${id}" ` + `aria-label="Link to this heading">#</a>`,
+    value: `<a class="heading-anchor" href="#${id}" aria-label="Link to this heading">#</a>`,
   };
 }
 
@@ -63,11 +57,7 @@ export default function satteriHeadingStyle() {
           existingId ?? getSlugger(ctx.data).slug(headingText(node, ctx.textContent(node)));
 
         ctx.setProperty(node, "id", id);
-        ctx.setProperty(
-          node,
-          "className",
-          unique([...classList(props["className"]), "group", "heading"]),
-        );
+        ctx.setProperty(node, "className", unique([...classList(props["className"]), "heading"]));
         ctx.appendChild(node, anchor(id));
       },
     },
