@@ -1,6 +1,5 @@
 ---
 import "@/styles/global.css";
-import Link from "@/components/link.astro";
 import ASCII from "@/components/ascii.astro";
 import { getImageUrl, getPageTitle, siteName } from "@/metadata";
 
@@ -13,16 +12,18 @@ interface Props {
 const { title, desc, date } = Astro.props;
 const { pathname } = Astro.url;
 
-const ref = "tale.me(7)";
 const headline = getPageTitle(title);
 const socialTitle = date ? title : headline;
 const imageUrl = getImageUrl(Astro.url);
 
-const pad = (n: number) => n.toString().padStart(2, "0");
-const now = new Date();
-const buildDate = `${now.getUTCFullYear()}-${pad(
-  now.getUTCMonth() + 1,
-)}-${pad(now.getUTCDate())}`;
+// Posts own the page's h1, so the site name drops to a paragraph there.
+const Brand = date ? "p" : "h1";
+
+const nav = [
+  { label: "Home", to: "/", isActive: pathname === "/" },
+  { label: "Portfolio", to: "/portfolio/", isActive: pathname.startsWith("/portfolio") },
+  { label: "Sponsor", to: "/sponsor/", isActive: pathname.startsWith("/sponsor") },
+];
 ---
 
 <!doctype html>
@@ -92,45 +93,38 @@ const buildDate = `${now.getUTCFullYear()}-${pad(
   <body
     class:list={[
       "flex min-h-screen flex-col overscroll-none",
-      "bg-neutral-200 text-base/snug text-neutral-900",
-      "antialiased dark:bg-black dark:text-neutral-50",
+      "bg-neutral-50 text-base/snug text-neutral-900",
+      "antialiased dark:bg-neutral-950 dark:text-neutral-50",
     ]}
   >
-    <main
-      class:list={[
-        "mx-auto my-4 w-full max-w-3xl flex-1 p-4 font-mono",
-        "font-normal border border-neutral-300 bg-neutral-50",
-        "dark:bg-neutral-950 dark:border-neutral-700",
-      ]}
-    >
+    <main class="mx-auto w-full max-w-3xl flex-1 px-4 pt-8 pb-12 font-mono sm:pt-12">
       <header
         class:list={[
-          "flex flex-col items-center gap-x-4 uppercase sm:flex-row",
+          "mb-10 flex flex-col items-center gap-x-4 sm:flex-row",
           "sm:items-baseline",
         ]}
       >
-        <h1 class="font-bold tracking-wide">{siteName}</h1>
-        <nav class="flex flex-wrap gap-x-2 sm:ml-auto">
-          <Link active={pathname === "/"} to="/">
-            [{pathname === "/" ? "*" : ""}home]
-          </Link>
-          <Link active={pathname.startsWith("/portfolio")} to="/portfolio/">
-            [{pathname.startsWith("/portfolio") ? "*" : ""}portfolio]
-          </Link>
-          <Link active={pathname.startsWith("/sponsor")} to="/sponsor/">
-            [{pathname.startsWith("/sponsor") ? "*" : ""}sponsor]
-          </Link>
+        <Brand class="font-bold">
+          <a href="/">{siteName}</a>
+        </Brand>
+        <nav class="flex flex-wrap gap-x-4 sm:ml-auto">
+          {nav.map(({ label, to, isActive }) => (
+            <a
+              href={to}
+              aria-current={isActive ? "page" : undefined}
+              class:list={[
+                "hover:underline",
+                isActive ? "font-bold" : "opacity-60 hover:opacity-100",
+              ]}
+            >
+              {label}
+            </a>
+          ))}
         </nav>
       </header>
-      <hr class="my-3 border-neutral-300 dark:border-neutral-700" />
       <slot />
-      <hr class="mt-8 mb-3 border-neutral-300 dark:border-neutral-700" />
-      <footer class="flex flex-wrap items-baseline gap-x-4 uppercase opacity-50">
-        <span>{buildDate}</span>
-        <span class="ml-auto">{ref}</span>
-      </footer>
     </main>
-    <div class="my-8 w-full font-mono font-normal">
+    <div class="mb-8 w-full font-mono font-normal">
       <ASCII />
     </div>
   </body>

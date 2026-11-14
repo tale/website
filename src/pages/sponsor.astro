@@ -1,7 +1,6 @@
 ---
 import Link from "@/components/link.astro";
 import Section from "@/components/section.astro";
-import Table from "@/components/table.astro";
 import Site from "@/layouts/site.astro";
 import Sponsors from "@/components/sponsors.astro";
 import { staticPages } from "@/metadata";
@@ -23,48 +22,31 @@ const platforms = [
 ---
 
 <Site {title} {desc}>
-  <p class="mb-6">
+  <p class="mb-10">
     Support my open-source work by sponsoring me on GitHub. I work full-time so
     any support helps me dedicate more time to maintaining my projects. Every
     contribution makes a difference and is greatly appreciated. Thank you for
     considering supporting my work!
   </p>
 
-  <Section title="Where to Sponsor" meta={`[${platforms.length} entries]`} />
-  <Table
-    class="mb-6"
-    columns={[
-      {
-        key: "name",
-        heading: "Platform",
-        width: "sm:w-[22ch]",
-        render: (platform) => (
-          <Link external wrap to={platform.href}>
-            {platform.name}
-          </Link>
-        ),
-      },
-      { key: "note", heading: "Notes", class: "opacity-80" },
-    ]}
-    rows={platforms}
-  />
+  <Section title="Where to sponsor" />
+  <ul class="mb-10 space-y-1">
+    {platforms.map((platform) => (
+      <li>
+        <Link external to={platform.href}>
+          {platform.name}
+        </Link>
+        <span class="opacity-60"> - {platform.note}</span>
+      </li>
+    ))}
+  </ul>
 
-  <Section title="Where the Support Goes" meta={`[3 entries]`} />
-  <Table
-    class="mb-6"
-    columns={[
-      {
-        heading: "Where the Support Goes",
-        class: "opacity-80",
-        render: (allocation) => allocation,
-      },
-    ]}
-    rows={[
-      "Hosting and infrastructure for projects like Rootbeer and Headplane",
-      "Time to triage issues, ship features, and review community PRs.",
-      "The occasional cup of coffee that keeps the late-night commits flowing.",
-    ]}
-  />
+  <Section title="Where the support goes" />
+  <ul class="mb-10 list-disc space-y-1 pl-5 marker:opacity-50">
+    <li>Hosting and infrastructure for projects like Rootbeer and Headplane.</li>
+    <li>Time to triage issues, ship features, and review community PRs.</li>
+    <li>The occasional cup of coffee that keeps the late-night commits flowing.</li>
+  </ul>
 
   <Sponsors />
 </Site>

@@ -13,7 +13,7 @@ const { total } = totalBreakdown.data;
 const active = users.length + orgs.length;
 ---
 
-<Section title="Sponsors" meta={`[${active} active / ${total} all-time]`} />
+<Section title="Sponsors" meta={`${active} active, ${total} all-time`} />
 <p class="mb-3 opacity-80">
   Thank you to everyone who has ever supported my work — past and present.
 </p>
@@ -23,7 +23,6 @@ const active = users.length + orgs.length;
     <Section
       level={3}
       title="Organizations"
-      meta={`[${orgs.length}]`}
       class="mt-4"
     />
     <div
@@ -72,7 +71,6 @@ const active = users.length + orgs.length;
     <Section
       level={3}
       title="Individuals"
-      meta={`[${users.length}]`}
       class="mt-4"
     />
     <div

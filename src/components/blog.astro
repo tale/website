@@ -2,42 +2,25 @@
 import { getCollection } from "astro:content";
 import Link from "@/components/link.astro";
 import Section from "@/components/section.astro";
-import Table from "@/components/table.astro";
 
 const posts = (await getCollection("blog")).sort((a, b) =>
   a.data.date > b.data.date ? -1 : 1,
 );
-
-const { format } = new Intl.DateTimeFormat("en-US", {
-  dateStyle: "medium",
-  timeZone: "UTC",
-});
-
-const rows = posts.map((post) => ({
-  id: post.id,
-  title: post.data.title,
-  published: format(post.data.date),
-}));
 ---
 
-<Section title="Blog Posts" meta={`[${posts.length} entries]`} />
-<Table
-  columns={[
-    {
-      key: "title",
-      heading: "Title",
-      render: (post) => (
-        <Link wrap to={`/blog/${post.id}`}>
-          {post.title}
-        </Link>
-      ),
-    },
-    {
-      key: "published",
-      heading: "Published",
-      align: "right",
-      class: "opacity-50 whitespace-nowrap tabular-nums",
-    },
-  ]}
-  {rows}
-/>
+<Section title="Writing" />
+<ul class="space-y-1">
+  {posts.map((post) => (
+    <li class="flex gap-x-4">
+      <time
+        datetime={post.data.date.toISOString()}
+        class="shrink-0 tabular-nums opacity-50"
+      >
+        {post.data.date.toISOString().slice(0, 10)}
+      </time>
+      <Link wrap to={`/blog/${post.id}`}>
+        {post.data.title}
+      </Link>
+    </li>
+  ))}
+</ul>

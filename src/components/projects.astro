@@ -8,7 +8,7 @@ import Table from "@/components/table.astro";
 const projects = (await getCollection("projects")).map(({ data }) => data);
 ---
 
-<Section title="Projects" meta={`[${projects.length} entries]`} />
+<Section title="Projects" />
 <div class="overflow-x-auto" role="region" aria-label="Projects" tabindex="0">
   <Table
     class="min-w-xl"
