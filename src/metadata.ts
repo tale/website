@@ -5,10 +5,6 @@ export const staticPages = {
     title: siteName,
     description: "Aarnav Tale's personal website and blog.",
   },
-  sponsor: {
-    title: "Sponsor Me",
-    description: "Support Aarnav Tale's open-source work.",
-  },
   "404": {
     title: "404 Not Found",
     description: "The page you are looking for does not exist",

@@ -10,7 +10,6 @@ interface Props {
 }
 
 const { title, desc, date } = Astro.props;
-const { pathname } = Astro.url;
 
 const headline = getPageTitle(title);
 const socialTitle = date ? title : headline;
@@ -18,11 +17,6 @@ const imageUrl = getImageUrl(Astro.url);
 
 // Posts own the page's h1, so the site name drops to a paragraph there.
 const Brand = date ? "p" : "h1";
-
-const nav = [
-  { label: "Home", to: "/", isActive: pathname === "/" },
-  { label: "Sponsor", to: "/sponsor/", isActive: pathname.startsWith("/sponsor") },
-];
 ---
 
 <!doctype html>
@@ -96,29 +90,10 @@ const nav = [
     ]}
   >
     <main class="mx-auto w-full max-w-3xl flex-1 px-4 pt-8 pb-12 font-mono sm:pt-12">
-      <header
-        class:list={[
-          "mb-10 flex flex-col items-center gap-x-4 sm:flex-row",
-          "sm:items-baseline",
-        ]}
-      >
+      <header class="mb-10">
         <Brand class="font-bold">
           <a href="/" class="hover:underline">{siteName}</a>
         </Brand>
-        <nav class="flex flex-wrap gap-x-4 sm:ml-auto">
-          {nav.map(({ label, to, isActive }) => (
-            <a
-              href={to}
-              aria-current={isActive ? "page" : undefined}
-              class:list={[
-                "hover:underline",
-                isActive ? "font-bold" : "text-muted hover:text-ink",
-              ]}
-            >
-              {label}
-            </a>
-          ))}
-        </nav>
       </header>
       <slot />
     </main>

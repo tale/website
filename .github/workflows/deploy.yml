@@ -56,8 +56,6 @@ jobs:
 
       - name: Build
         run: pnpm build
-        env:
-          GITHUB_TOKEN: ${{ secrets.SPONSORS_TOKEN }}
 
       - name: Upload artifact for deployment
         uses: actions/upload-pages-artifact@v3

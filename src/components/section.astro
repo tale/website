@@ -2,19 +2,10 @@
 interface Props {
   title: string;
   level?: 2 | 3;
-  meta?: string;
-  class?: string;
 }
 
-const { title, level = 2, meta, class: extra } = Astro.props;
+const { title, level = 2 } = Astro.props;
 const Tag = `h${level}` as "h2" | "h3";
 ---
 
-<Tag class:list={["mb-2 flex flex-wrap items-baseline gap-x-2 font-bold", extra]}>
-  <span>{title}</span>
-  {meta && (
-    <span class="ml-auto font-normal whitespace-nowrap text-faint">
-      {meta}
-    </span>
-  )}
-</Tag>
+<Tag class="mb-2 font-bold">{title}</Tag>

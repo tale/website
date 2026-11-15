@@ -12,6 +12,7 @@ export default defineConfig({
   integrations: [sitemap()],
   redirects: {
     "/portfolio": "/",
+    "/sponsor": "https://github.com/sponsors/tale",
   },
   vite: {
     plugins: [tailwindcss()],
