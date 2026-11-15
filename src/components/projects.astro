@@ -1,44 +1,19 @@
 ---
 import { getCollection } from "astro:content";
-import IconButton from "@/components/icon-button.astro";
 import Link from "@/components/link.astro";
 import Section from "@/components/section.astro";
-import Table from "@/components/table.astro";
 
-const projects = (await getCollection("projects")).map(({ data }) => data);
+const projects = await getCollection("projects");
 ---
 
 <Section title="Projects" />
-<div class="overflow-x-auto" role="region" aria-label="Projects" tabindex="0">
-  <Table
-    class="min-w-xl"
-    columns={[
-      {
-        heading: "Project",
-        class: "whitespace-nowrap",
-        render: (project) =>
-          project.link ? (
-            <Link external to={project.link}>{project.name}</Link>
-          ) : (
-            project.name
-          ),
-      },
-      {
-        heading: "Description",
-        class: "text-muted",
-        render: (project) => project.description,
-      },
-      {
-        heading: "Stack",
-        render: (project) => (
-          <span class="flex gap-1">
-            {project.icons.map((icon) => (
-              <IconButton name={icon} />
-            ))}
-          </span>
-        ),
-      },
-    ]}
-    rows={projects}
-  />
-</div>
+<ul class="space-y-2 sm:space-y-1">
+  {projects.map(({ data }) => (
+    <li class="sm:flex sm:gap-x-4">
+      <span class="block shrink-0 sm:w-[16ch]">
+        <Link to={data.link}>{data.name}</Link>
+      </span>
+      <span class="text-muted">{data.description}</span>
+    </li>
+  ))}
+</ul>

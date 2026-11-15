@@ -20,8 +20,6 @@
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.5",
     "@astrojs/ts-plugin": "^1.11.0",
-    "@iconify-json/devicon": "^1.2.80",
-    "@iconify/utils": "^3.1.7",
     "@tailwindcss/vite": "^4.3.5",
     "astro": "7.4.12",
     "astro-meta-tags": "^0.4.1",

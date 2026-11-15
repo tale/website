@@ -64,6 +64,20 @@
 }
 
 @layer components {
+  .copy {
+    & > * + * {
+      margin-top: 1rem;
+    }
+
+    & a {
+      color: var(--color-accent);
+    }
+
+    & a:hover {
+      text-decoration: underline;
+    }
+  }
+
   .prose {
     color: var(--color-muted);
     line-height: 1.625;

@@ -1,14 +1,13 @@
 ---
 interface Props {
   to: string;
-  external?: boolean;
 }
 
-const { to, external = false } = Astro.props;
+const { to } = Astro.props;
+
+// Prettier wraps link labels onto their own lines; trim so that whitespace
+// doesn't render as an underlined trailing space inside the link.
+const label = (await Astro.slots.render("default")).trim();
 ---
 
-<a
-  href={to}
-  target={external ? "_blank" : undefined}
-  rel={external ? "noopener noreferrer" : undefined}
-  class="text-accent hover:underline"><slot /></a>
+<a href={to} class="text-accent hover:underline" set:html={label} />

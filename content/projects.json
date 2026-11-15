@@ -3,42 +3,24 @@
     "id": "1-headplane",
     "name": "Headplane",
     "description": "Full-featured admin interface for Headscale",
-    "link": "https://headplane.net",
-    "icons": ["typescript", "react", "go-wordmark"]
+    "link": "https://headplane.net"
   },
   {
     "id": "2-rootbeer",
     "name": "Rootbeer",
     "description": "Declarative package and configuration in Lua",
-    "link": "https://rbpkg.com",
-    "icons": ["rust", "lua"]
+    "link": "https://rbpkg.com"
   },
   {
     "id": "3-prtui",
     "name": "prtui",
     "description": "Minimal Vim-like Terminal UI for reviewing PRs",
-    "link": "https://prtui.tale.me",
-    "icons": ["rust"]
+    "link": "https://prtui.tale.me"
   },
   {
     "id": "4-bobrwm",
     "name": "bobrwm",
     "description": "A tiling window manager for macOS",
-    "link": "https://bobrwm.com",
-    "icons": ["zig", "swift"]
-  },
-  {
-    "id": "5-canister",
-    "name": "Canister",
-    "description": "Search engine and analytics aggregator for iOS",
-    "link": "https://canister.me",
-    "icons": ["rust", "typescript", "kubernetes"]
-  },
-  {
-    "id": "6-kubectl-action",
-    "name": "kubectl-action",
-    "description": "Manage Kubernetes clusters from GitHub Actions",
-    "link": "https://github.com/tale/kubectl-action",
-    "icons": ["typescript"]
+    "link": "https://bobrwm.com"
   }
 ]

@@ -10,6 +10,9 @@ import satteriHeadingStyle from "./src/plugins/satteri-heading-style.ts";
 export default defineConfig({
   site: "https://tale.me",
   integrations: [sitemap()],
+  redirects: {
+    "/portfolio": "/",
+  },
   vite: {
     plugins: [tailwindcss()],
   },

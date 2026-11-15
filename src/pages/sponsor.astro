@@ -33,7 +33,7 @@ const platforms = [
   <ul class="mb-10 space-y-1">
     {platforms.map((platform) => (
       <li>
-        <Link external to={platform.href}>{platform.name}</Link>
+        <Link to={platform.href}>{platform.name}</Link>
         <span class="text-muted"> - {platform.note}</span>
       </li>
     ))}

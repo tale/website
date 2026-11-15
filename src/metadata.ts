@@ -5,10 +5,6 @@ export const staticPages = {
     title: siteName,
     description: "Aarnav Tale's personal website and blog.",
   },
-  portfolio: {
-    title: "Portfolio",
-    description: "Aarnav Tale's personal portfolio.",
-  },
   sponsor: {
     title: "Sponsor Me",
     description: "Support Aarnav Tale's open-source work.",
