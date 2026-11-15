@@ -1,10 +1,14 @@
 {
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "astro": true,
   "ignorePatterns": [],
   "overrides": [
     {
       "files": ["*.md"],
-      "options": { "printWidth": 80, "proseWrap": "always" }
+      "options": {
+        "printWidth": 80,
+        "proseWrap": "always"
+      }
     }
   ]
 }

@@ -42,13 +42,7 @@ const links = [
       href="/fonts/berkeley-regular.woff2"
       type="font/woff2"
     />
-    <link
-      as="font"
-      crossorigin
-      rel="preload"
-      href="/fonts/berkeley-bold.woff2"
-      type="font/woff2"
-    />
+    <link as="font" crossorigin rel="preload" href="/fonts/berkeley-bold.woff2" type="font/woff2" />
     <link rel="canonical" href={Astro.url.href} />
     <link
       rel="alternate"
@@ -67,9 +61,7 @@ const links = [
     <meta property="og:title" content={socialTitle} />
     <meta property="og:description" content={desc} />
     <meta property="og:image" content={imageUrl} />
-    {date && (
-      <meta property="article:published_time" content={date.toISOString()} />
-    )}
+    {date && <meta property="article:published_time" content={date.toISOString()} />}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@aarnavtale" />
     <meta name="twitter:creator" content="@aarnavtale" />
@@ -89,7 +81,9 @@ const links = [
     <main class="mx-auto w-full max-w-3xl flex-1 px-4 pt-8 pb-10 font-mono">
       <header class="mb-8">
         <Brand class="text-xl font-bold">
-          <a href="/" class="hover:underline">{siteName}</a>
+          <a href="/" class="hover:underline">
+            {siteName}
+          </a>
         </Brand>
         <nav class="mt-1 flex flex-wrap gap-x-4">
           {links.map(({ label, to }) => (
