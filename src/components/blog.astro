@@ -1,6 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import Link from "@/components/link.astro";
 import Section from "@/components/section.astro";
 
 const posts = (await getCollection("blog")).sort((a, b) =>
@@ -12,12 +11,14 @@ const years = Map.groupBy(posts, (post) => post.data.date.getUTCFullYear());
 <Section title="Writing" />
 <div class="space-y-3">
   {[...years].map(([year, yearPosts]) => (
-    <section>
+    <section class="flex gap-6">
       <h3 class="text-faint">{year}</h3>
-      <ul class="space-y-1 pl-4">
+      <ul class="space-y-1">
         {yearPosts.map((post) => (
           <li>
-            <Link to={`/blog/${post.id}`}>{post.data.title}</Link>
+            <a href={`/blog/${post.id}`} class="hover:underline">
+              {post.data.title}
+            </a>
           </li>
         ))}
       </ul>
