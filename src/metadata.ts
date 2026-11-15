@@ -7,7 +7,7 @@ export const staticPages = {
   },
   "404": {
     title: "404 Not Found",
-    description: "The page you are looking for does not exist",
+    description: "This page doesn't exist.",
   },
 };
 

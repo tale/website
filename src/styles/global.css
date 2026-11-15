@@ -1,14 +1,5 @@
 @import "tailwindcss";
 
-/*
- *   canvas  page background
- *   raised  row hover, code backgrounds
- *   line    borders, rules, scrollbar thumb
- *   ink     primary text and headings
- *   muted   secondary text: descriptions, prose body, past roles
- *   faint   tertiary text: dates, table headers, list markers, decoration
- *   accent  links and focus outlines
- */
 @theme static {
   --color-*: initial;
   --color-canvas: light-dark(oklch(98.5% 0 0), oklch(14.5% 0 0));
@@ -24,11 +15,6 @@
 }
 
 @layer base {
-  :root {
-    color-scheme: light dark;
-    scrollbar-gutter: stable;
-  }
-
   * {
     scrollbar-width: thin;
     scrollbar-color: var(--color-line) transparent;
@@ -49,6 +35,9 @@
   }
 
   :root {
+    color-scheme: light dark;
+    scrollbar-gutter: stable;
+
     --astro-code-foreground: var(--color-ink);
     --astro-code-background: var(--color-raised);
     --astro-code-token-comment: var(--color-faint);
@@ -74,10 +63,10 @@
 
     & a {
       color: var(--color-accent);
-    }
 
-    & a:hover {
-      text-decoration: underline;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
@@ -121,14 +110,16 @@
       text-underline-offset: 2px;
     }
 
+    & :is(ul, ol) {
+      padding-left: 1.5em;
+    }
+
     & ul {
       list-style: disc;
-      padding-left: 1.5em;
     }
 
     & ol {
       list-style: decimal;
-      padding-left: 1.5em;
     }
 
     & li + li {
