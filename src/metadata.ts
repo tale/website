@@ -14,8 +14,3 @@ export const staticPages = {
 export function getPageTitle(title = siteName) {
   return title === siteName ? title : `${title} • ${siteName}`;
 }
-
-export function getImageUrl(url: URL) {
-  const page = url.pathname.replace(/^\/+|\/+$/g, "") || "index";
-  return new URL(`/og/${page}.webp`, url).href;
-}
