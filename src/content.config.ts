@@ -14,14 +14,6 @@ export const collections = {
         .transform((val) => new Date(val)),
     }),
   }),
-  projects: defineCollection({
-    loader: file("content/projects.json"),
-    schema: z.object({
-      name: z.string(),
-      description: z.string(),
-      link: z.url(),
-    }),
-  }),
   sponsorUsers: defineCollection({
     loader: file("content/sponsors.json", {
       parser: (text) => JSON.parse(text).users,

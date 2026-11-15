@@ -1,7 +1,6 @@
 ---
 import { Content as Bio } from "@content/bio.md";
 import Blog from "@/components/blog.astro";
-import Projects from "@/components/projects.astro";
 import Site from "@/layouts/site.astro";
 import { staticPages } from "@/metadata";
 
@@ -11,9 +10,6 @@ const { title, description: desc } = staticPages.index;
 <Site {title} {desc}>
   <div class="copy mb-10">
     <Bio />
-  </div>
-  <div class="mb-10">
-    <Projects />
   </div>
   <Blog />
 </Site>

@@ -6,16 +6,21 @@ import Section from "@/components/section.astro";
 const posts = (await getCollection("blog")).sort((a, b) =>
   a.data.date > b.data.date ? -1 : 1,
 );
+const years = Map.groupBy(posts, (post) => post.data.date.getUTCFullYear());
 ---
 
 <Section title="Writing" />
-<ul class="space-y-1">
-  {posts.map((post) => (
-    <li class="flex gap-x-4">
-      <time datetime={post.data.date.toISOString()} class="shrink-0 text-faint">
-        {post.data.date.toISOString().slice(0, 10)}
-      </time>
-      <Link to={`/blog/${post.id}`}>{post.data.title}</Link>
-    </li>
+<div class="space-y-3">
+  {[...years].map(([year, yearPosts]) => (
+    <section>
+      <h3 class="text-faint">{year}</h3>
+      <ul class="space-y-1 pl-4">
+        {yearPosts.map((post) => (
+          <li>
+            <Link to={`/blog/${post.id}`}>{post.data.title}</Link>
+          </li>
+        ))}
+      </ul>
+    </section>
   ))}
-</ul>
+</div>
