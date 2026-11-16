@@ -82,26 +82,22 @@ const links = [
   <body
     class:list={[
       "flex min-h-screen flex-col overscroll-none",
-      "bg-canvas text-base/snug text-ink antialiased",
+      "bg-canvas font-mono text-base/snug text-ink antialiased",
     ]}
   >
-    <main class="mx-auto w-full max-w-3xl flex-1 px-4 pt-8 pb-10 font-mono">
+    <main class="mx-auto w-full max-w-3xl flex-1 px-4 pt-8 pb-10">
       <header class="mb-8">
         <Brand class="text-xl font-bold">
-          <a href="/" class="hover:underline">
-            {siteName}
-          </a>
+          <a href="/">{siteName}</a>
         </Brand>
       </header>
       <slot />
     </main>
-    <footer class="mb-8 font-mono">
+    <footer class="mb-8">
       <ASCII />
       <nav class="mt-4 flex flex-wrap justify-center gap-x-4 px-4">
         {links.map(({ label, to }) => (
-          <a href={to} class="text-ink hover:underline">
-            {label}
-          </a>
+          <a href={to}>{label}</a>
         ))}
       </nav>
     </footer>

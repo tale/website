@@ -15,9 +15,7 @@ const years = Map.groupBy(sortedPosts, (post) => post.data.date.getUTCFullYear()
       <ul class="space-y-1">
         {yearPosts.map((post) => (
           <li>
-            <a href={`/blog/${post.id}/`} class="hover:underline">
-              {post.data.title}
-            </a>
+            <a href={`/blog/${post.id}/`}>{post.data.title}</a>
           </li>
         ))}
       </ul>

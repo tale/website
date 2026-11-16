@@ -12,7 +12,7 @@ const { headings, class: extra } = Astro.props;
 <ul class:list={["space-y-1", extra]}>
   {headings.map(({ depth, slug, text }) => (
     <li class:list={{ "pl-4 text-muted": depth === 3 }}>
-      <a href={`#${slug}`} class="hover:underline">
+      <a href={`#${slug}`}>
         <span class="text-faint">-</span> {text}
       </a>
     </li>

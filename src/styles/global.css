@@ -7,7 +7,7 @@
   --color-line: light-dark(oklch(87% 0 0), oklch(37% 0 0));
   --color-ink: light-dark(oklch(20.5% 0 0), oklch(98.5% 0 0));
   --color-muted: light-dark(oklch(44% 0 0), oklch(71% 0 0));
-  --color-faint: light-dark(oklch(56% 0 0), oklch(56% 0 0));
+  --color-faint: oklch(56% 0 0);
   --color-accent: light-dark(oklch(54.6% 0.245 262.9), oklch(70.7% 0.165 254.6));
 
   --font-mono: "Berkeley Mono", monospace;
@@ -27,6 +27,10 @@
   ::-webkit-scrollbar-thumb {
     background: var(--color-line);
     border-radius: 5px;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 
   :focus-visible {
@@ -53,27 +57,25 @@
 }
 
 @layer components {
-  .copy {
-    line-height: 1.5;
+  :is(.copy, .prose) {
     text-wrap: pretty;
-
-    & > * + * {
-      margin-top: 1rem;
-    }
 
     & a {
       color: var(--color-accent);
+    }
+  }
 
-      &:hover {
-        text-decoration: underline;
-      }
+  .copy {
+    line-height: 1.5;
+
+    & > * + * {
+      margin-top: 1rem;
     }
   }
 
   .prose {
     color: var(--color-muted);
     line-height: 1.625;
-    text-wrap: pretty;
 
     & > * + * {
       margin-top: 1.25em;
@@ -105,7 +107,6 @@
     }
 
     & a {
-      color: var(--color-accent);
       text-decoration: underline;
       text-underline-offset: 2px;
     }
