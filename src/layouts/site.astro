@@ -92,18 +92,18 @@ const links = [
             {siteName}
           </a>
         </Brand>
-        <nav class="mt-1 flex flex-wrap gap-x-4">
-          {links.map(({ label, to }) => (
-            <a href={to} class="text-muted hover:text-ink hover:underline">
-              {label}
-            </a>
-          ))}
-        </nav>
       </header>
       <slot />
     </main>
-    <div class="mb-8 font-mono">
+    <footer class="mb-8 font-mono">
       <ASCII />
-    </div>
+      <nav class="mt-4 flex flex-wrap justify-center gap-x-4 px-4">
+        {links.map(({ label, to }) => (
+          <a href={to} class="text-ink hover:underline">
+            {label}
+          </a>
+        ))}
+      </nav>
+    </footer>
   </body>
 </html>
