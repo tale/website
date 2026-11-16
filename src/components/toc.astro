@@ -3,18 +3,26 @@ import type { MarkdownHeading } from "astro";
 
 interface Props {
   headings: MarkdownHeading[];
-  class?: string;
 }
 
-const { headings, class: extra } = Astro.props;
+const { headings } = Astro.props;
 ---
 
-<ul class:list={["space-y-1", extra]}>
-  {headings.map(({ depth, slug, text }) => (
-    <li class:list={{ "pl-4 text-muted": depth === 3 }}>
-      <a href={`#${slug}`}>
-        <span class="text-faint">-</span> {text}
-      </a>
-    </li>
-  ))}
-</ul>
+<nav
+  id="toc"
+  aria-labelledby="toc-label"
+  class="mb-8 xl:absolute xl:top-0 xl:left-full xl:ml-8 xl:h-full xl:w-52"
+>
+  <div class="xl:sticky xl:top-8">
+    <p id="toc-label" class="mb-2 text-faint">
+      On this page
+    </p>
+    <ul class="toc space-y-1">
+      {headings.map(({ depth, slug, text }) => (
+        <li class:list={{ "pl-4": depth === 3 }}>
+          <a href={`#${slug}`}>{text}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>

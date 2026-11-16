@@ -1,13 +1,12 @@
 ---
 import { getCollection } from "astro:content";
-import Section from "@/components/section.astro";
 
 const posts = await getCollection("blog");
 const sortedPosts = posts.toSorted((a, b) => b.data.date.getTime() - a.data.date.getTime());
 const years = Map.groupBy(sortedPosts, (post) => post.data.date.getUTCFullYear());
 ---
 
-<Section title="Writing" />
+<h2 class="mb-3 font-bold">Writing</h2>
 <div class="space-y-3">
   {[...years].map(([year, yearPosts]) => (
     <section class="flex gap-6">

@@ -73,6 +73,28 @@
     }
   }
 
+  .toc {
+    & a {
+      color: var(--color-muted);
+    }
+
+    @variant xl {
+      scroll-target-group: auto;
+
+      & a {
+        display: block;
+        margin-left: calc(-0.75em - 2px);
+        padding-left: 0.75em;
+        border-left: 2px solid transparent;
+      }
+
+      & a:target-current {
+        border-color: var(--color-ink);
+        color: var(--color-ink);
+      }
+    }
+  }
+
   .prose {
     color: var(--color-muted);
     line-height: 1.625;

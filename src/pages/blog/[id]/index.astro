@@ -1,6 +1,5 @@
 ---
 import { getCollection, render } from "astro:content";
-import Section from "@/components/section.astro";
 import Toc from "@/components/toc.astro";
 import Site from "@/layouts/site.astro";
 
@@ -14,7 +13,8 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content, headings } = await render(post);
-const tocHeadings = headings.filter(({ depth }) => depth <= 3);
+const sectionHeadings = headings.filter(({ depth }) => depth <= 3);
+const tocHeadings = [{ depth: 2, slug: "top", text: "Introduction" }, ...sectionHeadings];
 ---
 
 <Site
@@ -23,33 +23,16 @@ const tocHeadings = headings.filter(({ depth }) => depth <= 3);
   date={post.data.date}
   image={`/blog/${post.id}/og.png`}
 >
-  {tocHeadings.length > 0 && (
-    <aside
-      class:list={[
-        "fixed top-32 right-8 hidden max-h-[70vh] w-64 overflow-y-auto",
-        "border-l border-line pl-4 2xl:block",
-      ]}
-    >
-      <Section level={3} title="On this page" />
-      <Toc headings={tocHeadings} />
-    </aside>
-  )}
-
-  <header class="mb-8">
-    <h1 class="text-xl font-bold text-balance">{post.data.title}</h1>
-    <time datetime={post.data.date.toISOString()} class="mt-1 block text-faint">
-      {post.data.date.toISOString().slice(0, 10)}
-    </time>
-  </header>
-
-  {tocHeadings.length > 0 && (
-    <details class="mb-6 border border-line p-3 2xl:hidden">
-      <summary class="cursor-pointer font-bold select-none">On this page</summary>
-      <Toc headings={tocHeadings} class="mt-2" />
-    </details>
-  )}
-
-  <div class="prose">
-    <Content />
-  </div>
+  <article class="relative">
+    <header id="top" class="mb-8">
+      <h1 class="text-xl font-bold text-balance">{post.data.title}</h1>
+      <time datetime={post.data.date.toISOString()} class="mt-1 block text-faint">
+        {post.data.date.toISOString().slice(0, 10)}
+      </time>
+    </header>
+    {sectionHeadings.length > 0 && <Toc headings={tocHeadings} />}
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
 </Site>
