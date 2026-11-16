@@ -25,6 +25,7 @@ export default defineConfig({
     }),
     shikiConfig: {
       theme: "css-variables",
+      langAlias: { diagram: "text" },
     },
   },
 });
