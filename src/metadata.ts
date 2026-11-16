@@ -3,7 +3,7 @@ export const siteName = "Aarnav Tale";
 export const staticPages = {
   index: {
     title: siteName,
-    description: "Aarnav Tale's personal website and blog.",
+    description: "Software engineer. I write about whatever's on my mind.",
   },
   "404": {
     title: "404 Not Found",
