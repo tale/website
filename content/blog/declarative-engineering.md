@@ -25,7 +25,7 @@ sentences and doing a lot of the typing I didn't want to do. I found myself
 writing code by describing (in comments) what I wanted the next few lines to do
 and Copilot would produce an adequate implementation I could refine.
 
-![GitHub Copilot making a suggestion](~/pragmatic-github-copilot.png)
+![GitHub Copilot making a suggestion](./declarative-engineering/pragmatic-github-copilot.png)
 
 It worked, but I was still the one driving. I held the solution in my head and
 decided every next step. Copilot was the "dumb assistant" that fell apart at the
@@ -106,7 +106,7 @@ Nothing is perfect on the first pass. If the change is heading in the right
 direction, I leave review comments and let the agent fix them. This is where a
 strong review tool like [prtui](https://prtui.tale.me/) matters.
 
-![Leaving a review comment in prtui](~/prtui-review-comment.png)
+![Leaving a review comment in prtui](./declarative-engineering/prtui-review-comment.png)
 
 ### Throw It Away
 

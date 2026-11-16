@@ -184,7 +184,7 @@
       transition: opacity 150ms;
     }
 
-    & .heading:hover .heading-anchor,
+    & :is(h2, h3):hover .heading-anchor,
     & .heading-anchor:focus-visible {
       opacity: 1;
     }

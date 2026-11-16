@@ -1,10 +1,9 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
-import { satteri } from "@astrojs/markdown-satteri";
-import satteriAssetAlias from "./src/plugins/satteri-asset-alias.ts";
-import satteriFigure, { satteriUnwrapImageParagraphs } from "./src/plugins/satteri-figure.ts";
-import satteriHeadingStyle from "./src/plugins/satteri-heading-style.ts";
+import { satteri, satteriHeadingIdsPlugin } from "@astrojs/markdown-satteri";
+import satteriFigure from "./src/plugins/satteri-figure.ts";
+import satteriHeadingAnchor from "./src/plugins/satteri-heading-anchor.ts";
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,8 +19,7 @@ export default defineConfig({
 
   markdown: {
     processor: satteri({
-      mdastPlugins: [satteriAssetAlias()],
-      hastPlugins: [satteriUnwrapImageParagraphs(), satteriFigure(), satteriHeadingStyle()],
+      hastPlugins: [satteriFigure(), satteriHeadingIdsPlugin(), satteriHeadingAnchor()],
     }),
     shikiConfig: {
       theme: "css-variables",

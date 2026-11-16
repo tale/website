@@ -4,7 +4,7 @@ date: 2025-03-03
 description: A graphical text editor that might be better than Vim?
 ---
 
-![Preview of Zed](~/zed-preview.png)
+![Preview of Zed](./switch-from-vim-to-zed/zed-preview.png)
 
 Over the past several weeks, I've been experimenting with
 [Zed](https://zed.dev), a relatively new text editor that aims to replace Visual
@@ -35,7 +35,7 @@ codebase and language knowledge to remain productive. Second, I found myself
 using vanilla Vim more and would ultimately create a new Vim configuration with
 a minimal amount of plugins.
 
-![My Minimal Vim Configuration](~/vim-setup.png)
+![My Minimal Vim Configuration](./switch-from-vim-to-zed/vim-setup.png)
 
 ### Zed
 
@@ -64,7 +64,7 @@ I was able to get up and running quickly. Performance is incredibly snappy,
 allowing me to open up large codebases without issue. Code completion and LSP
 tooling is built-in and works well, staying out of my way most of the time.
 
-![A small snippet of my Zed keybindings](~/zed-bindings.png)
+![A small snippet of my Zed keybindings](./switch-from-vim-to-zed/zed-bindings.png)
 
 One of the best features of Zed is the high level of control when setting
 keybindings. I wanted to replicate as much of my Neovim workflow as I possibly

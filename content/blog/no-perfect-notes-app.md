@@ -6,7 +6,7 @@ description:
   didn't work for me.
 ---
 
-![Preview of Obsync](~/obsync-preview.png)
+![Preview of Obsync](./no-perfect-notes-app/obsync-preview.png)
 
 As a student, I find it important to take notes during lectures. I've spent my
 fair share of time looking for a proper note-taking app and I ultimately settled

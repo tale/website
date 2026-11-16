@@ -178,7 +178,7 @@ context on what went wrong. They'll be polluted with tons of internal stack
 traces and it's hard to figure out what the actual issue is. I tried to find a
 good example, but this is something about the kind of error you can expect
 
-![Nix error message](~/nix-error.png)
+![Nix error message](./nix-might-be-overengineered/nix-error.png)
 
 ### Things are Overengineered for the use case
 
