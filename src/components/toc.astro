@@ -8,15 +8,8 @@ interface Props {
 const { headings } = Astro.props;
 ---
 
-<nav
-  id="toc"
-  aria-labelledby="toc-label"
-  class="mb-8 xl:absolute xl:top-0 xl:left-full xl:ml-8 xl:h-full xl:w-52"
->
-  <div class="xl:sticky xl:top-8">
-    <p id="toc-label" class="mb-2 text-faint">
-      On this page
-    </p>
+<nav aria-label="On this page" class="absolute top-0 left-full ml-8 hidden h-full w-52 xl:block">
+  <div class="sticky top-8">
     <ul class="toc space-y-1">
       {headings.map(({ depth, slug, text }) => (
         <li class:list={{ "pl-4": depth === 3 }}>

@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content, headings } = await render(post);
 const sectionHeadings = headings.filter(({ depth }) => depth <= 3);
-const tocHeadings = [{ depth: 2, slug: "top", text: "Introduction" }, ...sectionHeadings];
+const tocHeadings = [{ depth: 2, slug: "main", text: "Introduction" }, ...sectionHeadings];
 ---
 
 <Site
@@ -24,7 +24,7 @@ const tocHeadings = [{ depth: 2, slug: "top", text: "Introduction" }, ...section
   image={`/blog/${post.id}/og.png`}
 >
   <article class="relative">
-    <header id="top" class="mb-8">
+    <header class="mb-8">
       <h1 class="text-xl font-bold text-balance">{post.data.title}</h1>
       <time datetime={post.data.date.toISOString()} class="mt-1 block text-faint">
         {post.data.date.toISOString().slice(0, 10)}
